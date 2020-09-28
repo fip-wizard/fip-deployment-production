@@ -1,0 +1,10 @@
+triple-store:
+  # (!) SPARQL endpoint to store data 
+  # Change this only if you want to use other triple store or different than "fip" repository
+  sparql-endpoint: http://agraph:10035/repositories/fip/statements
+  auth:
+    # (!) Change accordingly to your allegrograph/agraph.cfg
+    username: admin
+    password: password
+  graph:
+    class: ConjunctiveGraph
