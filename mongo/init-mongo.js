@@ -36,7 +36,7 @@ db.getCollection('appConfigs').insert(
             {
                 "icon" : "fas fa-plus-square",
                 "title" : "Create a FIP",
-                "url" : "https://fip-wizard.ds-wizard.org/questionnaires/create?selected=gofair:fip-wizard:4.1.7",
+                "url" : "/projects/create?selected=gofair:fip-wizard:4.2.5",
                 "newWindow" : false
             }
         ],

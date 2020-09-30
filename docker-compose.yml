@@ -83,6 +83,16 @@ services:
     volumes:
       - ./submission-service/config.yml:/app/config.yml:ro
 
+  proxy:
+    image: nginx:1.17
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./proxy/nginx:/etc/nginx:ro
+      - ./proxy/letsencrypt:/var/www/letsencrypt:ro
+      - /etc/letsencrypt:/etc/letsencrypt:ro
+
 volumes:
   mongo-data:
   agraph-data:
