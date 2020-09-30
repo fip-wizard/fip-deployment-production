@@ -1,0 +1,34 @@
+general:
+  # (!) Change clientUrl
+  # clientUrl: <dsw-url>
+  clientUrl: http://localhost:8080
+  # (!) Change secret to some random value if you are running in production environment (due to security)
+  # secret: <dsw-secret>
+  secret: 3etApfFxQZe39FJyzb7gif8HFUkcxahg
+  # (!) Change serviceToken to some random value if you are running in production environment (due to security)
+  # serviceToken: <dsw-service-token>
+  serviceToken: ohkPuHkTj2Gp3X32ekLFxu9q
+
+database:
+  host: mongo
+  databaseName: wizard
+  port: 27017
+  authEnabled: false
+  username:
+  password:
+
+messaging:
+  username: guest
+  password: guest
+
+mail:
+  # (!) Fill configuration to your mail server and change 'enabled' to true
+  enabled: false
+  name:
+  email:
+  host:
+  port:
+  ssl:
+  authEnabled:
+  username:
+  password:

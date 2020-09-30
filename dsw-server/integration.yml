@@ -1,3 +1,4 @@
 fairsharing:
   apiUrl: https://fairsharing.org/api
+  # (!) Fill to your FAIRSharing API key
   apiKey: FILL-HERE-YOUR-FAIRSHARING-API-KEY
