@@ -36,7 +36,7 @@ db.getCollection('appConfigs').insert(
             {
                 "icon" : "fas fa-plus-square",
                 "title" : "Create a FIP",
-                "url" : "/projects/create?selected=gofair:fip-wizard:4.2.5",
+                "url" : "/projects/create?selected=gofair:fip-wizard:4.3.2",
                 "newWindow" : false
             }
         ],
@@ -80,7 +80,7 @@ db.getCollection('appConfigs').insert(
                 "props" : [],
                 "supportedFormats" : [
                     {
-                        "templateId" : "gofair:fip-nanopub:0.3.0",
+                        "templateId" : "gofair:fip-nanopub:1.0.0",
                         "formatUuid" : "9c7d572e-c273-4323-97a4-ab38f943c33a"
                     }
                 ],
@@ -99,7 +99,7 @@ db.getCollection('appConfigs').insert(
         ]
     },
     "template" : {
-        "recommendedTemplateId" : "gofair:fip-nanopub:0.3.0"
+        "recommendedTemplateId" : "gofair:fip-nanopub:1.0.0"
     }
 })
 
@@ -23643,29 +23643,4054 @@ db.getCollection("packages").insertMany([
         }
     ],
     "createdAt" : ISODate("2020-09-30T06:25:11.378Z")
+},
+
+{
+    "id" : "gofair:fip-wizard:4.2.6",
+    "name" : "FIP Wizard",
+    "organizationId" : "gofair",
+    "kmId" : "fip-wizard",
+    "version" : "4.2.6",
+    "metamodelVersion" : 5,
+    "description" : "Questionnaire prompting Communities committed to implementation of the FAIR Principles to explicitly declare their FAIR implementation choices (the output of the Wizard is a community-specific FAIR Implementation Profile, or FIP).",
+    "readme" : "# FIP Questionnaire\n\nThe FIP questionnaire prompts communities to explicitly declare their FAIR Implementation Profiles.\n\nThis knowledge model has been created under the [GO FAIR Convergence Matrix Project](https://www.go-fair.org/today/fair-matrix). For more information, visit the [3-point FAIRification Framework](https://www.go-fair.org/how-to-go-fair/).\n\nThis knowledge model can be used in any DSW instance for testing and training purposes, however, please fill-in your actual FIPs in the **[FIP Wizard](https://fair-matrix.ds-wizard.org)** to share them with the community. Please report any issues and comments there.",
+    "license" : "Apache-2.0",
+    "previousPackageId" : "gofair:fip-wizard:4.2.5",
+    "forkOfPackageId" : "gofair:fair-convergence-matrix:3.0.0",
+    "mergeCheckpointPackageId" : "gofair:fair-convergence-matrix:3.0.0",
+    "events" : [ 
+        {
+            "eventType" : "EditChapterEvent",
+            "uuid" : "0da24b98-dcd9-4357-8f53-0807913c0939",
+            "parentUuid" : "4c357734-268e-448e-9738-e44f5197da5a",
+            "entityUuid" : "e3301b05-b02d-4c09-bb4b-7fb181414236",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "The first step in (re)using data is to find them. Metadata and data should be easy to find for both humans and computers. Machine-readable metadata are essential for automatic discovery of datasets and services, so this is an essential component of the FAIRification process."
+            },
+            "questionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditChapterEvent",
+            "uuid" : "a17bb667-8969-42b9-959b-bdda733d07c5",
+            "parentUuid" : "4c357734-268e-448e-9738-e44f5197da5a",
+            "entityUuid" : "d6ab1374-788b-4cd5-9614-5ec4c69d6cc5",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Once the user finds the required data, she/he needs to know how can they be accessed, possibly including authentication and authorisation."
+            },
+            "questionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditChapterEvent",
+            "uuid" : "d3e2b6be-78cf-472c-8692-ba3dd2743bd9",
+            "parentUuid" : "4c357734-268e-448e-9738-e44f5197da5a",
+            "entityUuid" : "2b7ee188-a227-43a8-8bf9-a99e6aeb3939",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "The data usually need to be integrated with other data. In addition, the data need to interoperate with applications or workflows for analysis, storage, and processing."
+            },
+            "questionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditChapterEvent",
+            "uuid" : "4d181784-65b6-4699-a046-03879c396b11",
+            "parentUuid" : "4c357734-268e-448e-9738-e44f5197da5a",
+            "entityUuid" : "37e3ef76-71e1-47a9-be84-e1f1d9452193",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "The ultimate goal of FAIR is to optimise the reuse of data. To achieve this, metadata and data should be well-described so that they can be replicated and/or combined in different settings."
+            },
+            "questionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "df72151e-ee2b-4448-a1ea-4416635f9baa",
+            "parentUuid" : "e3301b05-b02d-4c09-bb4b-7fb181414236",
+            "entityUuid" : "6a812ff5-a202-40d4-bd3b-02b341512e48",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Different identifier service providers offer different kinds of resolution services impacting F2 and I, and have different persistence policies impacting F1 and A2. Please state the service you use by either choosing your resource from FAIRsharing or Nanobench and enter any considerations you may have. If you cannot find you resource, please register the resource as a nanopublication in Nanobench first (see end of this questionnaire) and come back to this question afterwards to answer it fully."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ValueQuestion",
+            "uuid" : "c1a0334a-869e-4dce-869e-840f04b0f56a",
+            "parentUuid" : "63eecafc-fdda-47d3-92d2-d58fad54588d",
+            "entityUuid" : "c9cd6f2d-d16e-4ef6-831f-a20e33290b6f",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : null
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "valueType" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "8a66ea89-6557-409e-86cd-8e08f3e815a6",
+            "parentUuid" : "e3301b05-b02d-4c09-bb4b-7fb181414236",
+            "entityUuid" : "797c4af8-0184-43cf-b40c-e2608b7b4d0a",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Different identifier service providers offer different kinds of resolution services impacting F2 and I, and have different persistence policies impacting F1 and A2. Please state the service you use by either choosing your resource from FAIRsharing or Nanobench and enter any considerations you may have. If you cannot find you resource, please register the resource as a nanopublication in Nanobench first (see end of this questionnaire) and come back to this question afterwards to answer it fully."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "e63c7dcf-241e-4916-be63-3c851569c832",
+            "parentUuid" : "e3301b05-b02d-4c09-bb4b-7fb181414236",
+            "entityUuid" : "808310c5-7321-4789-aa97-80f4c7ac9fa8",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Here we mean metadata schemas such as for example Dublin Core and DCAT."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "290ec78f-4f03-403c-b039-7d1e488381c2",
+            "parentUuid" : "e3301b05-b02d-4c09-bb4b-7fb181414236",
+            "entityUuid" : "6a812ff5-a202-40d4-bd3b-02b341512e48",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Different identifier service providers offer different kinds of resolution services impacting F2 and I. One example would be a Digital Object Identifier (DOI). Please state the service you use by either choosing your resource from FAIRsharing or Nanobench and enter any considerations you may have. If you cannot find you resource, please register the resource as a nanopublication in Nanobench first (see end of this questionnaire) and come back to this question afterwards to answer it fully."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "2f24947f-7e4c-4289-9f54-b0e1babc24bd",
+            "parentUuid" : "e3301b05-b02d-4c09-bb4b-7fb181414236",
+            "entityUuid" : "797c4af8-0184-43cf-b40c-e2608b7b4d0a",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Different identifier service providers offer different kinds of resolution services impacting F2 and I. One example would be a Digital Object Identifier (DOI). Please state the service you use by either choosing your resource from FAIRsharing or Nanobench and enter any considerations you may have. If you cannot find you resource, please register the resource as a nanopublication in Nanobench first (see end of this questionnaire) and come back to this question afterwards to answer it fully."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "c1e66610-4a3f-4989-9180-fda9acccbafa",
+            "parentUuid" : "e3301b05-b02d-4c09-bb4b-7fb181414236",
+            "entityUuid" : "faeab073-3569-4bca-a804-c81c0de04a95",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Here we are looking for the technology that permanently links your data and metadata. The answers could range from metadata schema having predicates that qualify the relations and locations to technology platforms like repositories and FAIR Data Points that guarantee the permalink to infrastructures such the FAIR Digital Objects. In general if persistent identifiers are assigned they should be findable in the metadata as a separate field."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "ed0a1794-fa5c-41f0-b92c-51186ef6a04b",
+            "parentUuid" : "e3301b05-b02d-4c09-bb4b-7fb181414236",
+            "entityUuid" : "808310c5-7321-4789-aa97-80f4c7ac9fa8",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Here we mean metadata schemas such as for example Dublin Core and DCAT. Please state the service you use by either choosing your resource from FAIRsharing or Nanobench and enter any considerations you may have. If you cannot find you resource, please register the resource as a nanopublication in Nanobench first (see end of this questionnaire) and come back to this question afterwards to answer it fully."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "dd774472-8ef4-4b07-bb07-727fad0d56f5",
+            "parentUuid" : "e3301b05-b02d-4c09-bb4b-7fb181414236",
+            "entityUuid" : "faeab073-3569-4bca-a804-c81c0de04a95",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Here we are looking for the technology that permanently links your data and metadata. The answers could range from metadata schema having predicates that qualify the relations and locations to technology platforms like repositories and FAIR Data Points that guarantee the permalink to infrastructures such the FAIR Digital Objects. In general if persistent identifiers are assigned they should be findable in the metadata as a separate field. Please state the service you use by choosing your resource from Nanobench and enter any considerations you may have. If you cannot find you resource, please register the resource as a nanopublication in Nanobench first (see end of this questionnaire) and come back to this question afterwards to answer it fully."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "ba6afe25-1da4-4d75-8815-fff285475ec3",
+            "parentUuid" : "e3301b05-b02d-4c09-bb4b-7fb181414236",
+            "entityUuid" : "a50aa1e1-68a9-4e36-bdb6-4a4c5a3d902a",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "By search engine we mean a searchable resource, for example a repository, or a engine like Google search. Please state the service you use by choosing your resource from Nanobench and enter any considerations you may have. If you cannot find you resource, please register the resource as a nanopublication in Nanobench first (see end of this questionnaire) and come back to this question afterwards to answer it fully."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "dffa5647-b8d6-4e13-8c9a-9069b030c5d2",
+            "parentUuid" : "e3301b05-b02d-4c09-bb4b-7fb181414236",
+            "entityUuid" : "5f33c2e8-8b95-435c-870a-fd97d91ff8da",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "By search engine we mean a searchable resource, for example a data repository, or a engine like Google search. Please state the service you use by choosing your resource from Nanobench and enter any considerations you may have. If you cannot find you resource, please register the resource as a nanopublication in Nanobench first (see end of this questionnaire) and come back to this question afterwards to answer it fully."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "a8b660ac-a08a-4b4a-b6ca-8d5b312abd75",
+            "parentUuid" : "e3301b05-b02d-4c09-bb4b-7fb181414236",
+            "entityUuid" : "a50aa1e1-68a9-4e36-bdb6-4a4c5a3d902a",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "By search engine we mean a searchable resource, for example a data repository, or a engine like Google search. Please state the service you use by choosing your resource from Nanobench and enter any considerations you may have. If you cannot find you resource, please register the resource as a nanopublication in Nanobench first (see end of this questionnaire) and come back to this question afterwards to answer it fully."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditChapterEvent",
+            "uuid" : "2286f07d-1b2d-4bc7-9894-1aa280fcab70",
+            "parentUuid" : "4c357734-268e-448e-9738-e44f5197da5a",
+            "entityUuid" : "d6ab1374-788b-4cd5-9614-5ec4c69d6cc5",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Once data has been found, there needs to be information about how the data can be accessed, possibly including authentication and authorisation."
+            },
+            "questionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "e5046f53-31d7-484d-a51f-348bc5b049aa",
+            "parentUuid" : "d6ab1374-788b-4cd5-9614-5ec4c69d6cc5",
+            "entityUuid" : "43ff12a0-22ff-492b-9777-99e2469f5cf1",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "For most purposes, this is a World Wide Web protocol like HTTP or FTP. Please state the service you use by choosing your resource from Nanobench and enter any considerations you may have. If you cannot find you resource, please register the resource as a nanopublication in Nanobench first (see end of this questionnaire) and come back to this question afterwards to answer it fully."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "9ae52cbb-bedd-43f5-8f3e-619e29bdea26",
+            "parentUuid" : "d6ab1374-788b-4cd5-9614-5ec4c69d6cc5",
+            "entityUuid" : "ee073efa-c934-4db4-ae87-49b73df11ca5",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "What are the methods of authorization which are supported to secure access to your data/services?  "
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "87be1d62-38bf-462b-9c58-8997d917f176",
+            "parentUuid" : "d6ab1374-788b-4cd5-9614-5ec4c69d6cc5",
+            "entityUuid" : "ee073efa-c934-4db4-ae87-49b73df11ca5",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : null
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "0726ea5f-e69c-4280-a1a5-4ea5e89ebf3c",
+            "parentUuid" : "d6ab1374-788b-4cd5-9614-5ec4c69d6cc5",
+            "entityUuid" : "2ddde9e8-4284-4b61-b5a7-8b0e8f8b28c2",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "What are the methods of authorization which are supported to secure access to your data/services? Examples are Shibboleth paired with eduGain or OAuth. Please state the service you use by choosing your resource from Nanobench and enter any considerations you may have. If you cannot find you resource, please register the resource as a nanopublication in Nanobench first (see end of this questionnaire) and come back to this question afterwards to answer it fully."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "d5ea433b-bafe-43bd-8cda-174d104e7169",
+            "parentUuid" : "d6ab1374-788b-4cd5-9614-5ec4c69d6cc5",
+            "entityUuid" : "ee073efa-c934-4db4-ae87-49b73df11ca5",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "For most purposes, this is a World Wide Web protocol like HTTP or FTP. Please state the service you use by choosing your resource from Nanobench and enter any considerations you may have. If you cannot find you resource, please register the resource as a nanopublication in Nanobench first (see end of this questionnaire) and come back to this question afterwards to answer it fully."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "12c7f762-47fa-4934-bfe7-153369f6c960",
+            "parentUuid" : "d6ab1374-788b-4cd5-9614-5ec4c69d6cc5",
+            "entityUuid" : "d2c28334-7dc9-4804-9f0c-89984240fb3b",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "What are the methods of authorization which are supported to secure access to your data/services? Examples are Shibboleth paired with eduGain or OAuth. Please state the service you use by choosing your resource from Nanobench and enter any considerations you may have. If you cannot find you resource, please register the resource as a nanopublication in Nanobench first (see end of this questionnaire) and come back to this question afterwards to answer it fully."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "e28b73c4-3009-4b37-9aa7-b7598c9059f5",
+            "parentUuid" : "d6ab1374-788b-4cd5-9614-5ec4c69d6cc5",
+            "entityUuid" : "a93c26cc-ca80-4bcf-ac4c-04e8123bbadb",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "This metadata longevity plan will in most cases be hard to locate even if it exists. An excellent challenge to the community at large is to create a standard, machine-readable metadata longevity plan and predicates to identify it as such.  "
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "28061716-dcfb-444c-a2fc-6195333afe93",
+            "parentUuid" : "d6ab1374-788b-4cd5-9614-5ec4c69d6cc5",
+            "entityUuid" : "a93c26cc-ca80-4bcf-ac4c-04e8123bbadb",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "This metadata longevity plan will in most cases be hard to locate even if it exists since creating such a plan is far from standard. An excellent challenge to the community at large is to create a standard, machine-readable metadata longevity plan and predicates to identify it as such. Please state the service you use by choosing your resource from Nanobench and enter any considerations you may have. If you cannot find you resource, please register the resource as a nanopublication in Nanobench first (see end of this questionnaire) and come back to this question afterwards to answer it fully."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "1d351a22-4014-4c0d-bc0a-220524057eb2",
+            "parentUuid" : "2b7ee188-a227-43a8-8bf9-a99e6aeb3939",
+            "entityUuid" : "a07fc6d6-1f8c-4c21-9bf5-1040682fa5b8",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "By knowledge representation languages we mean standards such as Resource Description Framework (RDF) or Extensible Markup Language (XML)."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "22d21fbc-86a5-4ad7-bdad-fd25a89ef172",
+            "parentUuid" : "2b7ee188-a227-43a8-8bf9-a99e6aeb3939",
+            "entityUuid" : "a07fc6d6-1f8c-4c21-9bf5-1040682fa5b8",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "By knowledge representation languages we mean standards such as Resource Description Framework (RDF) or Extensible Markup Language (XML). Please state the service you use by choosing your resource from Nanobench and enter any considerations you may have. If you cannot find you resource, please register the resource as a nanopublication in Nanobench first (see end of this questionnaire) and come back to this question afterwards to answer it fully."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "c4eb3991-0624-40ed-b670-a3544133a701",
+            "parentUuid" : "2b7ee188-a227-43a8-8bf9-a99e6aeb3939",
+            "entityUuid" : "53120a47-9151-42d4-bd33-4fd91fa9a48a",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "By knowledge representation languages we mean standards such as Resource Description Framework (RDF) or Extensible Markup Language (XML). Please state the service you use by choosing your resource from Nanobench and enter any considerations you may have. If you cannot find you resource, please register the resource as a nanopublication in Nanobench first (see end of this questionnaire) and come back to this question afterwards to answer it fully."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "b4e7728c-07bc-4ed6-a96a-9c7aef39e10b",
+            "parentUuid" : "2b7ee188-a227-43a8-8bf9-a99e6aeb3939",
+            "entityUuid" : "aea4c5be-aaa3-4e27-a6d6-f2e6af0bc43d",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Please state the service you use by choosing your resource from Nanobench and enter any considerations you may have. If you cannot find you resource, please register the resource as a nanopublication in Nanobench first (see end of this questionnaire) and come back to this question afterwards to answer it fully."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "4fc198c8-de57-4488-b6ea-ab53c0207cc4",
+            "parentUuid" : "2b7ee188-a227-43a8-8bf9-a99e6aeb3939",
+            "entityUuid" : "bc3f2a07-6921-4693-8e09-4caf408d162a",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Please state the service you use by choosing your resource from Nanobench and enter any considerations you may have. If you cannot find you resource, please register the resource as a nanopublication in Nanobench first (see end of this questionnaire) and come back to this question afterwards to answer it fully."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "7cd1838e-7ba0-43f9-8e13-2ca0ed6201d4",
+            "parentUuid" : "2b7ee188-a227-43a8-8bf9-a99e6aeb3939",
+            "entityUuid" : "e712930b-8a6d-474e-b6da-e2fd0e50ab68",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Please state the service you use by choosing your resource from Nanobench and enter any considerations you may have. If you cannot find you resource, please register the resource as a nanopublication in Nanobench first (see end of this questionnaire) and come back to this question afterwards to answer it fully."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "c3527078-3031-4b83-8106-bed2ce7c3053",
+            "parentUuid" : "2b7ee188-a227-43a8-8bf9-a99e6aeb3939",
+            "entityUuid" : "a07fc6d6-1f8c-4c21-9bf5-1040682fa5b8",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "By knowledge representation languages we mean standards such as Resource Description Framework (RDF) or Extensible Markup Language (XML).Please state the service you use by either choosing your resource from FAIRsharing or Nanobench and enter any considerations you may have. If you cannot find you resource, please register the resource as a nanopublication in Nanobench first (see end of this questionnaire) and come back to this question afterwards to answer it fully."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "ebc9ed54-9597-42ee-852f-d6d9d70c03b8",
+            "parentUuid" : "2b7ee188-a227-43a8-8bf9-a99e6aeb3939",
+            "entityUuid" : "53120a47-9151-42d4-bd33-4fd91fa9a48a",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "By knowledge representation languages we mean standards such as Resource Description Framework (RDF) or Extensible Markup Language (XML). Please state the service you use by either choosing your resource from FAIRsharing or Nanobench and enter any considerations you may have. If you cannot find you resource, please register the resource as a nanopublication in Nanobench first (see end of this questionnaire) and come back to this question afterwards to answer it fully."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "4108998c-1b9c-49ab-bcbd-d6e8ef221f81",
+            "parentUuid" : "2b7ee188-a227-43a8-8bf9-a99e6aeb3939",
+            "entityUuid" : "aea4c5be-aaa3-4e27-a6d6-f2e6af0bc43d",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Please state the service you use by either choosing your resource from FAIRsharing or Nanobench and enter any considerations you may have. If you cannot find you resource, please register the resource as a nanopublication in Nanobench first (see end of this questionnaire) and come back to this question afterwards to answer it fully."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "de2107d3-b815-42b1-b798-c398376d7dd9",
+            "parentUuid" : "2b7ee188-a227-43a8-8bf9-a99e6aeb3939",
+            "entityUuid" : "bc3f2a07-6921-4693-8e09-4caf408d162a",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Please state the service you use by either choosing your resource from FAIRsharing or Nanobench and enter any considerations you may have. If you cannot find you resource, please register the resource as a nanopublication in Nanobench first (see end of this questionnaire) and come back to this question afterwards to answer it fully."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "fc85f32c-6744-4427-96ea-889fa398c557",
+            "parentUuid" : "2b7ee188-a227-43a8-8bf9-a99e6aeb3939",
+            "entityUuid" : "e712930b-8a6d-474e-b6da-e2fd0e50ab68",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Please state the service you use by either choosing your resource from FAIRsharing or Nanobench and enter any considerations you may have. If you cannot find you resource, please register the resource as a nanopublication in Nanobench first (see end of this questionnaire) and come back to this question afterwards to answer it fully."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "574918c2-b52f-4132-9830-5fc3fb0d3f87",
+            "parentUuid" : "37e3ef76-71e1-47a9-be84-e1f1d9452193",
+            "entityUuid" : "f6b5b347-6e01-4294-a0e3-d64382bea1e9",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Please state the service you use by either choosing your resource from FAIRsharing or Nanobench and enter any considerations you may have. If you cannot find you resource, please register the resource as a nanopublication in Nanobench first (see end of this questionnaire) and come back to this question afterwards to answer it fully."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "99507394-c298-4702-8bf3-5ab1f59ed861",
+            "parentUuid" : "37e3ef76-71e1-47a9-be84-e1f1d9452193",
+            "entityUuid" : "08aae90c-ba61-4c78-b3bd-eb92d29e8111",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Please state the service you use by either choosing your resource from FAIRsharing or Nanobench and enter any considerations you may have. If you cannot find you resource, please register the resource as a nanopublication in Nanobench first (see end of this questionnaire) and come back to this question afterwards to answer it fully."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditChapterEvent",
+            "uuid" : "2e08c999-8361-4fe9-aac2-8fe4e1dd4d12",
+            "parentUuid" : "4c357734-268e-448e-9738-e44f5197da5a",
+            "entityUuid" : "e3301b05-b02d-4c09-bb4b-7fb181414236",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "\"Digital resources should be easy to find for both humans and computers. Extensive machine-actionable metadata are essential for automatic discovery of relevant datasets and services, and are therefore an essential component of the FAIRification process\" (https://doi.org/10.1162/dint_r_00024)."
+            },
+            "questionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditChapterEvent",
+            "uuid" : "1647569a-904c-477b-a9bf-d9b445ab1394",
+            "parentUuid" : "4c357734-268e-448e-9738-e44f5197da5a",
+            "entityUuid" : "e3301b05-b02d-4c09-bb4b-7fb181414236",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "\"Digital resources should be easy to find for both humans and computers. Extensive machine-actionable metadata are essential for automatic discovery of relevant datasets and services, and are therefore an essential component of the FAIRification process\" - from [FAIR Principles: Interpretations and Implementation Considerations](https://doi.org/10.1162/dint_r_00024)."
+            },
+            "questionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditChapterEvent",
+            "uuid" : "c93f65ed-b152-4e0b-ba9c-d1696b4b84be",
+            "parentUuid" : "4c357734-268e-448e-9738-e44f5197da5a",
+            "entityUuid" : "d6ab1374-788b-4cd5-9614-5ec4c69d6cc5",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Protocols for retrieving digital resources should be made explicit, for both humans and machines, including well-defined mechanisms to obtain authorization for access to protected data."
+            },
+            "questionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditChapterEvent",
+            "uuid" : "e4616d1f-a7b5-4524-9d9f-ae24fb0060e7",
+            "parentUuid" : "4c357734-268e-448e-9738-e44f5197da5a",
+            "entityUuid" : "2b7ee188-a227-43a8-8bf9-a99e6aeb3939",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "When two or more digital resources are related to the same topic or entity, it should be possible for machines to merge the information into a richer, unified view of that entity. Similarly, when a digital entity is capable of being processed by an online service, a machine should be capable of automatically detecting this compliance and facilitating the interaction between the data and that tool. This requires that the meaning (semantics) of each participating resource – be they data and/or services service – is clear."
+            },
+            "questionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditChapterEvent",
+            "uuid" : "e6587f1f-7e48-4b2f-b983-54cf9f600bee",
+            "parentUuid" : "4c357734-268e-448e-9738-e44f5197da5a",
+            "entityUuid" : "37e3ef76-71e1-47a9-be84-e1f1d9452193",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Digital resources are sufficiently well described for both humans and computers, such that a machine is capable of deciding: if a digital resource should be reused (i.e., is it relevant to the task at-hand?); if a digital resource can be reused, and under what conditions (i.e., do I fulfill the conditions of reuse?); and who to credit if it is reused."
+            },
+            "questionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditChapterEvent",
+            "uuid" : "0545d7e4-b21c-4295-807f-503566cd231d",
+            "parentUuid" : "4c357734-268e-448e-9738-e44f5197da5a",
+            "entityUuid" : "d6ab1374-788b-4cd5-9614-5ec4c69d6cc5",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "\"Protocols for retrieving digital resources should be made explicit, for both humans and machines, including well-defined mechanisms to obtain authorization for access to protected data.\" - from [FAIR Principles: Interpretations and Implementation Considerations](https://doi.org/10.1162/dint_r_00024)."
+            },
+            "questionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditChapterEvent",
+            "uuid" : "f5904b38-a655-4341-8b6b-0a2d2658f1fa",
+            "parentUuid" : "4c357734-268e-448e-9738-e44f5197da5a",
+            "entityUuid" : "2b7ee188-a227-43a8-8bf9-a99e6aeb3939",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "\"When two or more digital resources are related to the same topic or entity, it should be possible for machines to merge the information into a richer, unified view of that entity. Similarly, when a digital entity is capable of being processed by an online service, a machine should be capable of automatically detecting this compliance and facilitating the interaction between the data and that tool. This requires that the meaning (semantics) of each participating resource – be they data and/or services service – is clear.\"  - from [FAIR Principles: Interpretations and Implementation Considerations](https://doi.org/10.1162/dint_r_00024)."
+            },
+            "questionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditChapterEvent",
+            "uuid" : "d0ba8a5b-0391-44a1-bc77-8ea4de45c2ec",
+            "parentUuid" : "4c357734-268e-448e-9738-e44f5197da5a",
+            "entityUuid" : "e3301b05-b02d-4c09-bb4b-7fb181414236",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "\"Digital resources should be easy to find for both humans and computers. Extensive machine-actionable metadata are essential for automatic discovery of relevant datasets and services, and are therefore an essential component of the FAIRification process.\" - from [FAIR Principles: Interpretations and Implementation Considerations](https://doi.org/10.1162/dint_r_00024)"
+            },
+            "questionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditChapterEvent",
+            "uuid" : "d8345ffa-df45-4546-b74b-d374408766a5",
+            "parentUuid" : "4c357734-268e-448e-9738-e44f5197da5a",
+            "entityUuid" : "d6ab1374-788b-4cd5-9614-5ec4c69d6cc5",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "\"Protocols for retrieving digital resources should be made explicit, for both humans and machines, including well-defined mechanisms to obtain authorization for access to protected data.\" - from [FAIR Principles: Interpretations and Implementation Considerations](https://doi.org/10.1162/dint_r_00024)"
+            },
+            "questionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditChapterEvent",
+            "uuid" : "43b79520-2822-49a5-a707-27f4f9aa7cf0",
+            "parentUuid" : "4c357734-268e-448e-9738-e44f5197da5a",
+            "entityUuid" : "2b7ee188-a227-43a8-8bf9-a99e6aeb3939",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "\"When two or more digital resources are related to the same topic or entity, it should be possible for machines to merge the information into a richer, unified view of that entity. Similarly, when a digital entity is capable of being processed by an online service, a machine should be capable of automatically detecting this compliance and facilitating the interaction between the data and that tool. This requires that the meaning (semantics) of each participating resource – be they data and/or services service – is clear.\"  - from [FAIR Principles: Interpretations and Implementation Considerations](https://doi.org/10.1162/dint_r_00024)"
+            },
+            "questionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditChapterEvent",
+            "uuid" : "3b8a15ab-ee1a-4f96-b77c-8d03ad222ef9",
+            "parentUuid" : "4c357734-268e-448e-9738-e44f5197da5a",
+            "entityUuid" : "37e3ef76-71e1-47a9-be84-e1f1d9452193",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "\"Digital resources are sufficiently well described for both humans and computers, such that a machine is capable of deciding: if a digital resource should be reused (i.e., is it relevant to the task at-hand?); if a digital resource can be reused, and under what conditions (i.e., do I fulfill the conditions of reuse?); and who to credit if it is reused.\""
+            },
+            "questionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditChapterEvent",
+            "uuid" : "20e8ed69-d6b4-4055-894e-d4a1732fb309",
+            "parentUuid" : "4c357734-268e-448e-9738-e44f5197da5a",
+            "entityUuid" : "37e3ef76-71e1-47a9-be84-e1f1d9452193",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "\"Digital resources are sufficiently well described for both humans and computers, such that a machine is capable of deciding: if a digital resource should be reused (i.e., is it relevant to the task at-hand?); if a digital resource can be reused, and under what conditions (i.e., do I fulfill the conditions of reuse?); and who to credit if it is reused.\"  - from [FAIR Principles: Interpretations and Implementation Considerations](https://doi.org/10.1162/dint_r_00024)"
+            },
+            "questionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "5b166f71-1dfc-49b5-908f-06c08cf76429",
+            "parentUuid" : "2b7ee188-a227-43a8-8bf9-a99e6aeb3939",
+            "entityUuid" : "a07fc6d6-1f8c-4c21-9bf5-1040682fa5b8",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "By knowledge representation languages we mean standards such as Resource Description Framework (RDF) or Extensible Markup Language (XML). Please state the service you use by either choosing your resource from FAIRsharing or Nanobench and enter any considerations you may have. If you cannot find you resource, please register the resource as a nanopublication in Nanobench first (see end of this questionnaire) and come back to this question afterwards to answer it fully."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "21344e50-638f-4b24-b60e-97f0dbc7f096",
+            "parentUuid" : "2b7ee188-a227-43a8-8bf9-a99e6aeb3939",
+            "entityUuid" : "aea4c5be-aaa3-4e27-a6d6-f2e6af0bc43d",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "By structured vocabularies we mean for example ontologies defined in the “Web Ontology Language” (OWL) and shared via a publicly accessible registry. Please state the service you use by either choosing your resource from FAIRsharing or Nanobench and enter any considerations you may have. If you cannot find you resource, please register the resource as a nanopublication in Nanobench first (see end of this questionnaire) and come back to this question afterwards to answer it fully."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "8e21ed2d-a4f3-4441-a920-63db849e7003",
+            "parentUuid" : "2b7ee188-a227-43a8-8bf9-a99e6aeb3939",
+            "entityUuid" : "bc3f2a07-6921-4693-8e09-4caf408d162a",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "By structured vocabularies we mean for example ontologies defined in the “Web Ontology Language” (OWL) and shared via a publicly accessible registry. Please state the service you use by either choosing your resource from FAIRsharing or Nanobench and enter any considerations you may have. If you cannot find you resource, please register the resource as a nanopublication in Nanobench first (see end of this questionnaire) and come back to this question afterwards to answer it fully."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "b877de76-0ac8-4a07-8691-4cbc1a065feb",
+            "parentUuid" : "2b7ee188-a227-43a8-8bf9-a99e6aeb3939",
+            "entityUuid" : "10ba5624-d948-4f1a-91c1-61f33ec1e51b",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Please state the service you use by either choosing your resource from FAIRsharing or Nanobench and enter any considerations you may have. If you cannot find you resource, please register the resource as a nanopublication in Nanobench first (see end of this questionnaire) and come back to this question afterwards to answer it fully."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "add44456-6ca0-4e75-be20-9ee89aca1078",
+            "parentUuid" : "37e3ef76-71e1-47a9-be84-e1f1d9452193",
+            "entityUuid" : "c704e5d2-7044-4415-8d52-bb621f64b9d6",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "If you need help to choose from the list please check this website:\nhttps://chooser-beta.creativecommons.org/"
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "ebee1c8d-eb45-486b-af2b-7c340757f9a6",
+            "parentUuid" : "37e3ef76-71e1-47a9-be84-e1f1d9452193",
+            "entityUuid" : "f6b5b347-6e01-4294-a0e3-d64382bea1e9",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Provenance descriptions can for instance be implemented following community specific templates according to the PROV-Template or CEDAR approach. Please state the service you use by either choosing your resource from FAIRsharing or Nanobench and enter any considerations you may have. If you cannot find you resource, please register the resource as a nanopublication in Nanobench first (see end of this questionnaire) and come back to this question afterwards to answer it fully."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "3bfd982d-0742-4937-80aa-ae4b1a3f44e0",
+            "parentUuid" : "37e3ef76-71e1-47a9-be84-e1f1d9452193",
+            "entityUuid" : "08aae90c-ba61-4c78-b3bd-eb92d29e8111",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Provenance descriptions can for instance be implemented following community specific templates according to the PROV-Template or CEDAR approach. Please state the service you use by either choosing your resource from FAIRsharing or Nanobench and enter any considerations you may have. If you cannot find you resource, please register the resource as a nanopublication in Nanobench first (see end of this questionnaire) and come back to this question afterwards to answer it fully."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }
+    ],
+    "createdAt" : ISODate("2020-09-30T09:52:21.875Z")
+},
+
+{
+    "id" : "gofair:fip-wizard:4.2.7",
+    "name" : "FIP Wizard",
+    "organizationId" : "gofair",
+    "kmId" : "fip-wizard",
+    "version" : "4.2.7",
+    "metamodelVersion" : 5,
+    "description" : "Questionnaire prompting Communities committed to implementation of the FAIR Principles to explicitly declare their FAIR implementation choices (the output of the Wizard is a community-specific FAIR Implementation Profile, or FIP).",
+    "readme" : "# FIP Questionnaire\n\nThe FIP questionnaire prompts communities to explicitly declare their FAIR Implementation Profiles.\n\nThis knowledge model has been created under the [GO FAIR Convergence Matrix Project](https://www.go-fair.org/today/fair-matrix). For more information, visit the [3-point FAIRification Framework](https://www.go-fair.org/how-to-go-fair/).\n\nThis knowledge model can be used in any DSW instance for testing and training purposes, however, please fill-in your actual FIPs in the **[FIP Wizard](https://fair-matrix.ds-wizard.org)** to share them with the community. Please report any issues and comments there.",
+    "license" : "Apache-2.0",
+    "previousPackageId" : "gofair:fip-wizard:4.2.6",
+    "forkOfPackageId" : "gofair:fair-convergence-matrix:3.0.0",
+    "mergeCheckpointPackageId" : "gofair:fair-convergence-matrix:3.0.0",
+    "events" : [ 
+        {
+            "eventType" : "AddAnswerEvent",
+            "uuid" : "e9f851ef-ef31-4a8c-9015-604826eb0072",
+            "parentUuid" : "d8b28d85-ce0a-4614-818f-4c9c34aef1b9",
+            "entityUuid" : "4d04ea08-bbf4-4410-bd33-1471b3e3bd60",
+            "label" : "Register a FAIR-enabling resource",
+            "advice" : null,
+            "metricMeasures" : []
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "OptionsQuestion",
+            "uuid" : "416eeb30-83f0-4bec-be3e-0c37e66ff781",
+            "parentUuid" : "0d68cbb7-3b51-4f22-afc9-0051cf477c8d",
+            "entityUuid" : "d8b28d85-ce0a-4614-818f-4c9c34aef1b9",
+            "title" : {
+                "changed" : true,
+                "value" : "Register a resource in Nanopub"
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "answerUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "OptionsQuestion",
+            "uuid" : "33499d8b-3ef9-424e-88c7-7a2a65a1659f",
+            "parentUuid" : "0d68cbb7-3b51-4f22-afc9-0051cf477c8d",
+            "entityUuid" : "d8b28d85-ce0a-4614-818f-4c9c34aef1b9",
+            "title" : {
+                "changed" : true,
+                "value" : "Register a resource in Nanobench"
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "answerUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditAnswerEvent",
+            "uuid" : "79e5ebc6-655f-41d4-bce2-e7927b20e51d",
+            "parentUuid" : "d8b28d85-ce0a-4614-818f-4c9c34aef1b9",
+            "entityUuid" : "4d04ea08-bbf4-4410-bd33-1471b3e3bd60",
+            "label" : {
+                "changed" : false
+            },
+            "advice" : {
+                "changed" : true,
+                "value" : "[Use you Nanobench on localhost:37373](http://localhost:37373/publish?1&template=http://purl.org/np/RApJG4fwj0szOMBMiYGmYvd5MCtRle6VbwkMJUb1SxxDM). The registered resource will be retrievable by Nanobench after its publication."
+            },
+            "followUpUuids" : {
+                "changed" : false
+            },
+            "metricMeasures" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "AddAnswerEvent",
+            "uuid" : "b8034d17-6f4b-4868-8fa0-b4f559c1f51e",
+            "parentUuid" : "d8b28d85-ce0a-4614-818f-4c9c34aef1b9",
+            "entityUuid" : "50fe4597-66d6-4607-9687-8ab864c8615b",
+            "label" : "Register a FAIR Implementation Community",
+            "advice" : "[Use you Nanobench on localhost:37373](http://localhost:37373/publish?1&template=http://purl.org/np/RApJG4fwj0szOMBMiYGmYvd5MCtRle6VbwkMJUb1SxxDM). The registered resource will be retrievable by Nanobench after its publication.",
+            "metricMeasures" : []
+        }, 
+        {
+            "eventType" : "EditAnswerEvent",
+            "uuid" : "7c06a948-8727-488b-b367-177d1e29a763",
+            "parentUuid" : "d8b28d85-ce0a-4614-818f-4c9c34aef1b9",
+            "entityUuid" : "50fe4597-66d6-4607-9687-8ab864c8615b",
+            "label" : {
+                "changed" : false
+            },
+            "advice" : {
+                "changed" : true,
+                "value" : "[Use you Nanobench on http://localhost:37373/publish?14&template=http://purl.org/np/RALjGBdI-nfsJeGy2Me7G6ekE0jKeoM28TUDb36S8pCEg). \nThe registered resource will be retrievable by Nanobench after its publication."
+            },
+            "followUpUuids" : {
+                "changed" : false
+            },
+            "metricMeasures" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditAnswerEvent",
+            "uuid" : "0cd57624-3904-4cc5-8686-251eff235b57",
+            "parentUuid" : "d8b28d85-ce0a-4614-818f-4c9c34aef1b9",
+            "entityUuid" : "4d04ea08-bbf4-4410-bd33-1471b3e3bd60",
+            "label" : {
+                "changed" : false
+            },
+            "advice" : {
+                "changed" : true,
+                "value" : "[Use you Nanobench on localhost:37373](http://localhost:37373/publish?16&template=http://purl.org/np/RAHvHX5qjbdnYXsZWsRMO3KuFekGUFR6LuPjigZns9_VA). The registered resource will be retrievable by Nanobench after its publication."
+            },
+            "followUpUuids" : {
+                "changed" : false
+            },
+            "metricMeasures" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "OptionsQuestion",
+            "uuid" : "d198062a-f7b7-4835-a843-ba18f32fb80f",
+            "parentUuid" : "0d68cbb7-3b51-4f22-afc9-0051cf477c8d",
+            "entityUuid" : "d8b28d85-ce0a-4614-818f-4c9c34aef1b9",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "[Use you Nanobench on localhost:37373]. \nThe registered resource will be retrievable by Nanobench after its publication."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "answerUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditAnswerEvent",
+            "uuid" : "6b8710b0-6853-4309-84ed-ae7fab8102dd",
+            "parentUuid" : "d8b28d85-ce0a-4614-818f-4c9c34aef1b9",
+            "entityUuid" : "50fe4597-66d6-4607-9687-8ab864c8615b",
+            "label" : {
+                "changed" : false
+            },
+            "advice" : {
+                "changed" : true,
+                "value" : "[Use you Nanobench on localhost:37373] (http://localhost:37373/publish?14&template=http://purl.org/np/RALjGBdI-nfsJeGy2Me7G6ekE0jKeoM28TUDb36S8pCEg). \nThe registered resource will be retrievable by Nanobench after its publication."
+            },
+            "followUpUuids" : {
+                "changed" : false
+            },
+            "metricMeasures" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditAnswerEvent",
+            "uuid" : "cb721532-7c8f-4821-aea6-208a48ca3e11",
+            "parentUuid" : "d8b28d85-ce0a-4614-818f-4c9c34aef1b9",
+            "entityUuid" : "4d04ea08-bbf4-4410-bd33-1471b3e3bd60",
+            "label" : {
+                "changed" : false
+            },
+            "advice" : {
+                "changed" : true,
+                "value" : "[Use you Nanobench on localhost:37373] (http://localhost:37373/publish?16&template=http://purl.org/np/RAHvHX5qjbdnYXsZWsRMO3KuFekGUFR6LuPjigZns9_VA). The registered resource will be retrievable by Nanobench after its publication."
+            },
+            "followUpUuids" : {
+                "changed" : false
+            },
+            "metricMeasures" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "OptionsQuestion",
+            "uuid" : "1c67568b-e2be-4257-9f33-f490faf0e7ea",
+            "parentUuid" : "0d68cbb7-3b51-4f22-afc9-0051cf477c8d",
+            "entityUuid" : "d8b28d85-ce0a-4614-818f-4c9c34aef1b9",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "answerUuids" : {
+                "changed" : true,
+                "value" : [ 
+                    "50fe4597-66d6-4607-9687-8ab864c8615b", 
+                    "4d04ea08-bbf4-4410-bd33-1471b3e3bd60"
+                ]
+            }
+        }, 
+        {
+            "eventType" : "EditChapterEvent",
+            "uuid" : "f4247409-4592-44cc-8fe1-d5d5832b36ff",
+            "parentUuid" : "4c357734-268e-448e-9738-e44f5197da5a",
+            "entityUuid" : "0d68cbb7-3b51-4f22-afc9-0051cf477c8d",
+            "title" : {
+                "changed" : true,
+                "value" : "Register a new resource as a nanopublication in Nanobench"
+            },
+            "text" : {
+                "changed" : false
+            },
+            "questionUuids" : {
+                "changed" : false
+            }
+        }
+    ],
+    "createdAt" : ISODate("2020-10-01T04:48:01.547Z")
+},
+
+{
+    "id" : "gofair:fip-wizard:4.2.8",
+    "name" : "FIP Wizard",
+    "organizationId" : "gofair",
+    "kmId" : "fip-wizard",
+    "version" : "4.2.8",
+    "metamodelVersion" : 5,
+    "description" : "Questionnaire prompting Communities committed to implementation of the FAIR Principles to explicitly declare their FAIR implementation choices (the output of the Wizard is a community-specific FAIR Implementation Profile, or FIP).",
+    "readme" : "# FIP Questionnaire\n\nThe FIP questionnaire prompts communities to explicitly declare their FAIR Implementation Profiles.\n\nThis knowledge model has been created under the [GO FAIR Convergence Matrix Project](https://www.go-fair.org/today/fair-matrix). For more information, visit the [3-point FAIRification Framework](https://www.go-fair.org/how-to-go-fair/).\n\nThis knowledge model can be used in any DSW instance for testing and training purposes, however, please fill-in your actual FIPs in the **[FIP Wizard](https://fair-matrix.ds-wizard.org)** to share them with the community. Please report any issues and comments there.",
+    "license" : "Apache-2.0",
+    "previousPackageId" : "gofair:fip-wizard:4.2.7",
+    "forkOfPackageId" : "gofair:fair-convergence-matrix:3.0.0",
+    "mergeCheckpointPackageId" : "gofair:fair-convergence-matrix:3.0.0",
+    "events" : [ 
+        {
+            "eventType" : "EditChapterEvent",
+            "uuid" : "094455ff-e928-40fb-b2a6-c4a53ad2f22e",
+            "parentUuid" : "4c357734-268e-448e-9738-e44f5197da5a",
+            "entityUuid" : "0d68cbb7-3b51-4f22-afc9-0051cf477c8d",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "To register a FAIR e\n\n\nIf your resource is not already available in FAIRsharing or Nanobench you can use Nanobench to register this resource as a nanopublication. The nanopublication will be given a persistent URL (PURL). "
+            },
+            "questionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditChapterEvent",
+            "uuid" : "48603ae0-a041-4fb7-ad2a-d6f9d6ee8365",
+            "parentUuid" : "4c357734-268e-448e-9738-e44f5197da5a",
+            "entityUuid" : "0d68cbb7-3b51-4f22-afc9-0051cf477c8d",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "To register a FAIR Implementation Community please \n\n\nIf your resource is not already available in FAIRsharing or Nanobench you can use Nanobench to register this resource as a nanopublication. The nanopublication will be given a persistent URL (PURL). "
+            },
+            "questionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditChapterEvent",
+            "uuid" : "dd5fea16-9bbd-4f3d-ba49-eff4c75fd9c3",
+            "parentUuid" : "4c357734-268e-448e-9738-e44f5197da5a",
+            "entityUuid" : "0d68cbb7-3b51-4f22-afc9-0051cf477c8d",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "To register a FAIR Implementation Community please use Nanobench \n\n\nIf your resource is not already available in FAIRsharing or Nanobench you can use Nanobench to register this resource as a nanopublication. The nanopublication will be given a persistent URL (PURL). "
+            },
+            "questionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditChapterEvent",
+            "uuid" : "ad933e11-e9ae-436d-9157-176a89ad6707",
+            "parentUuid" : "4c357734-268e-448e-9738-e44f5197da5a",
+            "entityUuid" : "0d68cbb7-3b51-4f22-afc9-0051cf477c8d",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "To register a FAIR Implementation Community please use this template:  \n\n\nIf your resource is not already available in FAIRsharing or Nanobench you can use Nanobench to register this resource as a nanopublication. The nanopublication will be given a persistent URL (PURL). "
+            },
+            "questionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditChapterEvent",
+            "uuid" : "7de36b92-197f-43b0-bd73-91d87c1a66a2",
+            "parentUuid" : "4c357734-268e-448e-9738-e44f5197da5a",
+            "entityUuid" : "0d68cbb7-3b51-4f22-afc9-0051cf477c8d",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "To register a FAIR Implementation Community please use this [template] (http://localhost:37373/publish?14&template=http://purl.org/np/RALjGBdI-nfsJeGy2Me7G6ekE0jKeoM28TUDb36S8pCEg\n\n\nIf your resource is not already available in FAIRsharing or Nanobench you can use Nanobench to register this resource as a nanopublication. The nanopublication will be given a persistent URL (PURL). "
+            },
+            "questionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditChapterEvent",
+            "uuid" : "59933156-522e-4408-8143-1c211d63effb",
+            "parentUuid" : "4c357734-268e-448e-9738-e44f5197da5a",
+            "entityUuid" : "0d68cbb7-3b51-4f22-afc9-0051cf477c8d",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "To register a FAIR Implementation Community please use this [template](http://localhost:37373/publish?14&template=http://purl.org/np/RALjGBdI-nfsJeGy2Me7G6ekE0jKeoM28TUDb36S8pCEg\n\n\nIf your resource is not already available in FAIRsharing or Nanobench you can use Nanobench to register this resource as a nanopublication. The nanopublication will be given a persistent URL (PURL). "
+            },
+            "questionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditChapterEvent",
+            "uuid" : "6d00dd2b-5e9a-4f2e-8606-2c5ba551f008",
+            "parentUuid" : "4c357734-268e-448e-9738-e44f5197da5a",
+            "entityUuid" : "0d68cbb7-3b51-4f22-afc9-0051cf477c8d",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "To register a **FAIR Implementation Community** please use this [template](http://localhost:37373/publish?14&template=http://purl.org/np/RALjGBdI-nfsJeGy2Me7G6ekE0jKeoM28TUDb36S8pCEg)\n\nTo register a new **FAIR-Enabling Resource** please use this [template](http://localhost:37373/publish?14&template=http://purl.org/np/RALjGBdI-nfsJeGy2Me7G6ekE0jKeoM28TUDb36S8pCEg)\n\n\nIf your resource is not already available in FAIRsharing or Nanobench you can use Nanobench to register this resource as a nanopublication. The nanopublication will be given a persistent URL (PURL). "
+            },
+            "questionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditChapterEvent",
+            "uuid" : "ecedd42a-a322-4252-bf56-5a74bd9b007a",
+            "parentUuid" : "4c357734-268e-448e-9738-e44f5197da5a",
+            "entityUuid" : "0d68cbb7-3b51-4f22-afc9-0051cf477c8d",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "If your resource is not already available in FAIRsharing or Nanobench you can use Nanobench to register this resource as a nanopublication. The nanopublication will be given a persistent URL (PURL). \n\nTo register a **FAIR Implementation Community** please use this [template](http://localhost:37373/publish?14&template=http://purl.org/np/RALjGBdI-nfsJeGy2Me7G6ekE0jKeoM28TUDb36S8pCEg)\n\n\n\n\nTo register a new **FAIR-Enabling Resource** please use this [template](http://localhost:37373/publish?16&template=http://purl.org/np/RAHvHX5qjbdnYXsZWsRMO3KuFekGUFR6LuPjigZns9_VA)\n\nIf your resource is not already available in FAIRsharing or Nanobench you can use Nanobench to register this resource as a nanopublication. The nanopublication will be given a persistent URL (PURL). "
+            },
+            "questionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditChapterEvent",
+            "uuid" : "75c20a59-25f0-40f8-8f42-2173afa70fcc",
+            "parentUuid" : "4c357734-268e-448e-9738-e44f5197da5a",
+            "entityUuid" : "0d68cbb7-3b51-4f22-afc9-0051cf477c8d",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "### Why to register\nIf your resource is not already available in FAIRsharing or Nanobench you can use Nanobench to register this resource as a nanopublication. The nanopublication will be given a persistent URL (PURL). The registered resource will be retrievable by Nanobench after its publication in the answer field of the Wizard questions.\n\n### How to register\nTo register a **FAIR Implementation Community** please use this [template](http://localhost:37373/publish?14&template=http://purl.org/np/RALjGBdI-nfsJeGy2Me7G6ekE0jKeoM28TUDb36S8pCEg)\n\nTo register a new **FAIR-Enabling Resource** please use this [template](http://localhost:37373/publish?16&template=http://purl.org/np/RAHvHX5qjbdnYXsZWsRMO3KuFekGUFR6LuPjigZns9_VA)\n"
+            },
+            "questionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "DeleteQuestionEvent",
+            "uuid" : "da40ec56-730b-4cb3-8dac-e1ea12ccaf4c",
+            "parentUuid" : "0d68cbb7-3b51-4f22-afc9-0051cf477c8d",
+            "entityUuid" : "d8b28d85-ce0a-4614-818f-4c9c34aef1b9"
+        }, 
+        {
+            "eventType" : "EditChapterEvent",
+            "uuid" : "57ddd2fe-8167-4c23-95ef-2cbadb88a553",
+            "parentUuid" : "4c357734-268e-448e-9738-e44f5197da5a",
+            "entityUuid" : "0d68cbb7-3b51-4f22-afc9-0051cf477c8d",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "questionUuids" : {
+                "changed" : false
+            }
+        }
+    ],
+    "createdAt" : ISODate("2020-10-01T05:07:31.766Z")
+},
+
+{
+    "id" : "gofair:fip-wizard:4.2.9",
+    "name" : "FIP Wizard",
+    "organizationId" : "gofair",
+    "kmId" : "fip-wizard",
+    "version" : "4.2.9",
+    "metamodelVersion" : 5,
+    "description" : "Questionnaire prompting Communities committed to implementation of the FAIR Principles to explicitly declare their FAIR implementation choices (the output of the Wizard is a community-specific FAIR Implementation Profile, or FIP).",
+    "readme" : "# FIP Questionnaire\n\nThe FIP questionnaire prompts communities to explicitly declare their FAIR Implementation Profiles.\n\nThis knowledge model has been created under the [GO FAIR Convergence Matrix Project](https://www.go-fair.org/today/fair-matrix). For more information, visit the [3-point FAIRification Framework](https://www.go-fair.org/how-to-go-fair/).\n\nThis knowledge model can be used in any DSW instance for testing and training purposes, however, please fill-in your actual FIPs in the **[FIP Wizard](https://fair-matrix.ds-wizard.org)** to share them with the community. Please report any issues and comments there.",
+    "license" : "Apache-2.0",
+    "previousPackageId" : "gofair:fip-wizard:4.2.8",
+    "forkOfPackageId" : "gofair:fair-convergence-matrix:3.0.0",
+    "mergeCheckpointPackageId" : "gofair:fair-convergence-matrix:3.0.0",
+    "events" : [ 
+        {
+            "eventType" : "EditChapterEvent",
+            "uuid" : "ff65e29f-5010-4183-8a8d-ef9a8436de3a",
+            "parentUuid" : "4c357734-268e-448e-9738-e44f5197da5a",
+            "entityUuid" : "0d68cbb7-3b51-4f22-afc9-0051cf477c8d",
+            "title" : {
+                "changed" : true,
+                "value" : "Register a new resource as a nanopublication"
+            },
+            "text" : {
+                "changed" : false
+            },
+            "questionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ValueQuestion",
+            "uuid" : "0a74d9fd-4796-41c1-a639-bb5a4dacdfa7",
+            "parentUuid" : "63eecafc-fdda-47d3-92d2-d58fad54588d",
+            "entityUuid" : "c9cd6f2d-d16e-4ef6-831f-a20e33290b6f",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : true,
+                "value" : null
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "valueType" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "3b862f24-53e3-4b4d-bc84-f1560b49b52a",
+            "parentUuid" : "63eecafc-fdda-47d3-92d2-d58fad54588d",
+            "entityUuid" : "1a98d12d-8716-4d0e-87ab-c7e9b4ab9527",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : true,
+                "value" : 2
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "integrationUuid" : {
+                "changed" : false
+            },
+            "props" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ValueQuestion",
+            "uuid" : "bbe02208-d0ad-49b9-937c-f12aacf5383c",
+            "parentUuid" : "63eecafc-fdda-47d3-92d2-d58fad54588d",
+            "entityUuid" : "c9cd6f2d-d16e-4ef6-831f-a20e33290b6f",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : true,
+                "value" : 2
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "valueType" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ValueQuestion",
+            "uuid" : "c1c8d922-9600-4409-a23e-e7e097e61adc",
+            "parentUuid" : "6a812ff5-a202-40d4-bd3b-02b341512e48",
+            "entityUuid" : "6318940e-d311-4102-836e-77dc0f2838f1",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : true,
+                "value" : 2
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "valueType" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "98f2ff0f-e9dc-4905-b7f5-715cd7e09388",
+            "parentUuid" : "e3301b05-b02d-4c09-bb4b-7fb181414236",
+            "entityUuid" : "6a812ff5-a202-40d4-bd3b-02b341512e48",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : true,
+                "value" : 2
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "9cbe7bb0-cb6f-4885-bb6f-f43bfba3ac46",
+            "parentUuid" : "6a812ff5-a202-40d4-bd3b-02b341512e48",
+            "entityUuid" : "eb623708-368e-49ef-b093-3ed5a12986c1",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : true,
+                "value" : 2
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "integrationUuid" : {
+                "changed" : false
+            },
+            "props" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "453e9e37-f00e-4ad0-b043-baa4e60d9dbf",
+            "parentUuid" : "6a812ff5-a202-40d4-bd3b-02b341512e48",
+            "entityUuid" : "2a880dab-4f2f-4ab5-aefe-ce4942542a37",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : true,
+                "value" : 2
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "integrationUuid" : {
+                "changed" : false
+            },
+            "props" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "70e25f43-f1f3-432c-b5f3-d6a7551dab5e",
+            "parentUuid" : "6a812ff5-a202-40d4-bd3b-02b341512e48",
+            "entityUuid" : "47d618c6-568e-4112-b66a-339661bfc7fc",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : true,
+                "value" : 2
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : true,
+                "value" : [ 
+                    "f4ac44a5-be25-4b6f-b4a9-d7da4b139638", 
+                    "86205ba5-2016-4a4c-a3bf-d0aea015fec5"
+                ]
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "b0a177ee-602e-4758-8050-352a3ae17e18",
+            "parentUuid" : "6a812ff5-a202-40d4-bd3b-02b341512e48",
+            "entityUuid" : "2a880dab-4f2f-4ab5-aefe-ce4942542a37",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : true,
+                "value" : null
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "integrationUuid" : {
+                "changed" : false
+            },
+            "props" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "388515b9-0dbc-476b-9230-2d98e64a5f6d",
+            "parentUuid" : "6a812ff5-a202-40d4-bd3b-02b341512e48",
+            "entityUuid" : "eb623708-368e-49ef-b093-3ed5a12986c1",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : true,
+                "value" : null
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "integrationUuid" : {
+                "changed" : false
+            },
+            "props" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ValueQuestion",
+            "uuid" : "2efd0072-4dda-495a-9e91-cc6ff8a3bccb",
+            "parentUuid" : "6a812ff5-a202-40d4-bd3b-02b341512e48",
+            "entityUuid" : "6318940e-d311-4102-836e-77dc0f2838f1",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : true,
+                "value" : null
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "valueType" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "2c73012b-296b-41a3-9002-c57c52223146",
+            "parentUuid" : "6a812ff5-a202-40d4-bd3b-02b341512e48",
+            "entityUuid" : "47d618c6-568e-4112-b66a-339661bfc7fc",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : true,
+                "value" : null
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "36546377-1062-4102-a955-ae3359483ad4",
+            "parentUuid" : "e3301b05-b02d-4c09-bb4b-7fb181414236",
+            "entityUuid" : "797c4af8-0184-43cf-b40c-e2608b7b4d0a",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : true,
+                "value" : 2
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "4b18f29a-c052-4075-80f8-12ac77f7f925",
+            "parentUuid" : "e3301b05-b02d-4c09-bb4b-7fb181414236",
+            "entityUuid" : "808310c5-7321-4789-aa97-80f4c7ac9fa8",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : true,
+                "value" : 2
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "6d04a3ab-26b2-4829-bcd6-2dccc2a42c40",
+            "parentUuid" : "e3301b05-b02d-4c09-bb4b-7fb181414236",
+            "entityUuid" : "faeab073-3569-4bca-a804-c81c0de04a95",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : true,
+                "value" : 2
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "8443a52b-bc9f-4a1c-bcf8-50ab87ee6275",
+            "parentUuid" : "e3301b05-b02d-4c09-bb4b-7fb181414236",
+            "entityUuid" : "a50aa1e1-68a9-4e36-bdb6-4a4c5a3d902a",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : true,
+                "value" : 2
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "f34aaa1a-1aad-4646-ba06-32f0bcfad956",
+            "parentUuid" : "e3301b05-b02d-4c09-bb4b-7fb181414236",
+            "entityUuid" : "5f33c2e8-8b95-435c-870a-fd97d91ff8da",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : true,
+                "value" : 2
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "8e96287c-674d-4198-a312-5f090690d4db",
+            "parentUuid" : "d6ab1374-788b-4cd5-9614-5ec4c69d6cc5",
+            "entityUuid" : "43ff12a0-22ff-492b-9777-99e2469f5cf1",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : true,
+                "value" : 2
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "605c9ce4-4a76-417b-81c9-4895b72111c0",
+            "parentUuid" : "d6ab1374-788b-4cd5-9614-5ec4c69d6cc5",
+            "entityUuid" : "ee073efa-c934-4db4-ae87-49b73df11ca5",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : true,
+                "value" : 2
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "3159eff8-84f6-4247-a43a-c598e4d6f29f",
+            "parentUuid" : "d6ab1374-788b-4cd5-9614-5ec4c69d6cc5",
+            "entityUuid" : "2ddde9e8-4284-4b61-b5a7-8b0e8f8b28c2",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : true,
+                "value" : 2
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "21366190-4554-45ac-bce1-9dadba961dbf",
+            "parentUuid" : "d6ab1374-788b-4cd5-9614-5ec4c69d6cc5",
+            "entityUuid" : "d2c28334-7dc9-4804-9f0c-89984240fb3b",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : true,
+                "value" : 2
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "59b3bb6b-7e82-4105-98d5-c3d30e94eb33",
+            "parentUuid" : "d6ab1374-788b-4cd5-9614-5ec4c69d6cc5",
+            "entityUuid" : "a93c26cc-ca80-4bcf-ac4c-04e8123bbadb",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : true,
+                "value" : 2
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "a427804f-c585-451c-a172-55a99fcffd3b",
+            "parentUuid" : "2b7ee188-a227-43a8-8bf9-a99e6aeb3939",
+            "entityUuid" : "a07fc6d6-1f8c-4c21-9bf5-1040682fa5b8",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : true,
+                "value" : 2
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "a1b09486-1ad2-42bb-8e22-11176935d5d3",
+            "parentUuid" : "2b7ee188-a227-43a8-8bf9-a99e6aeb3939",
+            "entityUuid" : "53120a47-9151-42d4-bd33-4fd91fa9a48a",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : true,
+                "value" : 2
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "67010ed0-7d49-4cc4-970b-69190d71ae71",
+            "parentUuid" : "2b7ee188-a227-43a8-8bf9-a99e6aeb3939",
+            "entityUuid" : "aea4c5be-aaa3-4e27-a6d6-f2e6af0bc43d",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : true,
+                "value" : 2
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "e631a1ef-c255-4e6a-9fe9-61e9b177538d",
+            "parentUuid" : "2b7ee188-a227-43a8-8bf9-a99e6aeb3939",
+            "entityUuid" : "bc3f2a07-6921-4693-8e09-4caf408d162a",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : true,
+                "value" : 2
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "3868212b-c43c-415a-a67d-d57681fb05c4",
+            "parentUuid" : "2b7ee188-a227-43a8-8bf9-a99e6aeb3939",
+            "entityUuid" : "e712930b-8a6d-474e-b6da-e2fd0e50ab68",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : true,
+                "value" : 2
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "993df080-78ba-419e-82b6-9274c2eed15a",
+            "parentUuid" : "2b7ee188-a227-43a8-8bf9-a99e6aeb3939",
+            "entityUuid" : "10ba5624-d948-4f1a-91c1-61f33ec1e51b",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : true,
+                "value" : 3
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "e883e7a0-9ff3-491e-ab35-bc5657d41c71",
+            "parentUuid" : "37e3ef76-71e1-47a9-be84-e1f1d9452193",
+            "entityUuid" : "29a8f2cc-696c-4e64-bfae-cba99ca761e1",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : true,
+                "value" : 2
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "60eed732-9a30-436a-968c-2c479dcd38a2",
+            "parentUuid" : "37e3ef76-71e1-47a9-be84-e1f1d9452193",
+            "entityUuid" : "c704e5d2-7044-4415-8d52-bb621f64b9d6",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : true,
+                "value" : 2
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "a4bd013b-c8ee-4d30-a260-6a242588b115",
+            "parentUuid" : "37e3ef76-71e1-47a9-be84-e1f1d9452193",
+            "entityUuid" : "f6b5b347-6e01-4294-a0e3-d64382bea1e9",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : true,
+                "value" : 2
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "df9eae9f-a369-4a81-a0db-af5ee54954c0",
+            "parentUuid" : "37e3ef76-71e1-47a9-be84-e1f1d9452193",
+            "entityUuid" : "08aae90c-ba61-4c78-b3bd-eb92d29e8111",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : true,
+                "value" : 2
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }
+    ],
+    "createdAt" : ISODate("2020-10-01T15:05:24.125Z")
+},
+
+{
+    "id" : "gofair:fip-wizard:4.3.0",
+    "name" : "FIP Wizard",
+    "organizationId" : "gofair",
+    "kmId" : "fip-wizard",
+    "version" : "4.3.0",
+    "metamodelVersion" : 5,
+    "description" : "Questionnaire prompting Communities committed to implementation of the FAIR Principles to explicitly declare their FAIR implementation choices (the output of the Wizard is a community-specific FAIR Implementation Profile, or FIP).",
+    "readme" : "# FIP Questionnaire\n\nThe FIP questionnaire prompts communities to explicitly declare their FAIR Implementation Profiles.\n\nThis knowledge model has been created under the [GO FAIR Convergence Matrix Project](https://www.go-fair.org/today/fair-matrix). For more information, visit the [3-point FAIRification Framework](https://www.go-fair.org/how-to-go-fair/).\n\nThis knowledge model can be used in any DSW instance for testing and training purposes, however, please fill-in your actual FIPs in the **[FIP Wizard](https://fair-matrix.ds-wizard.org)** to share them with the community. Please report any issues and comments there.",
+    "license" : "Apache-2.0",
+    "previousPackageId" : "gofair:fip-wizard:4.2.9",
+    "forkOfPackageId" : "gofair:fair-convergence-matrix:3.0.0",
+    "mergeCheckpointPackageId" : "gofair:fair-convergence-matrix:3.0.0",
+    "events" : [ 
+        {
+            "eventType" : "DeleteQuestionEvent",
+            "uuid" : "e1d45ef3-ab6d-42ee-8e4a-3849402b7f15",
+            "parentUuid" : "6a812ff5-a202-40d4-bd3b-02b341512e48",
+            "entityUuid" : "eb623708-368e-49ef-b093-3ed5a12986c1"
+        }, 
+        {
+            "eventType" : "DeleteQuestionEvent",
+            "uuid" : "0ab843d5-7bc8-46a4-96b5-ee04f5b9dc54",
+            "parentUuid" : "47d618c6-568e-4112-b66a-339661bfc7fc",
+            "entityUuid" : "f4ac44a5-be25-4b6f-b4a9-d7da4b139638"
+        }, 
+        {
+            "eventType" : "DeleteQuestionEvent",
+            "uuid" : "68a8f5b1-19ca-4802-8c9c-3d76cbbe55f0",
+            "parentUuid" : "797c4af8-0184-43cf-b40c-e2608b7b4d0a",
+            "entityUuid" : "770c6137-7359-4e34-89a2-17708645cbe1"
+        }, 
+        {
+            "eventType" : "DeleteQuestionEvent",
+            "uuid" : "3ba78eb7-76cd-4855-b6cd-e92a013e6993",
+            "parentUuid" : "4f3cfb2a-cbb4-40f5-a151-74c9bcb661bd",
+            "entityUuid" : "7dfc2257-9eca-4e14-ba0f-d8e52fe26707"
+        }, 
+        {
+            "eventType" : "DeleteQuestionEvent",
+            "uuid" : "2b2cf550-9b3a-4dbc-88d2-aece439d762e",
+            "parentUuid" : "808310c5-7321-4789-aa97-80f4c7ac9fa8",
+            "entityUuid" : "d975599c-e3de-4acd-9370-0ff6537b888a"
+        }, 
+        {
+            "eventType" : "DeleteQuestionEvent",
+            "uuid" : "b25a7c94-2aec-4b66-b2eb-13b5fa0b53bc",
+            "parentUuid" : "f0ef2043-8c9b-4aa5-9a3b-2c5474a5a694",
+            "entityUuid" : "ff940eb5-b2b6-4f06-b85c-c883cacb3c4e"
+        }, 
+        {
+            "eventType" : "DeleteQuestionEvent",
+            "uuid" : "a9a4d0e7-6d85-4845-abd8-d1baea540bc1",
+            "parentUuid" : "a50aa1e1-68a9-4e36-bdb6-4a4c5a3d902a",
+            "entityUuid" : "8509fe0d-2225-4230-8c71-991033389df3"
+        }, 
+        {
+            "eventType" : "DeleteQuestionEvent",
+            "uuid" : "00fee6bd-4019-4fea-a282-6707dec0bb2d",
+            "parentUuid" : "07648d69-41c1-4f7c-bafa-8d93caa32d7c",
+            "entityUuid" : "0d32ff1a-201b-4425-a830-b3b3aef4a0bb"
+        }, 
+        {
+            "eventType" : "DeleteQuestionEvent",
+            "uuid" : "a65ff661-6bd5-470e-b40b-fee748dffa3d",
+            "parentUuid" : "5f33c2e8-8b95-435c-870a-fd97d91ff8da",
+            "entityUuid" : "3ded4b7d-fc8a-4386-b96f-34f0d681cf57"
+        }, 
+        {
+            "eventType" : "DeleteQuestionEvent",
+            "uuid" : "7559bdb0-0032-47cd-a80d-063730efd916",
+            "parentUuid" : "66665dd7-0d60-4ac6-a2dd-a69495899dd0",
+            "entityUuid" : "303abfbd-d135-4f1f-bc57-2b842ae4065a"
+        }, 
+        {
+            "eventType" : "DeleteQuestionEvent",
+            "uuid" : "5417364d-6b6b-430e-a8c3-e91179cb1c56",
+            "parentUuid" : "a07fc6d6-1f8c-4c21-9bf5-1040682fa5b8",
+            "entityUuid" : "b05cbdda-1636-4c38-86c6-5b4820950e11"
+        }, 
+        {
+            "eventType" : "DeleteQuestionEvent",
+            "uuid" : "96d42e6d-8497-471c-a74e-9b676ca269f0",
+            "parentUuid" : "014a56b6-cc81-4044-9352-98a2c11acdfd",
+            "entityUuid" : "2efe903b-751e-45c8-a26c-bfe25515449e"
+        }, 
+        {
+            "eventType" : "DeleteQuestionEvent",
+            "uuid" : "f325e928-5914-4792-9739-8bc6c070f10b",
+            "parentUuid" : "53120a47-9151-42d4-bd33-4fd91fa9a48a",
+            "entityUuid" : "68718ac7-b88a-47ce-86e6-5827e7834b89"
+        }, 
+        {
+            "eventType" : "DeleteQuestionEvent",
+            "uuid" : "b33daa96-8fee-4c67-b47d-feac71f0ed4a",
+            "parentUuid" : "0256112b-b2f5-44e5-be33-69ffeec6a561",
+            "entityUuid" : "6a8028fa-c546-4b0f-985b-6dc1ef20a56e"
+        }, 
+        {
+            "eventType" : "DeleteQuestionEvent",
+            "uuid" : "ac32fd6c-638b-4e50-804e-117d60457b7c",
+            "parentUuid" : "aea4c5be-aaa3-4e27-a6d6-f2e6af0bc43d",
+            "entityUuid" : "48476982-e866-4feb-94f8-5b2b5d423c61"
+        }, 
+        {
+            "eventType" : "DeleteQuestionEvent",
+            "uuid" : "7fa13180-e1ff-4a70-932d-3357d548274e",
+            "parentUuid" : "bc3f2a07-6921-4693-8e09-4caf408d162a",
+            "entityUuid" : "9f02dcd1-fed5-481d-bea5-577303523853"
+        }, 
+        {
+            "eventType" : "DeleteQuestionEvent",
+            "uuid" : "5dde1f0f-ddef-4d60-84b9-a7db5da4c09e",
+            "parentUuid" : "84e1d4c8-67f1-4d0e-b897-3b99c4feb9bb",
+            "entityUuid" : "08eb78d4-643a-41c3-9301-70302e7a00cd"
+        }, 
+        {
+            "eventType" : "DeleteQuestionEvent",
+            "uuid" : "8af94763-adb9-4160-9f9f-448644979035",
+            "parentUuid" : "e712930b-8a6d-474e-b6da-e2fd0e50ab68",
+            "entityUuid" : "ae187e7b-b7f6-447a-beae-35c7e1402cbc"
+        }, 
+        {
+            "eventType" : "DeleteQuestionEvent",
+            "uuid" : "7e0c24ef-9148-48b9-b4f4-d6b19db4ca95",
+            "parentUuid" : "87d51804-6741-477b-ae53-3941b5631a81",
+            "entityUuid" : "2ca1f907-5e7e-4839-9cfd-b0aea80d080d"
+        }, 
+        {
+            "eventType" : "DeleteQuestionEvent",
+            "uuid" : "7700dd86-c934-497d-81b4-e037e778c98c",
+            "parentUuid" : "10ba5624-d948-4f1a-91c1-61f33ec1e51b",
+            "entityUuid" : "38a47f4a-1544-4867-b2f3-abbf4b12b20e"
+        }, 
+        {
+            "eventType" : "DeleteQuestionEvent",
+            "uuid" : "e67d8f83-adf7-4ff6-b3f6-6bc769c27e8a",
+            "parentUuid" : "a3d10b12-ae30-48f9-9827-239ea003398d",
+            "entityUuid" : "830ca9fb-ddb4-483b-8584-68f921d560e1"
+        }, 
+        {
+            "eventType" : "DeleteQuestionEvent",
+            "uuid" : "18dac96b-cd72-44a1-98ba-2d5d11dc2b31",
+            "parentUuid" : "f6b5b347-6e01-4294-a0e3-d64382bea1e9",
+            "entityUuid" : "4f344af5-84ef-4613-bbeb-4509b949ca62"
+        }, 
+        {
+            "eventType" : "DeleteQuestionEvent",
+            "uuid" : "1e00f119-fd89-48dd-9331-6d973dbd3d1c",
+            "parentUuid" : "72fd2469-3506-4e28-b8b3-f1049baa097f",
+            "entityUuid" : "52980e65-1841-4426-af2e-5609f62b1c29"
+        }, 
+        {
+            "eventType" : "DeleteQuestionEvent",
+            "uuid" : "ae8108d6-5bcb-40b6-9394-9e0da1a83d5b",
+            "parentUuid" : "08aae90c-ba61-4c78-b3bd-eb92d29e8111",
+            "entityUuid" : "c358894e-a82a-4536-8c5d-cbc4183d82c2"
+        }, 
+        {
+            "eventType" : "DeleteQuestionEvent",
+            "uuid" : "665432b9-902c-4002-9706-61db841b7525",
+            "parentUuid" : "a2ad654d-95ce-4ab0-a853-0416c1c37868",
+            "entityUuid" : "1b061704-78ed-42db-a175-0f0f59fc1b99"
+        }, 
+        {
+            "eventType" : "DeleteQuestionEvent",
+            "uuid" : "1d077eae-634f-453d-8f3d-ae56c069e244",
+            "parentUuid" : "5700be0d-3918-42e0-b066-512fa6c9137a",
+            "entityUuid" : "11059789-bf7a-4b0b-9663-411de782aa49"
+        }, 
+        {
+            "eventType" : "DeleteIntegrationEvent",
+            "uuid" : "691fb937-ef61-409a-b97a-576fe7999801",
+            "parentUuid" : "4c357734-268e-448e-9738-e44f5197da5a",
+            "entityUuid" : "e0171442-ba41-4749-8f06-7ac4d7922e97"
+        }, 
+        {
+            "eventType" : "EditChapterEvent",
+            "uuid" : "bd23589e-efcd-4982-a07b-973d72f35b04",
+            "parentUuid" : "4c357734-268e-448e-9738-e44f5197da5a",
+            "entityUuid" : "0d68cbb7-3b51-4f22-afc9-0051cf477c8d",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "### Why to register\nIf your resource is not already available in FAIRsharing or Nanobench you can use Nanobench to register this resource as a nanopublication. The nanopublication will be given a persistent URL (PURL). The registered resource will be retrievable by Nanobench after its publication in the answer field of the Wizard questions.\n\n### How to register\nTo register a **FAIR Implementation Community** please use this [template](http://localhost:37373/publish?14&template=http://purl.org/np/RALjGBdI-nfsJeGy2Me7G6ekE0jKeoM28TUDb36S8pCEg)\n\nTo register a new **FAIR-Enabling Resource** please use this [template](http://localhost:37373/publish?16&template=http://purl.org/np/RAHvHX5qjbdnYXsZWsRMO3KuFekGUFR6LuPjigZns9_VA)\n\nTo register a new **Metadata Longevity Plan** please use this [template](http://localhost:37373/publish;jsessionid=4450C16937A70FE021218237175CC677?0&template=RAUF4xScVUUQL_qyG5YM5Liq3wLOpYfXMpxy3wQQ36wsc)\n"
+            },
+            "questionUuids" : {
+                "changed" : false
+            }
+        }
+    ],
+    "createdAt" : ISODate("2020-10-04T21:36:38.309Z")
+},
+
+{
+    "id" : "gofair:fip-wizard:4.3.1",
+    "name" : "FIP Wizard",
+    "organizationId" : "gofair",
+    "kmId" : "fip-wizard",
+    "version" : "4.3.1",
+    "metamodelVersion" : 5,
+    "description" : "Questionnaire prompting Communities committed to implementation of the FAIR Principles to explicitly declare their FAIR implementation choices (the output of the Wizard is a community-specific FAIR Implementation Profile, or FIP).",
+    "readme" : "# FIP Questionnaire\n\nThe FIP questionnaire prompts communities to explicitly declare their FAIR Implementation Profiles.\n\nThis knowledge model has been created under the [GO FAIR Convergence Matrix Project](https://www.go-fair.org/today/fair-matrix). For more information, visit the [3-point FAIRification Framework](https://www.go-fair.org/how-to-go-fair/).\n\nThis knowledge model can be used in any DSW instance for testing and training purposes, however, please fill-in your actual FIPs in the **[FIP Wizard](https://fair-matrix.ds-wizard.org)** to share them with the community. Please report any issues and comments there.",
+    "license" : "Apache-2.0",
+    "previousPackageId" : "gofair:fip-wizard:4.3.0",
+    "forkOfPackageId" : "gofair:fair-convergence-matrix:3.0.0",
+    "mergeCheckpointPackageId" : "gofair:fair-convergence-matrix:3.0.0",
+    "events" : [ 
+        {
+            "eventType" : "EditChapterEvent",
+            "uuid" : "b8dfa44d-21aa-4b6d-b308-ad8c84334372",
+            "parentUuid" : "4c357734-268e-448e-9738-e44f5197da5a",
+            "entityUuid" : "0d6d8772-7604-4835-9fe1-735ff9eb63fa",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "The FAR Implementation Profile (FIP) is a collection of FAIR implementation choices made by a FAIR Implementation Community (FIC) for each of the FAIR Principles. Community-specific FIPs are themselves captured as FAIR datasets and are made openly available to other communities for reuse. To create a FIP, the FIC needs to fill out this questionnaire where the implementation choices are recorded as resources. The questionnaire is structured as follows: the first section is about the FIC, which is then followed by a number of questions per FAIR principle. The answer to each of the questions should be a FAIR-enabling resource. The questionnaire offers to look up the resource in Nanobench. If the resource cannot be found in any of these applications, there is an option at the end of the questionnaire to register a FAIR-enabling resource as a nanopublication in Nanobench. The resource will get a PURL which can then directly be used when further filling out the questionnaire. When the questionnaire is filled in, the FIP is considered to be the implementation of R1.3, which is why there is no separate question addressing this subprinciple."
+            },
+            "questionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditChapterEvent",
+            "uuid" : "beba8567-3c4e-40d3-862d-7b3142aca984",
+            "parentUuid" : "4c357734-268e-448e-9738-e44f5197da5a",
+            "entityUuid" : "63eecafc-fdda-47d3-92d2-d58fad54588d",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Implementing the FAIR Principles requires numerous choices concerning the use of FAIR-Enabling Resources, be they domain-relevant standards or other technologies. These choices compose the FAIR Implementation Profile (FIP), and are made on behalf of a community of practice. A FAIR Implementation Community is a voluntary association of people and organisations that agree to adhere to the same FIP. In this section of the FIP Wizard, you are requested to answer some questions that will define your FAIR Implementation Community. Note, the FAIR Implementation Community can be large or small, formal or informal. It is anticipated that FIPs will likely evolve (merge, split) over time as they are designed, tested and reused by other FAIR Implementation Communities. "
+            },
+            "questionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "cbdd3712-a6d9-4c9c-b26e-9528653afce7",
+            "parentUuid" : "e3301b05-b02d-4c09-bb4b-7fb181414236",
+            "entityUuid" : "6a812ff5-a202-40d4-bd3b-02b341512e48",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Different identifier service providers offer different kinds of resolution services impacting F2 and I. One example would be a Digital Object Identifier (DOI). Please choose your resource from Nanobench and enter any considerations you may have. If you cannot find your resource, please register the resource as a nanopublication in Nanobench first (see the end of this questionnaire) and come back to this question afterwards to answer it fully."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ValueQuestion",
+            "uuid" : "26e5f732-a26d-4f5a-9baa-adfe6887b006",
+            "parentUuid" : "6a812ff5-a202-40d4-bd3b-02b341512e48",
+            "entityUuid" : "6318940e-d311-4102-836e-77dc0f2838f1",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Comments on the choice of this FAIR-Enabling Resource. These comments may include requirements or constraints unique to your FAIR Implementaton Community (for example, how this choice may impact the findability of your data within or between domains). "
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "valueType" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "794676d4-3eaa-4116-800c-e4638f1a59ef",
+            "parentUuid" : "e3301b05-b02d-4c09-bb4b-7fb181414236",
+            "entityUuid" : "797c4af8-0184-43cf-b40c-e2608b7b4d0a",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Different identifier service providers offer different kinds of resolution services impacting F2 and I. One example would be a Digital Object Identifier (DOI). Please choose your resource from Nanobench and enter any considerations you may have. If you cannot find your resource, please register the resource as a nanopublication in Nanobench first (see the end of this questionnaire) and come back to this question afterwards to answer it fully."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ValueQuestion",
+            "uuid" : "d052c0a8-dc01-450f-8fb1-acf6f2ea9ecc",
+            "parentUuid" : "808310c5-7321-4789-aa97-80f4c7ac9fa8",
+            "entityUuid" : "b351f7d6-7b0a-43e6-a845-d82d27040435",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Comments on the choice of this FAIR-Enabling Resource. These comments may include requirements or constraints unique to your community (for example, how this choice may impact the findability of your data within or between domains). "
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "valueType" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "696ddace-07c5-4f3f-b2db-9fdc02af8497",
+            "parentUuid" : "e3301b05-b02d-4c09-bb4b-7fb181414236",
+            "entityUuid" : "808310c5-7321-4789-aa97-80f4c7ac9fa8",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Here we mean metadata schemas such as for example Dublin Core and DCAT. Please state the service you use by choosing your resource from Nanobench and enter any considerations you may have. If you cannot find your resource, please register the resource as a nanopublication in Nanobench first (see the end of this questionnaire) and come back to this question afterwards to answer it fully."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "5137d01b-28ca-4060-97eb-52f0e45c3692",
+            "parentUuid" : "2b7ee188-a227-43a8-8bf9-a99e6aeb3939",
+            "entityUuid" : "a07fc6d6-1f8c-4c21-9bf5-1040682fa5b8",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "By knowledge representation languages we mean standards such as Resource Description Framework (RDF) or Extensible Markup Language (XML). Please state the service you use by choosing your resource from Nanobench and enter any considerations you may have. If you cannot find your resource, please register the resource as a nanopublication in Nanobench first (see the end of this questionnaire) and come back to this question afterwards to answer it fully."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "4b915c44-5d42-4472-8d4c-462f576dfdef",
+            "parentUuid" : "2b7ee188-a227-43a8-8bf9-a99e6aeb3939",
+            "entityUuid" : "53120a47-9151-42d4-bd33-4fd91fa9a48a",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "By knowledge representation languages we mean standards such as Resource Description Framework (RDF) or Extensible Markup Language (XML). Please state the service you use by choosing your resource from Nanobench and enter any considerations you may have. If you cannot find your resource, please register the resource as a nanopublication in Nanobench first (see the end of this questionnaire) and come back to this question afterwards to answer it fully."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "b3face31-19a9-450d-8eaf-4674e2c91e26",
+            "parentUuid" : "2b7ee188-a227-43a8-8bf9-a99e6aeb3939",
+            "entityUuid" : "aea4c5be-aaa3-4e27-a6d6-f2e6af0bc43d",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "By structured vocabularies we mean for example ontologies defined in the “Web Ontology Language” (OWL) and shared via a publicly accessible registry. Please state the service you use by choosing your resource from Nanobench and enter any considerations you may have. If you cannot find your resource, please register the resource as a nanopublication in Nanobench first (see the end of this questionnaire) and come back to this question afterwards to answer it fully."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "20440f3e-0297-41b0-8a33-e2eed64bcdc7",
+            "parentUuid" : "2b7ee188-a227-43a8-8bf9-a99e6aeb3939",
+            "entityUuid" : "bc3f2a07-6921-4693-8e09-4caf408d162a",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "By structured vocabularies we mean for example ontologies defined in the “Web Ontology Language” (OWL) and shared via a publicly accessible registry. Please state the service you use by choosing your resource from Nanobench and enter any considerations you may have. If you cannot find your resource, please register the resource as a nanopublication in Nanobench first (see the end of this questionnaire) and come back to this question afterwards to answer it fully."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "daf97ae6-6432-4c4e-9ebc-0b574ed3266a",
+            "parentUuid" : "2b7ee188-a227-43a8-8bf9-a99e6aeb3939",
+            "entityUuid" : "e712930b-8a6d-474e-b6da-e2fd0e50ab68",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Please state the service you use by choosing your resource from Nanobench and enter any considerations you may have. If you cannot find your resource, please register the resource as a nanopublication in Nanobench first (see the end of this questionnaire) and come back to this question afterwards to answer it fully."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "c5d1439a-fb79-4ed6-8828-d957777cd7bc",
+            "parentUuid" : "2b7ee188-a227-43a8-8bf9-a99e6aeb3939",
+            "entityUuid" : "10ba5624-d948-4f1a-91c1-61f33ec1e51b",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Please state the service you use by choosing your resource from Nanobench and enter any considerations you may have. If you cannot find your resource, please register the resource as a nanopublication in Nanobench first (see the end of this questionnaire) and come back to this question afterwards to answer it fully."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ValueQuestion",
+            "uuid" : "7768221c-eee9-400e-9f29-378199a4e29a",
+            "parentUuid" : "e712930b-8a6d-474e-b6da-e2fd0e50ab68",
+            "entityUuid" : "f423b127-9fce-4435-8d5b-44a36815f8fa",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Comments on the choice of this FAIR-Enabling Resource. These comments may include requirements or constraints unique to your community (for example, increased interoperation with another FIC). "
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "valueType" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ValueQuestion",
+            "uuid" : "9c74aa1e-9f0e-443a-8c41-cd774319274d",
+            "parentUuid" : "10ba5624-d948-4f1a-91c1-61f33ec1e51b",
+            "entityUuid" : "baca3035-1f3c-4964-b8f5-26182ca7f446",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "community "
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "valueType" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ValueQuestion",
+            "uuid" : "fc1ac506-53ca-4cbe-bb02-c7a0b1f68a1c",
+            "parentUuid" : "e712930b-8a6d-474e-b6da-e2fd0e50ab68",
+            "entityUuid" : "f423b127-9fce-4435-8d5b-44a36815f8fa",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Comments on the choice of this FAIR-Enabling Resource. These comments may include requirements or constraints unique to your community (for example, increased interoperation with another community). "
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "valueType" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ValueQuestion",
+            "uuid" : "52523080-fa1b-4038-8bd3-c6ad6bb977b0",
+            "parentUuid" : "10ba5624-d948-4f1a-91c1-61f33ec1e51b",
+            "entityUuid" : "baca3035-1f3c-4964-b8f5-26182ca7f446",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Comments on the choice of this FAIR-Enabling Resource. These comments may include requirements or constraints unique to your community (for example, increased interoperation with another community). "
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "valueType" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "e0ea7605-0c85-4d15-80f2-b4c4f22ccd75",
+            "parentUuid" : "37e3ef76-71e1-47a9-be84-e1f1d9452193",
+            "entityUuid" : "f6b5b347-6e01-4294-a0e3-d64382bea1e9",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Provenance descriptions can for instance be implemented following community-specific templates according to the PROV-Template or CEDAR approach. Please state the service you use by choosing your resource from Nanobench and enter any considerations you may have. If you cannot find your resource, please register the resource as a nanopublication in Nanobench first (see the end of this questionnaire) and come back to this question afterwards to answer it fully."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "7904b303-fef7-4e25-87a4-41f49eadb6a6",
+            "parentUuid" : "37e3ef76-71e1-47a9-be84-e1f1d9452193",
+            "entityUuid" : "08aae90c-ba61-4c78-b3bd-eb92d29e8111",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Provenance descriptions can for instance be implemented following community-specific templates according to the PROV-Template or CEDAR approach. Please state the service you use by choosing your resource from Nanobench and enter any considerations you may have. If you cannot find your resource, please register the resource as a nanopublication in Nanobench first (see the end of this questionnaire) and come back to this question afterwards to answer it fully."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ValueQuestion",
+            "uuid" : "71e5aebf-565a-4c9f-86ce-eaa213263a49",
+            "parentUuid" : "29a8f2cc-696c-4e64-bfae-cba99ca761e1",
+            "entityUuid" : "312b5818-cdd3-43dc-bcf1-bb9788a88f19",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Comments on the choice of this FAIR-Enabling Resource. These comments may include requirements or constraints unique to your community (for example, increased interoperation with another community). "
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "valueType" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ValueQuestion",
+            "uuid" : "17488053-4ce6-47b7-bf3f-607d056c2d1f",
+            "parentUuid" : "f6b5b347-6e01-4294-a0e3-d64382bea1e9",
+            "entityUuid" : "53319468-f864-488c-aa6c-995f21cf9207",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Comments on the choice of this FAIR-Enabling Resource. These comments may include requirements or constraints unique to your community (for example, increased interoperation with another community). "
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "valueType" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ValueQuestion",
+            "uuid" : "a697d26d-881e-4700-9bad-e4bb2c222302",
+            "parentUuid" : "08aae90c-ba61-4c78-b3bd-eb92d29e8111",
+            "entityUuid" : "b5a6c104-b267-48c8-851c-7ee603bf7838",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Comments on the choice of this FAIR-Enabling Resource. These comments may include requirements or constraints unique to your community (for example, increased interoperation with another community). "
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "valueType" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ValueQuestion",
+            "uuid" : "112715a3-fb82-4f37-8db3-f6890821187d",
+            "parentUuid" : "bc3f2a07-6921-4693-8e09-4caf408d162a",
+            "entityUuid" : "4f91161c-d968-4387-8264-0ba4e05f8f5a",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Comments on the choice of this FAIR-Enabling Resource. These comments may include requirements or constraints unique to your community (for example, increased interoperation with another community). "
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "valueType" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ValueQuestion",
+            "uuid" : "55f4b6f8-a74a-49ce-9e46-50d3d6517bb1",
+            "parentUuid" : "aea4c5be-aaa3-4e27-a6d6-f2e6af0bc43d",
+            "entityUuid" : "55040213-7a86-416a-8eb6-85f05711587d",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Comments on the choice of this FAIR-Enabling Resource. These comments may include requirements or constraints unique to your community (for example, increased interoperation with another community). "
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "valueType" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ValueQuestion",
+            "uuid" : "fe07b553-4710-4780-a314-73d149849519",
+            "parentUuid" : "53120a47-9151-42d4-bd33-4fd91fa9a48a",
+            "entityUuid" : "fff28ddd-d34c-4dc9-8a20-ba26280eb39a",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Comments on the choice of this FAIR-Enabling Resource. These comments may include requirements or constraints unique to your community (for example, increased interoperation with another community). "
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "valueType" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ValueQuestion",
+            "uuid" : "3d833e76-e55f-408e-8f7b-a03e6b29e4da",
+            "parentUuid" : "a07fc6d6-1f8c-4c21-9bf5-1040682fa5b8",
+            "entityUuid" : "0a43f23d-6261-4359-bcfb-2f58f3303c49",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Comments on the choice of this FAIR-Enabling Resource. These comments may include requirements or constraints unique to your community (for example, increased interoperation with another community). "
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "valueType" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ValueQuestion",
+            "uuid" : "55e45424-05f2-4f98-aee8-efdbde81f067",
+            "parentUuid" : "43ff12a0-22ff-492b-9777-99e2469f5cf1",
+            "entityUuid" : "d06cdad0-f322-4376-be83-0dffa3ea6ff2",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Comments on the choice of this FAIR-Enabling Resource. These comments may include requirements or constraints unique to your community (for example, access constraints on sensitive data reflecting local policy and regulations)."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "valueType" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ValueQuestion",
+            "uuid" : "bf323c21-7a82-46eb-985a-18675f55f4df",
+            "parentUuid" : "2ddde9e8-4284-4b61-b5a7-8b0e8f8b28c2",
+            "entityUuid" : "c4d90bd6-0154-4bd9-ab7f-72f6f913625a",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Comments on the choice of this FAIR-Enabling Resource. These comments may include requirements or constraints unique to your community (for example, access constraints on sensitive data reflecting local policy and regulations)."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "valueType" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ValueQuestion",
+            "uuid" : "da730779-fe26-40aa-a877-641d897122cc",
+            "parentUuid" : "d2c28334-7dc9-4804-9f0c-89984240fb3b",
+            "entityUuid" : "7e256841-6b67-4fd5-bc6f-51a80f91c991",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Comments on the choice of this FAIR-Enabling Resource. These comments may include requirements or constraints unique to your community (for example, access constraints on sensitive data reflecting local policy and regulations)."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "valueType" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ValueQuestion",
+            "uuid" : "b0cc2550-065c-4599-92df-d23731e5c81d",
+            "parentUuid" : "a93c26cc-ca80-4bcf-ac4c-04e8123bbadb",
+            "entityUuid" : "ed203074-d9df-47bc-80ed-abf3283f3aa8",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Comments on the choice of this FAIR-Enabling Resource. These comments may include requirements or constraints unique to your community (for example, increased interoperation with another community). "
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "valueType" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ValueQuestion",
+            "uuid" : "470ccc0d-e948-488b-9fba-6ec4733b23bb",
+            "parentUuid" : "c704e5d2-7044-4415-8d52-bb621f64b9d6",
+            "entityUuid" : "cacd776b-b531-4487-bd53-a61dd9653b12",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Comments on the choice of this FAIR-Enabling Resource. These comments may include requirements or constraints unique to your community (for example, increased interoperation with another community). "
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "valueType" : {
+                "changed" : false
+            }
+        }
+    ],
+    "createdAt" : ISODate("2020-10-04T22:46:56.337Z")
+},
+
+{
+    "id" : "gofair:fip-wizard:4.3.2",
+    "name" : "FIP Wizard",
+    "organizationId" : "gofair",
+    "kmId" : "fip-wizard",
+    "version" : "4.3.2",
+    "metamodelVersion" : 5,
+    "description" : "Questionnaire prompting Communities committed to implementation of the FAIR Principles to explicitly declare their FAIR implementation choices (the output of the Wizard is a community-specific FAIR Implementation Profile, or FIP).",
+    "readme" : "# FIP Questionnaire\n\nThe FIP questionnaire prompts communities to explicitly declare their FAIR Implementation Profiles.\n\nThis knowledge model has been created under the [GO FAIR Convergence Matrix Project](https://www.go-fair.org/today/fair-matrix). For more information, visit the [3-point FAIRification Framework](https://www.go-fair.org/how-to-go-fair/).\n\nThis knowledge model can be used in any DSW instance for testing and training purposes, however, please fill-in your actual FIPs in the **[FIP Wizard](https://fair-matrix.ds-wizard.org)** to share them with the community. Please report any issues and comments there.",
+    "license" : "Apache-2.0",
+    "previousPackageId" : "gofair:fip-wizard:4.3.1",
+    "forkOfPackageId" : "gofair:fair-convergence-matrix:3.0.0",
+    "mergeCheckpointPackageId" : "gofair:fair-convergence-matrix:3.0.0",
+    "events" : [ 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "1f752a83-aa04-4faf-8ec8-c3cd5852bfe8",
+            "parentUuid" : "e712930b-8a6d-474e-b6da-e2fd0e50ab68",
+            "entityUuid" : "1e33211f-25e5-408c-a2a6-5dc9e06c6606",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "integrationUuid" : {
+                "changed" : false
+            },
+            "props" : {
+                "changed" : true,
+                "value" : {
+                    "type" : "https://w3id.org/fair/fip/terms/Metadata-schema"
+                }
+            }
+        }
+    ],
+    "createdAt" : ISODate("2020-10-04T23:02:35.099Z")
 }
 
     ])
 
 db.getCollection("templates").insert({
-    "id" : "gofair:fip-nanopub:0.3.0",
+    "id" : "gofair:fip-nanopub:1.0.0",
     "name" : "FIP Nanopub",
     "organizationId" : "gofair",
     "templateId" : "fip-nanopub",
-    "version" : "0.3.0",
+    "version" : "1.0.0",
     "metamodelVersion" : 2,
     "description" : "FAIR Implementation Profile as Nanopublication",
-    "readme" : "# FAIR Implementation Profile as Nanopublication",
-    "license" : "apache-2",
+    "readme" : "# FIP Nanopublication (RDF) template\n\nExport template that transforms FIP questionnaire into a set of nanopublications (one per declaration).\n\n## Changelog\n\n### 1.0.0\n\n- Initial version of FIP nanopublication export template\n",
+    "license" : "Apache-2.0",
     "allowedPackages" : [ 
         {
             "orgId" : "gofair",
             "kmId" : "fip-wizard",
-            "minVersion" : "4.2.3",
+            "minVersion" : "4.3.0",
+            "maxVersion" : null
+        }, 
+        {
+            "orgId" : "gofair",
+            "kmId" : "FIPV1",
+            "minVersion" : "1.0.0",
             "maxVersion" : null
         }
     ],
-    "recommendedPackageId" : "gofair:fip-wizard:4.2.3",
+    "recommendedPackageId" : "gofair:fip-wizard:4.3.2",
     "formats" : [ 
         {
             "uuid" : "9c7d572e-c273-4323-97a4-ab38f943c33a",
@@ -23687,23 +27712,23 @@ db.getCollection("templates").insert({
     ],
     "files" : [ 
         {
-            "uuid" : "1e008d36-9449-4339-9196-02c3c028d2fe",
+            "uuid" : "4f043314-6d38-43d6-ae1c-e459cf20e603",
             "fileName" : "content/nanopub.trig.j2",
-            "content" : "{%- import \"content/_triples.j2\" as triples with context -%}\n@prefix : <http://purl.org/nanopub/temp/fip-delaration-np/{{ ctx.uuid }}#> .\n@prefix fip: <https://w3id.org/fair/fip/terms/> .\n@prefix fair: <https://w3id.org/fair/principles/terms/> .\n@prefix np: <http://www.nanopub.org/nschema#> .\n@prefix npx: <http://purl.org/nanopub/x/> .\n@prefix prov: <http://www.w3.org/ns/prov#> .\n@prefix dct: <http://purl.org/dc/terms/> .\n@prefix owl: <http://www.w3.org/2002/07/owl#> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@prefix orcid: <https://orcid.org/> .\n\n:Head {\n  : a np:Nanopublication;\n    np:hasAssertion :assertion ;\n    np:hasProvenance :provenance ;\n    np:hasPublicationInfo :pubinfo .\n}\n\n:assertion {\n{%- for triple in triples.triples %}\n  {%- if triple|length == 3 %}\n  {{ triple[0] }} {{ triple[1] }} {{ triple[2] }} .\n  {%- elif triple|length == 1 %}\n  # {{ triple[0] }}\n  {%- else %}\n  #================================================\n  {%- endif %}\n{%- endfor %}\n}\n\n:provenance {\n  {%- if triples.orcid %}\n  :assertion dct:creator orcid:{{ triples.orcid }} .\n  {%- else %}\n  :assertion dct:creator \"unknown\" .\n  {%- endif %}\n}\n\n:pubinfo {\n  : dct:created \"{{ ctx.updatedAt|datetime_format(\"%Y-%m-%dT%H:%M:%SZ\") }}\"^^xsd:dateTime ;\n    dct:creator <{{ ctx.config.clientUrl }}> ;\n    dct:license <https://creativecommons.org/publicdomain/zero/1.0/> .\n}\n"
+            "content" : "{%- import \"content/_triples.j2\" as triples with context -%}\n# This file contains declarations from FIP Questionnaire {{ ctx.questionnaireUuid }} as nanopubs\n#\n# Delete all previous data related to this FIP questionnaire\n#> pre-query: DELETE { GRAPH ?g { ?s ?p ?o } } WHERE { GRAPH ?g { ?s ?p ?o } FILTER REGEX(?g, \"^http://purl.org/nanopub/temp/fip-declaration-np/{{ ctx.questionnaireUuid }}/\") } ;\n\n{% for declaration in triples.declarations -%}\n{%- set declarationUuid = declaration[\"uuid\"] -%}\n{%- set xtriples = declaration[\"triples\"] %}\n# Declaration #{{loop.index}} ({{declarationUuid}})\n@prefix : <http://purl.org/nanopub/temp/fip-declaration-np/{{ ctx.questionnaireUuid }}/{{ ctx.uuid }}/{{ declarationUuid }}#> .\n@prefix fip: <https://w3id.org/fair/fip/terms/> .\n@prefix fair: <https://w3id.org/fair/principles/terms/> .\n@prefix np: <http://www.nanopub.org/nschema#> .\n@prefix npx: <http://purl.org/nanopub/x/> .\n@prefix prov: <http://www.w3.org/ns/prov#> .\n@prefix dct: <http://purl.org/dc/terms/> .\n@prefix owl: <http://www.w3.org/2002/07/owl#> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@prefix orcid: <https://orcid.org/> .\n\n:Head {\n  : a np:Nanopublication;\n    np:hasAssertion :assertion ;\n    np:hasProvenance :provenance ;\n    np:hasPublicationInfo :pubinfo .\n}\n\n:assertion {\n{%- for triple in xtriples %}\n  {%- if triple|length == 3 %}\n  {{ triple[0] }} {{ triple[1] }} {{ triple[2] }} .\n  {%- elif triple|length == 1 %}\n  # {{ triple[0] }}\n  {%- else %}\n  #================================================\n  {%- endif %}\n{%- endfor %}\n}\n\n:provenance {\n  {%- if triples.orcid %}\n  {%- set orcid = triples.orcid|replace(\"https://orcid.org/\", \"\")|replace(\"http://orcid.org/\", \"\") %}\n  {%- if orcid.split('-')|length == 4 %}\n  :assertion dct:creator orcid:{{ orcid }} .\n  {%- else %}\n  :assertion dct:creator {{ orcid|tojson }} .\n  {%- endif %}\n  {%- else %}\n  :assertion dct:creator \"unknown\" .\n  {%- endif %}\n}\n\n:pubinfo {\n  : dct:created \"{{ ctx.updatedAt|datetime_format(\"%Y-%m-%dT%H:%M:%SZ\") }}\"^^xsd:dateTime ;\n    dct:creator <{{ ctx.config.clientUrl }}> ;\n    dct:license <https://creativecommons.org/publicdomain/zero/1.0/> .\n}\n\n{% endfor -%}\n"
         }, 
         {
-            "uuid" : "36c95f58-95f8-4ff8-bbec-53868bd815ac",
+            "uuid" : "9a5fa854-0ad2-43fb-a125-b92ec7c13844",
             "fileName" : "content/_definition.j2",
-            "content" : "{#- All UUIDs that are needed -#}\n{%- set questions = [\n  {\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-F1-D\",\n    \"type\": \"normal\",\n    \"chapter\": \"e3301b05-b02d-4c09-bb4b-7fb181414236\",\n    \"declaration\": \"6a812ff5-a202-40d4-bd3b-02b341512e48\",\n    \"consideration\": \"6318940e-d311-4102-836e-77dc0f2838f1\",\n    \"c_fairsharing\": \"eb623708-368e-49ef-b093-3ed5a12986c1\",\n    \"c_nanobench\": \"2a880dab-4f2f-4ab5-aefe-ce4942542a37\",\n    \"c_options\": \"x\",\n    \"planning\": \"47d618c6-568e-4112-b66a-339661bfc7fc\",\n    \"p_fairsharing\": \"f4ac44a5-be25-4b6f-b4a9-d7da4b139638\",\n    \"p_nanobench\": \"86205ba5-2016-4a4c-a3bf-d0aea015fec5\",\n    \"p_options\": \"x\"\n  },\n  {\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-F1-MD\",\n    \"type\": \"normal\",\n    \"chapter\": \"e3301b05-b02d-4c09-bb4b-7fb181414236\",\n    \"declaration\": \"797c4af8-0184-43cf-b40c-e2608b7b4d0a\",\n    \"consideration\": \"891413be-e42d-409c-967f-a2e271777aab\",\n    \"c_fairsharing\": \"770c6137-7359-4e34-89a2-17708645cbe1\",\n    \"c_nanobench\": \"8b75db91-a7e6-4053-ba77-431ef0e8d67a\",\n    \"c_options\": \"x\",\n    \"planning\": \"4f3cfb2a-cbb4-40f5-a151-74c9bcb661bd\",\n    \"p_fairsharing\": \"7dfc2257-9eca-4e14-ba0f-d8e52fe26707\",\n    \"p_nanobench\": \"4a10d70e-2a4e-4ea1-a796-e5d100bc53ea\",\n    \"p_options\": \"x\"\n  },\n  {\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-F2\",\n    \"type\": \"normal\",\n    \"chapter\": \"e3301b05-b02d-4c09-bb4b-7fb181414236\",\n    \"declaration\": \"808310c5-7321-4789-aa97-80f4c7ac9fa8\",\n    \"consideration\": \"b351f7d6-7b0a-43e6-a845-d82d27040435\",\n    \"c_fairsharing\": \"d975599c-e3de-4acd-9370-0ff6537b888a\",\n    \"c_nanobench\": \"cae8352d-a048-49ad-b95f-24454bb5f80a\",\n    \"c_options\": \"x\",\n    \"planning\": \"f0ef2043-8c9b-4aa5-9a3b-2c5474a5a694\",\n    \"p_fairsharing\": \"ff940eb5-b2b6-4f06-b85c-c883cacb3c4e\",\n    \"p_nanobench\": \"a57428a6-8dfe-48e3-b846-d4a039ca934c\",\n    \"p_options\": \"x\"\n  },\n  {\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-F3\",\n    \"type\": \"only_nanobench\",\n    \"chapter\": \"e3301b05-b02d-4c09-bb4b-7fb181414236\",\n    \"declaration\": \"faeab073-3569-4bca-a804-c81c0de04a95\",\n    \"consideration\": \"be91f639-06e5-4d65-9375-d04bcf3af66b\",\n    \"c_fairsharing\": \"x\",\n    \"c_nanobench\": \"59d34122-39d7-4587-ae39-de456d7459e2\",\n    \"c_options\": \"x\",\n    \"planning\": \"293aed26-bf2c-446b-9c91-5acc0e354e63\",\n    \"p_fairsharing\": \"x\",\n    \"p_nanobench\": \"e1657f7d-eb02-4baa-a40f-ae0b4ccf973e\",\n    \"p_options\": \"x\"\n  },\n  {\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-F4-D\",\n    \"type\": \"normal\",\n    \"chapter\": \"e3301b05-b02d-4c09-bb4b-7fb181414236\",\n    \"declaration\": \"a50aa1e1-68a9-4e36-bdb6-4a4c5a3d902a\",\n    \"consideration\": \"01e9538b-0246-4ae1-a60b-c870bd2f7f10\",\n    \"c_fairsharing\": \"8509fe0d-2225-4230-8c71-991033389df3\",\n    \"c_nanobench\": \"7bd33eba-28c2-4279-9dff-a2e672697936\",\n    \"c_options\": \"x\",\n    \"planning\": \"07648d69-41c1-4f7c-bafa-8d93caa32d7c\",\n    \"p_fairsharing\": \"0d32ff1a-201b-4425-a830-b3b3aef4a0bb\",\n    \"p_nanobench\": \"a74f5643-da60-4c93-8b93-bca758dca0cf\",\n    \"p_options\": \"x\"\n  },\n  {\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-F4-MD\",\n    \"type\": \"normal\",\n    \"chapter\": \"e3301b05-b02d-4c09-bb4b-7fb181414236\",\n    \"declaration\": \"5f33c2e8-8b95-435c-870a-fd97d91ff8da\",\n    \"consideration\": \"f321f449-7937-40da-9702-0df364a17fb5\",\n    \"c_fairsharing\": \"3ded4b7d-fc8a-4386-b96f-34f0d681cf57\",\n    \"c_nanobench\": \"20abafb3-72f8-4400-9e16-1acc1c61bf38\",\n    \"c_options\": \"x\",\n    \"planning\": \"66665dd7-0d60-4ac6-a2dd-a69495899dd0\",\n    \"p_fairsharing\": \"303abfbd-d135-4f1f-bc57-2b842ae4065a\",\n    \"p_nanobench\": \"b28bc881-ad87-4564-ab18-0fa8ac8ac061\",\n    \"p_options\": \"x\"\n  },\n  {\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-A1-D\",\n    \"type\": \"only_nanobench\",\n    \"chapter\": \"d6ab1374-788b-4cd5-9614-5ec4c69d6cc5\",\n    \"declaration\": \"43ff12a0-22ff-492b-9777-99e2469f5cf1\",\n    \"consideration\": \"d06cdad0-f322-4376-be83-0dffa3ea6ff2\",\n    \"c_fairsharing\": \"x\",\n    \"c_nanobench\": \"5746d5e3-3e98-460d-9a2e-61d3e974eab2\",\n    \"c_options\": \"x\",\n    \"planning\": \"6668dca1-0761-485c-8f6f-2fe66e2f66bf\",\n    \"p_fairsharing\": \"x\",\n    \"p_nanobench\": \"0979af91-88e6-4567-a25f-51dabd63ed30\",\n    \"p_options\": \"x\"\n  },\n  {\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-A1-MD\",\n    \"type\": \"only_nanobench\",\n    \"chapter\": \"d6ab1374-788b-4cd5-9614-5ec4c69d6cc5\",\n    \"declaration\": \"ee073efa-c934-4db4-ae87-49b73df11ca5\",\n    \"consideration\": \"c74cecef-cc36-45c9-8400-7a6a56ca4e2d\",\n    \"c_fairsharing\": \"x\",\n    \"c_nanobench\": \"0fe3186c-c7c1-4cef-a8e0-820c2823e66d\",\n    \"c_options\": \"x\",\n    \"planning\": \"ad6f9598-e308-4c6c-b751-b576e4423b8a\",\n    \"p_fairsharing\": \"x\",\n    \"p_nanobench\": \"f5b9bf6d-23ea-429d-a937-d988dfb1f971\",\n    \"p_options\": \"x\"\n  },\n  {\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-A1.1-D\",\n    \"type\": \"only_nanobench\",\n    \"chapter\": \"d6ab1374-788b-4cd5-9614-5ec4c69d6cc5\",\n    \"declaration\": \"2ddde9e8-4284-4b61-b5a7-8b0e8f8b28c2\",\n    \"consideration\": \"c4d90bd6-0154-4bd9-ab7f-72f6f913625a\",\n    \"c_fairsharing\": \"x\",\n    \"c_nanobench\": \"076e4fae-6668-4e84-a9f7-b00f1d33f58e\",\n    \"c_options\": \"x\",\n    \"planning\": \"38e487a0-684e-4add-a2c5-3902e62807a8\",\n    \"p_fairsharing\": \"x\",\n    \"p_nanobench\": \"e46681c4-d398-4a4d-875e-9829fa987301\",\n    \"p_options\": \"x\"\n  },\n  {\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-A1.1-MD\",\n    \"type\": \"only_nanobench\",\n    \"chapter\": \"d6ab1374-788b-4cd5-9614-5ec4c69d6cc5\",\n    \"declaration\": \"d2c28334-7dc9-4804-9f0c-89984240fb3b\",\n    \"consideration\": \"7e256841-6b67-4fd5-bc6f-51a80f91c991\",\n    \"c_fairsharing\": \"x\",\n    \"c_nanobench\": \"db02f6cd-0e28-41d9-9ccf-a0e9040c422d\",\n    \"c_options\": \"x\",\n    \"planning\": \"60d79156-2028-43e7-93f7-09a8d8545e80\",\n    \"p_fairsharing\": \"x\",\n    \"p_nanobench\": \"76141aaf-1807-4667-a349-1ecdcf08f10b\",\n    \"p_options\": \"x\"\n  },\n  {\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-A1.2\",\n    \"type\": \"only_nanobench\",\n    \"chapter\": \"d6ab1374-788b-4cd5-9614-5ec4c69d6cc5\",\n    \"declaration\": \"a93c26cc-ca80-4bcf-ac4c-04e8123bbadb\",\n    \"consideration\": \"ed203074-d9df-47bc-80ed-abf3283f3aa8\",\n    \"c_fairsharing\": \"x\",\n    \"c_nanobench\": \"f7ab7312-0f7f-4ba9-8141-85352a3115f4\",\n    \"c_options\": \"x\",\n    \"planning\": \"f2f9124a-deb0-4485-9dbd-24fcb011458f\",\n    \"p_fairsharing\": \"x\",\n    \"p_nanobench\": \"3d871bd7-06a4-41f4-858b-37211e30f332\",\n    \"p_options\": \"x\"\n  },\n  {\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-I1-D\",\n    \"type\": \"normal\",\n    \"chapter\": \"2b7ee188-a227-43a8-8bf9-a99e6aeb3939\",\n    \"declaration\": \"a07fc6d6-1f8c-4c21-9bf5-1040682fa5b8\",\n    \"consideration\": \"0a43f23d-6261-4359-bcfb-2f58f3303c49\",\n    \"c_fairsharing\": \"b05cbdda-1636-4c38-86c6-5b4820950e11\",\n    \"c_nanobench\": \"e3dd2327-0eaa-4ec2-8feb-9d66a78ec4c2\",\n    \"c_options\": \"x\",\n    \"planning\": \"014a56b6-cc81-4044-9352-98a2c11acdfd\",\n    \"p_fairsharing\": \"2efe903b-751e-45c8-a26c-bfe25515449e\",\n    \"p_nanobench\": \"2088b12c-1639-4db7-b4ca-00a89e3eaeb3\",\n    \"p_options\": \"x\"\n  },\n  {\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-I1-MD\",\n    \"type\": \"normal\",\n    \"chapter\": \"2b7ee188-a227-43a8-8bf9-a99e6aeb3939\",\n    \"declaration\": \"53120a47-9151-42d4-bd33-4fd91fa9a48a\",\n    \"consideration\": \"fff28ddd-d34c-4dc9-8a20-ba26280eb39a\",\n    \"c_fairsharing\": \"68718ac7-b88a-47ce-86e6-5827e7834b89\",\n    \"c_nanobench\": \"219f86b7-88d4-466d-8748-1dcf88fc06b6\",\n    \"c_options\": \"x\",\n    \"planning\": \"0256112b-b2f5-44e5-be33-69ffeec6a561\",\n    \"p_fairsharing\": \"6a8028fa-c546-4b0f-985b-6dc1ef20a56e\",\n    \"p_nanobench\": \"bf2a6eb8-8d75-434f-813d-ccad06444c1d\",\n    \"p_options\": \"x\"\n  },\n  {\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-I2-D\",\n    \"type\": \"normal\",\n    \"chapter\": \"2b7ee188-a227-43a8-8bf9-a99e6aeb3939\",\n    \"declaration\": \"aea4c5be-aaa3-4e27-a6d6-f2e6af0bc43d\",\n    \"consideration\": \"55040213-7a86-416a-8eb6-85f05711587d\",\n    \"c_fairsharing\": \"48476982-e866-4feb-94f8-5b2b5d423c61\",\n    \"c_nanobench\": \"8f9e5e00-77e4-4332-8270-a1a4257420ea\",\n    \"c_options\": \"x\",\n    \"planning\": \"5700be0d-3918-42e0-b066-512fa6c9137a\",\n    \"p_fairsharing\": \"11059789-bf7a-4b0b-9663-411de782aa49\",\n    \"p_nanobench\": \"c10f580d-f14c-4d8a-bb41-5ea45dc8dbc5\",\n    \"p_options\": \"x\"\n  },\n  {\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-I2-MD\",\n    \"type\": \"normal\",\n    \"chapter\": \"2b7ee188-a227-43a8-8bf9-a99e6aeb3939\",\n    \"declaration\": \"bc3f2a07-6921-4693-8e09-4caf408d162a\",\n    \"consideration\": \"4f91161c-d968-4387-8264-0ba4e05f8f5a\",\n    \"c_fairsharing\": \"9f02dcd1-fed5-481d-bea5-577303523853\",\n    \"c_nanobench\": \"40dbe55a-a532-4af2-a602-ca9fddae9412\",\n    \"c_options\": \"x\",\n    \"planning\": \"84e1d4c8-67f1-4d0e-b897-3b99c4feb9bb\",\n    \"p_fairsharing\": \"08eb78d4-643a-41c3-9301-70302e7a00cd\",\n    \"p_nanobench\": \"d71e4483-6b8b-4022-a25e-d4349f1dbf87\",\n    \"p_options\": \"x\"\n  },\n  {\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-I3-D\",\n    \"type\": \"normal\",\n    \"chapter\": \"2b7ee188-a227-43a8-8bf9-a99e6aeb3939\",\n    \"declaration\": \"e712930b-8a6d-474e-b6da-e2fd0e50ab68\",\n    \"consideration\": \"f423b127-9fce-4435-8d5b-44a36815f8fa\",\n    \"c_fairsharing\": \"ae187e7b-b7f6-447a-beae-35c7e1402cbc\",\n    \"c_nanobench\": \"1e33211f-25e5-408c-a2a6-5dc9e06c6606\",\n    \"c_options\": \"x\",\n    \"planning\": \"87d51804-6741-477b-ae53-3941b5631a81\",\n    \"p_fairsharing\": \"2ca1f907-5e7e-4839-9cfd-b0aea80d080d\",\n    \"p_nanobench\": \"9d3ad18c-2055-4d13-b2d0-0bd3503da2cb\",\n    \"p_options\": \"x\"\n  },\n  {\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-I3-MD\",\n    \"type\": \"normal\",\n    \"chapter\": \"2b7ee188-a227-43a8-8bf9-a99e6aeb3939\",\n    \"declaration\": \"10ba5624-d948-4f1a-91c1-61f33ec1e51b\",\n    \"consideration\": \"baca3035-1f3c-4964-b8f5-26182ca7f446\",\n    \"c_fairsharing\": \"38a47f4a-1544-4867-b2f3-abbf4b12b20e\",\n    \"c_nanobench\": \"b8bc1ffb-64c8-42a6-b5cc-50e2c9813a1f\",\n    \"c_options\": \"x\",\n    \"planning\": \"a3d10b12-ae30-48f9-9827-239ea003398d\",\n    \"p_fairsharing\": \"830ca9fb-ddb4-483b-8584-68f921d560e1\",\n    \"p_nanobench\": \"59b3e9d1-4481-491b-bfc9-f431324f08e6\",\n    \"p_options\": \"x\"\n  },\n  {\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-R1.1-D\",\n    \"type\": \"options\",\n    \"chapter\": \"37e3ef76-71e1-47a9-be84-e1f1d9452193\",\n    \"declaration\": \"29a8f2cc-696c-4e64-bfae-cba99ca761e1\",\n    \"consideration\": \"312b5818-cdd3-43dc-bcf1-bb9788a88f19\",\n    \"c_fairsharing\": \"x\",\n    \"c_nanobench\": \"x\",\n    \"c_options\": \"812fc813-effa-4183-909c-bbc4154730e3\",\n    \"planning\": \"9653cc3e-4350-4610-ad6a-fc9151856be1\",\n    \"p_fairsharing\": \"x\",\n    \"p_nanobench\": \"x\",\n    \"p_options\": \"615f99cf-275a-42b6-bc48-405021cfaf66\"\n  },\n  {\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-R1.1-MD\",\n    \"type\": \"options\",\n    \"chapter\": \"37e3ef76-71e1-47a9-be84-e1f1d9452193\",\n    \"declaration\": \"c704e5d2-7044-4415-8d52-bb621f64b9d6\",\n    \"consideration\": \"cacd776b-b531-4487-bd53-a61dd9653b12\",\n    \"c_fairsharing\": \"x\",\n    \"c_nanobench\": \"x\",\n    \"c_options\": \"55b072f8-f2b7-4cf6-be7f-19fd48ccf069\",\n    \"planning\": \"62e4811c-2217-4de9-9266-ff38524efc8c\",\n    \"p_fairsharing\": \"x\",\n    \"p_nanobench\": \"x\",\n    \"p_options\": \"c8a3a31e-e184-4e53-90fa-c9b6886382a5\"\n  },\n  {\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-R1.2-D\",\n    \"type\": \"normal\",\n    \"chapter\": \"37e3ef76-71e1-47a9-be84-e1f1d9452193\",\n    \"declaration\": \"f6b5b347-6e01-4294-a0e3-d64382bea1e9\",\n    \"consideration\": \"53319468-f864-488c-aa6c-995f21cf9207\",\n    \"c_fairsharing\": \"4f344af5-84ef-4613-bbeb-4509b949ca62\",\n    \"c_nanobench\": \"c88733b2-e294-419b-81bf-27206542668a\",\n    \"c_options\": \"x\",\n    \"planning\": \"72fd2469-3506-4e28-b8b3-f1049baa097f\",\n    \"p_fairsharing\": \"52980e65-1841-4426-af2e-5609f62b1c29\",\n    \"p_nanobench\": \"fa4b80dc-7427-4cf6-8299-4082eb1fcd0c\",\n    \"p_options\": \"x\"\n  },\n  {\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-R1.2-MD\",\n    \"type\": \"normal\",\n    \"chapter\": \"37e3ef76-71e1-47a9-be84-e1f1d9452193\",\n    \"declaration\": \"08aae90c-ba61-4c78-b3bd-eb92d29e8111\",\n    \"consideration\": \"b5a6c104-b267-48c8-851c-7ee603bf7838\",\n    \"c_fairsharing\": \"c358894e-a82a-4536-8c5d-cbc4183d82c2\",\n    \"c_nanobench\": \"abe255a0-7e65-4950-b2ae-47ac8ac30cc1\",\n    \"c_options\": \"x\",\n    \"planning\": \"a2ad654d-95ce-4ab0-a853-0416c1c37868\",\n    \"p_fairsharing\": \"1b061704-78ed-42db-a175-0f0f59fc1b99\",\n    \"p_nanobench\": \"83fdf983-73d3-4b6e-a9c5-58c91de07aa4\",\n    \"p_options\": \"x\"\n  }\n] -%}\n\n{%- set communityUuid = \"1a98d12d-8716-4d0e-87ab-c7e9b4ab9527\" -%}\n{%- set communityPath = \"63eecafc-fdda-47d3-92d2-d58fad54588d.1a98d12d-8716-4d0e-87ab-c7e9b4ab9527\" -%}\n{%- set orcidPath = \"63eecafc-fdda-47d3-92d2-d58fad54588d.c9cd6f2d-d16e-4ef6-831f-a20e33290b6f\" -%}\n"
+            "content" : "{%- set questions = [\n  {\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-F1-MD\",\n    \"type\": \"nanobench\",\n    \"chapter\": \"e3301b05-b02d-4c09-bb4b-7fb181414236\",\n    \"declaration\": \"6a812ff5-a202-40d4-bd3b-02b341512e48\",\n    \"consideration\": \"6318940e-d311-4102-836e-77dc0f2838f1\",\n    \"c_nanobench\": \"2a880dab-4f2f-4ab5-aefe-ce4942542a37\",\n    \"c_options\": \"x\",\n    \"planning\": \"47d618c6-568e-4112-b66a-339661bfc7fc\",\n    \"p_nanobench\": \"86205ba5-2016-4a4c-a3bf-d0aea015fec5\",\n    \"p_options\": \"x\"\n  },\n  {\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-F1-D\",\n    \"type\": \"nanobench\",\n    \"chapter\": \"e3301b05-b02d-4c09-bb4b-7fb181414236\",\n    \"declaration\": \"797c4af8-0184-43cf-b40c-e2608b7b4d0a\",\n    \"consideration\": \"891413be-e42d-409c-967f-a2e271777aab\",\n    \"c_nanobench\": \"8b75db91-a7e6-4053-ba77-431ef0e8d67a\",\n    \"c_options\": \"x\",\n    \"planning\": \"4f3cfb2a-cbb4-40f5-a151-74c9bcb661bd\",\n    \"p_nanobench\": \"4a10d70e-2a4e-4ea1-a796-e5d100bc53ea\",\n    \"p_options\": \"x\"\n  },\n  {\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-F2\",\n    \"type\": \"nanobench\",\n    \"chapter\": \"e3301b05-b02d-4c09-bb4b-7fb181414236\",\n    \"declaration\": \"808310c5-7321-4789-aa97-80f4c7ac9fa8\",\n    \"consideration\": \"b351f7d6-7b0a-43e6-a845-d82d27040435\",\n    \"c_nanobench\": \"cae8352d-a048-49ad-b95f-24454bb5f80a\",\n    \"c_options\": \"x\",\n    \"planning\": \"f0ef2043-8c9b-4aa5-9a3b-2c5474a5a694\",\n    \"p_nanobench\": \"a57428a6-8dfe-48e3-b846-d4a039ca934c\",\n    \"p_options\": \"x\"\n  },\n  {\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-F3\",\n    \"type\": \"nanobench\",\n    \"chapter\": \"e3301b05-b02d-4c09-bb4b-7fb181414236\",\n    \"declaration\": \"faeab073-3569-4bca-a804-c81c0de04a95\",\n    \"consideration\": \"be91f639-06e5-4d65-9375-d04bcf3af66b\",\n    \"c_nanobench\": \"59d34122-39d7-4587-ae39-de456d7459e2\",\n    \"c_options\": \"x\",\n    \"planning\": \"293aed26-bf2c-446b-9c91-5acc0e354e63\",\n    \"p_nanobench\": \"e1657f7d-eb02-4baa-a40f-ae0b4ccf973e\",\n    \"p_options\": \"x\"\n  },\n  {\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-F4-MD\",\n    \"type\": \"nanobench\",\n    \"chapter\": \"e3301b05-b02d-4c09-bb4b-7fb181414236\",\n    \"declaration\": \"a50aa1e1-68a9-4e36-bdb6-4a4c5a3d902a\",\n    \"consideration\": \"01e9538b-0246-4ae1-a60b-c870bd2f7f10\",\n    \"c_nanobench\": \"7bd33eba-28c2-4279-9dff-a2e672697936\",\n    \"c_options\": \"x\",\n    \"planning\": \"07648d69-41c1-4f7c-bafa-8d93caa32d7c\",\n    \"p_nanobench\": \"a74f5643-da60-4c93-8b93-bca758dca0cf\",\n    \"p_options\": \"x\"\n  },\n  {\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-F4-D\",\n    \"type\": \"nanobench\",\n    \"chapter\": \"e3301b05-b02d-4c09-bb4b-7fb181414236\",\n    \"declaration\": \"5f33c2e8-8b95-435c-870a-fd97d91ff8da\",\n    \"consideration\": \"f321f449-7937-40da-9702-0df364a17fb5\",\n    \"c_nanobench\": \"20abafb3-72f8-4400-9e16-1acc1c61bf38\",\n    \"c_options\": \"x\",\n    \"planning\": \"66665dd7-0d60-4ac6-a2dd-a69495899dd0\",\n    \"p_nanobench\": \"b28bc881-ad87-4564-ab18-0fa8ac8ac061\",\n    \"p_options\": \"x\"\n  },\n  {\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-A1-MD\",\n    \"type\": \"nanobench\",\n    \"chapter\": \"d6ab1374-788b-4cd5-9614-5ec4c69d6cc5\",\n    \"declaration\": \"43ff12a0-22ff-492b-9777-99e2469f5cf1\",\n    \"consideration\": \"d06cdad0-f322-4376-be83-0dffa3ea6ff2\",\n    \"c_nanobench\": \"5746d5e3-3e98-460d-9a2e-61d3e974eab2\",\n    \"c_options\": \"x\",\n    \"planning\": \"6668dca1-0761-485c-8f6f-2fe66e2f66bf\",\n    \"p_nanobench\": \"0979af91-88e6-4567-a25f-51dabd63ed30\",\n    \"p_options\": \"x\"\n  },\n  {\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-A1-D\",\n    \"type\": \"nanobench\",\n    \"chapter\": \"d6ab1374-788b-4cd5-9614-5ec4c69d6cc5\",\n    \"declaration\": \"ee073efa-c934-4db4-ae87-49b73df11ca5\",\n    \"consideration\": \"c74cecef-cc36-45c9-8400-7a6a56ca4e2d\",\n    \"c_nanobench\": \"0fe3186c-c7c1-4cef-a8e0-820c2823e66d\",\n    \"c_options\": \"x\",\n    \"planning\": \"ad6f9598-e308-4c6c-b751-b576e4423b8a\",\n    \"p_nanobench\": \"f5b9bf6d-23ea-429d-a937-d988dfb1f971\",\n    \"p_options\": \"x\"\n  },\n  {\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-A1.1-MD\",\n    \"type\": \"nanobench\",\n    \"chapter\": \"d6ab1374-788b-4cd5-9614-5ec4c69d6cc5\",\n    \"declaration\": \"2ddde9e8-4284-4b61-b5a7-8b0e8f8b28c2\",\n    \"consideration\": \"c4d90bd6-0154-4bd9-ab7f-72f6f913625a\",\n    \"c_nanobench\": \"076e4fae-6668-4e84-a9f7-b00f1d33f58e\",\n    \"c_options\": \"x\",\n    \"planning\": \"38e487a0-684e-4add-a2c5-3902e62807a8\",\n    \"p_nanobench\": \"e46681c4-d398-4a4d-875e-9829fa987301\",\n    \"p_options\": \"x\"\n  },\n  {\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-A1.1-D\",\n    \"type\": \"nanobench\",\n    \"chapter\": \"d6ab1374-788b-4cd5-9614-5ec4c69d6cc5\",\n    \"declaration\": \"d2c28334-7dc9-4804-9f0c-89984240fb3b\",\n    \"consideration\": \"7e256841-6b67-4fd5-bc6f-51a80f91c991\",\n    \"c_nanobench\": \"db02f6cd-0e28-41d9-9ccf-a0e9040c422d\",\n    \"c_options\": \"x\",\n    \"planning\": \"60d79156-2028-43e7-93f7-09a8d8545e80\",\n    \"p_nanobench\": \"76141aaf-1807-4667-a349-1ecdcf08f10b\",\n    \"p_options\": \"x\"\n  },\n  {\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-A1.2\",\n    \"type\": \"nanobench\",\n    \"chapter\": \"d6ab1374-788b-4cd5-9614-5ec4c69d6cc5\",\n    \"declaration\": \"a93c26cc-ca80-4bcf-ac4c-04e8123bbadb\",\n    \"consideration\": \"ed203074-d9df-47bc-80ed-abf3283f3aa8\",\n    \"c_nanobench\": \"f7ab7312-0f7f-4ba9-8141-85352a3115f4\",\n    \"c_options\": \"x\",\n    \"planning\": \"f2f9124a-deb0-4485-9dbd-24fcb011458f\",\n    \"p_nanobench\": \"3d871bd7-06a4-41f4-858b-37211e30f332\",\n    \"p_options\": \"x\"\n  },\n  {\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-I1-MD\",\n    \"type\": \"nanobench\",\n    \"chapter\": \"2b7ee188-a227-43a8-8bf9-a99e6aeb3939\",\n    \"declaration\": \"a07fc6d6-1f8c-4c21-9bf5-1040682fa5b8\",\n    \"consideration\": \"0a43f23d-6261-4359-bcfb-2f58f3303c49\",\n    \"c_nanobench\": \"e3dd2327-0eaa-4ec2-8feb-9d66a78ec4c2\",\n    \"c_options\": \"x\",\n    \"planning\": \"014a56b6-cc81-4044-9352-98a2c11acdfd\",\n    \"p_nanobench\": \"2088b12c-1639-4db7-b4ca-00a89e3eaeb3\",\n    \"p_options\": \"x\"\n  },\n  {\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-I1-D\",\n    \"type\": \"nanobench\",\n    \"chapter\": \"2b7ee188-a227-43a8-8bf9-a99e6aeb3939\",\n    \"declaration\": \"53120a47-9151-42d4-bd33-4fd91fa9a48a\",\n    \"consideration\": \"fff28ddd-d34c-4dc9-8a20-ba26280eb39a\",\n    \"c_nanobench\": \"219f86b7-88d4-466d-8748-1dcf88fc06b6\",\n    \"c_options\": \"x\",\n    \"planning\": \"0256112b-b2f5-44e5-be33-69ffeec6a561\",\n    \"p_nanobench\": \"bf2a6eb8-8d75-434f-813d-ccad06444c1d\",\n    \"p_options\": \"x\"\n  },\n  {\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-I2-MD\",\n    \"type\": \"nanobench\",\n    \"chapter\": \"2b7ee188-a227-43a8-8bf9-a99e6aeb3939\",\n    \"declaration\": \"aea4c5be-aaa3-4e27-a6d6-f2e6af0bc43d\",\n    \"consideration\": \"55040213-7a86-416a-8eb6-85f05711587d\",\n    \"c_nanobench\": \"8f9e5e00-77e4-4332-8270-a1a4257420ea\",\n    \"c_options\": \"x\",\n    \"planning\": \"5700be0d-3918-42e0-b066-512fa6c9137a\",\n    \"p_nanobench\": \"c10f580d-f14c-4d8a-bb41-5ea45dc8dbc5\",\n    \"p_options\": \"x\"\n  },\n  {\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-I2-D\",\n    \"type\": \"nanobench\",\n    \"chapter\": \"2b7ee188-a227-43a8-8bf9-a99e6aeb3939\",\n    \"declaration\": \"bc3f2a07-6921-4693-8e09-4caf408d162a\",\n    \"consideration\": \"4f91161c-d968-4387-8264-0ba4e05f8f5a\",\n    \"c_nanobench\": \"40dbe55a-a532-4af2-a602-ca9fddae9412\",\n    \"c_options\": \"x\",\n    \"planning\": \"84e1d4c8-67f1-4d0e-b897-3b99c4feb9bb\",\n    \"p_nanobench\": \"d71e4483-6b8b-4022-a25e-d4349f1dbf87\",\n    \"p_options\": \"x\"\n  },\n  {\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-I3-MD\",\n    \"type\": \"nanobench\",\n    \"chapter\": \"2b7ee188-a227-43a8-8bf9-a99e6aeb3939\",\n    \"declaration\": \"e712930b-8a6d-474e-b6da-e2fd0e50ab68\",\n    \"consideration\": \"f423b127-9fce-4435-8d5b-44a36815f8fa\",\n    \"c_nanobench\": \"1e33211f-25e5-408c-a2a6-5dc9e06c6606\",\n    \"c_options\": \"x\",\n    \"planning\": \"87d51804-6741-477b-ae53-3941b5631a81\",\n    \"p_nanobench\": \"9d3ad18c-2055-4d13-b2d0-0bd3503da2cb\",\n    \"p_options\": \"x\"\n  },\n  {\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-I3-D\",\n    \"type\": \"nanobench\",\n    \"chapter\": \"2b7ee188-a227-43a8-8bf9-a99e6aeb3939\",\n    \"declaration\": \"10ba5624-d948-4f1a-91c1-61f33ec1e51b\",\n    \"consideration\": \"baca3035-1f3c-4964-b8f5-26182ca7f446\",\n    \"c_nanobench\": \"b8bc1ffb-64c8-42a6-b5cc-50e2c9813a1f\",\n    \"c_options\": \"x\",\n    \"planning\": \"a3d10b12-ae30-48f9-9827-239ea003398d\",\n    \"p_nanobench\": \"59b3e9d1-4481-491b-bfc9-f431324f08e6\",\n    \"p_options\": \"x\"\n  },\n  {\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-R1.1-MD\",\n    \"type\": \"options\",\n    \"chapter\": \"37e3ef76-71e1-47a9-be84-e1f1d9452193\",\n    \"declaration\": \"29a8f2cc-696c-4e64-bfae-cba99ca761e1\",\n    \"consideration\": \"312b5818-cdd3-43dc-bcf1-bb9788a88f19\",\n    \"c_nanobench\": \"x\",\n    \"c_options\": \"812fc813-effa-4183-909c-bbc4154730e3\",\n    \"planning\": \"9653cc3e-4350-4610-ad6a-fc9151856be1\",\n    \"p_nanobench\": \"x\",\n    \"p_options\": \"615f99cf-275a-42b6-bc48-405021cfaf66\"\n  },\n  {\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-R1.1-D\",\n    \"type\": \"options\",\n    \"chapter\": \"37e3ef76-71e1-47a9-be84-e1f1d9452193\",\n    \"declaration\": \"c704e5d2-7044-4415-8d52-bb621f64b9d6\",\n    \"consideration\": \"cacd776b-b531-4487-bd53-a61dd9653b12\",\n    \"c_nanobench\": \"x\",\n    \"c_options\": \"55b072f8-f2b7-4cf6-be7f-19fd48ccf069\",\n    \"planning\": \"62e4811c-2217-4de9-9266-ff38524efc8c\",\n    \"p_nanobench\": \"x\",\n    \"p_options\": \"c8a3a31e-e184-4e53-90fa-c9b6886382a5\"\n  },\n  {\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-R1.2-MD\",\n    \"type\": \"nanobench\",\n    \"chapter\": \"37e3ef76-71e1-47a9-be84-e1f1d9452193\",\n    \"declaration\": \"f6b5b347-6e01-4294-a0e3-d64382bea1e9\",\n    \"consideration\": \"53319468-f864-488c-aa6c-995f21cf9207\",\n    \"c_nanobench\": \"c88733b2-e294-419b-81bf-27206542668a\",\n    \"c_options\": \"x\",\n    \"planning\": \"72fd2469-3506-4e28-b8b3-f1049baa097f\",\n    \"p_nanobench\": \"fa4b80dc-7427-4cf6-8299-4082eb1fcd0c\",\n    \"p_options\": \"x\"\n  },\n  {\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-R1.2-D\",\n    \"type\": \"nanobench\",\n    \"chapter\": \"37e3ef76-71e1-47a9-be84-e1f1d9452193\",\n    \"declaration\": \"08aae90c-ba61-4c78-b3bd-eb92d29e8111\",\n    \"consideration\": \"b5a6c104-b267-48c8-851c-7ee603bf7838\",\n    \"c_nanobench\": \"abe255a0-7e65-4950-b2ae-47ac8ac30cc1\",\n    \"c_options\": \"x\",\n    \"planning\": \"a2ad654d-95ce-4ab0-a853-0416c1c37868\",\n    \"p_nanobench\": \"83fdf983-73d3-4b6e-a9c5-58c91de07aa4\",\n    \"p_options\": \"x\"\n  }\n] -%}\n\n{%- set communityUuid = \"1a98d12d-8716-4d0e-87ab-c7e9b4ab9527\" -%}\n{%- set communityPath = \"63eecafc-fdda-47d3-92d2-d58fad54588d.1a98d12d-8716-4d0e-87ab-c7e9b4ab9527\" -%}\n{%- set orcidPath = \"63eecafc-fdda-47d3-92d2-d58fad54588d.c9cd6f2d-d16e-4ef6-831f-a20e33290b6f\" -%}\n"
         }, 
         {
-            "uuid" : "8aaa1c33-9de4-476b-8dd2-3726d97d844d",
+            "uuid" : "4e3aa1fd-82bd-4cce-93a8-7753de883084",
             "fileName" : "content/_triples.j2",
-            "content" : "{%- import \"content/_definition.j2\" as def with context -%}\n{%- set km = ctx.knowledgeModel -%}\n{%- set replies = ctx.questionnaireReplies -%}\n\n{%- set triples = [] -%}\n\n{%- set communityReply = replies[def.communityPath].value -%}\n{%- set communityUri = [] -%}\n{%- set communityQuestion = km.entities.questions[def.communityUuid] -%}\n{%- if communityReply.type == \"PlainValue\" and communityReply.value -%}\n  {%- do communityUri.append(communityReply.value) -%}\n{%- elif communityReply.id -%}\n  {%- set integration = km.entities.integrations[communityQuestion.integrationUuid] -%}\n  {%- do communityUri.append(integration.itemUrl|replace(\"${id}\", communityReply.id)) -%}\n{%- endif -%}\n{%- set orcid = replies[def.orcidPath]|reply_str_value -%}\n\n{%- for q in def.questions -%}\n  {%- set dquestion = km.entities.questions[q[\"declaration\"]] -%}\n  {#- Comment with question text -#}\n  {%- do triples.append([dquestion.title]) -%}\n\n  {%- set declarationsPath = [q[\"chapter\"], q[\"declaration\"]]|reply_path -%}\n  {%- set declarations = replies[declarationsPath]|reply_items -%}\n  {%- for declarationUuid in declarations -%}\n    {%- set blanknode = \"_:\" ~ declarationUuid -%}\n    {%- set declarationPath = [declarationsPath, declarationUuid]|reply_path -%}\n    {#- It is a declaration -#}\n    {%- do triples.append([blanknode, \"a\", \"fip:FIP-Declaration\"]) -%}\n    {#- It related to FIP question -#}\n    {%- do triples.append([blanknode, \"fip:refers-to-question\", \"<\" ~ q[\"purl\"] ~ \">\"]) -%}\n    {#- Community making the declaration -#}\n    {%- if communityUri|length > 0 -%}\n      {%- do triples.append([blanknode, \"fip:declared-by\", \"<\" ~ communityUri[0] ~ \">\"]) -%}\n    {%- endif -%}\n    {#- Community making the declaration -#}\n    {%- set considerationsPath = [declarationPath, q[\"consideration\"]]|reply_path -%}\n    {%- set considerations = replies[considerationsPath]|reply_str_value -%}\n    {%- do triples.append([blanknode, \"fip:considerations\", considerations|tojson]) -%}\n    {#- Current: FAIRsharing -#}\n    {%- if q[\"type\"] == \"normal\" -%}\n      {%- set cfairsharingReply = replies[[declarationPath, q[\"c_fairsharing\"]]|reply_path] -%}\n      {%- if cfairsharingReply -%}\n        {%- set reply = cfairsharingReply.value -%}\n        {%- set question = km.entities.questions[q[\"c_fairsharing\"]] -%}\n        {%- if reply.type == \"PlainValue\" and reply.value -%}\n          {%- do triples.append([blanknode, \"fip:declares-current-use-of\", \"<\" ~ reply.value ~ \">\"]) -%}\n        {%- elif reply.id -%}\n          {%- set integration = km.entities.integrations[question.integrationUuid] -%}\n          {%- set url = integration.itemUrl|replace(\"${id}\", reply.id) -%}\n          {%- do triples.append([blanknode, \"fip:declares-current-use-of\", \"<\" ~ url ~ \">\"]) -%}\n        {%- endif -%}\n      {%- endif -%}\n    {%- endif -%}\n    {#- Current: Nanobench -#}\n    {%- if q[\"type\"] == \"normal\" or q[\"type\"] == \"only_nanobench\" -%}\n      {%- set cnanobenchReply = replies[[declarationPath, q[\"c_nanobench\"]]|reply_path]-%}\n      {%- if cnanobenchReply -%}\n        {%- set reply = cnanobenchReply.value -%}\n        {%- set question = km.entities.questions[q[\"c_nanobench\"]] -%}\n        {%- if reply.type == \"PlainValue\" and reply.value -%}\n          {%- do triples.append([blanknode, \"fip:declares-current-use-of\", \"<\" ~ reply.value ~ \">\"]) -%}\n        {%- elif reply.id -%}\n          {%- set integration = km.entities.integrations[question.integrationUuid] -%}\n          {%- set url = integration.itemUrl|replace(\"${id}\", reply.id) -%}\n          {%- do triples.append([blanknode, \"fip:declares-current-use-of\", \"<\" ~ url ~ \">\"]) -%}\n        {%- endif -%}\n      {%- endif -%}\n    {%- endif -%}\n    {#- Current: Options -#}\n    {%- if q[\"type\"] == \"options\" -%}\n      {%- set coptionsAnswerUuid = replies[[declarationPath, q[\"c_options\"]]|reply_path]|reply_str_value -%}\n      {%- if coptionsAnswerUuid -%}\n        {%- set answer = km.entities.answers[coptionsAnswerUuid] -%}\n        {%- set answerValue = answer.label -%}\n        {%- do triples.append([blanknode, \"fip:declares-current-use-of\", \"<\" ~ answerValue ~ \">\"]) -%}\n      {%- endif -%}\n    {%- endif -%}\n    {#- Planned (fip:declares-planned-use-of) -#}\n    {%- set plannedsPath = [declarationPath, q[\"planning\"]]|reply_path -%}\n    {%- set planneds = replies[plannedsPath]|reply_items -%}\n    {%- for plannedUuid in planneds -%}\n      {%- set plannedPath = [plannedsPath, plannedUuid]|reply_path -%}\n      {#- Planned: FAIRsharing -#}\n      {%- if q[\"type\"] == \"normal\" -%}\n        {%- set pfairsharingReply = replies[[plannedPath, q[\"p_fairsharing\"]]|reply_path] -%}\n        {%- if pfairsharingReply -%}\n          {%- set reply = pfairsharingReply.value -%}\n          {%- set question = km.entities.questions[q[\"p_fairsharing\"]] -%}\n          {%- if reply.type == \"PlainValue\" and reply.value -%}\n            {%- do triples.append([blanknode, \"fip:declares-planned-use-of\", \"<\" ~ reply.value ~ \">\"]) -%}\n          {%- elif reply.id -%}\n            {%- set integration = km.entities.integrations[question.integrationUuid] -%}\n            {%- set url = integration.itemUrl|replace(\"${id}\", reply.id) -%}\n            {%- do triples.append([blanknode, \"fip:declares-planned-use-of\", \"<\" ~ url ~ \">\"]) -%}\n          {%- endif -%}\n        {%- endif -%}\n      {%- endif -%}\n      {#- Planned: Nanobench -#}\n      {%- if q[\"type\"] == \"normal\" or q[\"type\"] == \"only_nanobench\" -%}\n        {%- set pnanobenchReply = replies[[plannedPath, q[\"p_nanobench\"]]|reply_path]-%}\n        {%- if pnanobenchReply -%}\n          {%- set reply = pnanobenchReply.value -%}\n          {%- set question = km.entities.questions[q[\"p_nanobench\"]] -%}\n          {%- if reply.type == \"PlainValue\" and reply.value -%}\n            {%- do triples.append([blanknode, \"fip:declares-planned-use-of\", \"<\" ~ reply.value ~ \">\"]) -%}\n          {%- elif reply.id -%}\n            {%- set integration = km.entities.integrations[question.integrationUuid] -%}\n            {%- set url = integration.itemUrl|replace(\"${id}\", reply.id) -%}\n            {%- do triples.append([blanknode, \"fip:declares-planned-use-of\", \"<\" ~ url ~ \">\"]) -%}\n          {%- endif -%}\n        {%- endif -%}\n      {%- endif -%}\n      {#- Planned: Options -#}\n      {%- if q[\"type\"] == \"options\" -%}\n        {%- set poptionsAnswerUuid = replies[[plannedPath, q[\"p_options\"]]|reply_path]|reply_str_value -%}\n        {%- if poptionsAnswerUuid -%}\n          {%- set answer = km.entities.answers[poptionsAnswerUuid] -%}\n          {%- set answerValue = answer.label -%}\n          {%- do triples.append([blanknode, \"fip:declares-planned-use-of\", \"<\" ~ answerValue ~ \">\"]) -%}\n        {%- endif -%}\n      {%- endif -%}\n    {%- endfor -%}\n  {%- endfor -%}\n  {%- do triples.append([\"=======================================================\"]) -%}\n{%- endfor -%}\n"
+            "content" : "{%- import \"content/_definition.j2\" as def with context -%}\n{%- set km = ctx.knowledgeModel -%}\n{%- set replies = ctx.questionnaireReplies -%}\n\n{%- set declarations = [] -%}\n\n{%- set communityReply = replies[def.communityPath] -%}\n{%- if communityReply -%}\n  {%- set reply = communityReply.value -%}\n  {%- set communityUri = [] -%}\n  {%- set communityQuestion = km.entities.questions[def.communityUuid] -%}\n  {%- if reply.type == \"PlainValue\" and reply.value -%}\n    {%- do communityUri.append(reply.value) -%}\n  {%- elif reply.id -%}\n    {%- set integration = km.entities.integrations[communityQuestion.integrationUuid] -%}\n    {%- do communityUri.append(integration.itemUrl|replace(\"${id}\", reply.id)) -%}\n  {%- endif -%}\n{%- endif -%}\n{%- set orcid = replies[def.orcidPath]|reply_str_value -%}\n\n{%- for q in def.questions -%}\n  {%- set dquestion = km.entities.questions[q[\"declaration\"]] -%}\n\n  {%- set declarationsPath = [q[\"chapter\"], q[\"declaration\"]]|reply_path -%}\n  {%- set declarationItems = replies[declarationsPath]|reply_items -%}\n  {%- for declarationUuid in declarationItems -%}\n    {#- Comment with question text -#}\n    {%- set triples = [] -%}\n    {%- do triples.append([dquestion.title]) -%}\n    {%- set node = \":declaration\" -%}\n    {%- set declarationPath = [declarationsPath, declarationUuid]|reply_path -%}\n    {#- It is a declaration -#}\n    {%- do triples.append([node, \"a\", \"fip:FIP-Declaration\"]) -%}\n    {#- It related to FIP question -#}\n    {%- do triples.append([node, \"fip:refers-to-question\", \"<\" ~ q[\"purl\"] ~ \">\"]) -%}\n    {#- Community making the declaration -#}\n    {%- if communityUri|length > 0 -%}\n      {%- do triples.append([node, \"fip:declared-by\", \"<\" ~ communityUri[0] ~ \">\"]) -%}\n    {%- endif -%}\n    {#- Community making the declaration -#}\n    {%- set considerationsPath = [declarationPath, q[\"consideration\"]]|reply_path -%}\n    {%- set considerations = replies[considerationsPath]|reply_str_value -%}\n    {%- do triples.append([node, \"fip:considerations\", considerations|tojson]) -%}\n    {#- Current: Nanobench -#}\n    {%- if q[\"type\"] == \"nanobench\" -%}\n      {%- set cnanobenchReply = replies[[declarationPath, q[\"c_nanobench\"]]|reply_path]-%}\n      {%- if cnanobenchReply -%}\n        {%- set reply = cnanobenchReply.value -%}\n        {%- set question = km.entities.questions[q[\"c_nanobench\"]] -%}\n        {%- if reply.type == \"PlainValue\" and reply.value -%}\n          {%- do triples.append([node, \"fip:declares-current-use-of\", \"<\" ~ reply.value ~ \">\"]) -%}\n        {%- elif reply.id -%}\n          {%- set integration = km.entities.integrations[question.integrationUuid] -%}\n          {%- set url = integration.itemUrl|replace(\"${id}\", reply.id) -%}\n          {%- do triples.append([node, \"fip:declares-current-use-of\", \"<\" ~ url ~ \">\"]) -%}\n        {%- endif -%}\n      {%- endif -%}\n    {%- endif -%}\n    {#- Current: Options -#}\n    {%- if q[\"type\"] == \"options\" -%}\n      {%- set coptionsAnswerUuid = replies[[declarationPath, q[\"c_options\"]]|reply_path]|reply_str_value -%}\n      {%- if coptionsAnswerUuid -%}\n        {%- set answer = km.entities.answers[coptionsAnswerUuid] -%}\n        {%- set answerValue = answer.label -%}\n        {%- do triples.append([node, \"fip:declares-current-use-of\", \"<\" ~ answerValue ~ \">\"]) -%}\n      {%- endif -%}\n    {%- endif -%}\n    {#- Planned (fip:declares-planned-use-of) -#}\n    {%- set plannedsPath = [declarationPath, q[\"planning\"]]|reply_path -%}\n    {%- set planneds = replies[plannedsPath]|reply_items -%}\n    {%- for plannedUuid in planneds -%}\n      {%- set plannedPath = [plannedsPath, plannedUuid]|reply_path -%}\n      {#- Planned: Nanobench -#}\n      {%- if q[\"type\"] == \"nanobench\" -%}\n        {%- set pnanobenchReply = replies[[plannedPath, q[\"p_nanobench\"]]|reply_path]-%}\n        {%- if pnanobenchReply -%}\n          {%- set reply = pnanobenchReply.value -%}\n          {%- set question = km.entities.questions[q[\"p_nanobench\"]] -%}\n          {%- if reply.type == \"PlainValue\" and reply.value -%}\n            {%- do triples.append([node, \"fip:declares-planned-use-of\", \"<\" ~ reply.value ~ \">\"]) -%}\n          {%- elif reply.id -%}\n            {%- set integration = km.entities.integrations[question.integrationUuid] -%}\n            {%- set url = integration.itemUrl|replace(\"${id}\", reply.id) -%}\n            {%- do triples.append([node, \"fip:declares-planned-use-of\", \"<\" ~ url ~ \">\"]) -%}\n          {%- endif -%}\n        {%- endif -%}\n      {%- endif -%}\n      {#- Planned: Options -#}\n      {%- if q[\"type\"] == \"options\" -%}\n        {%- set poptionsAnswerUuid = replies[[plannedPath, q[\"p_options\"]]|reply_path]|reply_str_value -%}\n        {%- if poptionsAnswerUuid -%}\n          {%- set answer = km.entities.answers[poptionsAnswerUuid] -%}\n          {%- set answerValue = answer.label -%}\n          {%- do triples.append([node, \"fip:declares-planned-use-of\", \"<\" ~ answerValue ~ \">\"]) -%}\n        {%- endif -%}\n      {%- endif -%}\n    {%- endfor -%}\n\n    {%- set declaration = {\n      \"uuid\": declarationUuid,\n      \"triples\": triples\n    } -%}\n    {%- do declarations.append(declaration) -%}\n  {%- endfor -%}\n{%- endfor -%}\n"
         }
     ],
     "assets" : [],
-    "createdAt" : ISODate("2020-09-30T06:58:50.163Z")
+    "createdAt" : ISODate("2020-10-06T19:11:05.636Z")
 })
 
 // ----------------------------------------------------------------------------------------------------

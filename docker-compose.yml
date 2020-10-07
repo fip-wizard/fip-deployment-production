@@ -77,7 +77,7 @@ services:
       - ./allegrograph/agraph.cfg:/agraph/etc/agraph.cfg
 
   submission_service:
-    image: datastewardshipwizard/triple-store-submission-service:develop  # TODO: will be 1.2.0 probably
+    image: datastewardshipwizard/triple-store-submission-service:1.2.0
     restart: always
     hostname: submission_service
     volumes:
