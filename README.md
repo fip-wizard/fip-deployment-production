@@ -2,7 +2,7 @@
 
 **‼ More information can be found in the [documentation 📕](https://fip-wizard.readthedocs.org)**
 
-This is an example deployment of FIP Wizard ready for a production usage. It contains preconfigured [Data Stewardship Wizard](https://ds-wizard.org) (DSW) togeher with templates.
+This is an example deployment of FIP Wizard ready for a production usage. It contains preconfigured [Data Stewardship Wizard](https://ds-wizard.org) (DSW) together with templates.
 
 If you want to try it on your local machine, please use [the basic deployment configuration](https://github.com/fip-wizard/fip-deployment-basic).
 

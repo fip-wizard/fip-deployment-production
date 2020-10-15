@@ -36,7 +36,7 @@ db.getCollection('appConfigs').insert(
             {
                 "icon" : "fas fa-plus-square",
                 "title" : "Create a FIP",
-                "url" : "/projects/create?selected=gofair:fip-wizard:4.3.2",
+                "url" : "/fips/create?selected=gofair:fip-wizard:5.0.6",
                 "newWindow" : false
             }
         ],
@@ -48,7 +48,7 @@ db.getCollection('appConfigs').insert(
     },
     "questionnaire" : {
         "levels" : {
-            "enabled" : false
+            "enabled" : true
         },
         "feedback" : {
             "enabled" : false,
@@ -80,7 +80,7 @@ db.getCollection('appConfigs').insert(
                 "props" : [],
                 "supportedFormats" : [
                     {
-                        "templateId" : "gofair:fip-nanopub:1.0.0",
+                        "templateId" : "gofair:fip-nanopub:1.1.0",
                         "formatUuid" : "9c7d572e-c273-4323-97a4-ab38f943c33a"
                     }
                 ],
@@ -99,7 +99,7 @@ db.getCollection('appConfigs').insert(
         ]
     },
     "template" : {
-        "recommendedTemplateId" : "gofair:fip-nanopub:1.0.0"
+        "recommendedTemplateId" : "gofair:fip-nanopub:1.1.0"
     }
 })
 
@@ -27662,8 +27662,7660 @@ db.getCollection("packages").insertMany([
         }
     ],
     "createdAt" : ISODate("2020-10-04T23:02:35.099Z")
-}
+},
 
+{
+    "id" : "gofair:fip-wizard:4.3.3",
+    "name" : "FIP Wizard",
+    "organizationId" : "gofair",
+    "kmId" : "fip-wizard",
+    "version" : "4.3.3",
+    "metamodelVersion" : 5,
+    "description" : "Questionnaire prompting Communities committed to implementation of the FAIR Principles to explicitly declare their FAIR implementation choices (the output of the Wizard is a community-specific FAIR Implementation Profile, or FIP).",
+    "readme" : "# FIP Questionnaire\n\nThe FIP questionnaire prompts communities to explicitly declare their FAIR Implementation Profiles.\n\nThis knowledge model has been created under the [GO FAIR Convergence Matrix Project](https://www.go-fair.org/today/fair-matrix). For more information, visit the [3-point FAIRification Framework](https://www.go-fair.org/how-to-go-fair/).\n\nThis knowledge model can be used in any DSW instance for testing and training purposes, however, please fill-in your actual FIPs in the **[FIP Wizard](https://fair-matrix.ds-wizard.org)** to share them with the community. Please report any issues and comments there.",
+    "license" : "Apache-2.0",
+    "previousPackageId" : "gofair:fip-wizard:4.3.2",
+    "forkOfPackageId" : "gofair:fair-convergence-matrix:3.0.0",
+    "mergeCheckpointPackageId" : "gofair:fair-convergence-matrix:3.0.0",
+    "events" : [ 
+        {
+            "eventType" : "AddIntegrationEvent",
+            "uuid" : "0685f0db-a054-445f-98ed-2cd508a1e00b",
+            "parentUuid" : "4c357734-268e-448e-9738-e44f5197da5a",
+            "entityUuid" : "0176f120-6389-4f94-9fe3-65fea671e272",
+            "id" : "wikidata",
+            "name" : "Wikidata",
+            "props" : [],
+            "logo" : "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Wikidata-logo-en.svg/320px-Wikidata-logo-en.svg.png",
+            "requestMethod" : "GET",
+            "requestUrl" : "https://www.wikidata.org/w/api.php?action=wbsearchentities&language=en&format=json&limit=10&search=+${keyword}+${q}",
+            "requestHeaders" : {
+                "Accept" : "application/json"
+            },
+            "requestBody" : "",
+            "responseListField" : "search",
+            "responseIdField" : "concepturi",
+            "responseNameField" : "label",
+            "itemUrl" : "${id}"
+        }
+    ],
+    "createdAt" : ISODate("2020-10-09T18:53:09.508Z")
+},
+
+{
+    "id" : "gofair:fip-wizard:4.3.4",
+    "name" : "FIP Wizard",
+    "organizationId" : "gofair",
+    "kmId" : "fip-wizard",
+    "version" : "4.3.4",
+    "metamodelVersion" : 5,
+    "description" : "Questionnaire prompting Communities committed to implementation of the FAIR Principles to explicitly declare their FAIR implementation choices (the output of the Wizard is a community-specific FAIR Implementation Profile, or FIP).",
+    "readme" : "# FIP Questionnaire\n\nThe FIP questionnaire prompts communities to explicitly declare their FAIR Implementation Profiles.\n\nThis knowledge model has been created under the [GO FAIR Convergence Matrix Project](https://www.go-fair.org/today/fair-matrix). For more information, visit the [3-point FAIRification Framework](https://www.go-fair.org/how-to-go-fair/).\n\nThis knowledge model can be used in any DSW instance for testing and training purposes, however, please fill-in your actual FIPs in the **[FIP Wizard](https://fair-matrix.ds-wizard.org)** to share them with the community. Please report any issues and comments there.",
+    "license" : "Apache-2.0",
+    "previousPackageId" : "gofair:fip-wizard:4.3.3",
+    "forkOfPackageId" : "gofair:fair-convergence-matrix:3.0.0",
+    "mergeCheckpointPackageId" : "gofair:fair-convergence-matrix:3.0.0",
+    "events" : [ 
+        {
+            "eventType" : "AddQuestionEvent",
+            "questionType" : "OptionsQuestion",
+            "uuid" : "e264aa49-5e25-43aa-9d1f-63f00de66965",
+            "parentUuid" : "6a812ff5-a202-40d4-bd3b-02b341512e48",
+            "entityUuid" : "7a128d7c-22fe-47c8-b8cd-6672aafc2178",
+            "title" : "Choose your resource from WikiData",
+            "text" : null,
+            "requiredLevel" : null,
+            "tagUuids" : []
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "c58f43d2-b4de-4bf1-94e1-ce2c1c94c1f8",
+            "parentUuid" : "6a812ff5-a202-40d4-bd3b-02b341512e48",
+            "entityUuid" : "7a128d7c-22fe-47c8-b8cd-6672aafc2178",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "integrationUuid" : {
+                "changed" : true,
+                "value" : "0176f120-6389-4f94-9fe3-65fea671e272"
+            },
+            "props" : {
+                "changed" : true,
+                "value" : {}
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "b733a5ce-61bd-4752-8bcf-c0422d8e4b03",
+            "parentUuid" : "e3301b05-b02d-4c09-bb4b-7fb181414236",
+            "entityUuid" : "6a812ff5-a202-40d4-bd3b-02b341512e48",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : true,
+                "value" : [ 
+                    "6318940e-d311-4102-836e-77dc0f2838f1", 
+                    "7a128d7c-22fe-47c8-b8cd-6672aafc2178", 
+                    "2a880dab-4f2f-4ab5-aefe-ce4942542a37", 
+                    "47d618c6-568e-4112-b66a-339661bfc7fc"
+                ]
+            }
+        }, 
+        {
+            "eventType" : "AddQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "17ba4f3a-c4a7-488d-9202-fb7cb62805cf",
+            "parentUuid" : "47d618c6-568e-4112-b66a-339661bfc7fc",
+            "entityUuid" : "a3096bd9-89ef-4ecf-a979-e1c52ae2e4a4",
+            "title" : "Choose your resource from Wikidata",
+            "text" : null,
+            "requiredLevel" : null,
+            "tagUuids" : [],
+            "integrationUuid" : "0176f120-6389-4f94-9fe3-65fea671e272",
+            "props" : {}
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "e12b9b43-b454-415c-bcf5-1677b814d53e",
+            "parentUuid" : "6a812ff5-a202-40d4-bd3b-02b341512e48",
+            "entityUuid" : "47d618c6-568e-4112-b66a-339661bfc7fc",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : true,
+                "value" : [ 
+                    "a3096bd9-89ef-4ecf-a979-e1c52ae2e4a4", 
+                    "86205ba5-2016-4a4c-a3bf-d0aea015fec5"
+                ]
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "13e5eed0-6f4f-4da6-b1c7-ad0465a6aeb1",
+            "parentUuid" : "6a812ff5-a202-40d4-bd3b-02b341512e48",
+            "entityUuid" : "47d618c6-568e-4112-b66a-339661bfc7fc",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "It might be the case that you are using a specific resource at this moment but that there are plans to move to another resource in the future. If you already know which resource this is you can add it here. The resource can be an already available one or a resource to be developed. For existing resources please check first in Wikidata before you create a resource via Nanobench. For resources to be developed, you are asked to create a nanopublication. "
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "3c0ae5d7-cca4-4730-803f-77689c9ab44c",
+            "parentUuid" : "e3301b05-b02d-4c09-bb4b-7fb181414236",
+            "entityUuid" : "6a812ff5-a202-40d4-bd3b-02b341512e48",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Different identifier service providers offer different kinds of resolution services impacting F2 and I. One example would be a Digital Object Identifier (DOI). Please choose your resource first from WikiData and if you can't find it there, check existing resources from Nanobench and enter any considerations you may have. If you cannot find your resource, please register the resource as a nanopublication in Nanobench first (see the end of this questionnaire) and come back to this question afterwards to answer it fully."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }
+    ],
+    "createdAt" : ISODate("2020-10-11T15:15:32.729Z")
+},
+
+{
+    "id" : "gofair:fip-wizard:4.3.5",
+    "name" : "FIP Wizard",
+    "organizationId" : "gofair",
+    "kmId" : "fip-wizard",
+    "version" : "4.3.5",
+    "metamodelVersion" : 5,
+    "description" : "Questionnaire prompting Communities committed to implementation of the FAIR Principles to explicitly declare their FAIR implementation choices (the output of the Wizard is a community-specific FAIR Implementation Profile, or FIP).",
+    "readme" : "# FIP Questionnaire\n\nThe FIP questionnaire prompts communities to explicitly declare their FAIR Implementation Profiles.\n\nThis knowledge model has been created under the [GO FAIR Convergence Matrix Project](https://www.go-fair.org/today/fair-matrix). For more information, visit the [3-point FAIRification Framework](https://www.go-fair.org/how-to-go-fair/).\n\nThis knowledge model can be used in any DSW instance for testing and training purposes, however, please fill-in your actual FIPs in the **[FIP Wizard](https://fair-matrix.ds-wizard.org)** to share them with the community. Please report any issues and comments there.",
+    "license" : "Apache-2.0",
+    "previousPackageId" : "gofair:fip-wizard:4.3.4",
+    "forkOfPackageId" : "gofair:fair-convergence-matrix:3.0.0",
+    "mergeCheckpointPackageId" : "gofair:fair-convergence-matrix:3.0.0",
+    "events" : [ 
+        {
+            "eventType" : "EditChapterEvent",
+            "uuid" : "befd7dd2-72bf-446d-acc6-3aa95a91dca8",
+            "parentUuid" : "4c357734-268e-448e-9738-e44f5197da5a",
+            "entityUuid" : "0d6d8772-7604-4835-9fe1-735ff9eb63fa",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "The FAR Implementation Profile (FIP) is a collection of FAIR implementation choices made by a FAIR Implementation Community for each of the FAIR Principles. Community-specific FIPs are themselves captured as FAIR datasets and are made openly available to other communities for reuse. To create a FIP, the data steward of a community needs to fill out this questionnaire where the implementation choices are recorded as resources. The questionnaire is structured as follows: the first section is about the FAIR Implementation Community, which is then followed by a number of questions per FAIR principle. The answer to each of the questions should be a FAIR-enabling resource. The questionnaire offers to look up the resource in Nanobench. If the resource cannot be found in any of these applications, there is an option at the end of the questionnaire to register a FAIR-enabling resource as a nanopublication in Nanobench. The resource will get a PURL which can then directly be used when further filling out the questionnaire. When the questionnaire is filled in, the FIP is considered to be the implementation of R1.3, which is why there is no separate question addressing this subprinciple."
+            },
+            "questionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditChapterEvent",
+            "uuid" : "8b752024-9222-452c-9cb2-26b8909565e2",
+            "parentUuid" : "4c357734-268e-448e-9738-e44f5197da5a",
+            "entityUuid" : "0d6d8772-7604-4835-9fe1-735ff9eb63fa",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "The FAIR Implementation Profile (FIP) is a collection of FAIR implementation choices made by a FAIR Implementation Community for each of the FAIR Principles. Community-specific FIPs are themselves captured as FAIR datasets and are made openly available to other communities for reuse. To create a FIP, the data steward of a community needs to fill out this questionnaire where the implementation choices are recorded as resources. The questionnaire is structured as follows: the first section is about the FAIR Implementation Community, which is then followed by a number of questions per FAIR principle. The answer to each of the questions should be a FAIR-enabling resource. The questionnaire offers to look up the resource in Nanobench. If the resource cannot be found in any of these applications, there is an option at the end of the questionnaire to register a FAIR-enabling resource as a nanopublication in Nanobench. The resource will get a PURL which can then directly be used when further filling out the questionnaire. When the questionnaire is filled in, the FIP is considered to be the implementation of R1.3, which is why there is no separate question addressing this subprinciple."
+            },
+            "questionUuids" : {
+                "changed" : false
+            }
+        }
+    ],
+    "createdAt" : ISODate("2020-10-11T15:51:55.147Z")
+},
+
+{
+    "id" : "gofair:fip-wizard:4.3.6",
+    "name" : "FIP Wizard",
+    "organizationId" : "gofair",
+    "kmId" : "fip-wizard",
+    "version" : "4.3.6",
+    "metamodelVersion" : 5,
+    "description" : "Questionnaire prompting Communities committed to implementation of the FAIR Principles to explicitly declare their FAIR implementation choices (the output of the Wizard is a community-specific FAIR Implementation Profile, or FIP).",
+    "readme" : "# FIP Questionnaire\n\nThe FIP questionnaire prompts communities to explicitly declare their FAIR Implementation Profiles.\n\nThis knowledge model has been created under the [GO FAIR Convergence Matrix Project](https://www.go-fair.org/today/fair-matrix). For more information, visit the [3-point FAIRification Framework](https://www.go-fair.org/how-to-go-fair/).\n\nThis knowledge model can be used in any DSW instance for testing and training purposes, however, please fill-in your actual FIPs in the **[FIP Wizard](https://fair-matrix.ds-wizard.org)** to share them with the community. Please report any issues and comments there.",
+    "license" : "Apache-2.0",
+    "previousPackageId" : "gofair:fip-wizard:4.3.5",
+    "forkOfPackageId" : "gofair:fair-convergence-matrix:3.0.0",
+    "mergeCheckpointPackageId" : "gofair:fair-convergence-matrix:3.0.0",
+    "events" : [ 
+        {
+            "eventType" : "EditIntegrationEvent",
+            "uuid" : "95a07df7-7b9a-4af6-b645-9dd90070ef71",
+            "parentUuid" : "4c357734-268e-448e-9738-e44f5197da5a",
+            "entityUuid" : "0176f120-6389-4f94-9fe3-65fea671e272",
+            "id" : {
+                "changed" : false
+            },
+            "name" : {
+                "changed" : false
+            },
+            "props" : {
+                "changed" : true,
+                "value" : [ 
+                    "keyword"
+                ]
+            },
+            "logo" : {
+                "changed" : false
+            },
+            "requestMethod" : {
+                "changed" : false
+            },
+            "requestUrl" : {
+                "changed" : false
+            },
+            "requestHeaders" : {
+                "changed" : false
+            },
+            "requestBody" : {
+                "changed" : false
+            },
+            "responseListField" : {
+                "changed" : false
+            },
+            "responseIdField" : {
+                "changed" : false
+            },
+            "responseNameField" : {
+                "changed" : false
+            },
+            "itemUrl" : {
+                "changed" : false
+            }
+        }
+    ],
+    "createdAt" : ISODate("2020-10-11T16:05:02.229Z")
+},
+
+{
+    "id" : "gofair:fip-wizard:4.3.7",
+    "name" : "FIP Wizard",
+    "organizationId" : "gofair",
+    "kmId" : "fip-wizard",
+    "version" : "4.3.7",
+    "metamodelVersion" : 5,
+    "description" : "Questionnaire prompting Communities committed to implementation of the FAIR Principles to explicitly declare their FAIR implementation choices (the output of the Wizard is a community-specific FAIR Implementation Profile, or FIP).",
+    "readme" : "# FIP Questionnaire\n\nThe FIP questionnaire prompts communities to explicitly declare their FAIR Implementation Profiles.\n\nThis knowledge model has been created under the [GO FAIR Convergence Matrix Project](https://www.go-fair.org/today/fair-matrix). For more information, visit the [3-point FAIRification Framework](https://www.go-fair.org/how-to-go-fair/).\n\nThis knowledge model can be used in any DSW instance for testing and training purposes, however, please fill-in your actual FIPs in the **[FIP Wizard](https://fair-matrix.ds-wizard.org)** to share them with the community. Please report any issues and comments there.",
+    "license" : "Apache-2.0",
+    "previousPackageId" : "gofair:fip-wizard:4.3.6",
+    "forkOfPackageId" : "gofair:fair-convergence-matrix:3.0.0",
+    "mergeCheckpointPackageId" : "gofair:fair-convergence-matrix:3.0.0",
+    "events" : [ 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "45cc6904-af78-4635-aff7-2b378905d3bd",
+            "parentUuid" : "6a812ff5-a202-40d4-bd3b-02b341512e48",
+            "entityUuid" : "7a128d7c-22fe-47c8-b8cd-6672aafc2178",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : true,
+                "value" : 2
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "integrationUuid" : {
+                "changed" : false
+            },
+            "props" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "410610cf-7d55-42f7-a252-65d021d6a25e",
+            "parentUuid" : "6a812ff5-a202-40d4-bd3b-02b341512e48",
+            "entityUuid" : "7a128d7c-22fe-47c8-b8cd-6672aafc2178",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : true,
+                "value" : null
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "integrationUuid" : {
+                "changed" : false
+            },
+            "props" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "818e90e7-986c-4818-8a49-fa4230dde927",
+            "parentUuid" : "6a812ff5-a202-40d4-bd3b-02b341512e48",
+            "entityUuid" : "7a128d7c-22fe-47c8-b8cd-6672aafc2178",
+            "title" : {
+                "changed" : true,
+                "value" : "Choose an available resource from WikiData"
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "integrationUuid" : {
+                "changed" : false
+            },
+            "props" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "b237d66b-0af0-43a2-a1f9-e90674134cdc",
+            "parentUuid" : "6a812ff5-a202-40d4-bd3b-02b341512e48",
+            "entityUuid" : "2a880dab-4f2f-4ab5-aefe-ce4942542a37",
+            "title" : {
+                "changed" : true,
+                "value" : "Choose an available resource from Nanobench"
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "integrationUuid" : {
+                "changed" : false
+            },
+            "props" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "683626ab-9ca3-451b-9aa0-ef2413353707",
+            "parentUuid" : "47d618c6-568e-4112-b66a-339661bfc7fc",
+            "entityUuid" : "a3096bd9-89ef-4ecf-a979-e1c52ae2e4a4",
+            "title" : {
+                "changed" : true,
+                "value" : "Choose an available resource from Wikidata"
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "integrationUuid" : {
+                "changed" : false
+            },
+            "props" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "8e6fd664-422e-4c08-97cc-dd63475c2ddb",
+            "parentUuid" : "47d618c6-568e-4112-b66a-339661bfc7fc",
+            "entityUuid" : "86205ba5-2016-4a4c-a3bf-d0aea015fec5",
+            "title" : {
+                "changed" : true,
+                "value" : "Choose an available resource (or a resource to be developed) from Nanobench"
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "integrationUuid" : {
+                "changed" : false
+            },
+            "props" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "e45cb97a-1bc6-450c-ad8d-42562c9bfc18",
+            "parentUuid" : "e3301b05-b02d-4c09-bb4b-7fb181414236",
+            "entityUuid" : "6a812ff5-a202-40d4-bd3b-02b341512e48",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Different identifier service providers offer different kinds of resolution services impacting F2 and I. One example would be a Digital Object Identifier (DOI). \nTo answer this question, please follow this order:\n\n 1. _Considerations_: Please add any comments about the reasons why your community chose to use this resource\n 2. _Wikidata_: Check for existing resources from Wikidata (by typing in that field a keyword and clicking enter, you should find related resources), if not found there\n 3. _Nanobench_: Check for existing resources from Nanobench (by clicking in that field, available resources will pop up), and if not found\n 4. Register this resource in Nanobench (go to_ chapter VII_ ) and\n 5. then go back to this question (_Nanobench_) to look up for the newly created resource\n"
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "6eb93915-fea0-49e6-b728-b309db3d8601",
+            "parentUuid" : "6a812ff5-a202-40d4-bd3b-02b341512e48",
+            "entityUuid" : "47d618c6-568e-4112-b66a-339661bfc7fc",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "It might be the case that you are using a specific resource at this moment but that there are plans to move to another resource in the future. If you already know which resource this is you can add it here. The resource can be an already available one or a resource to be developed. \n\nTo answer this question for **existing resources**, please follow this order:\n 1. _Wikidata_: Check for existing resources from Wikidata (by typing in that field a keyword and clicking enter, you should find related resources), if not found there\n 2. _Nanobench_: Check for existing resources from Nanobench (by clicking in that field, available resources will pop up), and if not found\n 3. Register this resource in Nanobench (go to _chapter VII_ ) and\n 4. then go back to this question (_Nanobench_) to look up for the newly created resource\n\nTo answer this question for **resources to be developed**, please follow this order:\n 1. Go to _chapter VII_ to register the resource your community or somebody else wants to develop\n 2. Go to _Nanobench_ to look up for a the newly created resource\n"
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }
+    ],
+    "createdAt" : ISODate("2020-10-13T06:34:55.089Z")
+},
+
+{
+    "id" : "gofair:fip-wizard:4.3.8",
+    "name" : "FIP Wizard",
+    "organizationId" : "gofair",
+    "kmId" : "fip-wizard",
+    "version" : "4.3.8",
+    "metamodelVersion" : 5,
+    "description" : "Questionnaire prompting Communities committed to implementation of the FAIR Principles to explicitly declare their FAIR implementation choices (the output of the Wizard is a community-specific FAIR Implementation Profile, or FIP).",
+    "readme" : "# FIP Questionnaire\n\nThe FIP questionnaire prompts communities to explicitly declare their FAIR Implementation Profiles.\n\nThis knowledge model has been created under the [GO FAIR Convergence Matrix Project](https://www.go-fair.org/today/fair-matrix). For more information, visit the [3-point FAIRification Framework](https://www.go-fair.org/how-to-go-fair/).\n\nThis knowledge model can be used in any DSW instance for testing and training purposes, however, please fill-in your actual FIPs in the **[FIP Wizard](https://fair-matrix.ds-wizard.org)** to share them with the community. Please report any issues and comments there.",
+    "license" : "Apache-2.0",
+    "previousPackageId" : "gofair:fip-wizard:4.3.7",
+    "forkOfPackageId" : "gofair:fair-convergence-matrix:3.0.0",
+    "mergeCheckpointPackageId" : "gofair:fair-convergence-matrix:3.0.0",
+    "events" : [ 
+        {
+            "eventType" : "EditChapterEvent",
+            "uuid" : "17e8959b-0a4a-411a-b29b-99b96c0d6549",
+            "parentUuid" : "4c357734-268e-448e-9738-e44f5197da5a",
+            "entityUuid" : "e3301b05-b02d-4c09-bb4b-7fb181414236",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "questionUuids" : {
+                "changed" : true,
+                "value" : [ 
+                    "6a812ff5-a202-40d4-bd3b-02b341512e48", 
+                    "797c4af8-0184-43cf-b40c-e2608b7b4d0a", 
+                    "808310c5-7321-4789-aa97-80f4c7ac9fa8", 
+                    "faeab073-3569-4bca-a804-c81c0de04a95", 
+                    "a50aa1e1-68a9-4e36-bdb6-4a4c5a3d902a", 
+                    "5f33c2e8-8b95-435c-870a-fd97d91ff8da"
+                ]
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "62f6fcf4-7fa4-4c4b-a58a-75c1aa32e158",
+            "parentUuid" : "e3301b05-b02d-4c09-bb4b-7fb181414236",
+            "entityUuid" : "6a812ff5-a202-40d4-bd3b-02b341512e48",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Different identifier service providers offer different kinds of resolution services impacting F2 and I. One example would be a Digital Object Identifier (DOI). \nTo answer this question, please follow this order:\n\n 1. _Consideration_: Please add any comments about the reasons why your community chose to use this resource\n 2. _Wikidata_: Check for existing resources from Wikidata (by typing in that field a keyword and clicking enter, you should find related resources), if not found there\n 3. _Nanobench_: Check for existing resources from Nanobench (by clicking in that field, available resources will pop up), and if not found\n 4. Register this resource in Nanobench (go to_ chapter VII_ ) and\n 5. then go back to this question (_Nanobench_) to look up for the newly created resource\n"
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }
+    ],
+    "createdAt" : ISODate("2020-10-13T06:37:38.383Z")
+},
+
+{
+    "id" : "gofair:fip-wizard:4.3.9",
+    "name" : "FIP Wizard",
+    "organizationId" : "gofair",
+    "kmId" : "fip-wizard",
+    "version" : "4.3.9",
+    "metamodelVersion" : 5,
+    "description" : "Questionnaire prompting Communities committed to implementation of the FAIR Principles to explicitly declare their FAIR implementation choices (the output of the Wizard is a community-specific FAIR Implementation Profile, or FIP).",
+    "readme" : "# FIP Questionnaire\n\nThe FIP questionnaire prompts communities to explicitly declare their FAIR Implementation Profiles.\n\nThis knowledge model has been created under the [GO FAIR Convergence Matrix Project](https://www.go-fair.org/today/fair-matrix). For more information, visit the [3-point FAIRification Framework](https://www.go-fair.org/how-to-go-fair/).\n\nThis knowledge model can be used in any DSW instance for testing and training purposes, however, please fill-in your actual FIPs in the **[FIP Wizard](https://fair-matrix.ds-wizard.org)** to share them with the community. Please report any issues and comments there.",
+    "license" : "Apache-2.0",
+    "previousPackageId" : "gofair:fip-wizard:4.3.8",
+    "forkOfPackageId" : "gofair:fair-convergence-matrix:3.0.0",
+    "mergeCheckpointPackageId" : "gofair:fair-convergence-matrix:3.0.0",
+    "events" : [ 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "ee8b16b9-cfb5-4047-8fd2-daaae7530ddd",
+            "parentUuid" : "e3301b05-b02d-4c09-bb4b-7fb181414236",
+            "entityUuid" : "6a812ff5-a202-40d4-bd3b-02b341512e48",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Different identifier service providers offer different kinds of resolution services impacting F2 and I. One example would be a Digital Object Identifier (DOI). \nTo answer this question, please follow this order:\n\n 1. _Consideration_: Please add any comments about the reasons why your community chose to use this resource\n 2. _Wikidata_: Check for existing resources from Wikidata (by typing in that field a keyword and clicking enter, you should find related resources), if not found there\n 3. _Nanobench_: Check for existing resources from Nanobench (by clicking in that field, available resources will pop up), and if not found\n 4. Register this resource in Nanobench (go to_ chapter VII_ ) and\n 5. then go back to this question (_Nanobench_) to look up for the newly created resource\n\nIf you want to add an additional resource please make sure to click on the add button below this section.\n"
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "a6f87beb-7d08-4115-9d6c-6daae35fc477",
+            "parentUuid" : "e3301b05-b02d-4c09-bb4b-7fb181414236",
+            "entityUuid" : "6a812ff5-a202-40d4-bd3b-02b341512e48",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Different identifier service providers offer different kinds of resolution services impacting F2 and I. One example would be a Digital Object Identifier (DOI). \nTo answer this question **for one resource at a time**, please follow this order:\n\n 1. _Consideration_: Please add any comments about the reasons why your community chose to use this resource\n 2. _Wikidata_: Check for existing resources from Wikidata (by typing in that field a keyword and clicking enter, you should find related resources), if not found there\n 3. _Nanobench_: Check for existing resources from Nanobench (by clicking in that field, available resources will pop up), and if not found\n 4. Register this resource in Nanobench (go to_ chapter VII_ ) and\n 5. then go back to this question (_Nanobench_) to look up for the newly created resource\n\nIf you want to **add an additional resource** please make sure to click on the add button below this section outside the grey area.\n"
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "f7af3c10-af60-42b3-a96f-2ee3c9a02441",
+            "parentUuid" : "6a812ff5-a202-40d4-bd3b-02b341512e48",
+            "entityUuid" : "47d618c6-568e-4112-b66a-339661bfc7fc",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "It might be the case that you are using a specific resource at this moment but that there are plans to move to another resource in the future. If you already know which resource this is you can add it here. The resource can be an already available one or a resource to be developed. \n\nTo answer this question for **one existing resource at a time**, please follow this order:\n 1. _Wikidata_: Check for existing resources from Wikidata (by typing in that field a keyword and clicking enter, you should find related resources), if not found there\n 2. _Nanobench_: Check for existing resources from Nanobench (by clicking in that field, available resources will pop up), and if not found\n 3. Register this resource in Nanobench (go to _chapter VII_ ) and\n 4. then go back to this question (_Nanobench_) to look up for the newly created resource\n\nTo answer this question for **resources to be developed**, please follow this order:\n 1. Go to _chapter VII_ to register the resource your community or somebody else wants to develop\n 2. Go to _Nanobench_ to look up for a the newly created resource\n"
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "7db03828-7170-46ba-b461-5cf0b1330384",
+            "parentUuid" : "6a812ff5-a202-40d4-bd3b-02b341512e48",
+            "entityUuid" : "47d618c6-568e-4112-b66a-339661bfc7fc",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "It might be the case that you are using a specific resource at this moment but that there are plans to move to another resource in the future. If you already know which resource this is you can add it here. The resource can be an already available one or a resource to be developed. \n\nTo answer this question for **one existing resource at a time**, please follow this order:\n 1. _Wikidata_: Check for existing resources from Wikidata (by typing in that field a keyword and clicking enter, you should find related resources), if not found there\n 2. _Nanobench_: Check for existing resources from Nanobench (by clicking in that field, available resources will pop up), and if not found\n 3. Register this resource in Nanobench (go to _chapter VII_ ) and\n 4. then go back to this question (_Nanobench_) to look up for the newly created resource\n\nTo answer this question for ** one resource to be developed**, please follow this order:\n 1. Go to _chapter VII_ to register the resource your community or somebody else wants to develop\n 2. Go to _Nanobench_ to look up for the newly created resource\n"
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "8cb92cbc-e74a-4ad6-a315-4089318939f9",
+            "parentUuid" : "e3301b05-b02d-4c09-bb4b-7fb181414236",
+            "entityUuid" : "6a812ff5-a202-40d4-bd3b-02b341512e48",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Different identifier service providers offer different kinds of resolution services impacting F2 and I. One example would be a Digital Object Identifier (DOI). \nTo answer this question **for one existing resource at a time**, please follow this order:\n\n 1. _Consideration_: Please add any comments about the reasons why your community chose to use this resource\n 2. _Wikidata_: Check for existing resources from Wikidata (by typing in that field a keyword and clicking enter, you should find related resources), if not found there\n 3. _Nanobench_: Check for existing resources from Nanobench (by clicking in that field, available resources will pop up), and if not found\n 4. Register this resource in Nanobench (go to_ chapter VII_ ) and\n 5. then go back to this question (_Nanobench_) to look up for the newly created resource\n\nIf you want to **add an additional resource** please make sure to click on the add button below this section outside the grey area.\n"
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "676683dc-e40c-4319-bd56-7996fbd68a59",
+            "parentUuid" : "6a812ff5-a202-40d4-bd3b-02b341512e48",
+            "entityUuid" : "47d618c6-568e-4112-b66a-339661bfc7fc",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "It might be the case that you are using a specific resource at this moment but that there are plans to move to another resource in the future. If you already know which resource this is you can add it here. The resource can be an already available one or a resource to be developed. \n\nTo answer this question for **one existing resource at a time**, please follow this order:\n 1. _Wikidata_: Check for existing resources from Wikidata (by typing in that field a keyword and clicking enter, you should find related resources), if not found there\n 2. _Nanobench_: Check for existing resources from Nanobench (by clicking in that field, available resources will pop up), and if not found\n 3. Register this resource in Nanobench (go to _chapter VII_ ) and\n 4. then go back to this question (_Nanobench_) to look up for the newly created resource\n\nTo answer this question for ** one resource to be developed**, please follow this order:\n 1. Go to _chapter VII_ to register the resource your community or somebody else wants to develop\n 2. Go to _Nanobench_ to look up for the newly created resource\n\nIf you want to **add an additional resource** please make sure to click on the add button below this section outside the grey area.\n"
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "c59b51f0-193b-4dbd-beb4-08ffbd1febb3",
+            "parentUuid" : "6a812ff5-a202-40d4-bd3b-02b341512e48",
+            "entityUuid" : "47d618c6-568e-4112-b66a-339661bfc7fc",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "It might be the case that you are using a specific resource at this moment but that there are plans to move to another resource in the future. If you already know which resource this is you can add it here. The resource can be an already available one or a resource to be developed. \n\nTo answer this question for **one existing resource at a time**, please follow this order:\n 1. _Wikidata_: Check for existing resources from Wikidata (by typing in that field a keyword and clicking enter, you should find related resources), if not found there\n 2. _Nanobench_: Check for existing resources from Nanobench (by clicking in that field, available resources will pop up), and if not found\n 3. Register this resource in Nanobench (go to _chapter VII_ ) and\n 4. then go back to this question (_Nanobench_) to look up for the newly created resource\n\nTo answer this question for ** one resource to be developed**, please follow this order:\n 1. Go to _chapter VII_ to register the resource your community or somebody else wants to develop\n 2. Go to _Nanobench_ to look up for the newly created resource\n\nIf you want to **add an additional resource** please make sure to click on the add button below.\n"
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }
+    ],
+    "createdAt" : ISODate("2020-10-13T06:50:12.280Z")
+},
+
+{
+    "id" : "gofair:fip-wizard:5.0.0",
+    "name" : "FIP Wizard",
+    "organizationId" : "gofair",
+    "kmId" : "fip-wizard",
+    "version" : "5.0.0",
+    "metamodelVersion" : 5,
+    "description" : "Questionnaire prompting Communities committed to implementation of the FAIR Principles to explicitly declare their FAIR implementation choices (the output of the Wizard is a community-specific FAIR Implementation Profile, or FIP).",
+    "readme" : "# FIP Questionnaire\n\nThe FIP questionnaire prompts communities to explicitly declare their FAIR Implementation Profiles.\n\nThis knowledge model has been created under the [GO FAIR Convergence Matrix Project](https://www.go-fair.org/today/fair-matrix). For more information, visit the [3-point FAIRification Framework](https://www.go-fair.org/how-to-go-fair/).\n\nThis knowledge model can be used in any DSW instance for testing and training purposes, however, please fill-in your actual FIPs in the **[FIP Wizard](https://fair-matrix.ds-wizard.org)** to share them with the community. Please report any issues and comments there.",
+    "license" : "Apache-2.0",
+    "previousPackageId" : "gofair:fip-wizard:4.3.9",
+    "forkOfPackageId" : "gofair:fair-convergence-matrix:3.0.0",
+    "mergeCheckpointPackageId" : "gofair:fair-convergence-matrix:3.0.0",
+    "events" : [ 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "656c27cc-0a03-4ae3-8154-75425a5e0ad7",
+            "parentUuid" : "6a812ff5-a202-40d4-bd3b-02b341512e48",
+            "entityUuid" : "47d618c6-568e-4112-b66a-339661bfc7fc",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "67c7197b-f17b-4c76-84bc-e0601a4d7962",
+            "parentUuid" : "e3301b05-b02d-4c09-bb4b-7fb181414236",
+            "entityUuid" : "6a812ff5-a202-40d4-bd3b-02b341512e48",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Different identifier service providers offer different kinds of resolution services impacting F2 and I. One example would be a Digital Object Identifier (DOI). \n\nTo answer this question **for one existing resource at a time**, please follow this order:\n\n 1. _Consideration_: Please add any comments about the reasons why your community chose to use this resource\n 2. _Wikidata_: Check for existing resources from Wikidata (by typing in that field a keyword and clicking enter, you should find related resources), if not found there\n 3. _Nanobench_: Check for existing resources from Nanobench (by clicking in that field, available resources will pop up), and if not found\n 4. Register this resource in Nanobench (go to_ chapter VII_ ) and\n 5. then go back to this question (_Nanobench_) to look up for the newly created resource\n\nIf you want to **add an additional resource** please make sure to click on the add button below this section outside the grey area.\n"
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }
+    ],
+    "createdAt" : ISODate("2020-10-13T06:52:33.038Z")
+},
+
+{
+    "id" : "gofair:fip-wizard:5.0.1",
+    "name" : "FIP Wizard",
+    "organizationId" : "gofair",
+    "kmId" : "fip-wizard",
+    "version" : "5.0.1",
+    "metamodelVersion" : 5,
+    "description" : "Questionnaire prompting Communities committed to implementation of the FAIR Principles to explicitly declare their FAIR implementation choices (the output of the Wizard is a community-specific FAIR Implementation Profile, or FIP).",
+    "readme" : "# FIP Questionnaire\n\nThe FIP questionnaire prompts communities to explicitly declare their FAIR Implementation Profiles.\n\nThis knowledge model has been created under the [GO FAIR Convergence Matrix Project](https://www.go-fair.org/today/fair-matrix). For more information, visit the [3-point FAIRification Framework](https://www.go-fair.org/how-to-go-fair/).\n\nThis knowledge model can be used in any DSW instance for testing and training purposes, however, please fill-in your actual FIPs in the **[FIP Wizard](https://fair-matrix.ds-wizard.org)** to share them with the community. Please report any issues and comments there.",
+    "license" : "Apache-2.0",
+    "previousPackageId" : "gofair:fip-wizard:5.0.0",
+    "forkOfPackageId" : "gofair:fair-convergence-matrix:3.0.0",
+    "mergeCheckpointPackageId" : "gofair:fair-convergence-matrix:3.0.0",
+    "events" : [ 
+        {
+            "eventType" : "AddQuestionEvent",
+            "questionType" : "ValueQuestion",
+            "uuid" : "dffa26bc-91cf-4fc4-ae67-e2ef0e015247",
+            "parentUuid" : "29a8f2cc-696c-4e64-bfae-cba99ca761e1",
+            "entityUuid" : "b25d8565-ec74-4ee0-9ecc-33099a15a58b",
+            "title" : "Please add the usage license you use here if not found in the list above",
+            "text" : "Please use the URI from this source: https://spdx.org/licenses/",
+            "requiredLevel" : null,
+            "tagUuids" : [],
+            "valueType" : "StringQuestionValueType"
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "66d0c267-7867-44ed-9cc3-95e939c69265",
+            "parentUuid" : "37e3ef76-71e1-47a9-be84-e1f1d9452193",
+            "entityUuid" : "29a8f2cc-696c-4e64-bfae-cba99ca761e1",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : true,
+                "value" : [ 
+                    "312b5818-cdd3-43dc-bcf1-bb9788a88f19", 
+                    "812fc813-effa-4183-909c-bbc4154730e3", 
+                    "b25d8565-ec74-4ee0-9ecc-33099a15a58b", 
+                    "9653cc3e-4350-4610-ad6a-fc9151856be1"
+                ]
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ValueQuestion",
+            "uuid" : "6103fda8-a304-4b46-b679-a89f478d0bde",
+            "parentUuid" : "29a8f2cc-696c-4e64-bfae-cba99ca761e1",
+            "entityUuid" : "b25d8565-ec74-4ee0-9ecc-33099a15a58b",
+            "title" : {
+                "changed" : true,
+                "value" : "Please add the usage license as URI if not found in the list above"
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "valueType" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "AddQuestionEvent",
+            "questionType" : "OptionsQuestion",
+            "uuid" : "1b009227-a381-40b4-91fc-ddb4eaac5e67",
+            "parentUuid" : "29a8f2cc-696c-4e64-bfae-cba99ca761e1",
+            "entityUuid" : "62e988a1-cb21-41de-b385-8ec4674799af",
+            "title" : "New question",
+            "text" : null,
+            "requiredLevel" : null,
+            "tagUuids" : []
+        }, 
+        {
+            "eventType" : "AddQuestionEvent",
+            "questionType" : "ValueQuestion",
+            "uuid" : "18c4df9b-0080-457c-a724-8b4a615487b3",
+            "parentUuid" : "9653cc3e-4350-4610-ad6a-fc9151856be1",
+            "entityUuid" : "379dc1c5-586a-4d98-aaa4-4978e13fd347",
+            "title" : "Pleas as the usage license as URI if not found in the list above",
+            "text" : null,
+            "requiredLevel" : null,
+            "tagUuids" : [],
+            "valueType" : "StringQuestionValueType"
+        }, 
+        {
+            "eventType" : "DeleteQuestionEvent",
+            "uuid" : "c876fa57-4078-4167-82a8-9278eeb36be2",
+            "parentUuid" : "29a8f2cc-696c-4e64-bfae-cba99ca761e1",
+            "entityUuid" : "62e988a1-cb21-41de-b385-8ec4674799af"
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ValueQuestion",
+            "uuid" : "df15ffef-f4bd-4ec7-a1ef-40edcfaa3bf3",
+            "parentUuid" : "9653cc3e-4350-4610-ad6a-fc9151856be1",
+            "entityUuid" : "379dc1c5-586a-4d98-aaa4-4978e13fd347",
+            "title" : {
+                "changed" : true,
+                "value" : "Please as the usage license as URI if not found in the list above"
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Please use the URI from this source: https://spdx.org/licenses/"
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "valueType" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ValueQuestion",
+            "uuid" : "1db9e34b-c27c-473f-9056-4c79a22544a4",
+            "parentUuid" : "9653cc3e-4350-4610-ad6a-fc9151856be1",
+            "entityUuid" : "379dc1c5-586a-4d98-aaa4-4978e13fd347",
+            "title" : {
+                "changed" : true,
+                "value" : "Please add the usage license as URI if not found in the list above"
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "valueType" : {
+                "changed" : false
+            }
+        }
+    ],
+    "createdAt" : ISODate("2020-10-13T14:22:45.379Z")
+},
+
+{
+    "id" : "gofair:fip-wizard:5.0.2",
+    "name" : "FIP Wizard",
+    "organizationId" : "gofair",
+    "kmId" : "fip-wizard",
+    "version" : "5.0.2",
+    "metamodelVersion" : 5,
+    "description" : "Questionnaire prompting Communities committed to implementation of the FAIR Principles to explicitly declare their FAIR implementation choices (the output of the Wizard is a community-specific FAIR Implementation Profile, or FIP).",
+    "readme" : "# FIP Questionnaire\n\nThe FIP questionnaire prompts communities to explicitly declare their FAIR Implementation Profiles.\n\nThis knowledge model has been created under the [GO FAIR Convergence Matrix Project](https://www.go-fair.org/today/fair-matrix). For more information, visit the [3-point FAIRification Framework](https://www.go-fair.org/how-to-go-fair/).\n\nThis knowledge model can be used in any DSW instance for testing and training purposes, however, please fill-in your actual FIPs in the **[FIP Wizard](https://fair-matrix.ds-wizard.org)** to share them with the community. Please report any issues and comments there.",
+    "license" : "Apache-2.0",
+    "previousPackageId" : "gofair:fip-wizard:5.0.1",
+    "forkOfPackageId" : "gofair:fair-convergence-matrix:3.0.0",
+    "mergeCheckpointPackageId" : "gofair:fair-convergence-matrix:3.0.0",
+    "events" : [ 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "9cc2602c-9ac0-47a6-a2a8-223f22849ec1",
+            "parentUuid" : "63eecafc-fdda-47d3-92d2-d58fad54588d",
+            "entityUuid" : "1a98d12d-8716-4d0e-87ab-c7e9b4ab9527",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : true,
+                "value" : 1
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "integrationUuid" : {
+                "changed" : false
+            },
+            "props" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ValueQuestion",
+            "uuid" : "edf36bc9-c631-480d-a255-3bf34ebb48af",
+            "parentUuid" : "63eecafc-fdda-47d3-92d2-d58fad54588d",
+            "entityUuid" : "c9cd6f2d-d16e-4ef6-831f-a20e33290b6f",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : true,
+                "value" : 1
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "valueType" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "5f7deb45-425b-4233-b6a9-a1c0c8f23d45",
+            "parentUuid" : "e3301b05-b02d-4c09-bb4b-7fb181414236",
+            "entityUuid" : "6a812ff5-a202-40d4-bd3b-02b341512e48",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : true,
+                "value" : 1
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "dbbe2e56-7578-42b5-b0e7-ffb6d6f5a855",
+            "parentUuid" : "e3301b05-b02d-4c09-bb4b-7fb181414236",
+            "entityUuid" : "797c4af8-0184-43cf-b40c-e2608b7b4d0a",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : true,
+                "value" : 1
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "5096e11a-e913-47f6-8900-217142e47138",
+            "parentUuid" : "e3301b05-b02d-4c09-bb4b-7fb181414236",
+            "entityUuid" : "808310c5-7321-4789-aa97-80f4c7ac9fa8",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : true,
+                "value" : 1
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "1b5c00f1-b4dc-4395-b68c-d78b8b9b44da",
+            "parentUuid" : "e3301b05-b02d-4c09-bb4b-7fb181414236",
+            "entityUuid" : "faeab073-3569-4bca-a804-c81c0de04a95",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : true,
+                "value" : 1
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "79867626-67aa-48ee-918f-fea09c764994",
+            "parentUuid" : "e3301b05-b02d-4c09-bb4b-7fb181414236",
+            "entityUuid" : "a50aa1e1-68a9-4e36-bdb6-4a4c5a3d902a",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : true,
+                "value" : 1
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "26b60365-629b-49d9-998a-2e784668f77a",
+            "parentUuid" : "e3301b05-b02d-4c09-bb4b-7fb181414236",
+            "entityUuid" : "5f33c2e8-8b95-435c-870a-fd97d91ff8da",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : true,
+                "value" : 1
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "30e8a13a-d967-4c00-b23e-520975e634bb",
+            "parentUuid" : "d6ab1374-788b-4cd5-9614-5ec4c69d6cc5",
+            "entityUuid" : "43ff12a0-22ff-492b-9777-99e2469f5cf1",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : true,
+                "value" : 1
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "0b9110b9-29f4-4c48-8f5a-b2d0598d9e71",
+            "parentUuid" : "d6ab1374-788b-4cd5-9614-5ec4c69d6cc5",
+            "entityUuid" : "ee073efa-c934-4db4-ae87-49b73df11ca5",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : true,
+                "value" : 1
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "97b7dc94-1d9f-4e84-801e-e27a649c1848",
+            "parentUuid" : "d6ab1374-788b-4cd5-9614-5ec4c69d6cc5",
+            "entityUuid" : "2ddde9e8-4284-4b61-b5a7-8b0e8f8b28c2",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : true,
+                "value" : 1
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "45fa028e-5f8c-4280-8ba5-950667cf7c37",
+            "parentUuid" : "d6ab1374-788b-4cd5-9614-5ec4c69d6cc5",
+            "entityUuid" : "d2c28334-7dc9-4804-9f0c-89984240fb3b",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : true,
+                "value" : 1
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "5b6f374c-fd20-47c1-83ef-aa403f6aad73",
+            "parentUuid" : "d6ab1374-788b-4cd5-9614-5ec4c69d6cc5",
+            "entityUuid" : "a93c26cc-ca80-4bcf-ac4c-04e8123bbadb",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : true,
+                "value" : 1
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "36c82de4-7cef-4575-a3d0-79d9b601977d",
+            "parentUuid" : "2b7ee188-a227-43a8-8bf9-a99e6aeb3939",
+            "entityUuid" : "a07fc6d6-1f8c-4c21-9bf5-1040682fa5b8",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : true,
+                "value" : 1
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "6cb31174-93af-4c74-aa37-4039cdb791d0",
+            "parentUuid" : "2b7ee188-a227-43a8-8bf9-a99e6aeb3939",
+            "entityUuid" : "53120a47-9151-42d4-bd33-4fd91fa9a48a",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : true,
+                "value" : 1
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "74cf2071-c781-4b55-9ae2-53a4f1f324ff",
+            "parentUuid" : "2b7ee188-a227-43a8-8bf9-a99e6aeb3939",
+            "entityUuid" : "aea4c5be-aaa3-4e27-a6d6-f2e6af0bc43d",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : true,
+                "value" : 1
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "b1f50887-d5c4-4d95-8aa6-a8a6f1dd763a",
+            "parentUuid" : "2b7ee188-a227-43a8-8bf9-a99e6aeb3939",
+            "entityUuid" : "bc3f2a07-6921-4693-8e09-4caf408d162a",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : true,
+                "value" : 1
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "2696527f-2a2e-4034-b227-c8c3fe9e7419",
+            "parentUuid" : "2b7ee188-a227-43a8-8bf9-a99e6aeb3939",
+            "entityUuid" : "e712930b-8a6d-474e-b6da-e2fd0e50ab68",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : true,
+                "value" : 1
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "07f43137-c349-43ac-ad22-d634205bf777",
+            "parentUuid" : "2b7ee188-a227-43a8-8bf9-a99e6aeb3939",
+            "entityUuid" : "10ba5624-d948-4f1a-91c1-61f33ec1e51b",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : true,
+                "value" : 1
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "abe2fc2d-0339-4f18-b7d2-a19874c64466",
+            "parentUuid" : "37e3ef76-71e1-47a9-be84-e1f1d9452193",
+            "entityUuid" : "29a8f2cc-696c-4e64-bfae-cba99ca761e1",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : true,
+                "value" : 1
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "b1975c0d-a86f-4dc6-99b1-9b782bfad67d",
+            "parentUuid" : "37e3ef76-71e1-47a9-be84-e1f1d9452193",
+            "entityUuid" : "c704e5d2-7044-4415-8d52-bb621f64b9d6",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : true,
+                "value" : 1
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "9e30d107-0931-4465-8697-c31f41fba5b6",
+            "parentUuid" : "37e3ef76-71e1-47a9-be84-e1f1d9452193",
+            "entityUuid" : "f6b5b347-6e01-4294-a0e3-d64382bea1e9",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : true,
+                "value" : 1
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "14758a14-47a0-45c1-8d38-78ce1212fbd4",
+            "parentUuid" : "37e3ef76-71e1-47a9-be84-e1f1d9452193",
+            "entityUuid" : "08aae90c-ba61-4c78-b3bd-eb92d29e8111",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : true,
+                "value" : 1
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "AddQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "ea48130c-89d5-4818-ab23-02e3ce0922f6",
+            "parentUuid" : "797c4af8-0184-43cf-b40c-e2608b7b4d0a",
+            "entityUuid" : "64d22ea4-6dea-43bb-91f3-0d2689f8b38b",
+            "title" : "Choose an available resource from WikiData",
+            "text" : null,
+            "requiredLevel" : null,
+            "tagUuids" : [],
+            "integrationUuid" : "0176f120-6389-4f94-9fe3-65fea671e272",
+            "props" : {
+                "keyword" : ""
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "b1be46f4-64a1-41bd-b261-e196c5bbadce",
+            "parentUuid" : "e3301b05-b02d-4c09-bb4b-7fb181414236",
+            "entityUuid" : "797c4af8-0184-43cf-b40c-e2608b7b4d0a",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : true,
+                "value" : [ 
+                    "891413be-e42d-409c-967f-a2e271777aab", 
+                    "64d22ea4-6dea-43bb-91f3-0d2689f8b38b", 
+                    "8b75db91-a7e6-4053-ba77-431ef0e8d67a", 
+                    "4f3cfb2a-cbb4-40f5-a151-74c9bcb661bd"
+                ]
+            }
+        }, 
+        {
+            "eventType" : "AddQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "936ea243-20f1-45f8-a69f-bf71b01c6a6f",
+            "parentUuid" : "4f3cfb2a-cbb4-40f5-a151-74c9bcb661bd",
+            "entityUuid" : "6a16f854-1cfb-4ca7-894e-2adb60381036",
+            "title" : "Choose an available resource from WikiData",
+            "text" : null,
+            "requiredLevel" : null,
+            "tagUuids" : [],
+            "integrationUuid" : "0176f120-6389-4f94-9fe3-65fea671e272",
+            "props" : {
+                "keyword" : ""
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "6a2a8f16-eb40-4f06-bbb8-78cf5b3ce458",
+            "parentUuid" : "797c4af8-0184-43cf-b40c-e2608b7b4d0a",
+            "entityUuid" : "4f3cfb2a-cbb4-40f5-a151-74c9bcb661bd",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : true,
+                "value" : [ 
+                    "6a16f854-1cfb-4ca7-894e-2adb60381036", 
+                    "4a10d70e-2a4e-4ea1-a796-e5d100bc53ea"
+                ]
+            }
+        }, 
+        {
+            "eventType" : "AddQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "e41f6500-3b41-4c85-9bc0-32e65e900393",
+            "parentUuid" : "808310c5-7321-4789-aa97-80f4c7ac9fa8",
+            "entityUuid" : "49a90acf-36e3-42ef-b9d0-806e0ca2ce72",
+            "title" : "Choose an available resource from WikiData",
+            "text" : null,
+            "requiredLevel" : null,
+            "tagUuids" : [],
+            "integrationUuid" : "0176f120-6389-4f94-9fe3-65fea671e272",
+            "props" : {
+                "keyword" : ""
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "a16e4320-346d-47fd-9bdc-3fe6330000ff",
+            "parentUuid" : "e3301b05-b02d-4c09-bb4b-7fb181414236",
+            "entityUuid" : "808310c5-7321-4789-aa97-80f4c7ac9fa8",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : true,
+                "value" : [ 
+                    "b351f7d6-7b0a-43e6-a845-d82d27040435", 
+                    "49a90acf-36e3-42ef-b9d0-806e0ca2ce72", 
+                    "cae8352d-a048-49ad-b95f-24454bb5f80a", 
+                    "f0ef2043-8c9b-4aa5-9a3b-2c5474a5a694"
+                ]
+            }
+        }, 
+        {
+            "eventType" : "AddQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "f454df69-eed2-42dd-bb72-c3ecea13a490",
+            "parentUuid" : "f0ef2043-8c9b-4aa5-9a3b-2c5474a5a694",
+            "entityUuid" : "0b3deb52-5017-45c8-b1ec-c401a14cb966",
+            "title" : "Choose an available resource from WikiData",
+            "text" : null,
+            "requiredLevel" : null,
+            "tagUuids" : [],
+            "integrationUuid" : "0176f120-6389-4f94-9fe3-65fea671e272",
+            "props" : {
+                "keyword" : ""
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "21bfae96-9307-4b61-8326-b8a5b7c2ab67",
+            "parentUuid" : "808310c5-7321-4789-aa97-80f4c7ac9fa8",
+            "entityUuid" : "f0ef2043-8c9b-4aa5-9a3b-2c5474a5a694",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : true,
+                "value" : [ 
+                    "0b3deb52-5017-45c8-b1ec-c401a14cb966", 
+                    "a57428a6-8dfe-48e3-b846-d4a039ca934c"
+                ]
+            }
+        }, 
+        {
+            "eventType" : "AddQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "9bd251dc-6587-4fdd-820c-dda5cc1b8fd8",
+            "parentUuid" : "faeab073-3569-4bca-a804-c81c0de04a95",
+            "entityUuid" : "0ec3a986-b79a-4ef5-a9b3-7d49a30fe1b1",
+            "title" : "Choose an available resource from WikiData",
+            "text" : null,
+            "requiredLevel" : null,
+            "tagUuids" : [],
+            "integrationUuid" : "0176f120-6389-4f94-9fe3-65fea671e272",
+            "props" : {
+                "keyword" : ""
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "9034472c-2f19-4aa3-9ed4-fe25d5865f74",
+            "parentUuid" : "e3301b05-b02d-4c09-bb4b-7fb181414236",
+            "entityUuid" : "faeab073-3569-4bca-a804-c81c0de04a95",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : true,
+                "value" : [ 
+                    "be91f639-06e5-4d65-9375-d04bcf3af66b", 
+                    "0ec3a986-b79a-4ef5-a9b3-7d49a30fe1b1", 
+                    "59d34122-39d7-4587-ae39-de456d7459e2", 
+                    "293aed26-bf2c-446b-9c91-5acc0e354e63"
+                ]
+            }
+        }, 
+        {
+            "eventType" : "AddQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "4acbb65c-605c-43ce-916f-fce5bad3f528",
+            "parentUuid" : "293aed26-bf2c-446b-9c91-5acc0e354e63",
+            "entityUuid" : "46d5bc1d-27cb-41c3-96bd-16c917615ba2",
+            "title" : "Choose an available resource from WikiData",
+            "text" : null,
+            "requiredLevel" : null,
+            "tagUuids" : [],
+            "integrationUuid" : "0176f120-6389-4f94-9fe3-65fea671e272",
+            "props" : {
+                "keyword" : ""
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "53aeac14-5cad-4ba2-9470-357f3f91126f",
+            "parentUuid" : "faeab073-3569-4bca-a804-c81c0de04a95",
+            "entityUuid" : "293aed26-bf2c-446b-9c91-5acc0e354e63",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : true,
+                "value" : [ 
+                    "46d5bc1d-27cb-41c3-96bd-16c917615ba2", 
+                    "e1657f7d-eb02-4baa-a40f-ae0b4ccf973e"
+                ]
+            }
+        }, 
+        {
+            "eventType" : "AddQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "4c5c8629-bdb2-4a06-9b5b-9228a1838b9b",
+            "parentUuid" : "a50aa1e1-68a9-4e36-bdb6-4a4c5a3d902a",
+            "entityUuid" : "dfd222a9-8aaf-4df3-a3f5-617562d5a1f0",
+            "title" : "Choose an available resource from WikiData",
+            "text" : null,
+            "requiredLevel" : null,
+            "tagUuids" : [],
+            "integrationUuid" : "0176f120-6389-4f94-9fe3-65fea671e272",
+            "props" : {
+                "keyword" : ""
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "b388adde-ae27-415c-98df-231884732330",
+            "parentUuid" : "e3301b05-b02d-4c09-bb4b-7fb181414236",
+            "entityUuid" : "a50aa1e1-68a9-4e36-bdb6-4a4c5a3d902a",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : true,
+                "value" : [ 
+                    "01e9538b-0246-4ae1-a60b-c870bd2f7f10", 
+                    "dfd222a9-8aaf-4df3-a3f5-617562d5a1f0", 
+                    "7bd33eba-28c2-4279-9dff-a2e672697936", 
+                    "07648d69-41c1-4f7c-bafa-8d93caa32d7c"
+                ]
+            }
+        }, 
+        {
+            "eventType" : "AddQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "240f52dd-d9d2-470c-b036-109d4b40260c",
+            "parentUuid" : "07648d69-41c1-4f7c-bafa-8d93caa32d7c",
+            "entityUuid" : "1685f15e-a5a1-40ae-9e34-19810210770e",
+            "title" : "Choose an available resource from WikiData",
+            "text" : null,
+            "requiredLevel" : null,
+            "tagUuids" : [],
+            "integrationUuid" : "0176f120-6389-4f94-9fe3-65fea671e272",
+            "props" : {
+                "keyword" : ""
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "adc3688b-e00b-4056-88ec-23184d9a4b28",
+            "parentUuid" : "a50aa1e1-68a9-4e36-bdb6-4a4c5a3d902a",
+            "entityUuid" : "07648d69-41c1-4f7c-bafa-8d93caa32d7c",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : true,
+                "value" : [ 
+                    "1685f15e-a5a1-40ae-9e34-19810210770e", 
+                    "a74f5643-da60-4c93-8b93-bca758dca0cf"
+                ]
+            }
+        }, 
+        {
+            "eventType" : "AddQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "324090da-a618-4748-ac99-ae5dc9d6fa01",
+            "parentUuid" : "5f33c2e8-8b95-435c-870a-fd97d91ff8da",
+            "entityUuid" : "d8796118-d403-4f75-bacb-c94f558851b9",
+            "title" : "Choose an available resource from WikiData",
+            "text" : null,
+            "requiredLevel" : null,
+            "tagUuids" : [],
+            "integrationUuid" : "0176f120-6389-4f94-9fe3-65fea671e272",
+            "props" : {
+                "keyword" : ""
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "371604a1-40a0-42df-83c4-c40c6a160899",
+            "parentUuid" : "e3301b05-b02d-4c09-bb4b-7fb181414236",
+            "entityUuid" : "5f33c2e8-8b95-435c-870a-fd97d91ff8da",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : true,
+                "value" : [ 
+                    "f321f449-7937-40da-9702-0df364a17fb5", 
+                    "d8796118-d403-4f75-bacb-c94f558851b9", 
+                    "20abafb3-72f8-4400-9e16-1acc1c61bf38", 
+                    "66665dd7-0d60-4ac6-a2dd-a69495899dd0"
+                ]
+            }
+        }, 
+        {
+            "eventType" : "AddQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "17cb910b-38df-4b7a-936f-e471358a1abd",
+            "parentUuid" : "66665dd7-0d60-4ac6-a2dd-a69495899dd0",
+            "entityUuid" : "2c475394-8f93-463d-86f9-75b8a8169734",
+            "title" : "Choose an available resource from WikiData",
+            "text" : null,
+            "requiredLevel" : null,
+            "tagUuids" : [],
+            "integrationUuid" : "0176f120-6389-4f94-9fe3-65fea671e272",
+            "props" : {
+                "keyword" : ""
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "4d0979f7-2b86-454b-9a9b-d348ffca8dee",
+            "parentUuid" : "5f33c2e8-8b95-435c-870a-fd97d91ff8da",
+            "entityUuid" : "66665dd7-0d60-4ac6-a2dd-a69495899dd0",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : true,
+                "value" : [ 
+                    "2c475394-8f93-463d-86f9-75b8a8169734", 
+                    "b28bc881-ad87-4564-ab18-0fa8ac8ac061"
+                ]
+            }
+        }, 
+        {
+            "eventType" : "AddQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "853f76d5-a327-46a6-bd03-c5c83d65ecd7",
+            "parentUuid" : "43ff12a0-22ff-492b-9777-99e2469f5cf1",
+            "entityUuid" : "e600fc1f-bfbe-4bd5-a41e-a838d8afcc51",
+            "title" : "Choose an available resource from WikiData",
+            "text" : null,
+            "requiredLevel" : null,
+            "tagUuids" : [],
+            "integrationUuid" : "0176f120-6389-4f94-9fe3-65fea671e272",
+            "props" : {
+                "keyword" : ""
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "d6c542d6-ea54-4f08-ad4b-25f8497c4672",
+            "parentUuid" : "d6ab1374-788b-4cd5-9614-5ec4c69d6cc5",
+            "entityUuid" : "43ff12a0-22ff-492b-9777-99e2469f5cf1",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : true,
+                "value" : [ 
+                    "d06cdad0-f322-4376-be83-0dffa3ea6ff2", 
+                    "e600fc1f-bfbe-4bd5-a41e-a838d8afcc51", 
+                    "5746d5e3-3e98-460d-9a2e-61d3e974eab2", 
+                    "6668dca1-0761-485c-8f6f-2fe66e2f66bf"
+                ]
+            }
+        }, 
+        {
+            "eventType" : "AddQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "a2436141-200f-40ea-9b29-0b0fc4edab63",
+            "parentUuid" : "6668dca1-0761-485c-8f6f-2fe66e2f66bf",
+            "entityUuid" : "cd880a44-0705-448d-a048-cb4653df4216",
+            "title" : "Choose an available resource from WikiData",
+            "text" : null,
+            "requiredLevel" : null,
+            "tagUuids" : [],
+            "integrationUuid" : "0176f120-6389-4f94-9fe3-65fea671e272",
+            "props" : {
+                "keyword" : ""
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "76822740-6168-4e00-90a2-4a50d7d54a7b",
+            "parentUuid" : "43ff12a0-22ff-492b-9777-99e2469f5cf1",
+            "entityUuid" : "6668dca1-0761-485c-8f6f-2fe66e2f66bf",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : true,
+                "value" : [ 
+                    "cd880a44-0705-448d-a048-cb4653df4216", 
+                    "0979af91-88e6-4567-a25f-51dabd63ed30"
+                ]
+            }
+        }, 
+        {
+            "eventType" : "AddQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "e3ea9bae-ccb4-4cf7-afe4-c487ffe628e7",
+            "parentUuid" : "ee073efa-c934-4db4-ae87-49b73df11ca5",
+            "entityUuid" : "100c23dc-a379-4114-b6a8-431548d230f4",
+            "title" : "Choose an available resource from WikiData",
+            "text" : null,
+            "requiredLevel" : null,
+            "tagUuids" : [],
+            "integrationUuid" : "0176f120-6389-4f94-9fe3-65fea671e272",
+            "props" : {
+                "keyword" : ""
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "081a142d-5b55-4ca4-9ac8-c5769829efb7",
+            "parentUuid" : "d6ab1374-788b-4cd5-9614-5ec4c69d6cc5",
+            "entityUuid" : "ee073efa-c934-4db4-ae87-49b73df11ca5",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : true,
+                "value" : [ 
+                    "c74cecef-cc36-45c9-8400-7a6a56ca4e2d", 
+                    "100c23dc-a379-4114-b6a8-431548d230f4", 
+                    "0fe3186c-c7c1-4cef-a8e0-820c2823e66d", 
+                    "ad6f9598-e308-4c6c-b751-b576e4423b8a"
+                ]
+            }
+        }, 
+        {
+            "eventType" : "AddQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "f61a66e2-6239-4055-b35e-8a101c7d78da",
+            "parentUuid" : "ad6f9598-e308-4c6c-b751-b576e4423b8a",
+            "entityUuid" : "ee1e14ac-8328-4da5-8d66-879c81973cca",
+            "title" : "Choose an available resource from WikiData",
+            "text" : null,
+            "requiredLevel" : null,
+            "tagUuids" : [],
+            "integrationUuid" : "0176f120-6389-4f94-9fe3-65fea671e272",
+            "props" : {
+                "keyword" : ""
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "6ae5b927-9cae-4dca-98b9-df980feb9347",
+            "parentUuid" : "ee073efa-c934-4db4-ae87-49b73df11ca5",
+            "entityUuid" : "ad6f9598-e308-4c6c-b751-b576e4423b8a",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : true,
+                "value" : [ 
+                    "ee1e14ac-8328-4da5-8d66-879c81973cca", 
+                    "f5b9bf6d-23ea-429d-a937-d988dfb1f971"
+                ]
+            }
+        }, 
+        {
+            "eventType" : "AddQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "1458ce26-1d55-4d9d-b0d0-87f8513db3ae",
+            "parentUuid" : "2ddde9e8-4284-4b61-b5a7-8b0e8f8b28c2",
+            "entityUuid" : "856bac5d-863e-4018-8999-bc1f46e4e892",
+            "title" : "Choose an available resource from WikiData",
+            "text" : null,
+            "requiredLevel" : null,
+            "tagUuids" : [],
+            "integrationUuid" : "0176f120-6389-4f94-9fe3-65fea671e272",
+            "props" : {
+                "keyword" : ""
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "3fbe893d-cb6e-4f52-bf9b-648c2922dd2b",
+            "parentUuid" : "d6ab1374-788b-4cd5-9614-5ec4c69d6cc5",
+            "entityUuid" : "2ddde9e8-4284-4b61-b5a7-8b0e8f8b28c2",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : true,
+                "value" : [ 
+                    "c4d90bd6-0154-4bd9-ab7f-72f6f913625a", 
+                    "856bac5d-863e-4018-8999-bc1f46e4e892", 
+                    "076e4fae-6668-4e84-a9f7-b00f1d33f58e", 
+                    "38e487a0-684e-4add-a2c5-3902e62807a8"
+                ]
+            }
+        }, 
+        {
+            "eventType" : "AddQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "f6eddd05-1971-4633-bc1a-b62f52097b62",
+            "parentUuid" : "38e487a0-684e-4add-a2c5-3902e62807a8",
+            "entityUuid" : "039fca50-e23a-413e-9326-a1bb5d10115a",
+            "title" : "Choose an available resource from WikiData",
+            "text" : null,
+            "requiredLevel" : null,
+            "tagUuids" : [],
+            "integrationUuid" : "0176f120-6389-4f94-9fe3-65fea671e272",
+            "props" : {
+                "keyword" : ""
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "c90dae3b-2184-4ca3-9aa2-0631e169ff62",
+            "parentUuid" : "2ddde9e8-4284-4b61-b5a7-8b0e8f8b28c2",
+            "entityUuid" : "38e487a0-684e-4add-a2c5-3902e62807a8",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : true,
+                "value" : [ 
+                    "039fca50-e23a-413e-9326-a1bb5d10115a", 
+                    "e46681c4-d398-4a4d-875e-9829fa987301"
+                ]
+            }
+        }, 
+        {
+            "eventType" : "AddQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "5123516b-4918-4816-8e66-1f5366b3703d",
+            "parentUuid" : "d2c28334-7dc9-4804-9f0c-89984240fb3b",
+            "entityUuid" : "da8c8522-63f5-4d2a-8e08-cc52f0028aec",
+            "title" : "Choose an available resource from WikiData",
+            "text" : null,
+            "requiredLevel" : null,
+            "tagUuids" : [],
+            "integrationUuid" : "0176f120-6389-4f94-9fe3-65fea671e272",
+            "props" : {
+                "keyword" : ""
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "da5d70f0-7c16-4d17-9da4-d58b85da7e6e",
+            "parentUuid" : "d6ab1374-788b-4cd5-9614-5ec4c69d6cc5",
+            "entityUuid" : "d2c28334-7dc9-4804-9f0c-89984240fb3b",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : true,
+                "value" : [ 
+                    "7e256841-6b67-4fd5-bc6f-51a80f91c991", 
+                    "da8c8522-63f5-4d2a-8e08-cc52f0028aec", 
+                    "db02f6cd-0e28-41d9-9ccf-a0e9040c422d", 
+                    "60d79156-2028-43e7-93f7-09a8d8545e80"
+                ]
+            }
+        }, 
+        {
+            "eventType" : "AddQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "81384fc2-229d-4bd5-962c-e013bfb4637b",
+            "parentUuid" : "60d79156-2028-43e7-93f7-09a8d8545e80",
+            "entityUuid" : "8f98d71b-dcad-4f58-8f1b-f5a874653c92",
+            "title" : "Choose an available resource from WikiData",
+            "text" : null,
+            "requiredLevel" : null,
+            "tagUuids" : [],
+            "integrationUuid" : "0176f120-6389-4f94-9fe3-65fea671e272",
+            "props" : {
+                "keyword" : ""
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "22d2e52d-0499-4243-9994-cceae21070fb",
+            "parentUuid" : "d2c28334-7dc9-4804-9f0c-89984240fb3b",
+            "entityUuid" : "60d79156-2028-43e7-93f7-09a8d8545e80",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : true,
+                "value" : [ 
+                    "8f98d71b-dcad-4f58-8f1b-f5a874653c92", 
+                    "76141aaf-1807-4667-a349-1ecdcf08f10b"
+                ]
+            }
+        }, 
+        {
+            "eventType" : "AddQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "8454ec96-2c07-4b0f-a431-bc03211ebd9a",
+            "parentUuid" : "a93c26cc-ca80-4bcf-ac4c-04e8123bbadb",
+            "entityUuid" : "cf7bb89c-3e93-477e-8013-d1f40c228b5f",
+            "title" : "Choose an available resource from WikiData",
+            "text" : null,
+            "requiredLevel" : null,
+            "tagUuids" : [],
+            "integrationUuid" : "0176f120-6389-4f94-9fe3-65fea671e272",
+            "props" : {
+                "keyword" : ""
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "6b9d354d-a6c4-45d5-9e5a-aa9366dadb92",
+            "parentUuid" : "d6ab1374-788b-4cd5-9614-5ec4c69d6cc5",
+            "entityUuid" : "a93c26cc-ca80-4bcf-ac4c-04e8123bbadb",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : true,
+                "value" : [ 
+                    "ed203074-d9df-47bc-80ed-abf3283f3aa8", 
+                    "cf7bb89c-3e93-477e-8013-d1f40c228b5f", 
+                    "f7ab7312-0f7f-4ba9-8141-85352a3115f4", 
+                    "f2f9124a-deb0-4485-9dbd-24fcb011458f"
+                ]
+            }
+        }, 
+        {
+            "eventType" : "AddQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "c592d69f-d88a-4b77-85f7-ee8392c228a2",
+            "parentUuid" : "f2f9124a-deb0-4485-9dbd-24fcb011458f",
+            "entityUuid" : "e26cc46c-1a51-4465-8c96-0ab8750ec033",
+            "title" : "Choose an available resource from WikiData",
+            "text" : null,
+            "requiredLevel" : null,
+            "tagUuids" : [],
+            "integrationUuid" : "0176f120-6389-4f94-9fe3-65fea671e272",
+            "props" : {
+                "keyword" : ""
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "d9778708-b941-4e4a-bd36-c6e8e93decfb",
+            "parentUuid" : "a93c26cc-ca80-4bcf-ac4c-04e8123bbadb",
+            "entityUuid" : "f2f9124a-deb0-4485-9dbd-24fcb011458f",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : true,
+                "value" : [ 
+                    "e26cc46c-1a51-4465-8c96-0ab8750ec033", 
+                    "3d871bd7-06a4-41f4-858b-37211e30f332"
+                ]
+            }
+        }, 
+        {
+            "eventType" : "AddQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "0827661c-9714-4a49-ba0d-2137881bd31e",
+            "parentUuid" : "a07fc6d6-1f8c-4c21-9bf5-1040682fa5b8",
+            "entityUuid" : "d1e5866f-383e-431c-bd60-877fa0f0e72a",
+            "title" : "Choose an available resource from WikiData",
+            "text" : null,
+            "requiredLevel" : null,
+            "tagUuids" : [],
+            "integrationUuid" : "0176f120-6389-4f94-9fe3-65fea671e272",
+            "props" : {
+                "keyword" : ""
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "094e44a6-b2ad-4050-b861-0a4f2ca97538",
+            "parentUuid" : "2b7ee188-a227-43a8-8bf9-a99e6aeb3939",
+            "entityUuid" : "a07fc6d6-1f8c-4c21-9bf5-1040682fa5b8",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : true,
+                "value" : [ 
+                    "0a43f23d-6261-4359-bcfb-2f58f3303c49", 
+                    "d1e5866f-383e-431c-bd60-877fa0f0e72a", 
+                    "e3dd2327-0eaa-4ec2-8feb-9d66a78ec4c2", 
+                    "014a56b6-cc81-4044-9352-98a2c11acdfd"
+                ]
+            }
+        }, 
+        {
+            "eventType" : "AddQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "e5c57f73-2816-4132-b68c-39b07e974a2a",
+            "parentUuid" : "014a56b6-cc81-4044-9352-98a2c11acdfd",
+            "entityUuid" : "64400794-ee44-4874-85f6-444cc511535b",
+            "title" : "Choose an available resource from WikiData",
+            "text" : null,
+            "requiredLevel" : null,
+            "tagUuids" : [],
+            "integrationUuid" : "0176f120-6389-4f94-9fe3-65fea671e272",
+            "props" : {
+                "keyword" : ""
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "e562bad5-704d-4b16-bfaa-856f3f592462",
+            "parentUuid" : "a07fc6d6-1f8c-4c21-9bf5-1040682fa5b8",
+            "entityUuid" : "014a56b6-cc81-4044-9352-98a2c11acdfd",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : true,
+                "value" : [ 
+                    "64400794-ee44-4874-85f6-444cc511535b", 
+                    "2088b12c-1639-4db7-b4ca-00a89e3eaeb3"
+                ]
+            }
+        }, 
+        {
+            "eventType" : "AddQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "e07c6b95-0f70-4aca-a5f4-82e7bc41c170",
+            "parentUuid" : "53120a47-9151-42d4-bd33-4fd91fa9a48a",
+            "entityUuid" : "ffdbd1b7-5b52-4231-9318-f724b0164914",
+            "title" : "Choose an available resource from WikiData",
+            "text" : null,
+            "requiredLevel" : null,
+            "tagUuids" : [],
+            "integrationUuid" : "0176f120-6389-4f94-9fe3-65fea671e272",
+            "props" : {
+                "keyword" : ""
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "3585af03-c815-439d-9321-1fc4b3a4afdc",
+            "parentUuid" : "2b7ee188-a227-43a8-8bf9-a99e6aeb3939",
+            "entityUuid" : "53120a47-9151-42d4-bd33-4fd91fa9a48a",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : true,
+                "value" : [ 
+                    "fff28ddd-d34c-4dc9-8a20-ba26280eb39a", 
+                    "ffdbd1b7-5b52-4231-9318-f724b0164914", 
+                    "219f86b7-88d4-466d-8748-1dcf88fc06b6", 
+                    "0256112b-b2f5-44e5-be33-69ffeec6a561"
+                ]
+            }
+        }, 
+        {
+            "eventType" : "AddQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "8215c997-15ec-430b-adfd-7839c8301a9f",
+            "parentUuid" : "0256112b-b2f5-44e5-be33-69ffeec6a561",
+            "entityUuid" : "01473838-9166-49dd-8953-4a7f4eb4ca68",
+            "title" : "Choose an available resource from WikiData",
+            "text" : null,
+            "requiredLevel" : null,
+            "tagUuids" : [],
+            "integrationUuid" : "0176f120-6389-4f94-9fe3-65fea671e272",
+            "props" : {
+                "keyword" : ""
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "d210db88-5c72-4298-89e2-eddb03bfd8b6",
+            "parentUuid" : "53120a47-9151-42d4-bd33-4fd91fa9a48a",
+            "entityUuid" : "0256112b-b2f5-44e5-be33-69ffeec6a561",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : true,
+                "value" : [ 
+                    "01473838-9166-49dd-8953-4a7f4eb4ca68", 
+                    "bf2a6eb8-8d75-434f-813d-ccad06444c1d"
+                ]
+            }
+        }, 
+        {
+            "eventType" : "AddQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "5ad9c156-ca94-4a74-a616-6ba183f98ed5",
+            "parentUuid" : "aea4c5be-aaa3-4e27-a6d6-f2e6af0bc43d",
+            "entityUuid" : "006dbb8d-2b77-4bca-8f66-73fdbecaa210",
+            "title" : "Choose an available resource from WikiData",
+            "text" : null,
+            "requiredLevel" : null,
+            "tagUuids" : [],
+            "integrationUuid" : "0176f120-6389-4f94-9fe3-65fea671e272",
+            "props" : {
+                "keyword" : ""
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "a069d9dd-af03-49ef-b4bf-0b1bcb695492",
+            "parentUuid" : "2b7ee188-a227-43a8-8bf9-a99e6aeb3939",
+            "entityUuid" : "aea4c5be-aaa3-4e27-a6d6-f2e6af0bc43d",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : true,
+                "value" : [ 
+                    "55040213-7a86-416a-8eb6-85f05711587d", 
+                    "006dbb8d-2b77-4bca-8f66-73fdbecaa210", 
+                    "8f9e5e00-77e4-4332-8270-a1a4257420ea", 
+                    "5700be0d-3918-42e0-b066-512fa6c9137a"
+                ]
+            }
+        }, 
+        {
+            "eventType" : "AddQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "d329118f-5878-412e-9985-df1a97b19d9d",
+            "parentUuid" : "5700be0d-3918-42e0-b066-512fa6c9137a",
+            "entityUuid" : "0da59752-a14a-4685-a235-aa53a4abdc50",
+            "title" : "Choose an available resource from WikiData",
+            "text" : null,
+            "requiredLevel" : null,
+            "tagUuids" : [],
+            "integrationUuid" : "0176f120-6389-4f94-9fe3-65fea671e272",
+            "props" : {
+                "keyword" : ""
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "0dce0697-a90a-42bf-9c6c-eff265d6ea9c",
+            "parentUuid" : "aea4c5be-aaa3-4e27-a6d6-f2e6af0bc43d",
+            "entityUuid" : "5700be0d-3918-42e0-b066-512fa6c9137a",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : true,
+                "value" : [ 
+                    "0da59752-a14a-4685-a235-aa53a4abdc50", 
+                    "c10f580d-f14c-4d8a-bb41-5ea45dc8dbc5"
+                ]
+            }
+        }, 
+        {
+            "eventType" : "AddQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "97cc0729-67b1-48cf-b1a6-fd2f47314239",
+            "parentUuid" : "bc3f2a07-6921-4693-8e09-4caf408d162a",
+            "entityUuid" : "d57d3c0e-ac9d-40b5-a71c-3061b10ccbb2",
+            "title" : "Choose an available resource from WikiData",
+            "text" : null,
+            "requiredLevel" : null,
+            "tagUuids" : [],
+            "integrationUuid" : "0176f120-6389-4f94-9fe3-65fea671e272",
+            "props" : {
+                "keyword" : ""
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "de740bd4-6d08-465d-9ae4-b4abf9da7a60",
+            "parentUuid" : "2b7ee188-a227-43a8-8bf9-a99e6aeb3939",
+            "entityUuid" : "bc3f2a07-6921-4693-8e09-4caf408d162a",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : true,
+                "value" : [ 
+                    "4f91161c-d968-4387-8264-0ba4e05f8f5a", 
+                    "d57d3c0e-ac9d-40b5-a71c-3061b10ccbb2", 
+                    "40dbe55a-a532-4af2-a602-ca9fddae9412", 
+                    "84e1d4c8-67f1-4d0e-b897-3b99c4feb9bb"
+                ]
+            }
+        }, 
+        {
+            "eventType" : "AddQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "8579ed4e-00ff-40a4-9a5e-7006d71ffdfe",
+            "parentUuid" : "84e1d4c8-67f1-4d0e-b897-3b99c4feb9bb",
+            "entityUuid" : "06fa7ce5-9344-473d-8236-73bbc6435839",
+            "title" : "Choose an available resource from WikiData",
+            "text" : null,
+            "requiredLevel" : null,
+            "tagUuids" : [],
+            "integrationUuid" : "0176f120-6389-4f94-9fe3-65fea671e272",
+            "props" : {
+                "keyword" : ""
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "77d7f231-be53-47c1-9b5c-4209c76c9549",
+            "parentUuid" : "bc3f2a07-6921-4693-8e09-4caf408d162a",
+            "entityUuid" : "84e1d4c8-67f1-4d0e-b897-3b99c4feb9bb",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : true,
+                "value" : [ 
+                    "06fa7ce5-9344-473d-8236-73bbc6435839", 
+                    "d71e4483-6b8b-4022-a25e-d4349f1dbf87"
+                ]
+            }
+        }, 
+        {
+            "eventType" : "AddQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "d5c595af-7245-4491-b514-a9fd6a9c1eaa",
+            "parentUuid" : "e712930b-8a6d-474e-b6da-e2fd0e50ab68",
+            "entityUuid" : "8775f24c-1412-45dd-838c-9238af307361",
+            "title" : "Choose an available resource from WikiData",
+            "text" : null,
+            "requiredLevel" : null,
+            "tagUuids" : [],
+            "integrationUuid" : "0176f120-6389-4f94-9fe3-65fea671e272",
+            "props" : {
+                "keyword" : ""
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "ebdcb055-0a85-4892-a4aa-a6847186905c",
+            "parentUuid" : "2b7ee188-a227-43a8-8bf9-a99e6aeb3939",
+            "entityUuid" : "e712930b-8a6d-474e-b6da-e2fd0e50ab68",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : true,
+                "value" : [ 
+                    "f423b127-9fce-4435-8d5b-44a36815f8fa", 
+                    "8775f24c-1412-45dd-838c-9238af307361", 
+                    "1e33211f-25e5-408c-a2a6-5dc9e06c6606", 
+                    "87d51804-6741-477b-ae53-3941b5631a81"
+                ]
+            }
+        }, 
+        {
+            "eventType" : "AddQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "452c29ab-05dc-4dd3-b9c4-7d9b558ab070",
+            "parentUuid" : "87d51804-6741-477b-ae53-3941b5631a81",
+            "entityUuid" : "0898ed0a-ea75-46a5-8389-78011c81e7c3",
+            "title" : "Choose an available resource from WikiData",
+            "text" : null,
+            "requiredLevel" : null,
+            "tagUuids" : [],
+            "integrationUuid" : "0176f120-6389-4f94-9fe3-65fea671e272",
+            "props" : {
+                "keyword" : ""
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "4716aaea-1b72-49d5-ac9c-701944789855",
+            "parentUuid" : "e712930b-8a6d-474e-b6da-e2fd0e50ab68",
+            "entityUuid" : "87d51804-6741-477b-ae53-3941b5631a81",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : true,
+                "value" : [ 
+                    "0898ed0a-ea75-46a5-8389-78011c81e7c3", 
+                    "9d3ad18c-2055-4d13-b2d0-0bd3503da2cb"
+                ]
+            }
+        }, 
+        {
+            "eventType" : "AddQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "34c43bdb-1bd3-433e-bdb9-05d2d1eea231",
+            "parentUuid" : "10ba5624-d948-4f1a-91c1-61f33ec1e51b",
+            "entityUuid" : "af116cad-1578-4478-a050-ea5eaa8c3736",
+            "title" : "Choose an available resource from WikiData",
+            "text" : null,
+            "requiredLevel" : null,
+            "tagUuids" : [],
+            "integrationUuid" : "0176f120-6389-4f94-9fe3-65fea671e272",
+            "props" : {
+                "keyword" : ""
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "d60979fe-355d-4331-94a1-c9c4e9747a48",
+            "parentUuid" : "2b7ee188-a227-43a8-8bf9-a99e6aeb3939",
+            "entityUuid" : "10ba5624-d948-4f1a-91c1-61f33ec1e51b",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : true,
+                "value" : [ 
+                    "baca3035-1f3c-4964-b8f5-26182ca7f446", 
+                    "af116cad-1578-4478-a050-ea5eaa8c3736", 
+                    "b8bc1ffb-64c8-42a6-b5cc-50e2c9813a1f", 
+                    "a3d10b12-ae30-48f9-9827-239ea003398d"
+                ]
+            }
+        }, 
+        {
+            "eventType" : "AddQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "7244d6d8-ff4e-43d7-b7ed-b5c86bb06c31",
+            "parentUuid" : "a3d10b12-ae30-48f9-9827-239ea003398d",
+            "entityUuid" : "f941e87f-595d-4f35-abec-ee975fcbe894",
+            "title" : "Choose an available resource from WikiData",
+            "text" : null,
+            "requiredLevel" : null,
+            "tagUuids" : [],
+            "integrationUuid" : "0176f120-6389-4f94-9fe3-65fea671e272",
+            "props" : {
+                "keyword" : ""
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "3551fb31-3a28-4bd4-8e9e-ca567628f2ad",
+            "parentUuid" : "10ba5624-d948-4f1a-91c1-61f33ec1e51b",
+            "entityUuid" : "a3d10b12-ae30-48f9-9827-239ea003398d",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : true,
+                "value" : [ 
+                    "f941e87f-595d-4f35-abec-ee975fcbe894", 
+                    "59b3e9d1-4481-491b-bfc9-f431324f08e6"
+                ]
+            }
+        }, 
+        {
+            "eventType" : "AddQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "74baba63-3f69-4bae-9780-53dc8c836a09",
+            "parentUuid" : "f6b5b347-6e01-4294-a0e3-d64382bea1e9",
+            "entityUuid" : "1f150d19-88d2-462d-a71d-8010eb463b29",
+            "title" : "Choose an available resource from WikiData",
+            "text" : null,
+            "requiredLevel" : null,
+            "tagUuids" : [],
+            "integrationUuid" : "0176f120-6389-4f94-9fe3-65fea671e272",
+            "props" : {
+                "keyword" : ""
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "a6851116-9105-42d8-a939-439171166b1e",
+            "parentUuid" : "37e3ef76-71e1-47a9-be84-e1f1d9452193",
+            "entityUuid" : "f6b5b347-6e01-4294-a0e3-d64382bea1e9",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : true,
+                "value" : [ 
+                    "53319468-f864-488c-aa6c-995f21cf9207", 
+                    "1f150d19-88d2-462d-a71d-8010eb463b29", 
+                    "c88733b2-e294-419b-81bf-27206542668a", 
+                    "72fd2469-3506-4e28-b8b3-f1049baa097f"
+                ]
+            }
+        }, 
+        {
+            "eventType" : "AddQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "c07dd6b1-9885-42d7-826c-ffb40af42379",
+            "parentUuid" : "72fd2469-3506-4e28-b8b3-f1049baa097f",
+            "entityUuid" : "81a46a60-b8e5-4b9a-9382-405f9464b05c",
+            "title" : "Choose an available resource from WikiData",
+            "text" : null,
+            "requiredLevel" : null,
+            "tagUuids" : [],
+            "integrationUuid" : "0176f120-6389-4f94-9fe3-65fea671e272",
+            "props" : {
+                "keyword" : ""
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "992505ef-0c1e-4969-9a6d-43b6eeda00e6",
+            "parentUuid" : "f6b5b347-6e01-4294-a0e3-d64382bea1e9",
+            "entityUuid" : "72fd2469-3506-4e28-b8b3-f1049baa097f",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : true,
+                "value" : [ 
+                    "81a46a60-b8e5-4b9a-9382-405f9464b05c", 
+                    "fa4b80dc-7427-4cf6-8299-4082eb1fcd0c"
+                ]
+            }
+        }, 
+        {
+            "eventType" : "AddQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "85e38e7a-8b0c-4d26-85fe-124f1e42b2a9",
+            "parentUuid" : "08aae90c-ba61-4c78-b3bd-eb92d29e8111",
+            "entityUuid" : "4541e9fe-6266-4636-b860-5e1546c6b52e",
+            "title" : "Choose an available resource from WikiData",
+            "text" : null,
+            "requiredLevel" : null,
+            "tagUuids" : [],
+            "integrationUuid" : "0176f120-6389-4f94-9fe3-65fea671e272",
+            "props" : {
+                "keyword" : ""
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "6faa9406-38fb-435d-8eb6-dffb46caf5e3",
+            "parentUuid" : "37e3ef76-71e1-47a9-be84-e1f1d9452193",
+            "entityUuid" : "08aae90c-ba61-4c78-b3bd-eb92d29e8111",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : true,
+                "value" : [ 
+                    "b5a6c104-b267-48c8-851c-7ee603bf7838", 
+                    "4541e9fe-6266-4636-b860-5e1546c6b52e", 
+                    "abe255a0-7e65-4950-b2ae-47ac8ac30cc1", 
+                    "a2ad654d-95ce-4ab0-a853-0416c1c37868"
+                ]
+            }
+        }, 
+        {
+            "eventType" : "AddQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "3a77b281-e8d9-4550-8304-c3f1c7d5fc7d",
+            "parentUuid" : "a2ad654d-95ce-4ab0-a853-0416c1c37868",
+            "entityUuid" : "424f289d-4f90-494d-892c-6ccdc9f3089a",
+            "title" : "Choose an available resource from WikiData",
+            "text" : null,
+            "requiredLevel" : null,
+            "tagUuids" : [],
+            "integrationUuid" : "0176f120-6389-4f94-9fe3-65fea671e272",
+            "props" : {
+                "keyword" : ""
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "6fa94eb4-0cb5-4b7b-975c-ac9e28153485",
+            "parentUuid" : "08aae90c-ba61-4c78-b3bd-eb92d29e8111",
+            "entityUuid" : "a2ad654d-95ce-4ab0-a853-0416c1c37868",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : true,
+                "value" : [ 
+                    "424f289d-4f90-494d-892c-6ccdc9f3089a", 
+                    "83fdf983-73d3-4b6e-a9c5-58c91de07aa4"
+                ]
+            }
+        }, 
+        {
+            "eventType" : "AddQuestionEvent",
+            "questionType" : "ValueQuestion",
+            "uuid" : "631d97c7-5366-4178-b39a-e38101148b64",
+            "parentUuid" : "c704e5d2-7044-4415-8d52-bb621f64b9d6",
+            "entityUuid" : "4e8a8475-f355-4140-ad87-e224a0f3c1a8",
+            "title" : "Please add the usage license as URI if not found in the list above",
+            "text" : "Please use the URI from this source: https://spdx.org/licenses/",
+            "requiredLevel" : null,
+            "tagUuids" : [],
+            "valueType" : "StringQuestionValueType"
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "70777f3a-b8f7-41d2-9a01-8d64b32a5ed5",
+            "parentUuid" : "37e3ef76-71e1-47a9-be84-e1f1d9452193",
+            "entityUuid" : "c704e5d2-7044-4415-8d52-bb621f64b9d6",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : true,
+                "value" : [ 
+                    "cacd776b-b531-4487-bd53-a61dd9653b12", 
+                    "55b072f8-f2b7-4cf6-be7f-19fd48ccf069", 
+                    "4e8a8475-f355-4140-ad87-e224a0f3c1a8", 
+                    "62e4811c-2217-4de9-9266-ff38524efc8c"
+                ]
+            }
+        }, 
+        {
+            "eventType" : "AddQuestionEvent",
+            "questionType" : "ValueQuestion",
+            "uuid" : "973319b3-6259-4c4b-b6dd-0ce37e2dc8ce",
+            "parentUuid" : "62e4811c-2217-4de9-9266-ff38524efc8c",
+            "entityUuid" : "7932d617-2d1b-456d-8a02-5dd30c3e5c03",
+            "title" : "Please add the usage license as URI if not found in the list above",
+            "text" : "Please use the URI from this source: https://spdx.org/licenses/",
+            "requiredLevel" : null,
+            "tagUuids" : [],
+            "valueType" : "StringQuestionValueType"
+        }
+    ],
+    "createdAt" : ISODate("2020-10-13T16:04:52.976Z")
+},
+
+{
+    "id" : "gofair:fip-wizard:5.0.3",
+    "name" : "FIP Wizard",
+    "organizationId" : "gofair",
+    "kmId" : "fip-wizard",
+    "version" : "5.0.3",
+    "metamodelVersion" : 5,
+    "description" : "Questionnaire prompting Communities committed to implementation of the FAIR Principles to explicitly declare their FAIR implementation choices (the output of the Wizard is a community-specific FAIR Implementation Profile, or FIP).",
+    "readme" : "# FIP Questionnaire\n\nThe FIP questionnaire prompts communities to explicitly declare their FAIR Implementation Profiles.\n\nThis knowledge model has been created under the [GO FAIR Convergence Matrix Project](https://www.go-fair.org/today/fair-matrix). For more information, visit the [3-point FAIRification Framework](https://www.go-fair.org/how-to-go-fair/).\n\nThis knowledge model can be used in any DSW instance for testing and training purposes, however, please fill-in your actual FIPs in the **[FIP Wizard](https://fair-matrix.ds-wizard.org)** to share them with the community. Please report any issues and comments there.",
+    "license" : "Apache-2.0",
+    "previousPackageId" : "gofair:fip-wizard:5.0.2",
+    "forkOfPackageId" : "gofair:fair-convergence-matrix:3.0.0",
+    "mergeCheckpointPackageId" : "gofair:fair-convergence-matrix:3.0.0",
+    "events" : [ 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "ad58e0b6-3755-4ecc-bf71-464d231cdbcd",
+            "parentUuid" : "797c4af8-0184-43cf-b40c-e2608b7b4d0a",
+            "entityUuid" : "8b75db91-a7e6-4053-ba77-431ef0e8d67a",
+            "title" : {
+                "changed" : true,
+                "value" : "Choose an available resource from Nanobench"
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "integrationUuid" : {
+                "changed" : false
+            },
+            "props" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "04f75c79-e3a6-4d92-89b7-31acd73454c4",
+            "parentUuid" : "808310c5-7321-4789-aa97-80f4c7ac9fa8",
+            "entityUuid" : "cae8352d-a048-49ad-b95f-24454bb5f80a",
+            "title" : {
+                "changed" : true,
+                "value" : "Choose an available resource from Nanobench"
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "integrationUuid" : {
+                "changed" : false
+            },
+            "props" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "1fe86005-d082-420f-9a89-5276e8515f80",
+            "parentUuid" : "faeab073-3569-4bca-a804-c81c0de04a95",
+            "entityUuid" : "59d34122-39d7-4587-ae39-de456d7459e2",
+            "title" : {
+                "changed" : true,
+                "value" : "Choose an available resource from Nanobench"
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "integrationUuid" : {
+                "changed" : false
+            },
+            "props" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "d8c4e465-ae50-4218-b6e2-95fdb7a030c8",
+            "parentUuid" : "a50aa1e1-68a9-4e36-bdb6-4a4c5a3d902a",
+            "entityUuid" : "7bd33eba-28c2-4279-9dff-a2e672697936",
+            "title" : {
+                "changed" : true,
+                "value" : "Choose an available resource from Nanobench"
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "integrationUuid" : {
+                "changed" : false
+            },
+            "props" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "6a43f1fd-f750-4cbe-ba2d-383a5597ee82",
+            "parentUuid" : "5f33c2e8-8b95-435c-870a-fd97d91ff8da",
+            "entityUuid" : "20abafb3-72f8-4400-9e16-1acc1c61bf38",
+            "title" : {
+                "changed" : true,
+                "value" : "Choose an available resource from Nanobench"
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "integrationUuid" : {
+                "changed" : false
+            },
+            "props" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "5038a27a-1bcc-4729-a6af-3b1e6d7eaef7",
+            "parentUuid" : "43ff12a0-22ff-492b-9777-99e2469f5cf1",
+            "entityUuid" : "5746d5e3-3e98-460d-9a2e-61d3e974eab2",
+            "title" : {
+                "changed" : true,
+                "value" : "Choose an available resource from Nanobench"
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "integrationUuid" : {
+                "changed" : false
+            },
+            "props" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "e97b561b-10f3-4536-b34f-e3be7f62aa88",
+            "parentUuid" : "ee073efa-c934-4db4-ae87-49b73df11ca5",
+            "entityUuid" : "0fe3186c-c7c1-4cef-a8e0-820c2823e66d",
+            "title" : {
+                "changed" : true,
+                "value" : "Choose an available resource from Nanobench"
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "integrationUuid" : {
+                "changed" : false
+            },
+            "props" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "07bf2f99-253d-4d34-9644-09ffcfa5746b",
+            "parentUuid" : "2ddde9e8-4284-4b61-b5a7-8b0e8f8b28c2",
+            "entityUuid" : "076e4fae-6668-4e84-a9f7-b00f1d33f58e",
+            "title" : {
+                "changed" : true,
+                "value" : "Choose an available resource from Nanobench"
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "integrationUuid" : {
+                "changed" : false
+            },
+            "props" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "ad8a2392-48b8-45db-b9da-a52c3fa6fa89",
+            "parentUuid" : "d2c28334-7dc9-4804-9f0c-89984240fb3b",
+            "entityUuid" : "db02f6cd-0e28-41d9-9ccf-a0e9040c422d",
+            "title" : {
+                "changed" : true,
+                "value" : "Choose an available resource from Nanobench"
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "integrationUuid" : {
+                "changed" : false
+            },
+            "props" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "bfdbc908-a741-464c-84a0-fdc1803b1076",
+            "parentUuid" : "a93c26cc-ca80-4bcf-ac4c-04e8123bbadb",
+            "entityUuid" : "f7ab7312-0f7f-4ba9-8141-85352a3115f4",
+            "title" : {
+                "changed" : true,
+                "value" : "Choose an available resource from Nanobench"
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "integrationUuid" : {
+                "changed" : false
+            },
+            "props" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "55190187-3f0e-420f-acbd-466b3029baab",
+            "parentUuid" : "a07fc6d6-1f8c-4c21-9bf5-1040682fa5b8",
+            "entityUuid" : "e3dd2327-0eaa-4ec2-8feb-9d66a78ec4c2",
+            "title" : {
+                "changed" : true,
+                "value" : "Choose an available resource from Nanobench"
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "integrationUuid" : {
+                "changed" : false
+            },
+            "props" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "c2de7f7e-ab4d-4e03-a2d0-fa730d1526f7",
+            "parentUuid" : "53120a47-9151-42d4-bd33-4fd91fa9a48a",
+            "entityUuid" : "219f86b7-88d4-466d-8748-1dcf88fc06b6",
+            "title" : {
+                "changed" : true,
+                "value" : "Choose an available resource from Nanobench"
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "integrationUuid" : {
+                "changed" : false
+            },
+            "props" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "af193fad-d9b5-4da0-9de8-daa03b94ced6",
+            "parentUuid" : "aea4c5be-aaa3-4e27-a6d6-f2e6af0bc43d",
+            "entityUuid" : "8f9e5e00-77e4-4332-8270-a1a4257420ea",
+            "title" : {
+                "changed" : true,
+                "value" : "Choose an available resource from Nanobench"
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "integrationUuid" : {
+                "changed" : false
+            },
+            "props" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "2e62cc82-0305-44c3-9690-9043056f0fb7",
+            "parentUuid" : "bc3f2a07-6921-4693-8e09-4caf408d162a",
+            "entityUuid" : "40dbe55a-a532-4af2-a602-ca9fddae9412",
+            "title" : {
+                "changed" : true,
+                "value" : "Choose an available resource from Nanobench"
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "integrationUuid" : {
+                "changed" : false
+            },
+            "props" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "ee0cc38d-fdef-4f4f-9c7e-52ea6bfaf99f",
+            "parentUuid" : "e712930b-8a6d-474e-b6da-e2fd0e50ab68",
+            "entityUuid" : "1e33211f-25e5-408c-a2a6-5dc9e06c6606",
+            "title" : {
+                "changed" : true,
+                "value" : "Choose an available resource from Nanobench"
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "integrationUuid" : {
+                "changed" : false
+            },
+            "props" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "caba962f-0070-4b7f-ae48-5dd7e11850dd",
+            "parentUuid" : "10ba5624-d948-4f1a-91c1-61f33ec1e51b",
+            "entityUuid" : "b8bc1ffb-64c8-42a6-b5cc-50e2c9813a1f",
+            "title" : {
+                "changed" : true,
+                "value" : "Choose an available resource from Nanobench"
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "integrationUuid" : {
+                "changed" : false
+            },
+            "props" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "4003ee3b-16c8-4506-a053-51d5a9f87299",
+            "parentUuid" : "f6b5b347-6e01-4294-a0e3-d64382bea1e9",
+            "entityUuid" : "c88733b2-e294-419b-81bf-27206542668a",
+            "title" : {
+                "changed" : true,
+                "value" : "Choose an available resource from Nanobench"
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "integrationUuid" : {
+                "changed" : false
+            },
+            "props" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "10909e80-4d05-49de-9ddd-387b5dc050b7",
+            "parentUuid" : "08aae90c-ba61-4c78-b3bd-eb92d29e8111",
+            "entityUuid" : "abe255a0-7e65-4950-b2ae-47ac8ac30cc1",
+            "title" : {
+                "changed" : true,
+                "value" : "Choose an available resource from Nanobench"
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "integrationUuid" : {
+                "changed" : false
+            },
+            "props" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "5b6c00ca-ab05-4bfd-9104-555e407970d9",
+            "parentUuid" : "4f3cfb2a-cbb4-40f5-a151-74c9bcb661bd",
+            "entityUuid" : "4a10d70e-2a4e-4ea1-a796-e5d100bc53ea",
+            "title" : {
+                "changed" : true,
+                "value" : "Choose an available resource (or a resource to be developed) from Nanobench"
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "integrationUuid" : {
+                "changed" : false
+            },
+            "props" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "ed224c4f-f03c-41d5-b00b-e78b4bc26b6e",
+            "parentUuid" : "f0ef2043-8c9b-4aa5-9a3b-2c5474a5a694",
+            "entityUuid" : "a57428a6-8dfe-48e3-b846-d4a039ca934c",
+            "title" : {
+                "changed" : true,
+                "value" : "Choose an available resource (or a resource to be developed) from Nanobench"
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "integrationUuid" : {
+                "changed" : false
+            },
+            "props" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "19100f51-bb8d-4148-9b1f-c51e842f168a",
+            "parentUuid" : "293aed26-bf2c-446b-9c91-5acc0e354e63",
+            "entityUuid" : "e1657f7d-eb02-4baa-a40f-ae0b4ccf973e",
+            "title" : {
+                "changed" : true,
+                "value" : "Choose an available resource (or a resource to be developed) from Nanobench"
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "integrationUuid" : {
+                "changed" : false
+            },
+            "props" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "a5335b65-e39b-4b4e-a4aa-623591ab1f2f",
+            "parentUuid" : "07648d69-41c1-4f7c-bafa-8d93caa32d7c",
+            "entityUuid" : "a74f5643-da60-4c93-8b93-bca758dca0cf",
+            "title" : {
+                "changed" : true,
+                "value" : "Choose an available resource (or a resource to be developed) from Nanobench"
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "integrationUuid" : {
+                "changed" : false
+            },
+            "props" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "af72ed0c-fd3c-45fe-8f21-6928c520060b",
+            "parentUuid" : "66665dd7-0d60-4ac6-a2dd-a69495899dd0",
+            "entityUuid" : "b28bc881-ad87-4564-ab18-0fa8ac8ac061",
+            "title" : {
+                "changed" : true,
+                "value" : "Choose an available resource (or a resource to be developed) from Nanobench"
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "integrationUuid" : {
+                "changed" : false
+            },
+            "props" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "49aac490-fb30-4ee5-acdf-be7db1130522",
+            "parentUuid" : "6668dca1-0761-485c-8f6f-2fe66e2f66bf",
+            "entityUuid" : "0979af91-88e6-4567-a25f-51dabd63ed30",
+            "title" : {
+                "changed" : true,
+                "value" : "Choose an available resource (or a resource to be developed) from Nanobench"
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "integrationUuid" : {
+                "changed" : false
+            },
+            "props" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "cbc20608-d085-4c94-b222-e2f96ff6b0c6",
+            "parentUuid" : "ad6f9598-e308-4c6c-b751-b576e4423b8a",
+            "entityUuid" : "f5b9bf6d-23ea-429d-a937-d988dfb1f971",
+            "title" : {
+                "changed" : true,
+                "value" : "Choose an available resource (or a resource to be developed) from Nanobench"
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "integrationUuid" : {
+                "changed" : false
+            },
+            "props" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "085839d0-1a5c-48b8-8cb2-9e37d4192b21",
+            "parentUuid" : "38e487a0-684e-4add-a2c5-3902e62807a8",
+            "entityUuid" : "e46681c4-d398-4a4d-875e-9829fa987301",
+            "title" : {
+                "changed" : true,
+                "value" : "Choose an available resource (or a resource to be developed) from Nanobench"
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "integrationUuid" : {
+                "changed" : false
+            },
+            "props" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "6e25f311-8b95-4926-85a4-5ec6440a80e5",
+            "parentUuid" : "60d79156-2028-43e7-93f7-09a8d8545e80",
+            "entityUuid" : "76141aaf-1807-4667-a349-1ecdcf08f10b",
+            "title" : {
+                "changed" : true,
+                "value" : "Choose an available resource (or a resource to be developed) from Nanobench"
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "integrationUuid" : {
+                "changed" : false
+            },
+            "props" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "db79e3b1-3bde-48ca-ab86-db2d22b54e4a",
+            "parentUuid" : "f2f9124a-deb0-4485-9dbd-24fcb011458f",
+            "entityUuid" : "3d871bd7-06a4-41f4-858b-37211e30f332",
+            "title" : {
+                "changed" : true,
+                "value" : "Choose an available resource (or a resource to be developed) from Nanobench"
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "integrationUuid" : {
+                "changed" : false
+            },
+            "props" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "de9fb7d1-2e6f-411c-a5b0-e2818e844695",
+            "parentUuid" : "014a56b6-cc81-4044-9352-98a2c11acdfd",
+            "entityUuid" : "2088b12c-1639-4db7-b4ca-00a89e3eaeb3",
+            "title" : {
+                "changed" : true,
+                "value" : "Choose an available resource (or a resource to be developed) from Nanobench"
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "integrationUuid" : {
+                "changed" : false
+            },
+            "props" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "06fabd54-c43f-44c4-9550-8447104039a1",
+            "parentUuid" : "0256112b-b2f5-44e5-be33-69ffeec6a561",
+            "entityUuid" : "bf2a6eb8-8d75-434f-813d-ccad06444c1d",
+            "title" : {
+                "changed" : true,
+                "value" : "Choose an available resource (or a resource to be developed) from Nanobench"
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "integrationUuid" : {
+                "changed" : false
+            },
+            "props" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "74c5e07b-f741-4570-a8d5-f7eafa585804",
+            "parentUuid" : "5700be0d-3918-42e0-b066-512fa6c9137a",
+            "entityUuid" : "c10f580d-f14c-4d8a-bb41-5ea45dc8dbc5",
+            "title" : {
+                "changed" : true,
+                "value" : "Choose an available resource (or a resource to be developed) from Nanobench"
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "integrationUuid" : {
+                "changed" : false
+            },
+            "props" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "f2e7a7ed-296e-4251-b36e-20b60510e654",
+            "parentUuid" : "84e1d4c8-67f1-4d0e-b897-3b99c4feb9bb",
+            "entityUuid" : "d71e4483-6b8b-4022-a25e-d4349f1dbf87",
+            "title" : {
+                "changed" : true,
+                "value" : "Choose an available resource (or a resource to be developed) from Nanobench"
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "integrationUuid" : {
+                "changed" : false
+            },
+            "props" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "ef2d19e8-a12a-4467-90dd-7b6d48ada011",
+            "parentUuid" : "87d51804-6741-477b-ae53-3941b5631a81",
+            "entityUuid" : "9d3ad18c-2055-4d13-b2d0-0bd3503da2cb",
+            "title" : {
+                "changed" : true,
+                "value" : "Choose an available resource (or a resource to be developed) from Nanobench"
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "integrationUuid" : {
+                "changed" : false
+            },
+            "props" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "bd412e13-42f8-40d9-942c-30c4b17eab98",
+            "parentUuid" : "a3d10b12-ae30-48f9-9827-239ea003398d",
+            "entityUuid" : "59b3e9d1-4481-491b-bfc9-f431324f08e6",
+            "title" : {
+                "changed" : true,
+                "value" : "Choose an available resource (or a resource to be developed) from Nanobench"
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "integrationUuid" : {
+                "changed" : false
+            },
+            "props" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "fec2633b-8388-4c2f-a830-2425235beef3",
+            "parentUuid" : "72fd2469-3506-4e28-b8b3-f1049baa097f",
+            "entityUuid" : "fa4b80dc-7427-4cf6-8299-4082eb1fcd0c",
+            "title" : {
+                "changed" : true,
+                "value" : "Choose an available resource (or a resource to be developed) from Nanobench"
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "integrationUuid" : {
+                "changed" : false
+            },
+            "props" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "9ad38ac8-60ad-4b7e-8c05-e4310db293e8",
+            "parentUuid" : "a2ad654d-95ce-4ab0-a853-0416c1c37868",
+            "entityUuid" : "83fdf983-73d3-4b6e-a9c5-58c91de07aa4",
+            "title" : {
+                "changed" : true,
+                "value" : "Choose an available resource (or a resource to be developed) from Nanobench"
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "integrationUuid" : {
+                "changed" : false
+            },
+            "props" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "a4c67111-f6f4-41ba-8787-90ef388323ec",
+            "parentUuid" : "e3301b05-b02d-4c09-bb4b-7fb181414236",
+            "entityUuid" : "797c4af8-0184-43cf-b40c-e2608b7b4d0a",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Different identifier service providers offer different kinds of resolution services impacting F2 and I. One example would be a Digital Object Identifier (DOI). Please choose your resource from Nanobench and enter any considerations you may have. If you cannot find your resource, please register the resource as a nanopublication in Nanobench first (see the end of this questionnaire) and come back to this question afterwards to answer it fully.\n\nTo answer this question **for one existing resource at a time**, please follow this order:\n\n 1. _Consideration_: Please add any comments about the reasons why your community chose to use this resource\n 2. _Wikidata_: Check for existing resources from Wikidata (by typing in that field a keyword and clicking enter, you should find related resources), if not found there\n 3. _Nanobench_: Check for existing resources from Nanobench (by clicking in that field, available resources will pop up), and if not found\n 4. Register this resource in Nanobench (go to_ chapter VII_ ) and\n 5. then go back to this question (_Nanobench_) to look up for the newly created resource\n\nIf you want to **add an additional resource** please make sure to click on the add button below this section outside the grey area."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "1fb55c39-7960-4860-9c24-a2a73fa15ce6",
+            "parentUuid" : "e3301b05-b02d-4c09-bb4b-7fb181414236",
+            "entityUuid" : "808310c5-7321-4789-aa97-80f4c7ac9fa8",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Here we mean metadata schemas such as for example Dublin Core and DCAT. Please state the service you use by choosing your resource from Nanobench and enter any considerations you may have. If you cannot find your resource, please register the resource as a nanopublication in Nanobench first (see the end of this questionnaire) and come back to this question afterwards to answer it fully.\n\nTo answer this question **for one existing resource at a time**, please follow this order:\n\n 1. _Consideration_: Please add any comments about the reasons why your community chose to use this resource\n 2. _Wikidata_: Check for existing resources from Wikidata (by typing in that field a keyword and clicking enter, you should find related resources), if not found there\n 3. _Nanobench_: Check for existing resources from Nanobench (by clicking in that field, available resources will pop up), and if not found\n 4. Register this resource in Nanobench (go to_ chapter VII_ ) and\n 5. then go back to this question (_Nanobench_) to look up for the newly created resource\n\nIf you want to **add an additional resource** please make sure to click on the add button below this section outside the grey area."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "d0107262-fe9d-4eb9-ae89-5cb699bbd70e",
+            "parentUuid" : "e3301b05-b02d-4c09-bb4b-7fb181414236",
+            "entityUuid" : "faeab073-3569-4bca-a804-c81c0de04a95",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Here we are looking for the technology that permanently links your data and metadata. The answers could range from metadata schema having predicates that qualify the relations and locations to technology platforms like repositories and FAIR Data Points that guarantee the permalink to infrastructures such the FAIR Digital Objects. In general if persistent identifiers are assigned they should be findable in the metadata as a separate field. Please state the service you use by choosing your resource from Nanobench and enter any considerations you may have. If you cannot find you resource, please register the resource as a nanopublication in Nanobench first (see end of this questionnaire) and come back to this question afterwards to answer it fully.\n\nTo answer this question **for one existing resource at a time**, please follow this order:\n\n 1. _Consideration_: Please add any comments about the reasons why your community chose to use this resource\n 2. _Wikidata_: Check for existing resources from Wikidata (by typing in that field a keyword and clicking enter, you should find related resources), if not found there\n 3. _Nanobench_: Check for existing resources from Nanobench (by clicking in that field, available resources will pop up), and if not found\n 4. Register this resource in Nanobench (go to_ chapter VII_ ) and\n 5. then go back to this question (_Nanobench_) to look up for the newly created resource\n\nIf you want to **add an additional resource** please make sure to click on the add button below this section outside the grey area."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "85291557-3c9f-4124-b263-534d5f07e034",
+            "parentUuid" : "e3301b05-b02d-4c09-bb4b-7fb181414236",
+            "entityUuid" : "a50aa1e1-68a9-4e36-bdb6-4a4c5a3d902a",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "By search engine we mean a searchable resource, for example a data repository, or a engine like Google search. Please state the service you use by choosing your resource from Nanobench and enter any considerations you may have. If you cannot find you resource, please register the resource as a nanopublication in Nanobench first (see end of this questionnaire) and come back to this question afterwards to answer it fully.\n\nTo answer this question **for one existing resource at a time**, please follow this order:\n\n 1. _Consideration_: Please add any comments about the reasons why your community chose to use this resource\n 2. _Wikidata_: Check for existing resources from Wikidata (by typing in that field a keyword and clicking enter, you should find related resources), if not found there\n 3. _Nanobench_: Check for existing resources from Nanobench (by clicking in that field, available resources will pop up), and if not found\n 4. Register this resource in Nanobench (go to_ chapter VII_ ) and\n 5. then go back to this question (_Nanobench_) to look up for the newly created resource\n\nIf you want to **add an additional resource** please make sure to click on the add button below this section outside the grey area."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "dbd90a2c-393a-4e37-a5f6-a455036e80f8",
+            "parentUuid" : "e3301b05-b02d-4c09-bb4b-7fb181414236",
+            "entityUuid" : "5f33c2e8-8b95-435c-870a-fd97d91ff8da",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "By search engine we mean a searchable resource, for example a data repository, or a engine like Google search. Please state the service you use by choosing your resource from Nanobench and enter any considerations you may have. If you cannot find you resource, please register the resource as a nanopublication in Nanobench first (see end of this questionnaire) and come back to this question afterwards to answer it fully.\n\nTo answer this question **for one existing resource at a time**, please follow this order:\n\n 1. _Consideration_: Please add any comments about the reasons why your community chose to use this resource\n 2. _Wikidata_: Check for existing resources from Wikidata (by typing in that field a keyword and clicking enter, you should find related resources), if not found there\n 3. _Nanobench_: Check for existing resources from Nanobench (by clicking in that field, available resources will pop up), and if not found\n 4. Register this resource in Nanobench (go to_ chapter VII_ ) and\n 5. then go back to this question (_Nanobench_) to look up for the newly created resource\n\nIf you want to **add an additional resource** please make sure to click on the add button below this section outside the grey area."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "0fdca5c6-9a30-495c-a185-c481891a7d58",
+            "parentUuid" : "d6ab1374-788b-4cd5-9614-5ec4c69d6cc5",
+            "entityUuid" : "43ff12a0-22ff-492b-9777-99e2469f5cf1",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "For most purposes, this is a World Wide Web protocol like HTTP or FTP. Please state the service you use by choosing your resource from Nanobench and enter any considerations you may have. If you cannot find you resource, please register the resource as a nanopublication in Nanobench first (see end of this questionnaire) and come back to this question afterwards to answer it fully.\n\nTo answer this question **for one existing resource at a time**, please follow this order:\n\n 1. _Consideration_: Please add any comments about the reasons why your community chose to use this resource\n 2. _Wikidata_: Check for existing resources from Wikidata (by typing in that field a keyword and clicking enter, you should find related resources), if not found there\n 3. _Nanobench_: Check for existing resources from Nanobench (by clicking in that field, available resources will pop up), and if not found\n 4. Register this resource in Nanobench (go to_ chapter VII_ ) and\n 5. then go back to this question (_Nanobench_) to look up for the newly created resource\n\nIf you want to **add an additional resource** please make sure to click on the add button below this section outside the grey area."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "9df29358-f14e-4083-ad59-19e55f6fb250",
+            "parentUuid" : "d6ab1374-788b-4cd5-9614-5ec4c69d6cc5",
+            "entityUuid" : "ee073efa-c934-4db4-ae87-49b73df11ca5",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "For most purposes, this is a World Wide Web protocol like HTTP or FTP. Please state the service you use by choosing your resource from Nanobench and enter any considerations you may have. If you cannot find you resource, please register the resource as a nanopublication in Nanobench first (see end of this questionnaire) and come back to this question afterwards to answer it fully.\n\nTo answer this question **for one existing resource at a time**, please follow this order:\n\n 1. _Consideration_: Please add any comments about the reasons why your community chose to use this resource\n 2. _Wikidata_: Check for existing resources from Wikidata (by typing in that field a keyword and clicking enter, you should find related resources), if not found there\n 3. _Nanobench_: Check for existing resources from Nanobench (by clicking in that field, available resources will pop up), and if not found\n 4. Register this resource in Nanobench (go to_ chapter VII_ ) and\n 5. then go back to this question (_Nanobench_) to look up for the newly created resource\n\nIf you want to **add an additional resource** please make sure to click on the add button below this section outside the grey area."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "8614a8e2-4bac-4fbb-a416-20b644641db5",
+            "parentUuid" : "d6ab1374-788b-4cd5-9614-5ec4c69d6cc5",
+            "entityUuid" : "2ddde9e8-4284-4b61-b5a7-8b0e8f8b28c2",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "What are the methods of authorization which are supported to secure access to your data/services? Examples are Shibboleth paired with eduGain or OAuth. Please state the service you use by choosing your resource from Nanobench and enter any considerations you may have. If you cannot find you resource, please register the resource as a nanopublication in Nanobench first (see end of this questionnaire) and come back to this question afterwards to answer it fully.\n\nTo answer this question **for one existing resource at a time**, please follow this order:\n\n 1. _Consideration_: Please add any comments about the reasons why your community chose to use this resource\n 2. _Wikidata_: Check for existing resources from Wikidata (by typing in that field a keyword and clicking enter, you should find related resources), if not found there\n 3. _Nanobench_: Check for existing resources from Nanobench (by clicking in that field, available resources will pop up), and if not found\n 4. Register this resource in Nanobench (go to_ chapter VII_ ) and\n 5. then go back to this question (_Nanobench_) to look up for the newly created resource\n\nIf you want to **add an additional resource** please make sure to click on the add button below this section outside the grey area."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "979ea3f6-19ea-42c4-85dc-3b4f7953e8b0",
+            "parentUuid" : "d6ab1374-788b-4cd5-9614-5ec4c69d6cc5",
+            "entityUuid" : "d2c28334-7dc9-4804-9f0c-89984240fb3b",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "What are the methods of authorization which are supported to secure access to your data/services? Examples are Shibboleth paired with eduGain or OAuth. Please state the service you use by choosing your resource from Nanobench and enter any considerations you may have. If you cannot find you resource, please register the resource as a nanopublication in Nanobench first (see end of this questionnaire) and come back to this question afterwards to answer it fully.\n\nTo answer this question **for one existing resource at a time**, please follow this order:\n\n 1. _Consideration_: Please add any comments about the reasons why your community chose to use this resource\n 2. _Wikidata_: Check for existing resources from Wikidata (by typing in that field a keyword and clicking enter, you should find related resources), if not found there\n 3. _Nanobench_: Check for existing resources from Nanobench (by clicking in that field, available resources will pop up), and if not found\n 4. Register this resource in Nanobench (go to_ chapter VII_ ) and\n 5. then go back to this question (_Nanobench_) to look up for the newly created resource\n\nIf you want to **add an additional resource** please make sure to click on the add button below this section outside the grey area."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "8390e6e1-cba0-4d25-b435-64664540af06",
+            "parentUuid" : "d6ab1374-788b-4cd5-9614-5ec4c69d6cc5",
+            "entityUuid" : "a93c26cc-ca80-4bcf-ac4c-04e8123bbadb",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "This metadata longevity plan will in most cases be hard to locate even if it exists since creating such a plan is far from standard. An excellent challenge to the community at large is to create a standard, machine-readable metadata longevity plan and predicates to identify it as such. Please state the service you use by choosing your resource from Nanobench and enter any considerations you may have. If you cannot find you resource, please register the resource as a nanopublication in Nanobench first (see end of this questionnaire) and come back to this question afterwards to answer it fully.\n\nTo answer this question **for one existing resource at a time**, please follow this order:\n\n 1. _Consideration_: Please add any comments about the reasons why your community chose to use this resource\n 2. _Wikidata_: Check for existing resources from Wikidata (by typing in that field a keyword and clicking enter, you should find related resources), if not found there\n 3. _Nanobench_: Check for existing resources from Nanobench (by clicking in that field, available resources will pop up), and if not found\n 4. Register this resource in Nanobench (go to_ chapter VII_ ) and\n 5. then go back to this question (_Nanobench_) to look up for the newly created resource\n\nIf you want to **add an additional resource** please make sure to click on the add button below this section outside the grey area."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "b2b3006d-4771-4c97-ad89-3e1ce0368a08",
+            "parentUuid" : "2b7ee188-a227-43a8-8bf9-a99e6aeb3939",
+            "entityUuid" : "a07fc6d6-1f8c-4c21-9bf5-1040682fa5b8",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "By knowledge representation languages we mean standards such as Resource Description Framework (RDF) or Extensible Markup Language (XML). Please state the service you use by choosing your resource from Nanobench and enter any considerations you may have. If you cannot find your resource, please register the resource as a nanopublication in Nanobench first (see the end of this questionnaire) and come back to this question afterwards to answer it fully.\n\nTo answer this question **for one existing resource at a time**, please follow this order:\n\n 1. _Consideration_: Please add any comments about the reasons why your community chose to use this resource\n 2. _Wikidata_: Check for existing resources from Wikidata (by typing in that field a keyword and clicking enter, you should find related resources), if not found there\n 3. _Nanobench_: Check for existing resources from Nanobench (by clicking in that field, available resources will pop up), and if not found\n 4. Register this resource in Nanobench (go to_ chapter VII_ ) and\n 5. then go back to this question (_Nanobench_) to look up for the newly created resource\n\nIf you want to **add an additional resource** please make sure to click on the add button below this section outside the grey area."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "21fabafe-4ca0-404c-8090-990e68db233a",
+            "parentUuid" : "2b7ee188-a227-43a8-8bf9-a99e6aeb3939",
+            "entityUuid" : "53120a47-9151-42d4-bd33-4fd91fa9a48a",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "By knowledge representation languages we mean standards such as Resource Description Framework (RDF) or Extensible Markup Language (XML). Please state the service you use by choosing your resource from Nanobench and enter any considerations you may have. If you cannot find your resource, please register the resource as a nanopublication in Nanobench first (see the end of this questionnaire) and come back to this question afterwards to answer it fully.\n\nTo answer this question **for one existing resource at a time**, please follow this order:\n\n 1. _Consideration_: Please add any comments about the reasons why your community chose to use this resource\n 2. _Wikidata_: Check for existing resources from Wikidata (by typing in that field a keyword and clicking enter, you should find related resources), if not found there\n 3. _Nanobench_: Check for existing resources from Nanobench (by clicking in that field, available resources will pop up), and if not found\n 4. Register this resource in Nanobench (go to_ chapter VII_ ) and\n 5. then go back to this question (_Nanobench_) to look up for the newly created resource\n\nIf you want to **add an additional resource** please make sure to click on the add button below this section outside the grey area."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "80e779fe-a40e-43ef-98ba-4a22777928c8",
+            "parentUuid" : "2b7ee188-a227-43a8-8bf9-a99e6aeb3939",
+            "entityUuid" : "aea4c5be-aaa3-4e27-a6d6-f2e6af0bc43d",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "By structured vocabularies we mean for example ontologies defined in the “Web Ontology Language” (OWL) and shared via a publicly accessible registry. Please state the service you use by choosing your resource from Nanobench and enter any considerations you may have. If you cannot find your resource, please register the resource as a nanopublication in Nanobench first (see the end of this questionnaire) and come back to this question afterwards to answer it fully.\n\nTo answer this question **for one existing resource at a time**, please follow this order:\n\n 1. _Consideration_: Please add any comments about the reasons why your community chose to use this resource\n 2. _Wikidata_: Check for existing resources from Wikidata (by typing in that field a keyword and clicking enter, you should find related resources), if not found there\n 3. _Nanobench_: Check for existing resources from Nanobench (by clicking in that field, available resources will pop up), and if not found\n 4. Register this resource in Nanobench (go to_ chapter VII_ ) and\n 5. then go back to this question (_Nanobench_) to look up for the newly created resource\n\nIf you want to **add an additional resource** please make sure to click on the add button below this section outside the grey area."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "60066abe-4b10-4159-87a5-da9997c35b50",
+            "parentUuid" : "2b7ee188-a227-43a8-8bf9-a99e6aeb3939",
+            "entityUuid" : "bc3f2a07-6921-4693-8e09-4caf408d162a",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "By structured vocabularies we mean for example ontologies defined in the “Web Ontology Language” (OWL) and shared via a publicly accessible registry. Please state the service you use by choosing your resource from Nanobench and enter any considerations you may have. If you cannot find your resource, please register the resource as a nanopublication in Nanobench first (see the end of this questionnaire) and come back to this question afterwards to answer it fully.\n\nTo answer this question **for one existing resource at a time**, please follow this order:\n\n 1. _Consideration_: Please add any comments about the reasons why your community chose to use this resource\n 2. _Wikidata_: Check for existing resources from Wikidata (by typing in that field a keyword and clicking enter, you should find related resources), if not found there\n 3. _Nanobench_: Check for existing resources from Nanobench (by clicking in that field, available resources will pop up), and if not found\n 4. Register this resource in Nanobench (go to_ chapter VII_ ) and\n 5. then go back to this question (_Nanobench_) to look up for the newly created resource\n\nIf you want to **add an additional resource** please make sure to click on the add button below this section outside the grey area."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "11b6be74-a472-4192-aca0-cfda706936a8",
+            "parentUuid" : "2b7ee188-a227-43a8-8bf9-a99e6aeb3939",
+            "entityUuid" : "e712930b-8a6d-474e-b6da-e2fd0e50ab68",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Please state the service you use by choosing your resource from Nanobench and enter any considerations you may have. If you cannot find your resource, please register the resource as a nanopublication in Nanobench first (see the end of this questionnaire) and come back to this question afterwards to answer it fully.\n\nTo answer this question **for one existing resource at a time**, please follow this order:\n\n 1. _Consideration_: Please add any comments about the reasons why your community chose to use this resource\n 2. _Wikidata_: Check for existing resources from Wikidata (by typing in that field a keyword and clicking enter, you should find related resources), if not found there\n 3. _Nanobench_: Check for existing resources from Nanobench (by clicking in that field, available resources will pop up), and if not found\n 4. Register this resource in Nanobench (go to_ chapter VII_ ) and\n 5. then go back to this question (_Nanobench_) to look up for the newly created resource\n\nIf you want to **add an additional resource** please make sure to click on the add button below this section outside the grey area."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "bd5963ef-34e2-41b5-989a-8067e4cbeb3e",
+            "parentUuid" : "2b7ee188-a227-43a8-8bf9-a99e6aeb3939",
+            "entityUuid" : "10ba5624-d948-4f1a-91c1-61f33ec1e51b",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Please state the service you use by choosing your resource from Nanobench and enter any considerations you may have. If you cannot find your resource, please register the resource as a nanopublication in Nanobench first (see the end of this questionnaire) and come back to this question afterwards to answer it fully.\n\nTo answer this question **for one existing resource at a time**, please follow this order:\n\n 1. _Consideration_: Please add any comments about the reasons why your community chose to use this resource\n 2. _Wikidata_: Check for existing resources from Wikidata (by typing in that field a keyword and clicking enter, you should find related resources), if not found there\n 3. _Nanobench_: Check for existing resources from Nanobench (by clicking in that field, available resources will pop up), and if not found\n 4. Register this resource in Nanobench (go to_ chapter VII_ ) and\n 5. then go back to this question (_Nanobench_) to look up for the newly created resource\n\nIf you want to **add an additional resource** please make sure to click on the add button below this section outside the grey area."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "b78f1bdf-da81-4196-85f0-427113da6c24",
+            "parentUuid" : "37e3ef76-71e1-47a9-be84-e1f1d9452193",
+            "entityUuid" : "f6b5b347-6e01-4294-a0e3-d64382bea1e9",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Provenance descriptions can for instance be implemented following community-specific templates according to the PROV-Template or CEDAR approach. Please state the service you use by choosing your resource from Nanobench and enter any considerations you may have. If you cannot find your resource, please register the resource as a nanopublication in Nanobench first (see the end of this questionnaire) and come back to this question afterwards to answer it fully.\n\nTo answer this question **for one existing resource at a time**, please follow this order:\n\n 1. _Consideration_: Please add any comments about the reasons why your community chose to use this resource\n 2. _Wikidata_: Check for existing resources from Wikidata (by typing in that field a keyword and clicking enter, you should find related resources), if not found there\n 3. _Nanobench_: Check for existing resources from Nanobench (by clicking in that field, available resources will pop up), and if not found\n 4. Register this resource in Nanobench (go to_ chapter VII_ ) and\n 5. then go back to this question (_Nanobench_) to look up for the newly created resource\n\nIf you want to **add an additional resource** please make sure to click on the add button below this section outside the grey area."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "aee2af5d-7f44-4191-93f3-fa057c28e49f",
+            "parentUuid" : "37e3ef76-71e1-47a9-be84-e1f1d9452193",
+            "entityUuid" : "08aae90c-ba61-4c78-b3bd-eb92d29e8111",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Provenance descriptions can for instance be implemented following community-specific templates according to the PROV-Template or CEDAR approach. Please state the service you use by choosing your resource from Nanobench and enter any considerations you may have. If you cannot find your resource, please register the resource as a nanopublication in Nanobench first (see the end of this questionnaire) and come back to this question afterwards to answer it fully.\n\nTo answer this question **for one existing resource at a time**, please follow this order:\n\n 1. _Consideration_: Please add any comments about the reasons why your community chose to use this resource\n 2. _Wikidata_: Check for existing resources from Wikidata (by typing in that field a keyword and clicking enter, you should find related resources), if not found there\n 3. _Nanobench_: Check for existing resources from Nanobench (by clicking in that field, available resources will pop up), and if not found\n 4. Register this resource in Nanobench (go to_ chapter VII_ ) and\n 5. then go back to this question (_Nanobench_) to look up for the newly created resource\n\nIf you want to **add an additional resource** please make sure to click on the add button below this section outside the grey area."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "a3bf6585-7754-4066-ae34-ab2614082ff4",
+            "parentUuid" : "797c4af8-0184-43cf-b40c-e2608b7b4d0a",
+            "entityUuid" : "4f3cfb2a-cbb4-40f5-a151-74c9bcb661bd",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "It might be the case that you are using a specific resource at this moment but that there are plans to move to another resource in the future. If you already know which resource this is you can add it here. The resource can be an already available one or a resource to be developed. \n\nTo answer this question for **one existing resource at a time**, please follow this order:\n 1. _Wikidata_: Check for existing resources from Wikidata (by typing in that field a keyword and clicking enter, you should find related resources), if not found there\n 2. _Nanobench_: Check for existing resources from Nanobench (by clicking in that field, available resources will pop up), and if not found\n 3. Register this resource in Nanobench (go to _chapter VII_ ) and\n 4. then go back to this question (_Nanobench_) to look up for the newly created resource\n\nTo answer this question for ** one resource to be developed**, please follow this order:\n 1. Go to _chapter VII_ to register the resource your community or somebody else wants to develop\n 2. Go to _Nanobench_ to look up for the newly created resource\n\nIf you want to **add an additional resource** please make sure to click on the add button below.\n"
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "8bb7eaab-a1d9-4cce-97e0-01630c450373",
+            "parentUuid" : "808310c5-7321-4789-aa97-80f4c7ac9fa8",
+            "entityUuid" : "f0ef2043-8c9b-4aa5-9a3b-2c5474a5a694",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "It might be the case that you are using a specific resource at this moment but that there are plans to move to another resource in the future. If you already know which resource this is you can add it here. The resource can be an already available one or a resource to be developed. \n\nTo answer this question for **one existing resource at a time**, please follow this order:\n 1. _Wikidata_: Check for existing resources from Wikidata (by typing in that field a keyword and clicking enter, you should find related resources), if not found there\n 2. _Nanobench_: Check for existing resources from Nanobench (by clicking in that field, available resources will pop up), and if not found\n 3. Register this resource in Nanobench (go to _chapter VII_ ) and\n 4. then go back to this question (_Nanobench_) to look up for the newly created resource\n\nTo answer this question for ** one resource to be developed**, please follow this order:\n 1. Go to _chapter VII_ to register the resource your community or somebody else wants to develop\n 2. Go to _Nanobench_ to look up for the newly created resource\n\nIf you want to **add an additional resource** please make sure to click on the add button below.\n"
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "bb5bca1f-0b48-4862-8d93-8954349b6001",
+            "parentUuid" : "faeab073-3569-4bca-a804-c81c0de04a95",
+            "entityUuid" : "293aed26-bf2c-446b-9c91-5acc0e354e63",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "It might be the case that you are using a specific resource at this moment but that there are plans to move to another resource in the future. If you already know which resource this is you can add it here. The resource can be an already available one or a resource to be developed. \n\nTo answer this question for **one existing resource at a time**, please follow this order:\n 1. _Wikidata_: Check for existing resources from Wikidata (by typing in that field a keyword and clicking enter, you should find related resources), if not found there\n 2. _Nanobench_: Check for existing resources from Nanobench (by clicking in that field, available resources will pop up), and if not found\n 3. Register this resource in Nanobench (go to _chapter VII_ ) and\n 4. then go back to this question (_Nanobench_) to look up for the newly created resource\n\nTo answer this question for ** one resource to be developed**, please follow this order:\n 1. Go to _chapter VII_ to register the resource your community or somebody else wants to develop\n 2. Go to _Nanobench_ to look up for the newly created resource\n\nIf you want to **add an additional resource** please make sure to click on the add button below.\n"
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "5709b0bf-458e-4f9b-8503-75c937eae81e",
+            "parentUuid" : "a50aa1e1-68a9-4e36-bdb6-4a4c5a3d902a",
+            "entityUuid" : "07648d69-41c1-4f7c-bafa-8d93caa32d7c",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "It might be the case that you are using a specific resource at this moment but that there are plans to move to another resource in the future. If you already know which resource this is you can add it here. The resource can be an already available one or a resource to be developed. \n\nTo answer this question for **one existing resource at a time**, please follow this order:\n 1. _Wikidata_: Check for existing resources from Wikidata (by typing in that field a keyword and clicking enter, you should find related resources), if not found there\n 2. _Nanobench_: Check for existing resources from Nanobench (by clicking in that field, available resources will pop up), and if not found\n 3. Register this resource in Nanobench (go to _chapter VII_ ) and\n 4. then go back to this question (_Nanobench_) to look up for the newly created resource\n\nTo answer this question for ** one resource to be developed**, please follow this order:\n 1. Go to _chapter VII_ to register the resource your community or somebody else wants to develop\n 2. Go to _Nanobench_ to look up for the newly created resource\n\nIf you want to **add an additional resource** please make sure to click on the add button below.\n"
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "a9be2b56-1677-4b38-ad37-889a7908107f",
+            "parentUuid" : "5f33c2e8-8b95-435c-870a-fd97d91ff8da",
+            "entityUuid" : "66665dd7-0d60-4ac6-a2dd-a69495899dd0",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "It might be the case that you are using a specific resource at this moment but that there are plans to move to another resource in the future. If you already know which resource this is you can add it here. The resource can be an already available one or a resource to be developed. \n\nTo answer this question for **one existing resource at a time**, please follow this order:\n 1. _Wikidata_: Check for existing resources from Wikidata (by typing in that field a keyword and clicking enter, you should find related resources), if not found there\n 2. _Nanobench_: Check for existing resources from Nanobench (by clicking in that field, available resources will pop up), and if not found\n 3. Register this resource in Nanobench (go to _chapter VII_ ) and\n 4. then go back to this question (_Nanobench_) to look up for the newly created resource\n\nTo answer this question for ** one resource to be developed**, please follow this order:\n 1. Go to _chapter VII_ to register the resource your community or somebody else wants to develop\n 2. Go to _Nanobench_ to look up for the newly created resource\n\nIf you want to **add an additional resource** please make sure to click on the add button below.\n"
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "5e90cc98-1d50-48c7-bbb2-7dde53fa8bae",
+            "parentUuid" : "43ff12a0-22ff-492b-9777-99e2469f5cf1",
+            "entityUuid" : "6668dca1-0761-485c-8f6f-2fe66e2f66bf",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "It might be the case that you are using a specific resource at this moment but that there are plans to move to another resource in the future. If you already know which resource this is you can add it here. The resource can be an already available one or a resource to be developed. \n\nTo answer this question for **one existing resource at a time**, please follow this order:\n 1. _Wikidata_: Check for existing resources from Wikidata (by typing in that field a keyword and clicking enter, you should find related resources), if not found there\n 2. _Nanobench_: Check for existing resources from Nanobench (by clicking in that field, available resources will pop up), and if not found\n 3. Register this resource in Nanobench (go to _chapter VII_ ) and\n 4. then go back to this question (_Nanobench_) to look up for the newly created resource\n\nTo answer this question for ** one resource to be developed**, please follow this order:\n 1. Go to _chapter VII_ to register the resource your community or somebody else wants to develop\n 2. Go to _Nanobench_ to look up for the newly created resource\n\nIf you want to **add an additional resource** please make sure to click on the add button below.\n"
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "0c5c0eda-3d3f-4961-ae7d-2d10623d4c90",
+            "parentUuid" : "ee073efa-c934-4db4-ae87-49b73df11ca5",
+            "entityUuid" : "ad6f9598-e308-4c6c-b751-b576e4423b8a",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "It might be the case that you are using a specific resource at this moment but that there are plans to move to another resource in the future. If you already know which resource this is you can add it here. The resource can be an already available one or a resource to be developed. \n\nTo answer this question for **one existing resource at a time**, please follow this order:\n 1. _Wikidata_: Check for existing resources from Wikidata (by typing in that field a keyword and clicking enter, you should find related resources), if not found there\n 2. _Nanobench_: Check for existing resources from Nanobench (by clicking in that field, available resources will pop up), and if not found\n 3. Register this resource in Nanobench (go to _chapter VII_ ) and\n 4. then go back to this question (_Nanobench_) to look up for the newly created resource\n\nTo answer this question for ** one resource to be developed**, please follow this order:\n 1. Go to _chapter VII_ to register the resource your community or somebody else wants to develop\n 2. Go to _Nanobench_ to look up for the newly created resource\n\nIf you want to **add an additional resource** please make sure to click on the add button below.\n"
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "837bc658-d3ff-4e07-9a05-9a34ad07e23f",
+            "parentUuid" : "2ddde9e8-4284-4b61-b5a7-8b0e8f8b28c2",
+            "entityUuid" : "38e487a0-684e-4add-a2c5-3902e62807a8",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "It might be the case that you are using a specific resource at this moment but that there are plans to move to another resource in the future. If you already know which resource this is you can add it here. The resource can be an already available one or a resource to be developed. \n\nTo answer this question for **one existing resource at a time**, please follow this order:\n 1. _Wikidata_: Check for existing resources from Wikidata (by typing in that field a keyword and clicking enter, you should find related resources), if not found there\n 2. _Nanobench_: Check for existing resources from Nanobench (by clicking in that field, available resources will pop up), and if not found\n 3. Register this resource in Nanobench (go to _chapter VII_ ) and\n 4. then go back to this question (_Nanobench_) to look up for the newly created resource\n\nTo answer this question for ** one resource to be developed**, please follow this order:\n 1. Go to _chapter VII_ to register the resource your community or somebody else wants to develop\n 2. Go to _Nanobench_ to look up for the newly created resource\n\nIf you want to **add an additional resource** please make sure to click on the add button below.\n"
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "c9bf66ba-6fc5-48fd-bdcc-cfdb5f07ce86",
+            "parentUuid" : "d2c28334-7dc9-4804-9f0c-89984240fb3b",
+            "entityUuid" : "60d79156-2028-43e7-93f7-09a8d8545e80",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "It might be the case that you are using a specific resource at this moment but that there are plans to move to another resource in the future. If you already know which resource this is you can add it here. The resource can be an already available one or a resource to be developed. \n\nTo answer this question for **one existing resource at a time**, please follow this order:\n 1. _Wikidata_: Check for existing resources from Wikidata (by typing in that field a keyword and clicking enter, you should find related resources), if not found there\n 2. _Nanobench_: Check for existing resources from Nanobench (by clicking in that field, available resources will pop up), and if not found\n 3. Register this resource in Nanobench (go to _chapter VII_ ) and\n 4. then go back to this question (_Nanobench_) to look up for the newly created resource\n\nTo answer this question for ** one resource to be developed**, please follow this order:\n 1. Go to _chapter VII_ to register the resource your community or somebody else wants to develop\n 2. Go to _Nanobench_ to look up for the newly created resource\n\nIf you want to **add an additional resource** please make sure to click on the add button below.\n"
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "81152224-b222-4554-b816-dc07e0de4468",
+            "parentUuid" : "a93c26cc-ca80-4bcf-ac4c-04e8123bbadb",
+            "entityUuid" : "f2f9124a-deb0-4485-9dbd-24fcb011458f",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "It might be the case that you are using a specific resource at this moment but that there are plans to move to another resource in the future. If you already know which resource this is you can add it here. The resource can be an already available one or a resource to be developed. \n\nTo answer this question for **one existing resource at a time**, please follow this order:\n 1. _Wikidata_: Check for existing resources from Wikidata (by typing in that field a keyword and clicking enter, you should find related resources), if not found there\n 2. _Nanobench_: Check for existing resources from Nanobench (by clicking in that field, available resources will pop up), and if not found\n 3. Register this resource in Nanobench (go to _chapter VII_ ) and\n 4. then go back to this question (_Nanobench_) to look up for the newly created resource\n\nTo answer this question for ** one resource to be developed**, please follow this order:\n 1. Go to _chapter VII_ to register the resource your community or somebody else wants to develop\n 2. Go to _Nanobench_ to look up for the newly created resource\n\nIf you want to **add an additional resource** please make sure to click on the add button below.\n"
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "f92a7e37-aa0b-40bf-af57-f74a57fce202",
+            "parentUuid" : "a07fc6d6-1f8c-4c21-9bf5-1040682fa5b8",
+            "entityUuid" : "014a56b6-cc81-4044-9352-98a2c11acdfd",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "It might be the case that you are using a specific resource at this moment but that there are plans to move to another resource in the future. If you already know which resource this is you can add it here. The resource can be an already available one or a resource to be developed. \n\nTo answer this question for **one existing resource at a time**, please follow this order:\n 1. _Wikidata_: Check for existing resources from Wikidata (by typing in that field a keyword and clicking enter, you should find related resources), if not found there\n 2. _Nanobench_: Check for existing resources from Nanobench (by clicking in that field, available resources will pop up), and if not found\n 3. Register this resource in Nanobench (go to _chapter VII_ ) and\n 4. then go back to this question (_Nanobench_) to look up for the newly created resource\n\nTo answer this question for ** one resource to be developed**, please follow this order:\n 1. Go to _chapter VII_ to register the resource your community or somebody else wants to develop\n 2. Go to _Nanobench_ to look up for the newly created resource\n\nIf you want to **add an additional resource** please make sure to click on the add button below.\n"
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "fa45ef52-c96c-482f-9ac3-84cd833d865f",
+            "parentUuid" : "53120a47-9151-42d4-bd33-4fd91fa9a48a",
+            "entityUuid" : "0256112b-b2f5-44e5-be33-69ffeec6a561",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "It might be the case that you are using a specific resource at this moment but that there are plans to move to another resource in the future. If you already know which resource this is you can add it here. The resource can be an already available one or a resource to be developed. \n\nTo answer this question for **one existing resource at a time**, please follow this order:\n 1. _Wikidata_: Check for existing resources from Wikidata (by typing in that field a keyword and clicking enter, you should find related resources), if not found there\n 2. _Nanobench_: Check for existing resources from Nanobench (by clicking in that field, available resources will pop up), and if not found\n 3. Register this resource in Nanobench (go to _chapter VII_ ) and\n 4. then go back to this question (_Nanobench_) to look up for the newly created resource\n\nTo answer this question for ** one resource to be developed**, please follow this order:\n 1. Go to _chapter VII_ to register the resource your community or somebody else wants to develop\n 2. Go to _Nanobench_ to look up for the newly created resource\n\nIf you want to **add an additional resource** please make sure to click on the add button below.\n"
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "5ee839ce-5f49-4580-b139-9431dfe68c38",
+            "parentUuid" : "aea4c5be-aaa3-4e27-a6d6-f2e6af0bc43d",
+            "entityUuid" : "5700be0d-3918-42e0-b066-512fa6c9137a",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "It might be the case that you are using a specific resource at this moment but that there are plans to move to another resource in the future. If you already know which resource this is you can add it here. The resource can be an already available one or a resource to be developed. \n\nTo answer this question for **one existing resource at a time**, please follow this order:\n 1. _Wikidata_: Check for existing resources from Wikidata (by typing in that field a keyword and clicking enter, you should find related resources), if not found there\n 2. _Nanobench_: Check for existing resources from Nanobench (by clicking in that field, available resources will pop up), and if not found\n 3. Register this resource in Nanobench (go to _chapter VII_ ) and\n 4. then go back to this question (_Nanobench_) to look up for the newly created resource\n\nTo answer this question for ** one resource to be developed**, please follow this order:\n 1. Go to _chapter VII_ to register the resource your community or somebody else wants to develop\n 2. Go to _Nanobench_ to look up for the newly created resource\n\nIf you want to **add an additional resource** please make sure to click on the add button below.\n"
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "89789b0a-dbb6-4a29-9953-5e0e8834426a",
+            "parentUuid" : "bc3f2a07-6921-4693-8e09-4caf408d162a",
+            "entityUuid" : "84e1d4c8-67f1-4d0e-b897-3b99c4feb9bb",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "It might be the case that you are using a specific resource at this moment but that there are plans to move to another resource in the future. If you already know which resource this is you can add it here. The resource can be an already available one or a resource to be developed. \n\nTo answer this question for **one existing resource at a time**, please follow this order:\n 1. _Wikidata_: Check for existing resources from Wikidata (by typing in that field a keyword and clicking enter, you should find related resources), if not found there\n 2. _Nanobench_: Check for existing resources from Nanobench (by clicking in that field, available resources will pop up), and if not found\n 3. Register this resource in Nanobench (go to _chapter VII_ ) and\n 4. then go back to this question (_Nanobench_) to look up for the newly created resource\n\nTo answer this question for ** one resource to be developed**, please follow this order:\n 1. Go to _chapter VII_ to register the resource your community or somebody else wants to develop\n 2. Go to _Nanobench_ to look up for the newly created resource\n\nIf you want to **add an additional resource** please make sure to click on the add button below.\n"
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "e572459f-efba-449e-8a55-2ceb840934d4",
+            "parentUuid" : "e712930b-8a6d-474e-b6da-e2fd0e50ab68",
+            "entityUuid" : "87d51804-6741-477b-ae53-3941b5631a81",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "It might be the case that you are using a specific resource at this moment but that there are plans to move to another resource in the future. If you already know which resource this is you can add it here. The resource can be an already available one or a resource to be developed. \n\nTo answer this question for **one existing resource at a time**, please follow this order:\n 1. _Wikidata_: Check for existing resources from Wikidata (by typing in that field a keyword and clicking enter, you should find related resources), if not found there\n 2. _Nanobench_: Check for existing resources from Nanobench (by clicking in that field, available resources will pop up), and if not found\n 3. Register this resource in Nanobench (go to _chapter VII_ ) and\n 4. then go back to this question (_Nanobench_) to look up for the newly created resource\n\nTo answer this question for ** one resource to be developed**, please follow this order:\n 1. Go to _chapter VII_ to register the resource your community or somebody else wants to develop\n 2. Go to _Nanobench_ to look up for the newly created resource\n\nIf you want to **add an additional resource** please make sure to click on the add button below.\n"
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "670c5348-6df8-4458-8a3f-61d7f6d808fd",
+            "parentUuid" : "10ba5624-d948-4f1a-91c1-61f33ec1e51b",
+            "entityUuid" : "a3d10b12-ae30-48f9-9827-239ea003398d",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "It might be the case that you are using a specific resource at this moment but that there are plans to move to another resource in the future. If you already know which resource this is you can add it here. The resource can be an already available one or a resource to be developed. \n\nTo answer this question for **one existing resource at a time**, please follow this order:\n 1. _Wikidata_: Check for existing resources from Wikidata (by typing in that field a keyword and clicking enter, you should find related resources), if not found there\n 2. _Nanobench_: Check for existing resources from Nanobench (by clicking in that field, available resources will pop up), and if not found\n 3. Register this resource in Nanobench (go to _chapter VII_ ) and\n 4. then go back to this question (_Nanobench_) to look up for the newly created resource\n\nTo answer this question for ** one resource to be developed**, please follow this order:\n 1. Go to _chapter VII_ to register the resource your community or somebody else wants to develop\n 2. Go to _Nanobench_ to look up for the newly created resource\n\nIf you want to **add an additional resource** please make sure to click on the add button below.\n"
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "445bb66f-acdb-48b6-b74c-cec9ad68dee5",
+            "parentUuid" : "f6b5b347-6e01-4294-a0e3-d64382bea1e9",
+            "entityUuid" : "72fd2469-3506-4e28-b8b3-f1049baa097f",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "It might be the case that you are using a specific resource at this moment but that there are plans to move to another resource in the future. If you already know which resource this is you can add it here. The resource can be an already available one or a resource to be developed. \n\nTo answer this question for **one existing resource at a time**, please follow this order:\n 1. _Wikidata_: Check for existing resources from Wikidata (by typing in that field a keyword and clicking enter, you should find related resources), if not found there\n 2. _Nanobench_: Check for existing resources from Nanobench (by clicking in that field, available resources will pop up), and if not found\n 3. Register this resource in Nanobench (go to _chapter VII_ ) and\n 4. then go back to this question (_Nanobench_) to look up for the newly created resource\n\nTo answer this question for ** one resource to be developed**, please follow this order:\n 1. Go to _chapter VII_ to register the resource your community or somebody else wants to develop\n 2. Go to _Nanobench_ to look up for the newly created resource\n\nIf you want to **add an additional resource** please make sure to click on the add button below.\n"
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "7da8c69b-60f5-4921-b7bd-976d1437d1cc",
+            "parentUuid" : "08aae90c-ba61-4c78-b3bd-eb92d29e8111",
+            "entityUuid" : "a2ad654d-95ce-4ab0-a853-0416c1c37868",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "It might be the case that you are using a specific resource at this moment but that there are plans to move to another resource in the future. If you already know which resource this is you can add it here. The resource can be an already available one or a resource to be developed. \n\nTo answer this question for **one existing resource at a time**, please follow this order:\n 1. _Wikidata_: Check for existing resources from Wikidata (by typing in that field a keyword and clicking enter, you should find related resources), if not found there\n 2. _Nanobench_: Check for existing resources from Nanobench (by clicking in that field, available resources will pop up), and if not found\n 3. Register this resource in Nanobench (go to _chapter VII_ ) and\n 4. then go back to this question (_Nanobench_) to look up for the newly created resource\n\nTo answer this question for ** one resource to be developed**, please follow this order:\n 1. Go to _chapter VII_ to register the resource your community or somebody else wants to develop\n 2. Go to _Nanobench_ to look up for the newly created resource\n\nIf you want to **add an additional resource** please make sure to click on the add button below.\n"
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }
+    ],
+    "createdAt" : ISODate("2020-10-14T07:42:09.563Z")
+},
+
+{
+    "id" : "gofair:fip-wizard:5.0.4",
+    "name" : "FIP Wizard",
+    "organizationId" : "gofair",
+    "kmId" : "fip-wizard",
+    "version" : "5.0.4",
+    "metamodelVersion" : 5,
+    "description" : "Questionnaire prompting Communities committed to implementation of the FAIR Principles to explicitly declare their FAIR implementation choices (the output of the Wizard is a community-specific FAIR Implementation Profile, or FIP).",
+    "readme" : "# FIP Questionnaire\n\nThe FIP questionnaire prompts communities to explicitly declare their FAIR Implementation Profiles.\n\nThis knowledge model has been created under the [GO FAIR Convergence Matrix Project](https://www.go-fair.org/today/fair-matrix). For more information, visit the [3-point FAIRification Framework](https://www.go-fair.org/how-to-go-fair/).\n\nThis knowledge model can be used in any DSW instance for testing and training purposes, however, please fill-in your actual FIPs in the **[FIP Wizard](https://fair-matrix.ds-wizard.org)** to share them with the community. Please report any issues and comments there.",
+    "license" : "Apache-2.0",
+    "previousPackageId" : "gofair:fip-wizard:5.0.3",
+    "forkOfPackageId" : "gofair:fair-convergence-matrix:3.0.0",
+    "mergeCheckpointPackageId" : "gofair:fair-convergence-matrix:3.0.0",
+    "events" : [ 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "0e681f13-8dad-4c2e-af04-d1ede1a38258",
+            "parentUuid" : "63eecafc-fdda-47d3-92d2-d58fad54588d",
+            "entityUuid" : "1a98d12d-8716-4d0e-87ab-c7e9b4ab9527",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "You will have to first create a Community nanopublication (please go to chapter VII for that) before you can look it up here. Please avoid tying in the name of the community. You are requested to select an existing resource. "
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "integrationUuid" : {
+                "changed" : false
+            },
+            "props" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditChapterEvent",
+            "uuid" : "8dc6e34c-5e74-4182-bf49-15f0d3f900cf",
+            "parentUuid" : "4c357734-268e-448e-9738-e44f5197da5a",
+            "entityUuid" : "0d6d8772-7604-4835-9fe1-735ff9eb63fa",
+            "title" : {
+                "changed" : true,
+                "value" : "I. Background: The FAIR Implementation Profile and FAIR Implementation Community"
+            },
+            "text" : {
+                "changed" : false
+            },
+            "questionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditChapterEvent",
+            "uuid" : "5823942f-383e-40ae-9174-9fdfc1ea6b5f",
+            "parentUuid" : "4c357734-268e-448e-9738-e44f5197da5a",
+            "entityUuid" : "63eecafc-fdda-47d3-92d2-d58fad54588d",
+            "title" : {
+                "changed" : true,
+                "value" : "II. FAIR Implementation Community "
+            },
+            "text" : {
+                "changed" : false
+            },
+            "questionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditChapterEvent",
+            "uuid" : "682aac70-bbda-49fe-9fe1-c4a17ad4ad8c",
+            "parentUuid" : "4c357734-268e-448e-9738-e44f5197da5a",
+            "entityUuid" : "e3301b05-b02d-4c09-bb4b-7fb181414236",
+            "title" : {
+                "changed" : true,
+                "value" : "III. Findability"
+            },
+            "text" : {
+                "changed" : false
+            },
+            "questionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditChapterEvent",
+            "uuid" : "f0b640fc-acf1-4dc5-83ad-6b7c2c8d28ab",
+            "parentUuid" : "4c357734-268e-448e-9738-e44f5197da5a",
+            "entityUuid" : "d6ab1374-788b-4cd5-9614-5ec4c69d6cc5",
+            "title" : {
+                "changed" : true,
+                "value" : "IV. Accessibility"
+            },
+            "text" : {
+                "changed" : false
+            },
+            "questionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditChapterEvent",
+            "uuid" : "24d05099-286b-4dbb-8374-673c85a2a7c0",
+            "parentUuid" : "4c357734-268e-448e-9738-e44f5197da5a",
+            "entityUuid" : "2b7ee188-a227-43a8-8bf9-a99e6aeb3939",
+            "title" : {
+                "changed" : true,
+                "value" : "V. Interoperability"
+            },
+            "text" : {
+                "changed" : false
+            },
+            "questionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditChapterEvent",
+            "uuid" : "a683a5f2-2161-4449-8731-a6eeabe0384a",
+            "parentUuid" : "4c357734-268e-448e-9738-e44f5197da5a",
+            "entityUuid" : "37e3ef76-71e1-47a9-be84-e1f1d9452193",
+            "title" : {
+                "changed" : true,
+                "value" : "VI. Reusability"
+            },
+            "text" : {
+                "changed" : false
+            },
+            "questionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditChapterEvent",
+            "uuid" : "7cb462ad-6149-452c-94b0-0cdf47fb81d3",
+            "parentUuid" : "4c357734-268e-448e-9738-e44f5197da5a",
+            "entityUuid" : "0d68cbb7-3b51-4f22-afc9-0051cf477c8d",
+            "title" : {
+                "changed" : true,
+                "value" : "VII. Register a new resource as a nanopublication"
+            },
+            "text" : {
+                "changed" : false
+            },
+            "questionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "30d1392a-c10f-475a-8601-90dff975b669",
+            "parentUuid" : "37e3ef76-71e1-47a9-be84-e1f1d9452193",
+            "entityUuid" : "f6b5b347-6e01-4294-a0e3-d64382bea1e9",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "8b87add4-07c0-45a6-b9aa-d062a38b6e53",
+            "parentUuid" : "63eecafc-fdda-47d3-92d2-d58fad54588d",
+            "entityUuid" : "1a98d12d-8716-4d0e-87ab-c7e9b4ab9527",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "You will have to first create a Community nanopublication (please go to chapter VII for that) before you can look it up here. Please avoid tying in the name of the community as this would create an error when exporting the data. You are requested to select an existing resource. "
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "integrationUuid" : {
+                "changed" : false
+            },
+            "props" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ValueQuestion",
+            "uuid" : "ba0a0c7e-e849-4fe7-ad5d-87ac37299cbe",
+            "parentUuid" : "63eecafc-fdda-47d3-92d2-d58fad54588d",
+            "entityUuid" : "c9cd6f2d-d16e-4ef6-831f-a20e33290b6f",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Please add your ORCID manually (like this: 0000-0003-2195-3997, without https://orcid.org/!)."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "valueType" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "39ed48ff-a8f0-4c17-b893-37de9b5a53dd",
+            "parentUuid" : "e3301b05-b02d-4c09-bb4b-7fb181414236",
+            "entityUuid" : "797c4af8-0184-43cf-b40c-e2608b7b4d0a",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Different identifier service providers offer different kinds of resolution services impacting F2 and I. One example would be a Digital Object Identifier (DOI). \n\nTo answer this question **for one existing resource at a time**, please follow this order:\n\n 1. _Consideration_: Please add any comments about the reasons why your community chose to use this resource\n 2. _Wikidata_: Check for existing resources from Wikidata (by typing in that field a keyword and clicking enter, you should find related resources), if not found there\n 3. _Nanobench_: Check for existing resources from Nanobench (by clicking in that field, available resources will pop up), and if not found\n 4. Register this resource in Nanobench (go to_ chapter VII_ ) and\n 5. then go back to this question (_Nanobench_) to look up for the newly created resource\n\nIf you want to **add an additional resource** please make sure to click on the add button below this section outside the grey area."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ValueQuestion",
+            "uuid" : "96e7a66f-1d95-49ef-82fe-ddc53be2d870",
+            "parentUuid" : "797c4af8-0184-43cf-b40c-e2608b7b4d0a",
+            "entityUuid" : "891413be-e42d-409c-967f-a2e271777aab",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Comments on the choice of this FAIR-Enabling Resource. These comments may include requirements or constraints unique to your community (for example, how this choice may impact the findability of your data within or between domains). "
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "valueType" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ValueQuestion",
+            "uuid" : "7dcdd0cb-f3f9-4770-b333-6bb05eb789c3",
+            "parentUuid" : "797c4af8-0184-43cf-b40c-e2608b7b4d0a",
+            "entityUuid" : "891413be-e42d-409c-967f-a2e271777aab",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Comments on the choice of this FAIR-Enabling Resource. These comments may include requirements or constraints unique to your FAIR Implementaton Community (for example, how this choice may impact the findability of your data within or between domains). "
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "valueType" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ValueQuestion",
+            "uuid" : "8407f821-9571-4a90-8f45-4484dd751364",
+            "parentUuid" : "808310c5-7321-4789-aa97-80f4c7ac9fa8",
+            "entityUuid" : "b351f7d6-7b0a-43e6-a845-d82d27040435",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Comments on the choice of this FAIR-Enabling Resource. These comments may include requirements or constraints unique to your FAIR Implementaton Community (for example, how this choice may impact the findability of your data within or between domains). "
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "valueType" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ValueQuestion",
+            "uuid" : "216838d4-b1b4-4137-a230-79fe314e1085",
+            "parentUuid" : "faeab073-3569-4bca-a804-c81c0de04a95",
+            "entityUuid" : "be91f639-06e5-4d65-9375-d04bcf3af66b",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Comments on the choice of this FAIR-Enabling Resource. These comments may include requirements or constraints unique to your FAIR Implementaton Community (for example, how this choice may impact the findability of your data within or between domains). "
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "valueType" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ValueQuestion",
+            "uuid" : "592b90bb-26c6-4059-8ee6-aec0aa37ced8",
+            "parentUuid" : "a50aa1e1-68a9-4e36-bdb6-4a4c5a3d902a",
+            "entityUuid" : "01e9538b-0246-4ae1-a60b-c870bd2f7f10",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Comments on the choice of this FAIR-Enabling Resource. These comments may include requirements or constraints unique to your FAIR Implementaton Community (for example, how this choice may impact the findability of your data within or between domains). "
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "valueType" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ValueQuestion",
+            "uuid" : "6f3f197f-80ca-4eb6-9f04-ea6ce197fdb6",
+            "parentUuid" : "5f33c2e8-8b95-435c-870a-fd97d91ff8da",
+            "entityUuid" : "f321f449-7937-40da-9702-0df364a17fb5",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Comments on the choice of this FAIR-Enabling Resource. These comments may include requirements or constraints unique to your FAIR Implementaton Community (for example, how this choice may impact the findability of your data within or between domains). "
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "valueType" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ValueQuestion",
+            "uuid" : "2bb136f9-4461-47ea-809d-e07232f0fc04",
+            "parentUuid" : "43ff12a0-22ff-492b-9777-99e2469f5cf1",
+            "entityUuid" : "d06cdad0-f322-4376-be83-0dffa3ea6ff2",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Comments on the choice of this FAIR-Enabling Resource. These comments may include requirements or constraints unique to your FAIR Implementaton Community (for example, access constraints on sensitive data reflecting local policy and regulations)."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "valueType" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ValueQuestion",
+            "uuid" : "a0ad42a1-6684-4c08-b6fa-1ac9e6f2437a",
+            "parentUuid" : "ee073efa-c934-4db4-ae87-49b73df11ca5",
+            "entityUuid" : "c74cecef-cc36-45c9-8400-7a6a56ca4e2d",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Comments on the choice of this FAIR-Enabling Resource. These comments may include requirements or constraints unique to your FAIR Implementaton Community (for example, access constraints on sensitive data reflecting local policy and regulations)."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "valueType" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ValueQuestion",
+            "uuid" : "faa1c190-2504-42a6-a445-f6f80a87ca0c",
+            "parentUuid" : "2ddde9e8-4284-4b61-b5a7-8b0e8f8b28c2",
+            "entityUuid" : "c4d90bd6-0154-4bd9-ab7f-72f6f913625a",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Comments on the choice of this FAIR-Enabling Resource. These comments may include requirements or constraints unique to your FAIR Implementaton Community (for example, access constraints on sensitive data reflecting local policy and regulations)."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "valueType" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ValueQuestion",
+            "uuid" : "ea479503-2cc4-489f-b463-9a6ba5ea0727",
+            "parentUuid" : "d2c28334-7dc9-4804-9f0c-89984240fb3b",
+            "entityUuid" : "7e256841-6b67-4fd5-bc6f-51a80f91c991",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Comments on the choice of this FAIR-Enabling Resource. These comments may include requirements or constraints unique to your FAIR Implementaton Community (for example, access constraints on sensitive data reflecting local policy and regulations)."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "valueType" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ValueQuestion",
+            "uuid" : "27b4a4cd-bcfd-41a8-b722-9347ff5da3eb",
+            "parentUuid" : "a93c26cc-ca80-4bcf-ac4c-04e8123bbadb",
+            "entityUuid" : "ed203074-d9df-47bc-80ed-abf3283f3aa8",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Comments on the choice of this FAIR-Enabling Resource. These comments may include requirements or constraints unique to your FAIR Implementaton Community (for example, increased interoperation with another community). "
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "valueType" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ValueQuestion",
+            "uuid" : "c7c18889-e83b-4ebd-b1a4-d16438d3b31e",
+            "parentUuid" : "a07fc6d6-1f8c-4c21-9bf5-1040682fa5b8",
+            "entityUuid" : "0a43f23d-6261-4359-bcfb-2f58f3303c49",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Comments on the choice of this FAIR-Enabling Resource. These comments may include requirements or constraints unique to your FAIR Implementaton Community (for example, increased interoperation with another community). "
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "valueType" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ValueQuestion",
+            "uuid" : "6924114d-8e3e-414a-ad1a-d741f0c23073",
+            "parentUuid" : "53120a47-9151-42d4-bd33-4fd91fa9a48a",
+            "entityUuid" : "fff28ddd-d34c-4dc9-8a20-ba26280eb39a",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Comments on the choice of this FAIR-Enabling Resource. These comments may include requirements or constraints unique to your FAIR Implementaton Community (for example, increased interoperation with another community). "
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "valueType" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ValueQuestion",
+            "uuid" : "4d53ff46-179e-4a61-b344-6e490b219db2",
+            "parentUuid" : "aea4c5be-aaa3-4e27-a6d6-f2e6af0bc43d",
+            "entityUuid" : "55040213-7a86-416a-8eb6-85f05711587d",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Comments on the choice of this FAIR-Enabling Resource. These comments may include requirements or constraints unique to your FAIR Implementaton Community (for example, increased interoperation with another community). "
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "valueType" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ValueQuestion",
+            "uuid" : "382eed5f-8488-4f6d-825a-04b90c25d49e",
+            "parentUuid" : "bc3f2a07-6921-4693-8e09-4caf408d162a",
+            "entityUuid" : "4f91161c-d968-4387-8264-0ba4e05f8f5a",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Comments on the choice of this FAIR-Enabling Resource. These comments may include requirements or constraints unique to your FAIR Implementaton Community (for example, increased interoperation with another community). "
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "valueType" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ValueQuestion",
+            "uuid" : "0325754d-1562-4393-a7b4-4e73a89f7ad1",
+            "parentUuid" : "e712930b-8a6d-474e-b6da-e2fd0e50ab68",
+            "entityUuid" : "f423b127-9fce-4435-8d5b-44a36815f8fa",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Comments on the choice of this FAIR-Enabling Resource. These comments may include requirements or constraints unique to your FAIR Implementaton Community (for example, increased interoperation with another community). "
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "valueType" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ValueQuestion",
+            "uuid" : "0107b750-d3fb-46f6-ac14-e89ce05edc92",
+            "parentUuid" : "10ba5624-d948-4f1a-91c1-61f33ec1e51b",
+            "entityUuid" : "baca3035-1f3c-4964-b8f5-26182ca7f446",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Comments on the choice of this FAIR-Enabling Resource. These comments may include requirements or constraints unique to your FAIR Implementaton Community (for example, increased interoperation with another community). "
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "valueType" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ValueQuestion",
+            "uuid" : "c8974620-7ec5-43ff-bea9-159e773fdf07",
+            "parentUuid" : "29a8f2cc-696c-4e64-bfae-cba99ca761e1",
+            "entityUuid" : "312b5818-cdd3-43dc-bcf1-bb9788a88f19",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Comments on the choice of this FAIR-Enabling Resource. These comments may include requirements or constraints unique to your FAIR Implementaton Community (for example, increased interoperation with another community). "
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "valueType" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ValueQuestion",
+            "uuid" : "34686569-0817-44ce-8082-8e249902f14f",
+            "parentUuid" : "c704e5d2-7044-4415-8d52-bb621f64b9d6",
+            "entityUuid" : "cacd776b-b531-4487-bd53-a61dd9653b12",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Comments on the choice of this FAIR-Enabling Resource. These comments may include requirements or constraints unique to your FAIR Implementaton Community (for example, increased interoperation with another community). "
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "valueType" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ValueQuestion",
+            "uuid" : "a400a687-18ae-4e10-b3b7-c2011651f4f9",
+            "parentUuid" : "f6b5b347-6e01-4294-a0e3-d64382bea1e9",
+            "entityUuid" : "53319468-f864-488c-aa6c-995f21cf9207",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Comments on the choice of this FAIR-Enabling Resource. These comments may include requirements or constraints unique to your FAIR Implementaton Community (for example, increased interoperation with another community). "
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "valueType" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ValueQuestion",
+            "uuid" : "14b3f18b-557c-49d7-859b-cdcd8232abbe",
+            "parentUuid" : "08aae90c-ba61-4c78-b3bd-eb92d29e8111",
+            "entityUuid" : "b5a6c104-b267-48c8-851c-7ee603bf7838",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Comments on the choice of this FAIR-Enabling Resource. These comments may include requirements or constraints unique to your FAIR Implementaton Community (for example, increased interoperation with another community). "
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "valueType" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "38e90816-b103-4db2-8972-4c3b2f005eb0",
+            "parentUuid" : "e3301b05-b02d-4c09-bb4b-7fb181414236",
+            "entityUuid" : "808310c5-7321-4789-aa97-80f4c7ac9fa8",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Here we mean metadata schemas such as for example Dublin Core and DCAT. \n\nTo answer this question **for one existing resource at a time**, please follow this order:\n\n 1. _Consideration_: Please add any comments about the reasons why your community chose to use this resource\n 2. _Wikidata_: Check for existing resources from Wikidata (by typing in that field a keyword and clicking enter, you should find related resources), if not found there\n 3. _Nanobench_: Check for existing resources from Nanobench (by clicking in that field, available resources will pop up), and if not found\n 4. Register this resource in Nanobench (go to_ chapter VII_ ) and\n 5. then go back to this question (_Nanobench_) to look up for the newly created resource\n\nIf you want to **add an additional resource** please make sure to click on the add button below this section outside the grey area."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "971f1899-1e29-423a-9add-729040380460",
+            "parentUuid" : "e3301b05-b02d-4c09-bb4b-7fb181414236",
+            "entityUuid" : "faeab073-3569-4bca-a804-c81c0de04a95",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Here we are looking for the technology that permanently links your data and metadata. The answers could range from metadata schema having predicates that qualify the relations and locations to technology platforms like repositories and FAIR Data Points that guarantee the permalink to infrastructures such the FAIR Digital Objects. In general if persistent identifiers are assigned they should be findable in the metadata as a separate field. \n\nTo answer this question **for one existing resource at a time**, please follow this order:\n\n 1. _Consideration_: Please add any comments about the reasons why your community chose to use this resource\n 2. _Wikidata_: Check for existing resources from Wikidata (by typing in that field a keyword and clicking enter, you should find related resources), if not found there\n 3. _Nanobench_: Check for existing resources from Nanobench (by clicking in that field, available resources will pop up), and if not found\n 4. Register this resource in Nanobench (go to_ chapter VII_ ) and\n 5. then go back to this question (_Nanobench_) to look up for the newly created resource\n\nIf you want to **add an additional resource** please make sure to click on the add button below this section outside the grey area."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "29d79037-a50f-4008-b25a-cbf5dba459cd",
+            "parentUuid" : "e3301b05-b02d-4c09-bb4b-7fb181414236",
+            "entityUuid" : "a50aa1e1-68a9-4e36-bdb6-4a4c5a3d902a",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "By search engine we mean a searchable resource, for example a data repository, or a engine like Google search. \n\nTo answer this question **for one existing resource at a time**, please follow this order:\n\n 1. _Consideration_: Please add any comments about the reasons why your community chose to use this resource\n 2. _Wikidata_: Check for existing resources from Wikidata (by typing in that field a keyword and clicking enter, you should find related resources), if not found there\n 3. _Nanobench_: Check for existing resources from Nanobench (by clicking in that field, available resources will pop up), and if not found\n 4. Register this resource in Nanobench (go to_ chapter VII_ ) and\n 5. then go back to this question (_Nanobench_) to look up for the newly created resource\n\nIf you want to **add an additional resource** please make sure to click on the add button below this section outside the grey area."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "90b5764f-6f79-4a02-a5b7-4dfa43a85c78",
+            "parentUuid" : "e3301b05-b02d-4c09-bb4b-7fb181414236",
+            "entityUuid" : "5f33c2e8-8b95-435c-870a-fd97d91ff8da",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "By search engine we mean a searchable resource, for example a data repository, or a engine like Google search. \n\nTo answer this question **for one existing resource at a time**, please follow this order:\n\n 1. _Consideration_: Please add any comments about the reasons why your community chose to use this resource\n 2. _Wikidata_: Check for existing resources from Wikidata (by typing in that field a keyword and clicking enter, you should find related resources), if not found there\n 3. _Nanobench_: Check for existing resources from Nanobench (by clicking in that field, available resources will pop up), and if not found\n 4. Register this resource in Nanobench (go to_ chapter VII_ ) and\n 5. then go back to this question (_Nanobench_) to look up for the newly created resource\n\nIf you want to **add an additional resource** please make sure to click on the add button below this section outside the grey area."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "54f25961-b2b3-4ab8-899f-6afa3613de6e",
+            "parentUuid" : "d6ab1374-788b-4cd5-9614-5ec4c69d6cc5",
+            "entityUuid" : "43ff12a0-22ff-492b-9777-99e2469f5cf1",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "For most purposes, this is a World Wide Web protocol like HTTP or FTP. \n\nTo answer this question **for one existing resource at a time**, please follow this order:\n\n 1. _Consideration_: Please add any comments about the reasons why your community chose to use this resource\n 2. _Wikidata_: Check for existing resources from Wikidata (by typing in that field a keyword and clicking enter, you should find related resources), if not found there\n 3. _Nanobench_: Check for existing resources from Nanobench (by clicking in that field, available resources will pop up), and if not found\n 4. Register this resource in Nanobench (go to_ chapter VII_ ) and\n 5. then go back to this question (_Nanobench_) to look up for the newly created resource\n\nIf you want to **add an additional resource** please make sure to click on the add button below this section outside the grey area."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "1622b5e3-c7c1-4393-a67d-847eeb62c560",
+            "parentUuid" : "e3301b05-b02d-4c09-bb4b-7fb181414236",
+            "entityUuid" : "5f33c2e8-8b95-435c-870a-fd97d91ff8da",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "By search engine we mean a searchable resource, for example a data repository, or a search engine like re3data. \n\nTo answer this question **for one existing resource at a time**, please follow this order:\n\n 1. _Consideration_: Please add any comments about the reasons why your community chose to use this resource\n 2. _Wikidata_: Check for existing resources from Wikidata (by typing in that field a keyword and clicking enter, you should find related resources), if not found there\n 3. _Nanobench_: Check for existing resources from Nanobench (by clicking in that field, available resources will pop up), and if not found\n 4. Register this resource in Nanobench (go to_ chapter VII_ ) and\n 5. then go back to this question (_Nanobench_) to look up for the newly created resource\n\nIf you want to **add an additional resource** please make sure to click on the add button below this section outside the grey area."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "75b52204-64e8-45ea-9614-85acaa107b8a",
+            "parentUuid" : "d6ab1374-788b-4cd5-9614-5ec4c69d6cc5",
+            "entityUuid" : "ee073efa-c934-4db4-ae87-49b73df11ca5",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "For most purposes, this is a World Wide Web protocol like HTTP or FTP. \n\nTo answer this question **for one existing resource at a time**, please follow this order:\n\n 1. _Consideration_: Please add any comments about the reasons why your community chose to use this resource\n 2. _Wikidata_: Check for existing resources from Wikidata (by typing in that field a keyword and clicking enter, you should find related resources), if not found there\n 3. _Nanobench_: Check for existing resources from Nanobench (by clicking in that field, available resources will pop up), and if not found\n 4. Register this resource in Nanobench (go to_ chapter VII_ ) and\n 5. then go back to this question (_Nanobench_) to look up for the newly created resource\n\nIf you want to **add an additional resource** please make sure to click on the add button below this section outside the grey area."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "2073d56d-9aea-4722-8828-434b006eceb5",
+            "parentUuid" : "d6ab1374-788b-4cd5-9614-5ec4c69d6cc5",
+            "entityUuid" : "2ddde9e8-4284-4b61-b5a7-8b0e8f8b28c2",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "What are the methods of authorization which are supported to secure access to your data/services? Examples are Shibboleth paired with eduGain or OAuth. \n\nTo answer this question **for one existing resource at a time**, please follow this order:\n\n 1. _Consideration_: Please add any comments about the reasons why your community chose to use this resource\n 2. _Wikidata_: Check for existing resources from Wikidata (by typing in that field a keyword and clicking enter, you should find related resources), if not found there\n 3. _Nanobench_: Check for existing resources from Nanobench (by clicking in that field, available resources will pop up), and if not found\n 4. Register this resource in Nanobench (go to_ chapter VII_ ) and\n 5. then go back to this question (_Nanobench_) to look up for the newly created resource\n\nIf you want to **add an additional resource** please make sure to click on the add button below this section outside the grey area."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "01a6843e-0f3a-42a0-aee3-f1b42e2d30ce",
+            "parentUuid" : "d6ab1374-788b-4cd5-9614-5ec4c69d6cc5",
+            "entityUuid" : "d2c28334-7dc9-4804-9f0c-89984240fb3b",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "What are the methods of authorization which are supported to secure access to your data/services? Examples are Shibboleth paired with eduGain or OAuth. \n\nTo answer this question **for one existing resource at a time**, please follow this order:\n\n 1. _Consideration_: Please add any comments about the reasons why your community chose to use this resource\n 2. _Wikidata_: Check for existing resources from Wikidata (by typing in that field a keyword and clicking enter, you should find related resources), if not found there\n 3. _Nanobench_: Check for existing resources from Nanobench (by clicking in that field, available resources will pop up), and if not found\n 4. Register this resource in Nanobench (go to_ chapter VII_ ) and\n 5. then go back to this question (_Nanobench_) to look up for the newly created resource\n\nIf you want to **add an additional resource** please make sure to click on the add button below this section outside the grey area."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "8550e509-70c4-4722-aed7-0b451e9429d7",
+            "parentUuid" : "d6ab1374-788b-4cd5-9614-5ec4c69d6cc5",
+            "entityUuid" : "a93c26cc-ca80-4bcf-ac4c-04e8123bbadb",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "This metadata longevity plan will in most cases be hard to locate even if it exists since creating such a plan is far from standard. An excellent challenge to the community at large is to create a standard, machine-readable metadata longevity plan and predicates to identify it as such. \n\nTo answer this question **for one existing resource at a time**, please follow this order:\n\n 1. _Consideration_: Please add any comments about the reasons why your community chose to use this resource\n 2. _Wikidata_: Check for existing resources from Wikidata (by typing in that field a keyword and clicking enter, you should find related resources), if not found there\n 3. _Nanobench_: Check for existing resources from Nanobench (by clicking in that field, available resources will pop up), and if not found\n 4. Register this resource in Nanobench (go to_ chapter VII_ ) and\n 5. then go back to this question (_Nanobench_) to look up for the newly created resource\n\nIf you want to **add an additional resource** please make sure to click on the add button below this section outside the grey area."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "b304ea5f-0102-427a-b79f-9cc734593f46",
+            "parentUuid" : "2b7ee188-a227-43a8-8bf9-a99e6aeb3939",
+            "entityUuid" : "a07fc6d6-1f8c-4c21-9bf5-1040682fa5b8",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "By knowledge representation languages we mean standards such as Resource Description Framework (RDF) or Extensible Markup Language (XML). \n\nTo answer this question **for one existing resource at a time**, please follow this order:\n\n 1. _Consideration_: Please add any comments about the reasons why your community chose to use this resource\n 2. _Wikidata_: Check for existing resources from Wikidata (by typing in that field a keyword and clicking enter, you should find related resources), if not found there\n 3. _Nanobench_: Check for existing resources from Nanobench (by clicking in that field, available resources will pop up), and if not found\n 4. Register this resource in Nanobench (go to_ chapter VII_ ) and\n 5. then go back to this question (_Nanobench_) to look up for the newly created resource\n\nIf you want to **add an additional resource** please make sure to click on the add button below this section outside the grey area."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "6160a37b-7173-4ad9-82fd-f3652eaff546",
+            "parentUuid" : "2b7ee188-a227-43a8-8bf9-a99e6aeb3939",
+            "entityUuid" : "53120a47-9151-42d4-bd33-4fd91fa9a48a",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "By knowledge representation languages we mean standards such as Resource Description Framework (RDF) or Extensible Markup Language (XML). \n\nTo answer this question **for one existing resource at a time**, please follow this order:\n\n 1. _Consideration_: Please add any comments about the reasons why your community chose to use this resource\n 2. _Wikidata_: Check for existing resources from Wikidata (by typing in that field a keyword and clicking enter, you should find related resources), if not found there\n 3. _Nanobench_: Check for existing resources from Nanobench (by clicking in that field, available resources will pop up), and if not found\n 4. Register this resource in Nanobench (go to_ chapter VII_ ) and\n 5. then go back to this question (_Nanobench_) to look up for the newly created resource\n\nIf you want to **add an additional resource** please make sure to click on the add button below this section outside the grey area."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "8e7c4f16-0298-48af-929b-f830096ad6e1",
+            "parentUuid" : "2b7ee188-a227-43a8-8bf9-a99e6aeb3939",
+            "entityUuid" : "aea4c5be-aaa3-4e27-a6d6-f2e6af0bc43d",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "By structured vocabularies we mean any type of semantic artefact, which could range from simple taxonomies or thesauri in SKOS to ontologies defined in  OWL and shared via a publicly accessible registry. \n\nTo answer this question **for one existing resource at a time**, please follow this order:\n\n 1. _Consideration_: Please add any comments about the reasons why your community chose to use this resource\n 2. _Wikidata_: Check for existing resources from Wikidata (by typing in that field a keyword and clicking enter, you should find related resources), if not found there\n 3. _Nanobench_: Check for existing resources from Nanobench (by clicking in that field, available resources will pop up), and if not found\n 4. Register this resource in Nanobench (go to_ chapter VII_ ) and\n 5. then go back to this question (_Nanobench_) to look up for the newly created resource\n\nIf you want to **add an additional resource** please make sure to click on the add button below this section outside the grey area."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "97af773b-11a9-42da-bde9-03789ffb0a20",
+            "parentUuid" : "2b7ee188-a227-43a8-8bf9-a99e6aeb3939",
+            "entityUuid" : "bc3f2a07-6921-4693-8e09-4caf408d162a",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "By structured vocabularies we mean any type of semantic artefact, which could range from simple taxonomies or thesauri in SKOS to ontologies defined in  OWL and shared via a publicly accessible registry. \n\nTo answer this question **for one existing resource at a time**, please follow this order:\n\n 1. _Consideration_: Please add any comments about the reasons why your community chose to use this resource\n 2. _Wikidata_: Check for existing resources from Wikidata (by typing in that field a keyword and clicking enter, you should find related resources), if not found there\n 3. _Nanobench_: Check for existing resources from Nanobench (by clicking in that field, available resources will pop up), and if not found\n 4. Register this resource in Nanobench (go to_ chapter VII_ ) and\n 5. then go back to this question (_Nanobench_) to look up for the newly created resource\n\nIf you want to **add an additional resource** please make sure to click on the add button below this section outside the grey area."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "1e955532-8ed1-4e73-a60d-97ebed2d6752",
+            "parentUuid" : "2b7ee188-a227-43a8-8bf9-a99e6aeb3939",
+            "entityUuid" : "e712930b-8a6d-474e-b6da-e2fd0e50ab68",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "\n\nTo answer this question **for one existing resource at a time**, please follow this order:\n\n 1. _Consideration_: Please add any comments about the reasons why your community chose to use this resource\n 2. _Wikidata_: Check for existing resources from Wikidata (by typing in that field a keyword and clicking enter, you should find related resources), if not found there\n 3. _Nanobench_: Check for existing resources from Nanobench (by clicking in that field, available resources will pop up), and if not found\n 4. Register this resource in Nanobench (go to_ chapter VII_ ) and\n 5. then go back to this question (_Nanobench_) to look up for the newly created resource\n\nIf you want to **add an additional resource** please make sure to click on the add button below this section outside the grey area."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "215fba80-22c1-4340-b028-344ba03cc98e",
+            "parentUuid" : "2b7ee188-a227-43a8-8bf9-a99e6aeb3939",
+            "entityUuid" : "e712930b-8a6d-474e-b6da-e2fd0e50ab68",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Here we mean any model specifying qualified relations between metadata resources to enrich the contextual knowledge about the data.\n\nTo answer this question **for one existing resource at a time**, please follow this order:\n\n 1. _Consideration_: Please add any comments about the reasons why your community chose to use this resource\n 2. _Wikidata_: Check for existing resources from Wikidata (by typing in that field a keyword and clicking enter, you should find related resources), if not found there\n 3. _Nanobench_: Check for existing resources from Nanobench (by clicking in that field, available resources will pop up), and if not found\n 4. Register this resource in Nanobench (go to_ chapter VII_ ) and\n 5. then go back to this question (_Nanobench_) to look up for the newly created resource\n\nIf you want to **add an additional resource** please make sure to click on the add button below this section outside the grey area."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "f55bbfa4-da6b-4efd-b01b-ddeed1a08491",
+            "parentUuid" : "2b7ee188-a227-43a8-8bf9-a99e6aeb3939",
+            "entityUuid" : "10ba5624-d948-4f1a-91c1-61f33ec1e51b",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Here we mean any model specifying qualified relations between data resources to enrich the contextual knowledge about the data.\n\nTo answer this question **for one existing resource at a time**, please follow this order:\n\n 1. _Consideration_: Please add any comments about the reasons why your community chose to use this resource\n 2. _Wikidata_: Check for existing resources from Wikidata (by typing in that field a keyword and clicking enter, you should find related resources), if not found there\n 3. _Nanobench_: Check for existing resources from Nanobench (by clicking in that field, available resources will pop up), and if not found\n 4. Register this resource in Nanobench (go to_ chapter VII_ ) and\n 5. then go back to this question (_Nanobench_) to look up for the newly created resource\n\nIf you want to **add an additional resource** please make sure to click on the add button below this section outside the grey area."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "a4c02405-b77d-43b9-ae41-e6bfdaf5cadb",
+            "parentUuid" : "37e3ef76-71e1-47a9-be84-e1f1d9452193",
+            "entityUuid" : "f6b5b347-6e01-4294-a0e3-d64382bea1e9",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Provenance descriptions can for instance be implemented according to the PROV-model or following community-specific templates created in CEDAR templates. \n\nTo answer this question **for one existing resource at a time**, please follow this order:\n\n 1. _Consideration_: Please add any comments about the reasons why your community chose to use this resource\n 2. _Wikidata_: Check for existing resources from Wikidata (by typing in that field a keyword and clicking enter, you should find related resources), if not found there\n 3. _Nanobench_: Check for existing resources from Nanobench (by clicking in that field, available resources will pop up), and if not found\n 4. Register this resource in Nanobench (go to_ chapter VII_ ) and\n 5. then go back to this question (_Nanobench_) to look up for the newly created resource\n\nIf you want to **add an additional resource** please make sure to click on the add button below this section outside the grey area."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "ace8a4ed-f6f4-4cc3-b6eb-c153ad1146c6",
+            "parentUuid" : "37e3ef76-71e1-47a9-be84-e1f1d9452193",
+            "entityUuid" : "08aae90c-ba61-4c78-b3bd-eb92d29e8111",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "Provenance descriptions can for instance be implemented according to the PROV-model or following community-specific templates created in CEDAR templates. \n\nTo answer this question **for one existing resource at a time**, please follow this order:\n\n 1. _Consideration_: Please add any comments about the reasons why your community chose to use this resource\n 2. _Wikidata_: Check for existing resources from Wikidata (by typing in that field a keyword and clicking enter, you should find related resources), if not found there\n 3. _Nanobench_: Check for existing resources from Nanobench (by clicking in that field, available resources will pop up), and if not found\n 4. Register this resource in Nanobench (go to_ chapter VII_ ) and\n 5. then go back to this question (_Nanobench_) to look up for the newly created resource\n\nIf you want to **add an additional resource** please make sure to click on the add button below this section outside the grey area."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditChapterEvent",
+            "uuid" : "06df646a-96e8-456d-b142-6f3ce9ff8e3f",
+            "parentUuid" : "4c357734-268e-448e-9738-e44f5197da5a",
+            "entityUuid" : "0d68cbb7-3b51-4f22-afc9-0051cf477c8d",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "### Why to register\nIf your resource is not already available in Wikidata or as a nanopublication you can use Nanobench to register this resource as a new nanopublication. The nanopublication will be given a persistent URL (PURL). The registered resource will be retrievable by the wizard after its publication in the answer field of the related question.\n\n### How to register\nTo register a **FAIR Implementation Community** please use this [template](http://localhost:37373/publish?14&template=http://purl.org/np/RALjGBdI-nfsJeGy2Me7G6ekE0jKeoM28TUDb36S8pCEg)\n\nTo register a new **FAIR-Enabling Resource** please use this [template](http://localhost:37373/publish?16&template=http://purl.org/np/RAHvHX5qjbdnYXsZWsRMO3KuFekGUFR6LuPjigZns9_VA)\n\nTo register a new **Metadata Longevity Plan** please use this [template](http://localhost:37373/publish;jsessionid=4450C16937A70FE021218237175CC677?0&template=RAUF4xScVUUQL_qyG5YM5Liq3wLOpYfXMpxy3wQQ36wsc)\n"
+            },
+            "questionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditChapterEvent",
+            "uuid" : "4fd6db12-72ce-4e58-9497-f6e7ae528f05",
+            "parentUuid" : "4c357734-268e-448e-9738-e44f5197da5a",
+            "entityUuid" : "0d6d8772-7604-4835-9fe1-735ff9eb63fa",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "The FAIR Implementation Profile (FIP) is a collection of FAIR implementation choices made by a FAIR Implementation Community for each of the FAIR Principles. Community-specific FIPs are themselves captured as FAIR datasets and are made openly available to other communities for reuse. To create a FIP, the data steward of a community needs to fill out this questionnaire where the implementation choices are recorded as resources. The questionnaire is structured as follows: the first section is about the FAIR Implementation Community, which is then followed by a number of questions per FAIR principle. The answer to each of the questions should be a FAIR-Enabling Resource. The questionnaire offers to look up the resource in Nanobench. If the resource cannot be found in any of these applications, there is an option at the end of the questionnaire to register a FAIR-Enabling Resource as a nanopublication in Nanobench. The resource will get a PURL which can then directly be used when further filling out the questionnaire. When the questionnaire is filled in, the FIP is considered to be the implementation of R1.3, which is why there is no separate question addressing this subprinciple."
+            },
+            "questionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "55e8dcf6-76db-4b4a-8f13-49ccccd77400",
+            "parentUuid" : "63eecafc-fdda-47d3-92d2-d58fad54588d",
+            "entityUuid" : "1a98d12d-8716-4d0e-87ab-c7e9b4ab9527",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "You will have to first create a Community nanopublication (please go to chapter VII for that) before you can look it up here. When creating a Community you are asked to specify which research domains it belongs to. The research domains have to be selected from the drop-down menu in the template which uses the SRAO vocabulary (https://github.com/FAIRsharing/subject-ontology/). If you miss a category please go to https://github.com/FAIRsharing/subject-ontology/issues to add an issue there.\n\nPlease avoid tying in the name of the community as this would create an error when exporting the data. You are requested to select an existing resource. "
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "integrationUuid" : {
+                "changed" : false
+            },
+            "props" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "5c4bd8fd-4459-44a6-9681-47b0dc0ec97c",
+            "parentUuid" : "63eecafc-fdda-47d3-92d2-d58fad54588d",
+            "entityUuid" : "1a98d12d-8716-4d0e-87ab-c7e9b4ab9527",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "You will have to first create a Community nanopublication (please go to chapter VII for that) before you can look it up here. When creating a Community you are asked to specify which research domains it belongs to. The research domains have to be selected from the drop-down menu in the template which uses the SRAO vocabulary (https://github.com/FAIRsharing/subject-ontology/). If you miss a category please go to https://github.com/FAIRsharing/subject-ontology/issues to add your request there.\n\nPlease avoid tying in the name of the community as this would create an error when exporting the data. You are requested to select an existing resource. "
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "integrationUuid" : {
+                "changed" : false
+            },
+            "props" : {
+                "changed" : false
+            }
+        }
+    ],
+    "createdAt" : ISODate("2020-10-14T15:49:15.144Z")
+},
+
+{
+    "id" : "gofair:fip-wizard:5.0.5",
+    "name" : "FIP Wizard",
+    "organizationId" : "gofair",
+    "kmId" : "fip-wizard",
+    "version" : "5.0.5",
+    "metamodelVersion" : 5,
+    "description" : "Questionnaire prompting Communities committed to implementation of the FAIR Principles to explicitly declare their FAIR implementation choices (the output of the Wizard is a community-specific FAIR Implementation Profile, or FIP).",
+    "readme" : "# FIP Questionnaire\n\nThe FIP questionnaire prompts communities to explicitly declare their FAIR Implementation Profiles.\n\nThis knowledge model has been created under the [GO FAIR Convergence Matrix Project](https://www.go-fair.org/today/fair-matrix). For more information, visit the [3-point FAIRification Framework](https://www.go-fair.org/how-to-go-fair/).\n\nThis knowledge model can be used in any DSW instance for testing and training purposes, however, please fill-in your actual FIPs in the **[FIP Wizard](https://fair-matrix.ds-wizard.org)** to share them with the community. Please report any issues and comments there.",
+    "license" : "Apache-2.0",
+    "previousPackageId" : "gofair:fip-wizard:5.0.4",
+    "forkOfPackageId" : "gofair:fair-convergence-matrix:3.0.0",
+    "mergeCheckpointPackageId" : "gofair:fair-convergence-matrix:3.0.0",
+    "events" : [ 
+        {
+            "eventType" : "EditChapterEvent",
+            "uuid" : "6887c2d6-b9cb-4de7-bab0-06009331d71f",
+            "parentUuid" : "4c357734-268e-448e-9738-e44f5197da5a",
+            "entityUuid" : "0d6d8772-7604-4835-9fe1-735ff9eb63fa",
+            "title" : {
+                "changed" : true,
+                "value" : "Background: The FAIR Implementation Profile and FAIR Implementation Community"
+            },
+            "text" : {
+                "changed" : false
+            },
+            "questionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditChapterEvent",
+            "uuid" : "736be876-6158-4a23-b272-ed6319db6a69",
+            "parentUuid" : "4c357734-268e-448e-9738-e44f5197da5a",
+            "entityUuid" : "63eecafc-fdda-47d3-92d2-d58fad54588d",
+            "title" : {
+                "changed" : true,
+                "value" : "FAIR Implementation Community "
+            },
+            "text" : {
+                "changed" : false
+            },
+            "questionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditChapterEvent",
+            "uuid" : "e815142a-7119-4ac9-b4b3-c36800ad4424",
+            "parentUuid" : "4c357734-268e-448e-9738-e44f5197da5a",
+            "entityUuid" : "e3301b05-b02d-4c09-bb4b-7fb181414236",
+            "title" : {
+                "changed" : true,
+                "value" : "Findability"
+            },
+            "text" : {
+                "changed" : false
+            },
+            "questionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditChapterEvent",
+            "uuid" : "618837fb-8043-4e18-9464-2a4d1cac3254",
+            "parentUuid" : "4c357734-268e-448e-9738-e44f5197da5a",
+            "entityUuid" : "d6ab1374-788b-4cd5-9614-5ec4c69d6cc5",
+            "title" : {
+                "changed" : true,
+                "value" : "Accessibility"
+            },
+            "text" : {
+                "changed" : false
+            },
+            "questionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditChapterEvent",
+            "uuid" : "1472fb4c-18c2-494a-b2ea-7ef327c1ab4b",
+            "parentUuid" : "4c357734-268e-448e-9738-e44f5197da5a",
+            "entityUuid" : "2b7ee188-a227-43a8-8bf9-a99e6aeb3939",
+            "title" : {
+                "changed" : true,
+                "value" : "Interoperability"
+            },
+            "text" : {
+                "changed" : false
+            },
+            "questionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditChapterEvent",
+            "uuid" : "e790cb60-4d37-444f-ac64-3e1ebd8dc2ab",
+            "parentUuid" : "4c357734-268e-448e-9738-e44f5197da5a",
+            "entityUuid" : "37e3ef76-71e1-47a9-be84-e1f1d9452193",
+            "title" : {
+                "changed" : true,
+                "value" : "Reusability"
+            },
+            "text" : {
+                "changed" : false
+            },
+            "questionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditChapterEvent",
+            "uuid" : "d285788e-01c1-4a8e-9403-4e3e0a379b44",
+            "parentUuid" : "4c357734-268e-448e-9738-e44f5197da5a",
+            "entityUuid" : "0d68cbb7-3b51-4f22-afc9-0051cf477c8d",
+            "title" : {
+                "changed" : true,
+                "value" : "Register a new resource as a nanopublication"
+            },
+            "text" : {
+                "changed" : false
+            },
+            "questionUuids" : {
+                "changed" : false
+            }
+        }
+    ],
+    "createdAt" : ISODate("2020-10-14T15:52:14.514Z")
+},
+
+{
+    "id" : "gofair:fip-wizard:5.0.6",
+    "name" : "FIP Wizard",
+    "organizationId" : "gofair",
+    "kmId" : "fip-wizard",
+    "version" : "5.0.6",
+    "metamodelVersion" : 5,
+    "description" : "Questionnaire prompting Communities committed to implementation of the FAIR Principles to explicitly declare their FAIR implementation choices (the output of the Wizard is a community-specific FAIR Implementation Profile, or FIP).",
+    "readme" : "# FIP Questionnaire\n\nThe FIP questionnaire prompts communities to explicitly declare their FAIR Implementation Profiles.\n\nThis knowledge model has been created under the [GO FAIR Convergence Matrix Project](https://www.go-fair.org/today/fair-matrix). For more information, visit the [3-point FAIRification Framework](https://www.go-fair.org/how-to-go-fair/).\n\nThis knowledge model can be used in any DSW instance for testing and training purposes, however, please fill-in your actual FIPs in the **[FIP Wizard](https://fair-matrix.ds-wizard.org)** to share them with the community. Please report any issues and comments there.",
+    "license" : "Apache-2.0",
+    "previousPackageId" : "gofair:fip-wizard:5.0.5",
+    "forkOfPackageId" : "gofair:fair-convergence-matrix:3.0.0",
+    "mergeCheckpointPackageId" : "gofair:fair-convergence-matrix:3.0.0",
+    "events" : [ 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "cfebb700-d727-4ea4-9b1f-b3630e2a23e2",
+            "parentUuid" : "37e3ef76-71e1-47a9-be84-e1f1d9452193",
+            "entityUuid" : "29a8f2cc-696c-4e64-bfae-cba99ca761e1",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "R1.1 is about legal interoperability. The conditions under which the data can be used should be clear to machines and humans. If you need help to choose from the provided list please check this website: https://chooser-beta.creativecommons.org/. If you use another license not listed there put the URI of your license in the next answer box. "
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "e61b1fa4-dfea-4490-97be-60c77f09a9ef",
+            "parentUuid" : "37e3ef76-71e1-47a9-be84-e1f1d9452193",
+            "entityUuid" : "29a8f2cc-696c-4e64-bfae-cba99ca761e1",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "R1.1 is about legal interoperability. The conditions under which the data can be used should be clear to machines and humans. If you need help to choose from the provided list please check this website: https://chooser-beta.creativecommons.org/. If you use another license not listed there put the URI of your license, chosing it from this source: https://spdx.org/licenses/ in the answer box. "
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "664c1892-26e4-4095-9710-68c0f978c098",
+            "parentUuid" : "37e3ef76-71e1-47a9-be84-e1f1d9452193",
+            "entityUuid" : "29a8f2cc-696c-4e64-bfae-cba99ca761e1",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "R1.1 is about legal interoperability. The conditions under which the data can be used should be clear to machines and humans. If you need help to choose from the provided list please check this website: https://chooser-beta.creativecommons.org/. If you use another license not listed here put the URI of your license in the answer field of the follow-up question choosing it from this source: https://spdx.org/licenses/. "
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "a3a8525d-f7cf-45dc-a08e-8a5c975e292c",
+            "parentUuid" : "37e3ef76-71e1-47a9-be84-e1f1d9452193",
+            "entityUuid" : "c704e5d2-7044-4415-8d52-bb621f64b9d6",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "R1.1 is about legal interoperability. The conditions under which the data can be used should be clear to machines and humans. If you need help to choose from the provided list please check this website: https://chooser-beta.creativecommons.org/. If you use another license not listed here put the URI of your license in the answer field of the follow-up question choosing it from this source: https://spdx.org/licenses/. "
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }
+    ],
+    "createdAt" : ISODate("2020-10-14T16:00:27.864Z")
+}
     ])
 
 db.getCollection("templates").insert({
@@ -27729,6 +35381,64 @@ db.getCollection("templates").insert({
     ],
     "assets" : [],
     "createdAt" : ISODate("2020-10-06T19:11:05.636Z")
+})
+db.getCollection("templates").insert({
+    "id" : "gofair:fip-nanopub:1.1.0",
+    "name" : "FIP Nanopub",
+    "organizationId" : "gofair",
+    "templateId" : "fip-nanopub",
+    "version" : "1.1.0",
+    "metamodelVersion" : 2,
+    "description" : "FAIR Implementation Profile as Nanopublication",
+    "readme" : "# FIP Nanopublication (RDF) template\n\nExport template that transforms FIP questionnaire into a set of nanopublications (one per declaration).\n\n## Changelog\n\n### 1.1.0\n\n- Update for KM v5 (with Wikidata questions)\n\n### 1.0.0\n\n- Initial version of FIP nanopublication export template\n",
+    "license" : "Apache-2.0",
+    "allowedPackages" : [ 
+        {
+            "orgId" : "gofair",
+            "kmId" : "fip-wizard",
+            "minVersion" : "5.0.3",
+            "maxVersion" : null
+        }
+    ],
+    "recommendedPackageId" : "gofair:fip-wizard:5.0.3",
+    "formats" : [ 
+        {
+            "uuid" : "9c7d572e-c273-4323-97a4-ab38f943c33a",
+            "name" : "TriG (RDF)",
+            "shortName" : "trig",
+            "icon" : "fas fa-share-alt",
+            "color" : "#f15a24",
+            "steps" : [ 
+                {
+                    "name" : "jinja",
+                    "options" : {
+                        "content-type" : "application/trig",
+                        "extension" : "trig",
+                        "template" : "content/nanopub.trig.j2"
+                    }
+                }
+            ]
+        }
+    ],
+    "files" : [ 
+        {
+            "uuid" : "86cc1530-ff37-4aae-bd26-c73de6eab1a4",
+            "fileName" : "content/nanopub.trig.j2",
+            "content" : "{%- import \"content/_triples.j2\" as triples with context -%}\n# This file contains declarations from FIP Questionnaire {{ ctx.questionnaireUuid }} as nanopubs\n#\n# Delete all previous data related to this FIP questionnaire\n#> pre-query: DELETE { GRAPH ?g { ?s ?p ?o } } WHERE { GRAPH ?g { ?s ?p ?o } FILTER REGEX(?g, \"^http://purl.org/nanopub/temp/fip-declaration-np/{{ ctx.questionnaireUuid }}/\") } ;\n\n{% for declaration in triples.declarations -%}\n{%- set declarationUuid = declaration[\"uuid\"] -%}\n{%- set xtriples = declaration[\"triples\"] %}\n# Declaration #{{loop.index}} ({{declarationUuid}})\n@prefix : <http://purl.org/nanopub/temp/fip-declaration-np/{{ ctx.questionnaireUuid }}/{{ ctx.uuid }}/{{ declarationUuid }}#> .\n@prefix fip: <https://w3id.org/fair/fip/terms/> .\n@prefix fair: <https://w3id.org/fair/principles/terms/> .\n@prefix np: <http://www.nanopub.org/nschema#> .\n@prefix npx: <http://purl.org/nanopub/x/> .\n@prefix prov: <http://www.w3.org/ns/prov#> .\n@prefix dct: <http://purl.org/dc/terms/> .\n@prefix owl: <http://www.w3.org/2002/07/owl#> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@prefix orcid: <https://orcid.org/> .\n\n:Head {\n  : a np:Nanopublication;\n    np:hasAssertion :assertion ;\n    np:hasProvenance :provenance ;\n    np:hasPublicationInfo :pubinfo .\n}\n\n:assertion {\n{%- for triple in xtriples %}\n  {%- if triple|length == 3 %}\n  {{ triple[0] }} {{ triple[1] }} {{ triple[2] }} .\n  {%- elif triple|length == 1 %}\n  # {{ triple[0] }}\n  {%- else %}\n  #================================================\n  {%- endif %}\n{%- endfor %}\n}\n\n:provenance {\n  {%- if triples.orcid %}\n  {%- set orcid = triples.orcid|replace(\"https://orcid.org/\", \"\")|replace(\"http://orcid.org/\", \"\") %}\n  {%- if orcid.split('-')|length == 4 %}\n  :assertion dct:creator orcid:{{ orcid }} .\n  {%- else %}\n  :assertion dct:creator {{ orcid|tojson }} .\n  {%- endif %}\n  {%- else %}\n  :assertion dct:creator \"unknown\" .\n  {%- endif %}\n}\n\n:pubinfo {\n  : dct:created \"{{ ctx.updatedAt|datetime_format(\"%Y-%m-%dT%H:%M:%SZ\") }}\"^^xsd:dateTime ;\n    dct:creator <{{ ctx.config.clientUrl }}> ;\n    dct:license <https://creativecommons.org/publicdomain/zero/1.0/> .\n}\n\n{% endfor -%}\n"
+        }, 
+        {
+            "uuid" : "30b97f6e-815b-49b6-ba34-38bbf3c66a7d",
+            "fileName" : "content/_definition.j2",
+            "content" : "{%- set questions = [\n  {\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-F1-MD\",\n    \"type\": \"normal\",\n    \"chapter\": \"e3301b05-b02d-4c09-bb4b-7fb181414236\",\n    \"declaration\": \"6a812ff5-a202-40d4-bd3b-02b341512e48\",\n    \"consideration\": \"6318940e-d311-4102-836e-77dc0f2838f1\",\n    \"c_wikidata\": \"7a128d7c-22fe-47c8-b8cd-6672aafc2178\",\n    \"c_nanobench\": \"2a880dab-4f2f-4ab5-aefe-ce4942542a37\",\n    \"c_options\": \"x\",\n    \"c_uri\": \"x\",\n    \"planning\": \"47d618c6-568e-4112-b66a-339661bfc7fc\",\n    \"p_wikidata\": \"a3096bd9-89ef-4ecf-a979-e1c52ae2e4a4\",\n    \"p_nanobench\": \"86205ba5-2016-4a4c-a3bf-d0aea015fec5\",\n    \"p_options\": \"x\",\n    \"p_uri\": \"x\"\n  },\n  {\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-F1-D\",\n    \"type\": \"normal\",\n    \"chapter\": \"e3301b05-b02d-4c09-bb4b-7fb181414236\",\n    \"declaration\": \"797c4af8-0184-43cf-b40c-e2608b7b4d0a\",\n    \"consideration\": \"891413be-e42d-409c-967f-a2e271777aab\",\n    \"c_wikidata\": \"64d22ea4-6dea-43bb-91f3-0d2689f8b38b\",\n    \"c_nanobench\": \"8b75db91-a7e6-4053-ba77-431ef0e8d67a\",\n    \"c_options\": \"x\",\n    \"c_uri\": \"x\",\n    \"planning\": \"4f3cfb2a-cbb4-40f5-a151-74c9bcb661bd\",\n    \"p_wikidata\": \"6a16f854-1cfb-4ca7-894e-2adb60381036\",\n    \"p_nanobench\": \"4a10d70e-2a4e-4ea1-a796-e5d100bc53ea\",\n    \"p_options\": \"x\",\n    \"p_uri\": \"x\"\n  },\n  {\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-F2\",\n    \"type\": \"normal\",\n    \"chapter\": \"e3301b05-b02d-4c09-bb4b-7fb181414236\",\n    \"declaration\": \"808310c5-7321-4789-aa97-80f4c7ac9fa8\",\n    \"consideration\": \"b351f7d6-7b0a-43e6-a845-d82d27040435\",\n    \"c_wikidata\": \"49a90acf-36e3-42ef-b9d0-806e0ca2ce72\",\n    \"c_nanobench\": \"cae8352d-a048-49ad-b95f-24454bb5f80a\",\n    \"c_options\": \"x\",\n    \"c_uri\": \"x\",\n    \"planning\": \"f0ef2043-8c9b-4aa5-9a3b-2c5474a5a694\",\n    \"p_wikidata\": \"0b3deb52-5017-45c8-b1ec-c401a14cb966\",\n    \"p_nanobench\": \"a57428a6-8dfe-48e3-b846-d4a039ca934c\",\n    \"p_options\": \"x\",\n    \"p_uri\": \"x\"\n  },\n  {\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-F3\",\n    \"type\": \"normal\",\n    \"chapter\": \"e3301b05-b02d-4c09-bb4b-7fb181414236\",\n    \"declaration\": \"faeab073-3569-4bca-a804-c81c0de04a95\",\n    \"consideration\": \"be91f639-06e5-4d65-9375-d04bcf3af66b\",\n    \"c_wikidata\": \"0ec3a986-b79a-4ef5-a9b3-7d49a30fe1b1\",\n    \"c_nanobench\": \"59d34122-39d7-4587-ae39-de456d7459e2\",\n    \"c_options\": \"x\",\n    \"c_uri\": \"x\",\n    \"planning\": \"293aed26-bf2c-446b-9c91-5acc0e354e63\",\n    \"p_wikidata\": \"46d5bc1d-27cb-41c3-96bd-16c917615ba2\",\n    \"p_nanobench\": \"e1657f7d-eb02-4baa-a40f-ae0b4ccf973e\",\n    \"p_options\": \"x\",\n    \"p_uri\": \"x\"\n  },\n  {\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-F4-MD\",\n    \"type\": \"normal\",\n    \"chapter\": \"e3301b05-b02d-4c09-bb4b-7fb181414236\",\n    \"declaration\": \"a50aa1e1-68a9-4e36-bdb6-4a4c5a3d902a\",\n    \"consideration\": \"01e9538b-0246-4ae1-a60b-c870bd2f7f10\",\n    \"c_wikidata\": \"dfd222a9-8aaf-4df3-a3f5-617562d5a1f0\",\n    \"c_nanobench\": \"7bd33eba-28c2-4279-9dff-a2e672697936\",\n    \"c_options\": \"x\",\n    \"c_uri\": \"x\",\n    \"planning\": \"07648d69-41c1-4f7c-bafa-8d93caa32d7c\",\n    \"p_wikidata\": \"1685f15e-a5a1-40ae-9e34-19810210770e\",\n    \"p_nanobench\": \"a74f5643-da60-4c93-8b93-bca758dca0cf\",\n    \"p_options\": \"x\",\n    \"p_uri\": \"x\"\n  },\n  {\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-F4-D\",\n    \"type\": \"normal\",\n    \"chapter\": \"e3301b05-b02d-4c09-bb4b-7fb181414236\",\n    \"declaration\": \"5f33c2e8-8b95-435c-870a-fd97d91ff8da\",\n    \"consideration\": \"f321f449-7937-40da-9702-0df364a17fb5\",\n    \"c_wikidata\": \"d8796118-d403-4f75-bacb-c94f558851b9\",\n    \"c_nanobench\": \"20abafb3-72f8-4400-9e16-1acc1c61bf38\",\n    \"c_options\": \"x\",\n    \"c_uri\": \"x\",\n    \"planning\": \"66665dd7-0d60-4ac6-a2dd-a69495899dd0\",\n    \"p_wikidata\": \"2c475394-8f93-463d-86f9-75b8a8169734\",\n    \"p_nanobench\": \"b28bc881-ad87-4564-ab18-0fa8ac8ac061\",\n    \"p_options\": \"x\",\n    \"p_uri\": \"x\"\n  },\n  {\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-A1-MD\",\n    \"type\": \"normal\",\n    \"chapter\": \"d6ab1374-788b-4cd5-9614-5ec4c69d6cc5\",\n    \"declaration\": \"43ff12a0-22ff-492b-9777-99e2469f5cf1\",\n    \"consideration\": \"d06cdad0-f322-4376-be83-0dffa3ea6ff2\",\n    \"c_wikidata\": \"e600fc1f-bfbe-4bd5-a41e-a838d8afcc51\",\n    \"c_nanobench\": \"5746d5e3-3e98-460d-9a2e-61d3e974eab2\",\n    \"c_options\": \"x\",\n    \"c_uri\": \"x\",\n    \"planning\": \"6668dca1-0761-485c-8f6f-2fe66e2f66bf\",\n    \"p_wikidata\": \"cd880a44-0705-448d-a048-cb4653df4216\",\n    \"p_nanobench\": \"0979af91-88e6-4567-a25f-51dabd63ed30\",\n    \"p_options\": \"x\",\n    \"p_uri\": \"x\"\n  },\n  {\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-A1-D\",\n    \"type\": \"normal\",\n    \"chapter\": \"d6ab1374-788b-4cd5-9614-5ec4c69d6cc5\",\n    \"declaration\": \"ee073efa-c934-4db4-ae87-49b73df11ca5\",\n    \"consideration\": \"c74cecef-cc36-45c9-8400-7a6a56ca4e2d\",\n    \"c_wikidata\": \"100c23dc-a379-4114-b6a8-431548d230f4\",\n    \"c_nanobench\": \"0fe3186c-c7c1-4cef-a8e0-820c2823e66d\",\n    \"c_options\": \"x\",\n    \"c_uri\": \"x\",\n    \"planning\": \"ad6f9598-e308-4c6c-b751-b576e4423b8a\",\n    \"p_wikidata\": \"ee1e14ac-8328-4da5-8d66-879c81973cca\",\n    \"p_nanobench\": \"f5b9bf6d-23ea-429d-a937-d988dfb1f971\",\n    \"p_options\": \"x\",\n    \"p_uri\": \"x\"\n  },\n  {\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-A1.1-MD\",\n    \"type\": \"normal\",\n    \"chapter\": \"d6ab1374-788b-4cd5-9614-5ec4c69d6cc5\",\n    \"declaration\": \"2ddde9e8-4284-4b61-b5a7-8b0e8f8b28c2\",\n    \"consideration\": \"c4d90bd6-0154-4bd9-ab7f-72f6f913625a\",\n    \"c_wikidata\": \"856bac5d-863e-4018-8999-bc1f46e4e892\",\n    \"c_nanobench\": \"076e4fae-6668-4e84-a9f7-b00f1d33f58e\",\n    \"c_options\": \"x\",\n    \"c_uri\": \"x\",\n    \"planning\": \"38e487a0-684e-4add-a2c5-3902e62807a8\",\n    \"p_wikidata\": \"039fca50-e23a-413e-9326-a1bb5d10115a\",\n    \"p_nanobench\": \"e46681c4-d398-4a4d-875e-9829fa987301\",\n    \"p_options\": \"x\",\n    \"p_uri\": \"x\"\n  },\n  {\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-A1.1-D\",\n    \"type\": \"normal\",\n    \"chapter\": \"d6ab1374-788b-4cd5-9614-5ec4c69d6cc5\",\n    \"declaration\": \"d2c28334-7dc9-4804-9f0c-89984240fb3b\",\n    \"consideration\": \"7e256841-6b67-4fd5-bc6f-51a80f91c991\",\n    \"c_wikidata\": \"da8c8522-63f5-4d2a-8e08-cc52f0028aec\",\n    \"c_nanobench\": \"db02f6cd-0e28-41d9-9ccf-a0e9040c422d\",\n    \"c_options\": \"x\",\n    \"c_uri\": \"x\",\n    \"planning\": \"60d79156-2028-43e7-93f7-09a8d8545e80\",\n    \"p_wikidata\": \"8f98d71b-dcad-4f58-8f1b-f5a874653c92\",\n    \"p_nanobench\": \"76141aaf-1807-4667-a349-1ecdcf08f10b\",\n    \"p_options\": \"x\",\n    \"p_uri\": \"x\"\n  },\n  {\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-A1.2\",\n    \"type\": \"normal\",\n    \"chapter\": \"d6ab1374-788b-4cd5-9614-5ec4c69d6cc5\",\n    \"declaration\": \"a93c26cc-ca80-4bcf-ac4c-04e8123bbadb\",\n    \"consideration\": \"ed203074-d9df-47bc-80ed-abf3283f3aa8\",\n    \"c_wikidata\": \"cf7bb89c-3e93-477e-8013-d1f40c228b5f\",\n    \"c_nanobench\": \"f7ab7312-0f7f-4ba9-8141-85352a3115f4\",\n    \"c_options\": \"x\",\n    \"c_uri\": \"x\",\n    \"planning\": \"f2f9124a-deb0-4485-9dbd-24fcb011458f\",\n    \"p_wikidata\": \"e26cc46c-1a51-4465-8c96-0ab8750ec033\",\n    \"p_nanobench\": \"3d871bd7-06a4-41f4-858b-37211e30f332\",\n    \"p_options\": \"x\",\n    \"p_uri\": \"x\"\n  },\n  {\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-I1-MD\",\n    \"type\": \"normal\",\n    \"chapter\": \"2b7ee188-a227-43a8-8bf9-a99e6aeb3939\",\n    \"declaration\": \"a07fc6d6-1f8c-4c21-9bf5-1040682fa5b8\",\n    \"consideration\": \"0a43f23d-6261-4359-bcfb-2f58f3303c49\",\n    \"c_wikidata\": \"d1e5866f-383e-431c-bd60-877fa0f0e72a\",\n    \"c_nanobench\": \"e3dd2327-0eaa-4ec2-8feb-9d66a78ec4c2\",\n    \"c_options\": \"x\",\n    \"c_uri\": \"x\",\n    \"planning\": \"014a56b6-cc81-4044-9352-98a2c11acdfd\",\n    \"p_wikidata\": \"64400794-ee44-4874-85f6-444cc511535b\",\n    \"p_nanobench\": \"2088b12c-1639-4db7-b4ca-00a89e3eaeb3\",\n    \"p_options\": \"x\",\n    \"p_uri\": \"x\"\n  },\n  {\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-I1-D\",\n    \"type\": \"normal\",\n    \"chapter\": \"2b7ee188-a227-43a8-8bf9-a99e6aeb3939\",\n    \"declaration\": \"53120a47-9151-42d4-bd33-4fd91fa9a48a\",\n    \"consideration\": \"fff28ddd-d34c-4dc9-8a20-ba26280eb39a\",\n    \"c_wikidata\": \"ffdbd1b7-5b52-4231-9318-f724b0164914\",\n    \"c_nanobench\": \"219f86b7-88d4-466d-8748-1dcf88fc06b6\",\n    \"c_options\": \"x\",\n    \"c_uri\": \"x\",\n    \"planning\": \"0256112b-b2f5-44e5-be33-69ffeec6a561\",\n    \"p_wikidata\": \"01473838-9166-49dd-8953-4a7f4eb4ca68\",\n    \"p_nanobench\": \"bf2a6eb8-8d75-434f-813d-ccad06444c1d\",\n    \"p_options\": \"x\",\n    \"p_uri\": \"x\"\n  },\n  {\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-I2-MD\",\n    \"type\": \"normal\",\n    \"chapter\": \"2b7ee188-a227-43a8-8bf9-a99e6aeb3939\",\n    \"declaration\": \"aea4c5be-aaa3-4e27-a6d6-f2e6af0bc43d\",\n    \"consideration\": \"55040213-7a86-416a-8eb6-85f05711587d\",\n    \"c_wikidata\": \"006dbb8d-2b77-4bca-8f66-73fdbecaa210\",\n    \"c_nanobench\": \"8f9e5e00-77e4-4332-8270-a1a4257420ea\",\n    \"c_options\": \"x\",\n    \"c_uri\": \"x\",\n    \"planning\": \"5700be0d-3918-42e0-b066-512fa6c9137a\",\n    \"p_wikidata\": \"0da59752-a14a-4685-a235-aa53a4abdc50\",\n    \"p_nanobench\": \"c10f580d-f14c-4d8a-bb41-5ea45dc8dbc5\",\n    \"p_options\": \"x\",\n    \"p_uri\": \"x\"\n  },\n  {\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-I2-D\",\n    \"type\": \"normal\",\n    \"chapter\": \"2b7ee188-a227-43a8-8bf9-a99e6aeb3939\",\n    \"declaration\": \"bc3f2a07-6921-4693-8e09-4caf408d162a\",\n    \"consideration\": \"4f91161c-d968-4387-8264-0ba4e05f8f5a\",\n    \"c_wikidata\": \"d57d3c0e-ac9d-40b5-a71c-3061b10ccbb2\",\n    \"c_nanobench\": \"40dbe55a-a532-4af2-a602-ca9fddae9412\",\n    \"c_options\": \"x\",\n    \"c_uri\": \"x\",\n    \"planning\": \"84e1d4c8-67f1-4d0e-b897-3b99c4feb9bb\",\n    \"p_wikidata\": \"06fa7ce5-9344-473d-8236-73bbc6435839\",\n    \"p_nanobench\": \"d71e4483-6b8b-4022-a25e-d4349f1dbf87\",\n    \"p_options\": \"x\",\n    \"p_uri\": \"x\"\n  },\n  {\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-I3-MD\",\n    \"type\": \"normal\",\n    \"chapter\": \"2b7ee188-a227-43a8-8bf9-a99e6aeb3939\",\n    \"declaration\": \"e712930b-8a6d-474e-b6da-e2fd0e50ab68\",\n    \"consideration\": \"f423b127-9fce-4435-8d5b-44a36815f8fa\",\n    \"c_wikidata\": \"8775f24c-1412-45dd-838c-9238af307361\",\n    \"c_nanobench\": \"1e33211f-25e5-408c-a2a6-5dc9e06c6606\",\n    \"c_options\": \"x\",\n    \"c_uri\": \"x\",\n    \"planning\": \"87d51804-6741-477b-ae53-3941b5631a81\",\n    \"p_wikidata\": \"0898ed0a-ea75-46a5-8389-78011c81e7c3\",\n    \"p_nanobench\": \"9d3ad18c-2055-4d13-b2d0-0bd3503da2cb\",\n    \"p_options\": \"x\",\n    \"p_uri\": \"x\"\n  },\n  {\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-I3-D\",\n    \"type\": \"normal\",\n    \"chapter\": \"2b7ee188-a227-43a8-8bf9-a99e6aeb3939\",\n    \"declaration\": \"10ba5624-d948-4f1a-91c1-61f33ec1e51b\",\n    \"consideration\": \"baca3035-1f3c-4964-b8f5-26182ca7f446\",\n    \"c_wikidata\": \"af116cad-1578-4478-a050-ea5eaa8c3736\",\n    \"c_nanobench\": \"b8bc1ffb-64c8-42a6-b5cc-50e2c9813a1f\",\n    \"c_options\": \"x\",\n    \"c_uri\": \"x\",\n    \"planning\": \"a3d10b12-ae30-48f9-9827-239ea003398d\",\n    \"p_wikidata\": \"f941e87f-595d-4f35-abec-ee975fcbe894\",\n    \"p_nanobench\": \"59b3e9d1-4481-491b-bfc9-f431324f08e6\",\n    \"p_options\": \"x\",\n    \"p_uri\": \"x\"\n  },\n  {\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-R1.1-MD\",\n    \"type\": \"licenses\",\n    \"chapter\": \"37e3ef76-71e1-47a9-be84-e1f1d9452193\",\n    \"declaration\": \"29a8f2cc-696c-4e64-bfae-cba99ca761e1\",\n    \"consideration\": \"312b5818-cdd3-43dc-bcf1-bb9788a88f19\",\n    \"c_wikidata\": \"x\",\n    \"c_nanobench\": \"x\",\n    \"c_options\": \"812fc813-effa-4183-909c-bbc4154730e3\",\n    \"c_uri\": \"b25d8565-ec74-4ee0-9ecc-33099a15a58b\",\n    \"planning\": \"9653cc3e-4350-4610-ad6a-fc9151856be1\",\n    \"p_wikidata\": \"x\",\n    \"p_nanobench\": \"x\",\n    \"p_options\": \"615f99cf-275a-42b6-bc48-405021cfaf66\",\n    \"p_uri\": \"379dc1c5-586a-4d98-aaa4-4978e13fd347\"\n  },\n  {\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-R1.1-D\",\n    \"type\": \"licenses\",\n    \"chapter\": \"37e3ef76-71e1-47a9-be84-e1f1d9452193\",\n    \"declaration\": \"c704e5d2-7044-4415-8d52-bb621f64b9d6\",\n    \"consideration\": \"cacd776b-b531-4487-bd53-a61dd9653b12\",\n    \"c_wikidata\": \"x\",\n    \"c_nanobench\": \"x\",\n    \"c_options\": \"55b072f8-f2b7-4cf6-be7f-19fd48ccf069\",\n    \"c_uri\": \"4e8a8475-f355-4140-ad87-e224a0f3c1a8\",\n    \"planning\": \"62e4811c-2217-4de9-9266-ff38524efc8c\",\n    \"p_wikidata\": \"x\",\n    \"p_nanobench\": \"x\",\n    \"p_options\": \"c8a3a31e-e184-4e53-90fa-c9b6886382a5\",\n    \"p_uri\": \"7932d617-2d1b-456d-8a02-5dd30c3e5c03\"\n  },\n  {\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-R1.2-MD\",\n    \"type\": \"normal\",\n    \"chapter\": \"37e3ef76-71e1-47a9-be84-e1f1d9452193\",\n    \"declaration\": \"f6b5b347-6e01-4294-a0e3-d64382bea1e9\",\n    \"consideration\": \"53319468-f864-488c-aa6c-995f21cf9207\",\n    \"c_wikidata\": \"1f150d19-88d2-462d-a71d-8010eb463b29\",\n    \"c_nanobench\": \"c88733b2-e294-419b-81bf-27206542668a\",\n    \"c_options\": \"x\",\n    \"c_uri\": \"x\",\n    \"planning\": \"72fd2469-3506-4e28-b8b3-f1049baa097f\",\n    \"p_wikidata\": \"81a46a60-b8e5-4b9a-9382-405f9464b05c\",\n    \"p_nanobench\": \"fa4b80dc-7427-4cf6-8299-4082eb1fcd0c\",\n    \"p_options\": \"x\",\n    \"p_uri\": \"x\"\n  },\n  {\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-R1.2-D\",\n    \"type\": \"normal\",\n    \"chapter\": \"37e3ef76-71e1-47a9-be84-e1f1d9452193\",\n    \"declaration\": \"08aae90c-ba61-4c78-b3bd-eb92d29e8111\",\n    \"consideration\": \"b5a6c104-b267-48c8-851c-7ee603bf7838\",\n    \"c_wikidata\": \"4541e9fe-6266-4636-b860-5e1546c6b52e\",\n    \"c_nanobench\": \"abe255a0-7e65-4950-b2ae-47ac8ac30cc1\",\n    \"c_options\": \"x\",\n    \"c_uri\": \"x\",\n    \"planning\": \"a2ad654d-95ce-4ab0-a853-0416c1c37868\",\n    \"p_wikidata\": \"424f289d-4f90-494d-892c-6ccdc9f3089a\",\n    \"p_nanobench\": \"83fdf983-73d3-4b6e-a9c5-58c91de07aa4\",\n    \"p_options\": \"x\",\n    \"p_uri\": \"x\"\n  }\n] -%}\n\n{%- set communityUuid = \"1a98d12d-8716-4d0e-87ab-c7e9b4ab9527\" -%}\n{%- set communityPath = \"63eecafc-fdda-47d3-92d2-d58fad54588d.1a98d12d-8716-4d0e-87ab-c7e9b4ab9527\" -%}\n{%- set orcidPath = \"63eecafc-fdda-47d3-92d2-d58fad54588d.c9cd6f2d-d16e-4ef6-831f-a20e33290b6f\" -%}\n"
+        }, 
+        {
+            "uuid" : "6a5bcc94-7de6-4a46-8461-5cbf3721fa9b",
+            "fileName" : "content/_triples.j2",
+            "content" : "{%- import \"content/_definition.j2\" as def with context -%}\n{%- set km = ctx.knowledgeModel -%}\n{%- set replies = ctx.questionnaireReplies -%}\n\n{%- set declarations = [] -%}\n\n{%- set communityReply = replies[def.communityPath] -%}\n{%- if communityReply -%}\n  {%- set reply = communityReply.value -%}\n  {%- set communityUri = [] -%}\n  {%- set communityQuestion = km.entities.questions[def.communityUuid] -%}\n  {%- if reply.type == \"PlainValue\" and reply.value -%}\n    {%- do communityUri.append(reply.value) -%}\n  {%- elif reply.id -%}\n    {%- set integration = km.entities.integrations[communityQuestion.integrationUuid] -%}\n    {%- do communityUri.append(integration.itemUrl|replace(\"${id}\", reply.id)) -%}\n  {%- endif -%}\n{%- endif -%}\n{%- set orcid = replies[def.orcidPath]|reply_str_value -%}\n\n{%- for q in def.questions -%}\n  {%- set dquestion = km.entities.questions[q[\"declaration\"]] -%}\n\n  {%- set declarationsPath = [q[\"chapter\"], q[\"declaration\"]]|reply_path -%}\n  {%- set declarationItems = replies[declarationsPath]|reply_items -%}\n  {%- for declarationUuid in declarationItems -%}\n    {#- Comment with question text -#}\n    {%- set triples = [] -%}\n    {%- do triples.append([dquestion.title]) -%}\n    {%- set node = \":declaration\" -%}\n    {%- set declarationPath = [declarationsPath, declarationUuid]|reply_path -%}\n    {#- It is a declaration -#}\n    {%- do triples.append([node, \"a\", \"fip:FIP-Declaration\"]) -%}\n    {#- It related to FIP question -#}\n    {%- do triples.append([node, \"fip:refers-to-question\", \"<\" ~ q[\"purl\"] ~ \">\"]) -%}\n    {#- Community making the declaration -#}\n    {%- if communityUri|length > 0 -%}\n      {%- do triples.append([node, \"fip:declared-by\", \"<\" ~ communityUri[0] ~ \">\"]) -%}\n    {%- endif -%}\n    {#- Community making the declaration -#}\n    {%- set considerationsPath = [declarationPath, q[\"consideration\"]]|reply_path -%}\n    {%- set considerations = replies[considerationsPath]|reply_str_value -%}\n    {%- do triples.append([node, \"fip:considerations\", considerations|tojson]) -%}\n    {#- Current: Normal -#}\n    {%- if q[\"type\"] == \"normal\" -%}\n      {%- set cwikidataReply = replies[[declarationPath, q[\"c_wikidata\"]]|reply_path]-%}\n      {%- if cwikidataReply -%}\n        {%- set reply = cwikidataReply.value -%}\n        {%- set question = km.entities.questions[q[\"c_wikidata\"]] -%}\n        {%- if reply.type == \"PlainValue\" and reply.value -%}\n          {%- do triples.append([node, \"fip:declares-current-use-of\", \"<\" ~ reply.value ~ \">\"]) -%}\n        {%- elif reply.id -%}\n          {%- set integration = km.entities.integrations[question.integrationUuid] -%}\n          {%- set url = integration.itemUrl|replace(\"${id}\", reply.id) -%}\n          {%- do triples.append([node, \"fip:declares-current-use-of\", \"<\" ~ url ~ \">\"]) -%}\n          {%- do triples.append([\"<\" ~ url ~ \">\", \"rdfs:label\", reply.value|tojson]) -%}\n        {%- endif -%}\n      {%- endif -%}\n      {%- set cnanobenchReply = replies[[declarationPath, q[\"c_nanobench\"]]|reply_path]-%}\n      {%- if cnanobenchReply -%}\n        {%- set reply = cnanobenchReply.value -%}\n        {%- set question = km.entities.questions[q[\"c_nanobench\"]] -%}\n        {%- if reply.type == \"PlainValue\" and reply.value -%}\n          {%- do triples.append([node, \"fip:declares-current-use-of\", \"<\" ~ reply.value ~ \">\"]) -%}\n        {%- elif reply.id -%}\n          {%- set integration = km.entities.integrations[question.integrationUuid] -%}\n          {%- set url = integration.itemUrl|replace(\"${id}\", reply.id) -%}\n          {%- do triples.append([node, \"fip:declares-current-use-of\", \"<\" ~ url ~ \">\"]) -%}\n          {%- do triples.append([\"<\" ~ url ~ \">\", \"rdfs:label\", reply.value|tojson]) -%}\n        {%- endif -%}\n      {%- endif -%}\n    {%- endif -%}\n    {#- Current: Licenses -#}\n    {%- if q[\"type\"] == \"licenses\" -%}\n      {%- set coptionsAnswerUuid = replies[[declarationPath, q[\"c_options\"]]|reply_path]|reply_str_value -%}\n      {%- set curiAnswer = replies[[declarationPath, q[\"c_uri\"]]|reply_path]|reply_str_value -%}\n      {%- if coptionsAnswerUuid -%}\n        {%- set answer = km.entities.answers[coptionsAnswerUuid] -%}\n        {%- set answerValue = answer.label -%}\n        {%- do triples.append([node, \"fip:declares-current-use-of\", \"<\" ~ answerValue ~ \">\"]) -%}\n      {%- elif curiAnswer -%}\n        {%- do triples.append([node, \"fip:declares-current-use-of\", \"<\" ~ curiAnswer ~ \">\"]) -%}\n      {%- endif -%}\n    {%- endif -%}\n    {#- Planned (fip:declares-planned-use-of) -#}\n    {%- set plannedsPath = [declarationPath, q[\"planning\"]]|reply_path -%}\n    {%- set planneds = replies[plannedsPath]|reply_items -%}\n    {%- for plannedUuid in planneds -%}\n      {%- set plannedPath = [plannedsPath, plannedUuid]|reply_path -%}\n      {#- Planned: Normal -#}\n      {%- if q[\"type\"] == \"normal\" -%}\n        {%- set pwikidataReply = replies[[plannedPath, q[\"p_wikidata\"]]|reply_path]-%}\n        {%- if pwikidataReply -%}\n          {%- set reply = pwikidataReply.value -%}\n          {%- set question = km.entities.questions[q[\"p_wikidata\"]] -%}\n          {%- if reply.type == \"PlainValue\" and reply.value -%}\n            {%- do triples.append([node, \"fip:declares-planned-use-of\", \"<\" ~ reply.value ~ \">\"]) -%}\n          {%- elif reply.id -%}\n            {%- set integration = km.entities.integrations[question.integrationUuid] -%}\n            {%- set url = integration.itemUrl|replace(\"${id}\", reply.id) -%}\n            {%- do triples.append([node, \"fip:declares-planned-use-of\", \"<\" ~ url ~ \">\"]) -%}\n            {%- do triples.append([\"<\" ~ url ~ \">\", \"rdfs:label\", reply.value|tojson]) -%}\n          {%- endif -%}\n        {%- endif -%}\n        {%- set pnanobenchReply = replies[[plannedPath, q[\"p_nanobench\"]]|reply_path]-%}\n        {%- if pnanobenchReply -%}\n          {%- set reply = pnanobenchReply.value -%}\n          {%- set question = km.entities.questions[q[\"p_nanobench\"]] -%}\n          {%- if reply.type == \"PlainValue\" and reply.value -%}\n            {%- do triples.append([node, \"fip:declares-planned-use-of\", \"<\" ~ reply.value ~ \">\"]) -%}\n          {%- elif reply.id -%}\n            {%- set integration = km.entities.integrations[question.integrationUuid] -%}\n            {%- set url = integration.itemUrl|replace(\"${id}\", reply.id) -%}\n            {%- do triples.append([node, \"fip:declares-planned-use-of\", \"<\" ~ url ~ \">\"]) -%}\n            {%- do triples.append([\"<\" ~ url ~ \">\", \"rdfs:label\", reply.value|tojson]) -%}\n          {%- endif -%}\n        {%- endif -%}\n      {%- endif -%}\n      {#- Planned: Licenses -#}\n      {%- if q[\"type\"] == \"licenses\" -%}\n        {%- set poptionsAnswerUuid = replies[[plannedPath, q[\"p_options\"]]|reply_path]|reply_str_value -%}\n        {%- set puriAnswer = replies[[plannedPath, q[\"p_uri\"]]|reply_path]|reply_str_value -%}\n        {%- if poptionsAnswerUuid -%}\n          {%- set answer = km.entities.answers[poptionsAnswerUuid] -%}\n          {%- set answerValue = answer.label -%}\n          {%- do triples.append([node, \"fip:declares-planned-use-of\", \"<\" ~ answerValue ~ \">\"]) -%}\n        {%- elif puriAnswer -%}\n          {%- do triples.append([node, \"fip:declares-planned-use-of\", \"<\" ~ puriAnswer ~ \">\"]) -%}\n        {%- endif -%}\n      {%- endif -%}\n    {%- endfor -%}\n\n    {%- set declaration = {\n      \"uuid\": declarationUuid,\n      \"triples\": triples\n    } -%}\n    {%- do declarations.append(declaration) -%}\n  {%- endfor -%}\n{%- endfor -%}\n"
+        }
+    ],
+    "assets" : [],
+    "createdAt" : ISODate("2020-10-14T07:42:57.108Z")
 })
 
 // ----------------------------------------------------------------------------------------------------
@@ -28004,3 +35714,12 @@ db.getCollection('migrations').insertMany([
     "createdAt" : "2020-09-22 12:18:34.626253778 UTC"
 }
 ])
+
+db.getCollection("levels").deleteMany({})
+db.getCollection("levels").insert({
+    "level" : 1,
+    "title" : "Before Submitting the FIP",
+    "description" : "",
+    "createdAt" : ISODate("2019-04-23T16:49:03.049Z"),
+    "updatedAt" : ISODate("2019-04-23T16:49:03.049Z")
+})

@@ -2,7 +2,7 @@ version: '3'
 services:
 
   dsw_server:
-    image: datastewardshipwizard/wizard-server:develop
+    image: datastewardshipwizard/wizard-server:2.7.0
     restart: always
     hostname: dsw_server
     depends_on:
@@ -15,7 +15,7 @@ services:
       - 3000:3000
 
   dsw_client:
-    image: docker.ds-wizard.org/wizard-client:feature-DSW-917
+    image: datastewardshipwizard/wizard-client:2.7.0
     restart: always
     hostname: dsw_client
     environment:
@@ -31,7 +31,7 @@ services:
       - 8080:80
 
   docworker:
-    image: datastewardshipwizard/document-worker:develop
+    image: datastewardshipwizard/document-worker:2.7.0
     restart: always
     depends_on:
       - rabbitmq
