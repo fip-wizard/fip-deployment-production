@@ -35315,6 +35315,523 @@ db.getCollection("packages").insertMany([
         }
     ],
     "createdAt" : ISODate("2020-10-14T16:00:27.864Z")
+},
+
+{
+    "id" : "gofair:fip-wizard:5.0.7",
+    "name" : "FIP Wizard",
+    "organizationId" : "gofair",
+    "kmId" : "fip-wizard",
+    "version" : "5.0.7",
+    "metamodelVersion" : 5,
+    "description" : "Questionnaire prompting Communities committed to implementation of the FAIR Principles to explicitly declare their FAIR implementation choices (the output of the Wizard is a community-specific FAIR Implementation Profile, or FIP).",
+    "readme" : "# FIP Questionnaire\n\nThe FIP questionnaire prompts communities to explicitly declare their FAIR Implementation Profiles.\n\nThis knowledge model has been created under the [GO FAIR Convergence Matrix Project](https://www.go-fair.org/today/fair-matrix). For more information, visit the [3-point FAIRification Framework](https://www.go-fair.org/how-to-go-fair/).\n\nThis knowledge model can be used in any DSW instance for testing and training purposes, however, please fill-in your actual FIPs in the **[FIP Wizard](https://fair-matrix.ds-wizard.org)** to share them with the community. Please report any issues and comments there.",
+    "license" : "Apache-2.0",
+    "previousPackageId" : "gofair:fip-wizard:5.0.6",
+    "forkOfPackageId" : "gofair:fair-convergence-matrix:3.0.0",
+    "mergeCheckpointPackageId" : "gofair:fair-convergence-matrix:3.0.0",
+    "events" : [ 
+        {
+            "eventType" : "EditChapterEvent",
+            "uuid" : "ba64c216-ec4a-4272-8694-84edad194100",
+            "parentUuid" : "4c357734-268e-448e-9738-e44f5197da5a",
+            "entityUuid" : "0d68cbb7-3b51-4f22-afc9-0051cf477c8d",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "### Why to register\nIf your resource is not already available in Wikidata or as a nanopublication you can use Nanobench to register this resource as a new nanopublication. The nanopublication will be given a persistent URL (PURL). The registered resource will be retrievable by the wizard after its publication in the answer field of the related question.\n\n### How to register\nTo register a **FAIR Implementation Community** please use this [template](http://localhost:37373/publish?14&template=http://purl.org/np/RALjGBdI-nfsJeGy2Me7G6ekE0jKeoM28TUDb36S8pCEg)\n\nTo register a new **FAIR-Enabling Resource** please use this [template](http://localhost:37373/publish?16&template=http://purl.org/np/RAHvHX5qjbdnYXsZWsRMO3KuFekGUFR6LuPjigZns9_VA)\n\nTo register a new **Metadata Longevity Plan** please use this [template](http://localhost:37373/publish?3&template=http://purl.org/np/RA8xxVgd9hlYL8RQx0gEXmoEKhBpzInoHh4KxWyyi8dpM)\n"
+            },
+            "questionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditChapterEvent",
+            "uuid" : "ab40d138-e404-4564-b7bc-f09994edf8d1",
+            "parentUuid" : "4c357734-268e-448e-9738-e44f5197da5a",
+            "entityUuid" : "0d68cbb7-3b51-4f22-afc9-0051cf477c8d",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "questionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "AddQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "2673b451-5cf9-4885-b781-c345d0f697ba",
+            "parentUuid" : "29a8f2cc-696c-4e64-bfae-cba99ca761e1",
+            "entityUuid" : "0d87bc46-e037-4577-a2a9-9903c3231aba",
+            "title" : "Only if you cannot find your resource above, choose your resource from Nanobench",
+            "text" : null,
+            "requiredLevel" : null,
+            "tagUuids" : [],
+            "integrationUuid" : "39729d58-e7e3-4dac-afbe-8352c95f63e5",
+            "props" : {
+                "type" : "Data-usage-license"
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "5fc14b24-4c3f-4dbd-aa05-0f386b309810",
+            "parentUuid" : "37e3ef76-71e1-47a9-be84-e1f1d9452193",
+            "entityUuid" : "29a8f2cc-696c-4e64-bfae-cba99ca761e1",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : true,
+                "value" : [ 
+                    "312b5818-cdd3-43dc-bcf1-bb9788a88f19", 
+                    "812fc813-effa-4183-909c-bbc4154730e3", 
+                    "b25d8565-ec74-4ee0-9ecc-33099a15a58b", 
+                    "0d87bc46-e037-4577-a2a9-9903c3231aba", 
+                    "9653cc3e-4350-4610-ad6a-fc9151856be1"
+                ]
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "71c35630-bcab-4b77-807d-96bfa805723f",
+            "parentUuid" : "29a8f2cc-696c-4e64-bfae-cba99ca761e1",
+            "entityUuid" : "0d87bc46-e037-4577-a2a9-9903c3231aba",
+            "title" : {
+                "changed" : true,
+                "value" : "Only in case you cannot find your resource above, choose your resource from Nanobench"
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "integrationUuid" : {
+                "changed" : false
+            },
+            "props" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "a5fa780a-8f3c-4997-84d2-25c1b8416b24",
+            "parentUuid" : "29a8f2cc-696c-4e64-bfae-cba99ca761e1",
+            "entityUuid" : "0d87bc46-e037-4577-a2a9-9903c3231aba",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "integrationUuid" : {
+                "changed" : false
+            },
+            "props" : {
+                "changed" : true,
+                "value" : {
+                    "type" : "https://w3id.org/fair/fip/terms/Data-usage-license"
+                }
+            }
+        }, 
+        {
+            "eventType" : "AddQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "efe65730-09ac-4efb-b5b5-afc367b6291d",
+            "parentUuid" : "9653cc3e-4350-4610-ad6a-fc9151856be1",
+            "entityUuid" : "eaaf8139-28e5-43d3-872c-35277b4eb0d1",
+            "title" : "Only in case you cannot find your resource above, choose your resource from Nanobench",
+            "text" : null,
+            "requiredLevel" : null,
+            "tagUuids" : [],
+            "integrationUuid" : "39729d58-e7e3-4dac-afbe-8352c95f63e5",
+            "props" : {
+                "type" : ""
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "6a6897f9-b187-4bd3-8a2f-76baabea5c7e",
+            "parentUuid" : "9653cc3e-4350-4610-ad6a-fc9151856be1",
+            "entityUuid" : "eaaf8139-28e5-43d3-872c-35277b4eb0d1",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "integrationUuid" : {
+                "changed" : false
+            },
+            "props" : {
+                "changed" : true,
+                "value" : {
+                    "type" : "https://w3id.org/fair/fip/terms/Data-usage-license"
+                }
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "53c6e4e6-cca3-469f-b3be-4920cd2576b4",
+            "parentUuid" : "9653cc3e-4350-4610-ad6a-fc9151856be1",
+            "entityUuid" : "eaaf8139-28e5-43d3-872c-35277b4eb0d1",
+            "title" : {
+                "changed" : true,
+                "value" : "If not found above, choose your resource from Nanobench"
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "integrationUuid" : {
+                "changed" : false
+            },
+            "props" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "0b268d9d-5c3d-4876-90e8-531d875e06a7",
+            "parentUuid" : "29a8f2cc-696c-4e64-bfae-cba99ca761e1",
+            "entityUuid" : "0d87bc46-e037-4577-a2a9-9903c3231aba",
+            "title" : {
+                "changed" : true,
+                "value" : "If not found above, choose your resource from Nanobench"
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "integrationUuid" : {
+                "changed" : false
+            },
+            "props" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "AddQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "539245ba-3ecf-4020-809a-3e509ef41fca",
+            "parentUuid" : "c704e5d2-7044-4415-8d52-bb621f64b9d6",
+            "entityUuid" : "d718eade-e9c8-469c-9c0a-5e276c68c362",
+            "title" : "If not found above, choose your resource from Nanobench",
+            "text" : null,
+            "requiredLevel" : null,
+            "tagUuids" : [],
+            "integrationUuid" : "39729d58-e7e3-4dac-afbe-8352c95f63e5",
+            "props" : {
+                "type" : ""
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "e4e23f88-4c36-466c-aa29-c7ff054ba2e2",
+            "parentUuid" : "c704e5d2-7044-4415-8d52-bb621f64b9d6",
+            "entityUuid" : "d718eade-e9c8-469c-9c0a-5e276c68c362",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "integrationUuid" : {
+                "changed" : false
+            },
+            "props" : {
+                "changed" : true,
+                "value" : {
+                    "type" : "https://w3id.org/fair/fip/terms/Data-usage-license"
+                }
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "ff929107-5187-4e6b-ba4a-357678e42e28",
+            "parentUuid" : "37e3ef76-71e1-47a9-be84-e1f1d9452193",
+            "entityUuid" : "c704e5d2-7044-4415-8d52-bb621f64b9d6",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : true,
+                "value" : [ 
+                    "cacd776b-b531-4487-bd53-a61dd9653b12", 
+                    "55b072f8-f2b7-4cf6-be7f-19fd48ccf069", 
+                    "4e8a8475-f355-4140-ad87-e224a0f3c1a8", 
+                    "d718eade-e9c8-469c-9c0a-5e276c68c362", 
+                    "62e4811c-2217-4de9-9266-ff38524efc8c"
+                ]
+            }
+        }, 
+        {
+            "eventType" : "AddQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "9cffb849-23b8-4da2-8174-dc7dbcf643de",
+            "parentUuid" : "62e4811c-2217-4de9-9266-ff38524efc8c",
+            "entityUuid" : "52f5695c-8567-47af-a679-1355e96d3a96",
+            "title" : "New question",
+            "text" : null,
+            "requiredLevel" : null,
+            "tagUuids" : [],
+            "integrationUuid" : "39729d58-e7e3-4dac-afbe-8352c95f63e5",
+            "props" : {
+                "type" : "https://w3id.org/fair/fip/terms/Data-usage-license"
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "2147e201-9718-432a-9334-0b884488b4f1",
+            "parentUuid" : "62e4811c-2217-4de9-9266-ff38524efc8c",
+            "entityUuid" : "52f5695c-8567-47af-a679-1355e96d3a96",
+            "title" : {
+                "changed" : true,
+                "value" : "If not found above, choose your resource from Nanobench"
+            },
+            "text" : {
+                "changed" : false
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "integrationUuid" : {
+                "changed" : false
+            },
+            "props" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "c3873e8f-3fd1-4816-aae0-77e5f30ef6c5",
+            "parentUuid" : "37e3ef76-71e1-47a9-be84-e1f1d9452193",
+            "entityUuid" : "c704e5d2-7044-4415-8d52-bb621f64b9d6",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "R1.1 is about legal interoperability. The conditions under which the data can be used should be clear to machines and humans. If you need help to choose from the provided list please check this website: https://chooser-beta.creativecommons.org/. If you use another license not listed here put the URI of your license in the answer field of the follow-up question choosing it from this source: https://spdx.org/licenses/ or use Nanobench."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }, 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "ListQuestion",
+            "uuid" : "5e4a176a-ca80-45fe-b34e-b925025c60b2",
+            "parentUuid" : "37e3ef76-71e1-47a9-be84-e1f1d9452193",
+            "entityUuid" : "29a8f2cc-696c-4e64-bfae-cba99ca761e1",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "R1.1 is about legal interoperability. The conditions under which the data can be used should be clear to machines and humans. If you need help to choose from the provided list please check this website: https://chooser-beta.creativecommons.org/. If you use another license not listed here put the URI of your license in the answer field of the follow-up question choosing it from this source: https://spdx.org/licenses/  or use Nanobench."
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "itemTemplateQuestionUuids" : {
+                "changed" : false
+            }
+        }
+    ],
+    "createdAt" : ISODate("2020-10-19T17:57:17.976Z")
+},
+
+{
+    "id" : "gofair:fip-wizard:5.0.8",
+    "name" : "FIP Wizard",
+    "organizationId" : "gofair",
+    "kmId" : "fip-wizard",
+    "version" : "5.0.8",
+    "metamodelVersion" : 5,
+    "description" : "Questionnaire prompting Communities committed to implementation of the FAIR Principles to explicitly declare their FAIR implementation choices (the output of the Wizard is a community-specific FAIR Implementation Profile, or FIP).",
+    "readme" : "# FIP Questionnaire\n\nThe FIP questionnaire prompts communities to explicitly declare their FAIR Implementation Profiles.\n\nThis knowledge model has been created under the [GO FAIR Convergence Matrix Project](https://www.go-fair.org/today/fair-matrix). For more information, visit the [3-point FAIRification Framework](https://www.go-fair.org/how-to-go-fair/).\n\nThis knowledge model can be used in any DSW instance for testing and training purposes, however, please fill-in your actual FIPs in the **[FIP Wizard](https://fair-matrix.ds-wizard.org)** to share them with the community. Please report any issues and comments there.",
+    "license" : "Apache-2.0",
+    "previousPackageId" : "gofair:fip-wizard:5.0.7",
+    "forkOfPackageId" : "gofair:fair-convergence-matrix:3.0.0",
+    "mergeCheckpointPackageId" : "gofair:fair-convergence-matrix:3.0.0",
+    "events" : [ 
+        {
+            "eventType" : "EditQuestionEvent",
+            "questionType" : "IntegrationQuestion",
+            "uuid" : "d93f0291-0068-4c55-8ef1-fca7b9c71f4c",
+            "parentUuid" : "63eecafc-fdda-47d3-92d2-d58fad54588d",
+            "entityUuid" : "1a98d12d-8716-4d0e-87ab-c7e9b4ab9527",
+            "title" : {
+                "changed" : false
+            },
+            "text" : {
+                "changed" : true,
+                "value" : "You will have to first create a Community nanopublication (please go to chapter VII for that) before you can look it up here. When creating a Community you are asked to specify which research domains it belongs to. The research domains have to be selected from the drop-down menu in the template which uses the SRAO vocabulary (https://www.ebi.ac.uk/ols/ontologies/srao, where you could see the hierarchies of the subjects). If you miss a category please go to https://github.com/FAIRsharing/subject-ontology/issues to add your request there.\n\nPlease avoid typing in the name of the community as this would create an error when exporting the data. You are requested to select an existing resource. "
+            },
+            "requiredLevel" : {
+                "changed" : false
+            },
+            "tagUuids" : {
+                "changed" : false
+            },
+            "expertUuids" : {
+                "changed" : false
+            },
+            "referenceUuids" : {
+                "changed" : false
+            },
+            "integrationUuid" : {
+                "changed" : false
+            },
+            "props" : {
+                "changed" : false
+            }
+        }
+    ],
+    "createdAt" : ISODate("2020-10-20T10:13:05.461Z")
 }
     ])
 
@@ -35439,6 +35956,65 @@ db.getCollection("templates").insert({
     ],
     "assets" : [],
     "createdAt" : ISODate("2020-10-14T07:42:57.108Z")
+})
+
+db.getCollection("templates").insert({
+    "id" : "gofair:fip-nanopub:1.2.0",
+    "name" : "FIP Nanopub",
+    "organizationId" : "gofair",
+    "templateId" : "fip-nanopub",
+    "version" : "1.2.0",
+    "metamodelVersion" : 2,
+    "description" : "FAIR Implementation Profile as Nanopublications",
+    "readme" : "# FIP Nanopublication (RDF) template\n\nExport template that transforms FIP questionnaire into a set of nanopublications (one per declaration).\n\n## Changelog\n\n### 1.1.0\n\n- Update for KM v5 (with Wikidata questions)\n\n### 1.0.0\n\n- Initial version of FIP nanopublication export template\n",
+    "license" : "Apache-2.0",
+    "allowedPackages" : [ 
+        {
+            "orgId" : "gofair",
+            "kmId" : "fip-wizard",
+            "minVersion" : "5.0.8",
+            "maxVersion" : null
+        }
+    ],
+    "recommendedPackageId" : "gofair:fip-wizard:5.0.8",
+    "formats" : [ 
+        {
+            "uuid" : "9c7d572e-c273-4323-97a4-ab38f943c33a",
+            "name" : "TriG (RDF)",
+            "shortName" : "trig",
+            "icon" : "fas fa-share-alt",
+            "color" : "#f15a24",
+            "steps" : [ 
+                {
+                    "name" : "jinja",
+                    "options" : {
+                        "content-type" : "application/trig",
+                        "extension" : "trig",
+                        "template" : "content/nanopub.trig.j2"
+                    }
+                }
+            ]
+        }
+    ],
+    "files" : [ 
+        {
+            "uuid" : "3541b212-177e-4c7d-97de-aeb5bf4d6209",
+            "fileName" : "content/_definition.j2",
+            "content" : "{%- set questions = [\r\n  {\r\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-F1-MD\",\r\n    \"type\": \"normal\",\r\n    \"chapter\": \"e3301b05-b02d-4c09-bb4b-7fb181414236\",\r\n    \"declaration\": \"6a812ff5-a202-40d4-bd3b-02b341512e48\",\r\n    \"consideration\": \"6318940e-d311-4102-836e-77dc0f2838f1\",\r\n    \"c_wikidata\": \"7a128d7c-22fe-47c8-b8cd-6672aafc2178\",\r\n    \"c_nanobench\": \"2a880dab-4f2f-4ab5-aefe-ce4942542a37\",\r\n    \"c_options\": \"x\",\r\n    \"c_uri\": \"x\",\r\n    \"planning\": \"47d618c6-568e-4112-b66a-339661bfc7fc\",\r\n    \"p_wikidata\": \"a3096bd9-89ef-4ecf-a979-e1c52ae2e4a4\",\r\n    \"p_nanobench\": \"86205ba5-2016-4a4c-a3bf-d0aea015fec5\",\r\n    \"p_options\": \"x\",\r\n    \"p_uri\": \"x\"\r\n  },\r\n  {\r\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-F1-D\",\r\n    \"type\": \"normal\",\r\n    \"chapter\": \"e3301b05-b02d-4c09-bb4b-7fb181414236\",\r\n    \"declaration\": \"797c4af8-0184-43cf-b40c-e2608b7b4d0a\",\r\n    \"consideration\": \"891413be-e42d-409c-967f-a2e271777aab\",\r\n    \"c_wikidata\": \"64d22ea4-6dea-43bb-91f3-0d2689f8b38b\",\r\n    \"c_nanobench\": \"8b75db91-a7e6-4053-ba77-431ef0e8d67a\",\r\n    \"c_options\": \"x\",\r\n    \"c_uri\": \"x\",\r\n    \"planning\": \"4f3cfb2a-cbb4-40f5-a151-74c9bcb661bd\",\r\n    \"p_wikidata\": \"6a16f854-1cfb-4ca7-894e-2adb60381036\",\r\n    \"p_nanobench\": \"4a10d70e-2a4e-4ea1-a796-e5d100bc53ea\",\r\n    \"p_options\": \"x\",\r\n    \"p_uri\": \"x\"\r\n  },\r\n  {\r\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-F2\",\r\n    \"type\": \"normal\",\r\n    \"chapter\": \"e3301b05-b02d-4c09-bb4b-7fb181414236\",\r\n    \"declaration\": \"808310c5-7321-4789-aa97-80f4c7ac9fa8\",\r\n    \"consideration\": \"b351f7d6-7b0a-43e6-a845-d82d27040435\",\r\n    \"c_wikidata\": \"49a90acf-36e3-42ef-b9d0-806e0ca2ce72\",\r\n    \"c_nanobench\": \"cae8352d-a048-49ad-b95f-24454bb5f80a\",\r\n    \"c_options\": \"x\",\r\n    \"c_uri\": \"x\",\r\n    \"planning\": \"f0ef2043-8c9b-4aa5-9a3b-2c5474a5a694\",\r\n    \"p_wikidata\": \"0b3deb52-5017-45c8-b1ec-c401a14cb966\",\r\n    \"p_nanobench\": \"a57428a6-8dfe-48e3-b846-d4a039ca934c\",\r\n    \"p_options\": \"x\",\r\n    \"p_uri\": \"x\"\r\n  },\r\n  {\r\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-F3\",\r\n    \"type\": \"normal\",\r\n    \"chapter\": \"e3301b05-b02d-4c09-bb4b-7fb181414236\",\r\n    \"declaration\": \"faeab073-3569-4bca-a804-c81c0de04a95\",\r\n    \"consideration\": \"be91f639-06e5-4d65-9375-d04bcf3af66b\",\r\n    \"c_wikidata\": \"0ec3a986-b79a-4ef5-a9b3-7d49a30fe1b1\",\r\n    \"c_nanobench\": \"59d34122-39d7-4587-ae39-de456d7459e2\",\r\n    \"c_options\": \"x\",\r\n    \"c_uri\": \"x\",\r\n    \"planning\": \"293aed26-bf2c-446b-9c91-5acc0e354e63\",\r\n    \"p_wikidata\": \"46d5bc1d-27cb-41c3-96bd-16c917615ba2\",\r\n    \"p_nanobench\": \"e1657f7d-eb02-4baa-a40f-ae0b4ccf973e\",\r\n    \"p_options\": \"x\",\r\n    \"p_uri\": \"x\"\r\n  },\r\n  {\r\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-F4-MD\",\r\n    \"type\": \"normal\",\r\n    \"chapter\": \"e3301b05-b02d-4c09-bb4b-7fb181414236\",\r\n    \"declaration\": \"a50aa1e1-68a9-4e36-bdb6-4a4c5a3d902a\",\r\n    \"consideration\": \"01e9538b-0246-4ae1-a60b-c870bd2f7f10\",\r\n    \"c_wikidata\": \"dfd222a9-8aaf-4df3-a3f5-617562d5a1f0\",\r\n    \"c_nanobench\": \"7bd33eba-28c2-4279-9dff-a2e672697936\",\r\n    \"c_options\": \"x\",\r\n    \"c_uri\": \"x\",\r\n    \"planning\": \"07648d69-41c1-4f7c-bafa-8d93caa32d7c\",\r\n    \"p_wikidata\": \"1685f15e-a5a1-40ae-9e34-19810210770e\",\r\n    \"p_nanobench\": \"a74f5643-da60-4c93-8b93-bca758dca0cf\",\r\n    \"p_options\": \"x\",\r\n    \"p_uri\": \"x\"\r\n  },\r\n  {\r\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-F4-D\",\r\n    \"type\": \"normal\",\r\n    \"chapter\": \"e3301b05-b02d-4c09-bb4b-7fb181414236\",\r\n    \"declaration\": \"5f33c2e8-8b95-435c-870a-fd97d91ff8da\",\r\n    \"consideration\": \"f321f449-7937-40da-9702-0df364a17fb5\",\r\n    \"c_wikidata\": \"d8796118-d403-4f75-bacb-c94f558851b9\",\r\n    \"c_nanobench\": \"20abafb3-72f8-4400-9e16-1acc1c61bf38\",\r\n    \"c_options\": \"x\",\r\n    \"c_uri\": \"x\",\r\n    \"planning\": \"66665dd7-0d60-4ac6-a2dd-a69495899dd0\",\r\n    \"p_wikidata\": \"2c475394-8f93-463d-86f9-75b8a8169734\",\r\n    \"p_nanobench\": \"b28bc881-ad87-4564-ab18-0fa8ac8ac061\",\r\n    \"p_options\": \"x\",\r\n    \"p_uri\": \"x\"\r\n  },\r\n  {\r\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-A1.1-MD\",\r\n    \"type\": \"normal\",\r\n    \"chapter\": \"d6ab1374-788b-4cd5-9614-5ec4c69d6cc5\",\r\n    \"declaration\": \"43ff12a0-22ff-492b-9777-99e2469f5cf1\",\r\n    \"consideration\": \"d06cdad0-f322-4376-be83-0dffa3ea6ff2\",\r\n    \"c_wikidata\": \"e600fc1f-bfbe-4bd5-a41e-a838d8afcc51\",\r\n    \"c_nanobench\": \"5746d5e3-3e98-460d-9a2e-61d3e974eab2\",\r\n    \"c_options\": \"x\",\r\n    \"c_uri\": \"x\",\r\n    \"planning\": \"6668dca1-0761-485c-8f6f-2fe66e2f66bf\",\r\n    \"p_wikidata\": \"cd880a44-0705-448d-a048-cb4653df4216\",\r\n    \"p_nanobench\": \"0979af91-88e6-4567-a25f-51dabd63ed30\",\r\n    \"p_options\": \"x\",\r\n    \"p_uri\": \"x\"\r\n  },\r\n  {\r\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-A1.1-D\",\r\n    \"type\": \"normal\",\r\n    \"chapter\": \"d6ab1374-788b-4cd5-9614-5ec4c69d6cc5\",\r\n    \"declaration\": \"ee073efa-c934-4db4-ae87-49b73df11ca5\",\r\n    \"consideration\": \"c74cecef-cc36-45c9-8400-7a6a56ca4e2d\",\r\n    \"c_wikidata\": \"100c23dc-a379-4114-b6a8-431548d230f4\",\r\n    \"c_nanobench\": \"0fe3186c-c7c1-4cef-a8e0-820c2823e66d\",\r\n    \"c_options\": \"x\",\r\n    \"c_uri\": \"x\",\r\n    \"planning\": \"ad6f9598-e308-4c6c-b751-b576e4423b8a\",\r\n    \"p_wikidata\": \"ee1e14ac-8328-4da5-8d66-879c81973cca\",\r\n    \"p_nanobench\": \"f5b9bf6d-23ea-429d-a937-d988dfb1f971\",\r\n    \"p_options\": \"x\",\r\n    \"p_uri\": \"x\"\r\n  },\r\n  {\r\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-A1.2-MD\",\r\n    \"type\": \"normal\",\r\n    \"chapter\": \"d6ab1374-788b-4cd5-9614-5ec4c69d6cc5\",\r\n    \"declaration\": \"2ddde9e8-4284-4b61-b5a7-8b0e8f8b28c2\",\r\n    \"consideration\": \"c4d90bd6-0154-4bd9-ab7f-72f6f913625a\",\r\n    \"c_wikidata\": \"856bac5d-863e-4018-8999-bc1f46e4e892\",\r\n    \"c_nanobench\": \"076e4fae-6668-4e84-a9f7-b00f1d33f58e\",\r\n    \"c_options\": \"x\",\r\n    \"c_uri\": \"x\",\r\n    \"planning\": \"38e487a0-684e-4add-a2c5-3902e62807a8\",\r\n    \"p_wikidata\": \"039fca50-e23a-413e-9326-a1bb5d10115a\",\r\n    \"p_nanobench\": \"e46681c4-d398-4a4d-875e-9829fa987301\",\r\n    \"p_options\": \"x\",\r\n    \"p_uri\": \"x\"\r\n  },\r\n  {\r\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-A1.2-D\",\r\n    \"type\": \"normal\",\r\n    \"chapter\": \"d6ab1374-788b-4cd5-9614-5ec4c69d6cc5\",\r\n    \"declaration\": \"d2c28334-7dc9-4804-9f0c-89984240fb3b\",\r\n    \"consideration\": \"7e256841-6b67-4fd5-bc6f-51a80f91c991\",\r\n    \"c_wikidata\": \"da8c8522-63f5-4d2a-8e08-cc52f0028aec\",\r\n    \"c_nanobench\": \"db02f6cd-0e28-41d9-9ccf-a0e9040c422d\",\r\n    \"c_options\": \"x\",\r\n    \"c_uri\": \"x\",\r\n    \"planning\": \"60d79156-2028-43e7-93f7-09a8d8545e80\",\r\n    \"p_wikidata\": \"8f98d71b-dcad-4f58-8f1b-f5a874653c92\",\r\n    \"p_nanobench\": \"76141aaf-1807-4667-a349-1ecdcf08f10b\",\r\n    \"p_options\": \"x\",\r\n    \"p_uri\": \"x\"\r\n  },\r\n  {\r\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-A2\",\r\n    \"type\": \"normal\",\r\n    \"chapter\": \"d6ab1374-788b-4cd5-9614-5ec4c69d6cc5\",\r\n    \"declaration\": \"a93c26cc-ca80-4bcf-ac4c-04e8123bbadb\",\r\n    \"consideration\": \"ed203074-d9df-47bc-80ed-abf3283f3aa8\",\r\n    \"c_wikidata\": \"cf7bb89c-3e93-477e-8013-d1f40c228b5f\",\r\n    \"c_nanobench\": \"f7ab7312-0f7f-4ba9-8141-85352a3115f4\",\r\n    \"c_options\": \"x\",\r\n    \"c_uri\": \"x\",\r\n    \"planning\": \"f2f9124a-deb0-4485-9dbd-24fcb011458f\",\r\n    \"p_wikidata\": \"e26cc46c-1a51-4465-8c96-0ab8750ec033\",\r\n    \"p_nanobench\": \"3d871bd7-06a4-41f4-858b-37211e30f332\",\r\n    \"p_options\": \"x\",\r\n    \"p_uri\": \"x\"\r\n  },\r\n  {\r\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-I1-MD\",\r\n    \"type\": \"normal\",\r\n    \"chapter\": \"2b7ee188-a227-43a8-8bf9-a99e6aeb3939\",\r\n    \"declaration\": \"a07fc6d6-1f8c-4c21-9bf5-1040682fa5b8\",\r\n    \"consideration\": \"0a43f23d-6261-4359-bcfb-2f58f3303c49\",\r\n    \"c_wikidata\": \"d1e5866f-383e-431c-bd60-877fa0f0e72a\",\r\n    \"c_nanobench\": \"e3dd2327-0eaa-4ec2-8feb-9d66a78ec4c2\",\r\n    \"c_options\": \"x\",\r\n    \"c_uri\": \"x\",\r\n    \"planning\": \"014a56b6-cc81-4044-9352-98a2c11acdfd\",\r\n    \"p_wikidata\": \"64400794-ee44-4874-85f6-444cc511535b\",\r\n    \"p_nanobench\": \"2088b12c-1639-4db7-b4ca-00a89e3eaeb3\",\r\n    \"p_options\": \"x\",\r\n    \"p_uri\": \"x\"\r\n  },\r\n  {\r\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-I1-D\",\r\n    \"type\": \"normal\",\r\n    \"chapter\": \"2b7ee188-a227-43a8-8bf9-a99e6aeb3939\",\r\n    \"declaration\": \"53120a47-9151-42d4-bd33-4fd91fa9a48a\",\r\n    \"consideration\": \"fff28ddd-d34c-4dc9-8a20-ba26280eb39a\",\r\n    \"c_wikidata\": \"ffdbd1b7-5b52-4231-9318-f724b0164914\",\r\n    \"c_nanobench\": \"219f86b7-88d4-466d-8748-1dcf88fc06b6\",\r\n    \"c_options\": \"x\",\r\n    \"c_uri\": \"x\",\r\n    \"planning\": \"0256112b-b2f5-44e5-be33-69ffeec6a561\",\r\n    \"p_wikidata\": \"01473838-9166-49dd-8953-4a7f4eb4ca68\",\r\n    \"p_nanobench\": \"bf2a6eb8-8d75-434f-813d-ccad06444c1d\",\r\n    \"p_options\": \"x\",\r\n    \"p_uri\": \"x\"\r\n  },\r\n  {\r\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-I2-MD\",\r\n    \"type\": \"normal\",\r\n    \"chapter\": \"2b7ee188-a227-43a8-8bf9-a99e6aeb3939\",\r\n    \"declaration\": \"aea4c5be-aaa3-4e27-a6d6-f2e6af0bc43d\",\r\n    \"consideration\": \"55040213-7a86-416a-8eb6-85f05711587d\",\r\n    \"c_wikidata\": \"006dbb8d-2b77-4bca-8f66-73fdbecaa210\",\r\n    \"c_nanobench\": \"8f9e5e00-77e4-4332-8270-a1a4257420ea\",\r\n    \"c_options\": \"x\",\r\n    \"c_uri\": \"x\",\r\n    \"planning\": \"5700be0d-3918-42e0-b066-512fa6c9137a\",\r\n    \"p_wikidata\": \"0da59752-a14a-4685-a235-aa53a4abdc50\",\r\n    \"p_nanobench\": \"c10f580d-f14c-4d8a-bb41-5ea45dc8dbc5\",\r\n    \"p_options\": \"x\",\r\n    \"p_uri\": \"x\"\r\n  },\r\n  {\r\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-I2-D\",\r\n    \"type\": \"normal\",\r\n    \"chapter\": \"2b7ee188-a227-43a8-8bf9-a99e6aeb3939\",\r\n    \"declaration\": \"bc3f2a07-6921-4693-8e09-4caf408d162a\",\r\n    \"consideration\": \"4f91161c-d968-4387-8264-0ba4e05f8f5a\",\r\n    \"c_wikidata\": \"d57d3c0e-ac9d-40b5-a71c-3061b10ccbb2\",\r\n    \"c_nanobench\": \"40dbe55a-a532-4af2-a602-ca9fddae9412\",\r\n    \"c_options\": \"x\",\r\n    \"c_uri\": \"x\",\r\n    \"planning\": \"84e1d4c8-67f1-4d0e-b897-3b99c4feb9bb\",\r\n    \"p_wikidata\": \"06fa7ce5-9344-473d-8236-73bbc6435839\",\r\n    \"p_nanobench\": \"d71e4483-6b8b-4022-a25e-d4349f1dbf87\",\r\n    \"p_options\": \"x\",\r\n    \"p_uri\": \"x\"\r\n  },\r\n  {\r\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-I3-MD\",\r\n    \"type\": \"normal\",\r\n    \"chapter\": \"2b7ee188-a227-43a8-8bf9-a99e6aeb3939\",\r\n    \"declaration\": \"e712930b-8a6d-474e-b6da-e2fd0e50ab68\",\r\n    \"consideration\": \"f423b127-9fce-4435-8d5b-44a36815f8fa\",\r\n    \"c_wikidata\": \"8775f24c-1412-45dd-838c-9238af307361\",\r\n    \"c_nanobench\": \"1e33211f-25e5-408c-a2a6-5dc9e06c6606\",\r\n    \"c_options\": \"x\",\r\n    \"c_uri\": \"x\",\r\n    \"planning\": \"87d51804-6741-477b-ae53-3941b5631a81\",\r\n    \"p_wikidata\": \"0898ed0a-ea75-46a5-8389-78011c81e7c3\",\r\n    \"p_nanobench\": \"9d3ad18c-2055-4d13-b2d0-0bd3503da2cb\",\r\n    \"p_options\": \"x\",\r\n    \"p_uri\": \"x\"\r\n  },\r\n  {\r\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-I3-D\",\r\n    \"type\": \"normal\",\r\n    \"chapter\": \"2b7ee188-a227-43a8-8bf9-a99e6aeb3939\",\r\n    \"declaration\": \"10ba5624-d948-4f1a-91c1-61f33ec1e51b\",\r\n    \"consideration\": \"baca3035-1f3c-4964-b8f5-26182ca7f446\",\r\n    \"c_wikidata\": \"af116cad-1578-4478-a050-ea5eaa8c3736\",\r\n    \"c_nanobench\": \"b8bc1ffb-64c8-42a6-b5cc-50e2c9813a1f\",\r\n    \"c_options\": \"x\",\r\n    \"c_uri\": \"x\",\r\n    \"planning\": \"a3d10b12-ae30-48f9-9827-239ea003398d\",\r\n    \"p_wikidata\": \"f941e87f-595d-4f35-abec-ee975fcbe894\",\r\n    \"p_nanobench\": \"59b3e9d1-4481-491b-bfc9-f431324f08e6\",\r\n    \"p_options\": \"x\",\r\n    \"p_uri\": \"x\"\r\n  },\r\n  {\r\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-R1.1-MD\",\r\n    \"type\": \"licenses\",\r\n    \"chapter\": \"37e3ef76-71e1-47a9-be84-e1f1d9452193\",\r\n    \"declaration\": \"29a8f2cc-696c-4e64-bfae-cba99ca761e1\",\r\n    \"consideration\": \"312b5818-cdd3-43dc-bcf1-bb9788a88f19\",\r\n    \"c_wikidata\": \"x\",\r\n    \"c_nanobench\": \"0d87bc46-e037-4577-a2a9-9903c3231aba\",\r\n    \"c_options\": \"812fc813-effa-4183-909c-bbc4154730e3\",\r\n    \"c_uri\": \"b25d8565-ec74-4ee0-9ecc-33099a15a58b\",\r\n    \"planning\": \"9653cc3e-4350-4610-ad6a-fc9151856be1\",\r\n    \"p_wikidata\": \"x\",\r\n    \"p_nanobench\": \"eaaf8139-28e5-43d3-872c-35277b4eb0d1\",\r\n    \"p_options\": \"615f99cf-275a-42b6-bc48-405021cfaf66\",\r\n    \"p_uri\": \"379dc1c5-586a-4d98-aaa4-4978e13fd347\"\r\n  },\r\n  {\r\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-R1.1-D\",\r\n    \"type\": \"licenses\",\r\n    \"chapter\": \"37e3ef76-71e1-47a9-be84-e1f1d9452193\",\r\n    \"declaration\": \"c704e5d2-7044-4415-8d52-bb621f64b9d6\",\r\n    \"consideration\": \"cacd776b-b531-4487-bd53-a61dd9653b12\",\r\n    \"c_wikidata\": \"x\",\r\n    \"c_nanobench\": \"d718eade-e9c8-469c-9c0a-5e276c68c362\",\r\n    \"c_options\": \"55b072f8-f2b7-4cf6-be7f-19fd48ccf069\",\r\n    \"c_uri\": \"4e8a8475-f355-4140-ad87-e224a0f3c1a8\",\r\n    \"planning\": \"62e4811c-2217-4de9-9266-ff38524efc8c\",\r\n    \"p_wikidata\": \"x\",\r\n    \"p_nanobench\": \"52f5695c-8567-47af-a679-1355e96d3a96\",\r\n    \"p_options\": \"c8a3a31e-e184-4e53-90fa-c9b6886382a5\",\r\n    \"p_uri\": \"7932d617-2d1b-456d-8a02-5dd30c3e5c03\"\r\n  },\r\n  {\r\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-R1.2-MD\",\r\n    \"type\": \"normal\",\r\n    \"chapter\": \"37e3ef76-71e1-47a9-be84-e1f1d9452193\",\r\n    \"declaration\": \"f6b5b347-6e01-4294-a0e3-d64382bea1e9\",\r\n    \"consideration\": \"53319468-f864-488c-aa6c-995f21cf9207\",\r\n    \"c_wikidata\": \"1f150d19-88d2-462d-a71d-8010eb463b29\",\r\n    \"c_nanobench\": \"c88733b2-e294-419b-81bf-27206542668a\",\r\n    \"c_options\": \"x\",\r\n    \"c_uri\": \"x\",\r\n    \"planning\": \"72fd2469-3506-4e28-b8b3-f1049baa097f\",\r\n    \"p_wikidata\": \"81a46a60-b8e5-4b9a-9382-405f9464b05c\",\r\n    \"p_nanobench\": \"fa4b80dc-7427-4cf6-8299-4082eb1fcd0c\",\r\n    \"p_options\": \"x\",\r\n    \"p_uri\": \"x\"\r\n  },\r\n  {\r\n    \"purl\": \"https://w3id.org/fair/fip/terms/FIP-Question-R1.2-D\",\r\n    \"type\": \"normal\",\r\n    \"chapter\": \"37e3ef76-71e1-47a9-be84-e1f1d9452193\",\r\n    \"declaration\": \"08aae90c-ba61-4c78-b3bd-eb92d29e8111\",\r\n    \"consideration\": \"b5a6c104-b267-48c8-851c-7ee603bf7838\",\r\n    \"c_wikidata\": \"4541e9fe-6266-4636-b860-5e1546c6b52e\",\r\n    \"c_nanobench\": \"abe255a0-7e65-4950-b2ae-47ac8ac30cc1\",\r\n    \"c_options\": \"x\",\r\n    \"c_uri\": \"x\",\r\n    \"planning\": \"a2ad654d-95ce-4ab0-a853-0416c1c37868\",\r\n    \"p_wikidata\": \"424f289d-4f90-494d-892c-6ccdc9f3089a\",\r\n    \"p_nanobench\": \"83fdf983-73d3-4b6e-a9c5-58c91de07aa4\",\r\n    \"p_options\": \"x\",\r\n    \"p_uri\": \"x\"\r\n  }\r\n] -%}\r\n\r\n{%- set communityUuid = \"1a98d12d-8716-4d0e-87ab-c7e9b4ab9527\" -%}\r\n{%- set communityPath = \"63eecafc-fdda-47d3-92d2-d58fad54588d.1a98d12d-8716-4d0e-87ab-c7e9b4ab9527\" -%}\r\n{%- set orcidPath = \"63eecafc-fdda-47d3-92d2-d58fad54588d.c9cd6f2d-d16e-4ef6-831f-a20e33290b6f\" -%}\r\n"
+        }, 
+        {
+            "uuid" : "1dfdd637-2b2e-406c-b8ba-313ababfd5d0",
+            "fileName" : "content/_triples.j2",
+            "content" : "{%- import \"content/_definition.j2\" as def with context -%}\n{%- set km = ctx.knowledgeModel -%}\n{%- set replies = ctx.questionnaireReplies -%}\n\n{%- set declarations = [] -%}\n\n{%- set communityReply = replies[def.communityPath] -%}\n{%- if communityReply -%}\n  {%- set reply = communityReply.value -%}\n  {%- set communityUri = [] -%}\n  {%- set communityQuestion = km.entities.questions[def.communityUuid] -%}\n  {%- if reply.type == \"PlainValue\" and reply.value -%}\n    {%- do communityUri.append(reply.value) -%}\n  {%- elif reply.id -%}\n    {%- set integration = km.entities.integrations[communityQuestion.integrationUuid] -%}\n    {%- do communityUri.append(integration.itemUrl|replace(\"${id}\", reply.id)) -%}\n  {%- endif -%}\n{%- endif -%}\n{%- set orcid = replies[def.orcidPath]|reply_str_value -%}\n\n{%- for q in def.questions -%}\n  {%- set dquestion = km.entities.questions[q[\"declaration\"]] -%}\n\n  {%- set declarationsPath = [q[\"chapter\"], q[\"declaration\"]]|reply_path -%}\n  {%- set declarationItems = replies[declarationsPath]|reply_items -%}\n  {%- for declarationUuid in declarationItems -%}\n    {#- Comment with question text -#}\n    {%- set triples = [] -%}\n    {%- do triples.append([dquestion.title]) -%}\n    {%- set node = \":declaration\" -%}\n    {%- set declarationPath = [declarationsPath, declarationUuid]|reply_path -%}\n    {#- It is a declaration -#}\n    {%- do triples.append([node, \"a\", \"fip:FIP-Declaration\"]) -%}\n    {#- It related to FIP question -#}\n    {%- do triples.append([node, \"fip:refers-to-question\", \"<\" ~ q[\"purl\"] ~ \">\"]) -%}\n    {#- Community making the declaration -#}\n    {%- if communityUri|length > 0 -%}\n      {%- do triples.append([node, \"fip:declared-by\", \"<\" ~ communityUri[0] ~ \">\"]) -%}\n    {%- endif -%}\n    {#- Community making the declaration -#}\n    {%- set considerationsPath = [declarationPath, q[\"consideration\"]]|reply_path -%}\n    {%- set considerations = replies[considerationsPath]|reply_str_value -%}\n    {%- do triples.append([node, \"fip:considerations\", considerations|tojson]) -%}\n    {#- Current: Normal -#}\n    {%- if q[\"type\"] == \"normal\" -%}\n      {%- set cwikidataReply = replies[[declarationPath, q[\"c_wikidata\"]]|reply_path]-%}\n      {%- if cwikidataReply -%}\n        {%- set reply = cwikidataReply.value -%}\n        {%- set question = km.entities.questions[q[\"c_wikidata\"]] -%}\n        {%- if reply.type == \"PlainValue\" and reply.value -%}\n          {%- do triples.append([node, \"fip:declares-current-use-of\", \"<\" ~ reply.value ~ \">\"]) -%}\n        {%- elif reply.id -%}\n          {%- set integration = km.entities.integrations[question.integrationUuid] -%}\n          {%- set url = integration.itemUrl|replace(\"${id}\", reply.id) -%}\n          {%- do triples.append([node, \"fip:declares-current-use-of\", \"<\" ~ url ~ \">\"]) -%}\n          {%- do triples.append([\"<\" ~ url ~ \">\", \"rdfs:label\", reply.value|tojson]) -%}\n        {%- endif -%}\n      {%- endif -%}\n      {%- set cnanobenchReply = replies[[declarationPath, q[\"c_nanobench\"]]|reply_path]-%}\n      {%- if cnanobenchReply -%}\n        {%- set reply = cnanobenchReply.value -%}\n        {%- set question = km.entities.questions[q[\"c_nanobench\"]] -%}\n        {%- if reply.type == \"PlainValue\" and reply.value -%}\n          {%- do triples.append([node, \"fip:declares-current-use-of\", \"<\" ~ reply.value ~ \">\"]) -%}\n        {%- elif reply.id -%}\n          {%- set integration = km.entities.integrations[question.integrationUuid] -%}\n          {%- set url = integration.itemUrl|replace(\"${id}\", reply.id) -%}\n          {%- do triples.append([node, \"fip:declares-current-use-of\", \"<\" ~ url ~ \">\"]) -%}\n          {%- do triples.append([\"<\" ~ url ~ \">\", \"rdfs:label\", reply.value|tojson]) -%}\n        {%- endif -%}\n      {%- endif -%}\n    {%- endif -%}\n    {#- Current: Licenses -#}\n    {%- if q[\"type\"] == \"licenses\" -%}\n      {%- set coptionsAnswerUuid = replies[[declarationPath, q[\"c_options\"]]|reply_path]|reply_str_value -%}\n      {%- set curiAnswer = replies[[declarationPath, q[\"c_uri\"]]|reply_path]|reply_str_value -%}\n      {%- set cnanobenchReply = replies[[declarationPath, q[\"c_nanobench\"]]|reply_path]-%}\n      {%- if coptionsAnswerUuid -%}\n        {%- set answer = km.entities.answers[coptionsAnswerUuid] -%}\n        {%- set answerValue = answer.label -%}\n        {%- do triples.append([node, \"fip:declares-current-use-of\", \"<\" ~ answerValue ~ \">\"]) -%}\n      {%- elif curiAnswer -%}\n        {%- do triples.append([node, \"fip:declares-current-use-of\", \"<\" ~ curiAnswer ~ \">\"]) -%}\n      {%- elif cnanobenchReply -%}\n        {%- set reply = cnanobenchReply.value -%}\n        {%- set question = km.entities.questions[q[\"c_nanobench\"]] -%}\n        {%- if reply.type == \"PlainValue\" and reply.value -%}\n          {%- do triples.append([node, \"fip:declares-current-use-of\", \"<\" ~ reply.value ~ \">\"]) -%}\n        {%- elif reply.id -%}\n          {%- set integration = km.entities.integrations[question.integrationUuid] -%}\n          {%- set url = integration.itemUrl|replace(\"${id}\", reply.id) -%}\n          {%- do triples.append([node, \"fip:declares-current-use-of\", \"<\" ~ url ~ \">\"]) -%}\n          {%- do triples.append([\"<\" ~ url ~ \">\", \"rdfs:label\", reply.value|tojson]) -%}\n        {%- endif -%}\n      {%- endif -%}\n    {%- endif -%}\n    {#- Planned (fip:declares-planned-use-of) -#}\n    {%- set plannedsPath = [declarationPath, q[\"planning\"]]|reply_path -%}\n    {%- set planneds = replies[plannedsPath]|reply_items -%}\n    {%- for plannedUuid in planneds -%}\n      {%- set plannedPath = [plannedsPath, plannedUuid]|reply_path -%}\n      {#- Planned: Normal -#}\n      {%- if q[\"type\"] == \"normal\" -%}\n        {%- set pwikidataReply = replies[[plannedPath, q[\"p_wikidata\"]]|reply_path]-%}\n        {%- if pwikidataReply -%}\n          {%- set reply = pwikidataReply.value -%}\n          {%- set question = km.entities.questions[q[\"p_wikidata\"]] -%}\n          {%- if reply.type == \"PlainValue\" and reply.value -%}\n            {%- do triples.append([node, \"fip:declares-planned-use-of\", \"<\" ~ reply.value ~ \">\"]) -%}\n          {%- elif reply.id -%}\n            {%- set integration = km.entities.integrations[question.integrationUuid] -%}\n            {%- set url = integration.itemUrl|replace(\"${id}\", reply.id) -%}\n            {%- do triples.append([node, \"fip:declares-planned-use-of\", \"<\" ~ url ~ \">\"]) -%}\n            {%- do triples.append([\"<\" ~ url ~ \">\", \"rdfs:label\", reply.value|tojson]) -%}\n          {%- endif -%}\n        {%- endif -%}\n        {%- set pnanobenchReply = replies[[plannedPath, q[\"p_nanobench\"]]|reply_path]-%}\n        {%- if pnanobenchReply -%}\n          {%- set reply = pnanobenchReply.value -%}\n          {%- set question = km.entities.questions[q[\"p_nanobench\"]] -%}\n          {%- if reply.type == \"PlainValue\" and reply.value -%}\n            {%- do triples.append([node, \"fip:declares-planned-use-of\", \"<\" ~ reply.value ~ \">\"]) -%}\n          {%- elif reply.id -%}\n            {%- set integration = km.entities.integrations[question.integrationUuid] -%}\n            {%- set url = integration.itemUrl|replace(\"${id}\", reply.id) -%}\n            {%- do triples.append([node, \"fip:declares-planned-use-of\", \"<\" ~ url ~ \">\"]) -%}\n            {%- do triples.append([\"<\" ~ url ~ \">\", \"rdfs:label\", reply.value|tojson]) -%}\n          {%- endif -%}\n        {%- endif -%}\n      {%- endif -%}\n      {#- Planned: Licenses -#}\n      {%- if q[\"type\"] == \"licenses\" -%}\n        {%- set poptionsAnswerUuid = replies[[plannedPath, q[\"p_options\"]]|reply_path]|reply_str_value -%}\n        {%- set puriAnswer = replies[[plannedPath, q[\"p_uri\"]]|reply_path]|reply_str_value -%}\n        {%- set pnanobenchReply = replies[[plannedPath, q[\"p_nanobench\"]]|reply_path]-%}\n        {%- if poptionsAnswerUuid -%}\n          {%- set answer = km.entities.answers[poptionsAnswerUuid] -%}\n          {%- set answerValue = answer.label -%}\n          {%- do triples.append([node, \"fip:declares-planned-use-of\", \"<\" ~ answerValue ~ \">\"]) -%}\n        {%- elif puriAnswer -%}\n          {%- do triples.append([node, \"fip:declares-planned-use-of\", \"<\" ~ puriAnswer ~ \">\"]) -%}\n        {%- elif pnanobenchReply -%}\n          {%- set reply = pnanobenchReply.value -%}\n          {%- set question = km.entities.questions[q[\"p_nanobench\"]] -%}\n          {%- if reply.type == \"PlainValue\" and reply.value -%}\n            {%- do triples.append([node, \"fip:declares-planned-use-of\", \"<\" ~ reply.value ~ \">\"]) -%}\n          {%- elif reply.id -%}\n            {%- set integration = km.entities.integrations[question.integrationUuid] -%}\n            {%- set url = integration.itemUrl|replace(\"${id}\", reply.id) -%}\n            {%- do triples.append([node, \"fip:declares-planned-use-of\", \"<\" ~ url ~ \">\"]) -%}\n            {%- do triples.append([\"<\" ~ url ~ \">\", \"rdfs:label\", reply.value|tojson]) -%}\n          {%- endif -%}\n        {%- endif -%}\n      {%- endif -%}\n    {%- endfor -%}\n\n    {%- set declaration = {\n      \"uuid\": declarationUuid,\n      \"triples\": triples\n    } -%}\n    {%- do declarations.append(declaration) -%}\n  {%- endfor -%}\n{%- endfor -%}\n"
+        }, 
+        {
+            "uuid" : "e872edbc-bba9-4227-9ba0-15dbb1756827",
+            "fileName" : "content/nanopub.trig.j2",
+            "content" : "{%- import \"content/_triples.j2\" as triples with context -%}\n# This file contains declarations from FIP Questionnaire {{ ctx.questionnaireUuid }} as nanopubs\n#\n# Delete all previous data related to this FIP questionnaire\n#> pre-query: DELETE { GRAPH ?g { ?s ?p ?o } } WHERE { GRAPH ?g { ?s ?p ?o } FILTER REGEX(?g, \"^http://purl.org/nanopub/temp/fip-declaration-np/{{ ctx.questionnaireUuid }}/\") } ;\n\n{% for declaration in triples.declarations -%}\n{%- set declarationUuid = declaration[\"uuid\"] -%}\n{%- set xtriples = declaration[\"triples\"] %}\n# Declaration #{{loop.index}} ({{declarationUuid}})\n@prefix : <http://purl.org/nanopub/temp/fip-declaration-np/{{ ctx.questionnaireUuid }}/{{ ctx.uuid }}/{{ declarationUuid }}#> .\n@prefix fip: <https://w3id.org/fair/fip/terms/> .\n@prefix fair: <https://w3id.org/fair/principles/terms/> .\n@prefix np: <http://www.nanopub.org/nschema#> .\n@prefix npx: <http://purl.org/nanopub/x/> .\n@prefix prov: <http://www.w3.org/ns/prov#> .\n@prefix dct: <http://purl.org/dc/terms/> .\n@prefix owl: <http://www.w3.org/2002/07/owl#> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@prefix orcid: <https://orcid.org/> .\n\n:Head {\n  : a np:Nanopublication;\n    np:hasAssertion :assertion ;\n    np:hasProvenance :provenance ;\n    np:hasPublicationInfo :pubinfo .\n}\n\n:assertion {\n{%- for triple in xtriples %}\n  {%- if triple|length == 3 %}\n  {{ triple[0] }} {{ triple[1] }} {{ triple[2] }} .\n  {%- elif triple|length == 1 %}\n  # {{ triple[0] }}\n  {%- else %}\n  #================================================\n  {%- endif %}\n{%- endfor %}\n}\n\n:provenance {\n  {%- if triples.orcid %}\n  {%- set orcid = triples.orcid|replace(\"https://orcid.org/\", \"\")|replace(\"http://orcid.org/\", \"\") %}\n  {%- if orcid.split('-')|length == 4 %}\n  :assertion dct:creator orcid:{{ orcid }} .\n  {%- else %}\n  :assertion dct:creator {{ orcid|tojson }} .\n  {%- endif %}\n  {%- else %}\n  :assertion dct:creator \"unknown\" .\n  {%- endif %}\n}\n\n:pubinfo {\n  : dct:created \"{{ ctx.updatedAt|datetime_format(\"%Y-%m-%dT%H:%M:%SZ\") }}\"^^xsd:dateTime ;\n    dct:creator <{{ ctx.config.clientUrl }}> ;\n    dct:license <https://creativecommons.org/publicdomain/zero/1.0/> .\n}\n\n{% endfor -%}\n"
+        }
+    ],
+    "assets" : [],
+    "createdAt" : ISODate("2020-10-20T15:46:08.293Z")
 })
 
 // ----------------------------------------------------------------------------------------------------
